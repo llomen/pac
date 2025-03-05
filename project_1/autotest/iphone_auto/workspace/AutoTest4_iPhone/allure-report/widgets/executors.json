@@ -1,0 +1,10 @@
+[ {
+  "name" : "Jenkins",
+  "type" : "jenkins",
+  "url" : "http://10.1.172.175:8080/",
+  "buildOrder" : 77,
+  "buildName" : "AutoTest4_iPhone #77",
+  "buildUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/77/",
+  "reportName" : "AllureReport",
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/77/allure"
+} ]

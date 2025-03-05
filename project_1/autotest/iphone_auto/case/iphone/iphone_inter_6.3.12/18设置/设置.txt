@@ -1,0 +1,46 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${account}        siqian50@qq.com
+${password}       111111
+${pvs}            {'act':'pvs'}
+${xc}             {'act':'xc'}
+${nd}             {'act':'nd'}
+${VerifyImgGet}    {'act':'VerifyImgGet'}
+${appsetpush}     appsetpush
+
+*** Test Cases ***
+小窗播开关开xc-条数
+    首页-我
+    滚动到设置
+    公共－点击页面文本    设置
+    ${aa}    Get Element Attribute    xpath=//XCUIElementTypeSwitch[@name="小窗播放功能"]    value
+    run keyword if    ${aa} ==1    公共－xpath    //XCUIElementTypeSwitch[@name="小窗播放功能"]
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeSwitch[@name="小窗播放功能"]
+    ${result}    公共-获取结果    {'act':'xc'}    shift_mgnd    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+小窗播开关开xc-字段
+    公共-字段    ${result}
+
+小窗播开关开xc-字段值
+    公共-字段值    ${result}
+
+小窗播开关关xc-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeSwitch[@name="小窗播放功能"]
+    ${result}    公共-获取结果    {'act':'xc'}    shift_mgnd    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+小窗播开关关xc-字段
+    公共-字段    ${result}
+
+小窗播开关关xc-字段值
+    公共-字段值    ${result}

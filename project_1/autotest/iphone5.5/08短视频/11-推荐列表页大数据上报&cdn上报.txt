@@ -1,0 +1,116 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay1}         {"act":"aplay","bid":"2.1.1.1.1"}
+${aplay2}         {"act":"aplay","bid":"2.1.1"}
+${buffer1}        {"act":"buffer","bdsv":"iphone_v2.0.0.20180212"}
+${buffer2}        {"act":"buffer","imei":""}
+${hb1}            {"act":"hb","bdsv":"iphone_v2.0.0.20180212"}
+${hb2}            {"act":"hb","imei":""}
+${cdn2}           {'s':'2'}
+${cdn3}           {'s':'3'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+
+*** Test Cases ***
+进入推荐列表pvs-条数
+    [Tags]    sdk
+    公共-删除数据
+    公共－点击页面文本    有料
+    sleep    3
+    ${result}    公共-获取结果    {"act":"pvs"}    redian_1    mpp_pv_5_5_iphone_sdk_pindao    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+进入推荐列表pvs-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+进入推荐列表pvs-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}
+
+列表页点击播放aplay-条数
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${aplay2}    tuijian_duanshipin_001    mpp_vv_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表页点击播放aplay-字段
+    公共-字段    ${result}
+
+列表页点击播放aplay-字段值
+    公共-字段值    ${result}
+
+列表页点击播放cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    tuijian_duanshipin_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表页点击播放cdn2-字段
+    公共-字段    ${result}
+
+列表页点击播放cdn2-字段值
+    公共-字段值    ${result}
+
+列表页点击播放cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    tuijian_duanshipin_002    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表页点击播放cdn3-字段
+    公共-字段    ${result}
+
+列表页点击播放cdn3-字段值
+    公共-字段值    ${result}
+
+列表页短视频定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    tuijian_duanshipin_001    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表页短视频定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+列表页短视频定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+列表页点击播放buffer-条数
+    ${result}    公共-获取结果    ${buffer2}    tuijian_duanshipin_001    mpp_buffer_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表页点击播放buffer-字段
+    公共-字段    ${result}
+
+列表页点击播放buffer-字段值
+    公共-字段值    ${result}
+
+列表页点击播放hb-条数
+    sleep    10
+    ${result}    公共-获取结果    ${hb2}    tuijian_duanshipin_001    mpp_hb_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表页点击播放hb-字段
+    公共-字段    ${result}
+
+列表页点击播放hb-字段值
+    公共-字段值    ${result}
+
+切换短视频完成上报cdn-r3-条数
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${r3}    tuijian_duanshipin_002    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换短视频完成上报cdn-r3-字段
+    公共-字段    ${result}
+
+切换短视频完成上报cdn-r3-字段值
+    公共-字段值    ${result}

@@ -1,0 +1,152 @@
+*** Settings ***
+Documentation     播放列表3
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Force Tags        g2
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${hb3}            {'act':'hb','ht':'0'}
+${hb5}            {'act':'hb','ht':'1'}
+${hb15}           {'act':'hb','ht':'3'}
+${hb45}           {'act':'hb','ht':'4'}
+${hb60}           {'act':'hb','ht':'5'}
+${hb180}          {'act':'hb','ht':'6'}
+${hb_end}         {'act':'hb','ht':'2'}
+${aplay}          {'act':'aplay'}
+${buffer}         {'act':'buffer'}
+
+*** Test Cases ***
+点播3hb-条数
+    公共-删除数据
+    首页-搜索
+    搜索首页－输入搜索词    ${longfilm}
+    搜索－点击搜索
+    sleep    5
+    搜索-点击播放
+    sleep    20
+    ${result}    公共-获取结果    ${hb3}    shikan_3    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播3hb-字段
+    公共-字段    ${result}
+
+点播3hb-字段值
+    公共-字段值    ${result}
+
+点播5hb-条数
+    ${result}    公共-获取结果    ${hb5}    shikan_5    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播5hb-字段
+    公共-字段    ${result}
+
+点播5hb-字段值
+    公共-字段值    ${result}
+
+点播15hb-条数
+    sleep    3
+    ${result}    公共-获取结果    ${hb15}    shikan_15    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播15hb-字段
+    公共-字段    ${result}
+
+点播15hb-字段值
+    公共-字段值    ${result}
+
+点播45hb-条数
+    sleep    33
+    ${result}    公共-获取结果    ${hb45}    shikan_45    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播45hb-字段
+    公共-字段    ${result}
+
+点播45hb-字段值
+    公共-字段值    ${result}
+
+点播60hb-条数
+    sleep    20
+    ${result}    公共-获取结果    ${hb60}    shikan_60    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播60hb-字段
+    公共-字段    ${result}
+
+点播60hb-字段值
+    公共-字段值    ${result}
+
+点播180hb-条数
+    sleep    120
+    ${result}    公共-获取结果    ${hb180}    shikan_180    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播180hb-字段
+    公共-字段    ${result}
+
+点播180hb-字段值
+    公共-字段值    ${result}
+
+播放页列表跳转播放aplay-条数
+    公共-删除数据
+    公共－点击页面文本    仙猫主动替霖之解围
+    sleep    10
+    ${result}    公共-获取结果    ${aplay}    dianboliebiao_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页列表跳转播放aplay-字段
+    公共-字段    ${result}
+
+播放页列表跳转播放aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_005    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+播放页列表跳转播放buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianboliebiao_001    ${table_buffer}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页列表跳转播放buffer-字段
+    公共-字段    ${result}
+
+播放页列表跳转播放buffer-字段值
+    公共-字段值    ${result}
+
+播放页列表跳转播放hb-条数
+    ${result}    公共-获取结果    ${hb_end}    dianboxiayige_001    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页列表跳转播放hb-字段
+    公共-字段    ${result}
+
+播放页列表跳转播放hb-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+上滑
+    ${x1} =    evaluate    ${屏幕宽度}*0.4
+    ${y1} =    evaluate    ${屏幕高度}*0.8
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    -${屏幕高度}*0.3
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}

@@ -1,0 +1,310 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1548036452882" stop="1548036511317">
+  <name>22-启动</name>
+  <title>22-启动</title>
+  <labels/>
+  <test-cases>
+    <test-case severity="normal" start="1548036511233" status="failed" stop="1548036511235">
+      <description>启动pvs1-字段</description>
+      <name>启动pvs1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511239" status="failed" stop="1548036511242">
+      <description>启动pvs1-字段名</description>
+      <name>启动pvs1-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511243" status="failed" stop="1548036511246">
+      <description>首页闪图show-条数</description>
+      <name>首页闪图show-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511249" status="failed" stop="1548036511251">
+      <description>首页闪图show-字段</description>
+      <name>首页闪图show-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511253" status="failed" stop="1548036511255">
+      <description>首页闪图show-字段名</description>
+      <name>首页闪图show-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511256" status="failed" stop="1548036511258">
+      <description>首页头条要闻show-条数</description>
+      <name>首页头条要闻show-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511260" status="failed" stop="1548036511262">
+      <description>首页头条要闻show-字段</description>
+      <name>首页头条要闻show-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511264" status="failed" stop="1548036511265">
+      <description>首页头条要闻show-字段名</description>
+      <name>首页头条要闻show-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511267" status="failed" stop="1548036511269">
+      <description>小窗播放xc-条数</description>
+      <name>小窗播放xc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511270" status="failed" stop="1548036511272">
+      <description>小窗播放xc-字段</description>
+      <name>小窗播放xc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511273" status="failed" stop="1548036511275">
+      <description>小窗播放xc-字段名</description>
+      <name>小窗播放xc-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511276" status="failed" stop="1548036511278">
+      <description>皮肤nd-条数</description>
+      <name>皮肤nd-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511280" status="failed" stop="1548036511282">
+      <description>皮肤nd-字段</description>
+      <name>皮肤nd-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511284" status="failed" stop="1548036511288">
+      <description>皮肤nd-字段名</description>
+      <name>皮肤nd-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511292" status="failed" stop="1548036511296">
+      <description>首页今日热门show-条数</description>
+      <name>首页今日热门show-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511300" status="failed" stop="1548036511303">
+      <description>首页今日热门show-字段</description>
+      <name>首页今日热门show-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036511305" status="failed" stop="1548036511308">
+      <description>首页今日热门show-字段名</description>
+      <name>首页今日热门show-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to launch WebDriverAgent because of xcodebuild failure: "xcodebuild failed with code 65". Make sure you follow the tutorial at https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md. Try to remove the WebDriverAgentRunner application from the device if it is installed and reboot the device.
+</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps>
+        <step start="1548036511310" status="passed" stop="1548036511313">
+          <name>BuiltIn.Run Keyword And Ignore Error</name>
+          <title>BuiltIn.Run Keyword And Ignore Error</title>
+          <attachments/>
+          <steps>
+            <step start="1548036511311" status="passed" stop="1548036511312">
+              <name>AppiumLibrary.Close All Applications</name>
+              <title>AppiumLibrary.Close All Applications</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

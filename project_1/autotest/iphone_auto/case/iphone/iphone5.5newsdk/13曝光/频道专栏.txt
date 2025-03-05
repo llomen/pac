@@ -1,0 +1,150 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${table_chzlshow}    mpp_ip_chzlshow
+${table_chzlclick}    mpp_ip_chzlclick
+${chzlshow}       {'act':'chzlshow'}
+${chzlclick}      {'act':'chzlclick'}
+${columnist}      {'act':'columnist'}
+
+*** Test Cases ***
+专栏show-条数
+    首页-频道管理
+    公共－点击页面文本    动漫
+    comment    scroll    name=偶像大师灰姑娘女孩    name=马栏山饲养员
+    ${result}    公共-获取结果    {'logtype':'show'}    show_zl_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏show-字段
+    公共-字段    ${result}
+
+专栏show-字段值
+    公共-字段值    ${result}
+
+movietv专栏chzlshow-条数
+    ${result}    公共-获取结果    ${chzlshow}    chzlshow_002    ${table_chzlshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+movietv专栏chzlshow-字段
+    公共-字段    ${result}
+
+movietv专栏chzlshow-字段值
+    公共-字段值    ${result}
+
+tw专栏chzlshow-条数
+    公共-删除数据
+    频道专栏-滑动到图文
+    ${result}    公共-获取结果    ${chzlshow}    chzlshow_004    ${table_chzlshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+tw专栏chzlshow-字段
+    公共-字段    ${result}
+
+tw专栏chzlshow-字段值
+    公共-字段值    ${result}
+
+columht专栏chzlshow-条数
+    公共-删除数据
+    频道专栏-滑动到横图
+    ${result}    公共-获取结果    ${chzlshow}    chzlshow_001    ${table_chzlshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+columht专栏chzlshow-字段
+    公共-字段    ${result}
+
+columht专栏chzlshow-字段值
+    公共-字段值    ${result}
+
+未登录关注chzlclick-条数
+    公共-删除数据
+    频道专栏-关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_002    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未登录关注chzlclick-字段
+    公共-字段    ${result}
+
+未登录关注chzlclick-字段值
+    公共-字段值    ${result}
+
+未登录关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未登录关注columnist-字段
+    公共-字段    ${result}
+
+未登录关注columnist-字段值
+    公共-字段值    ${result}
+
+跳转登录页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录页pvs-字段
+    公共-字段    ${result}
+
+跳转登录页pvs-字段值
+    公共-字段值    ${result}
+
+登录后跳转回专栏频道
+    直接登录    ${mail_account}    ${mail_pwd}    ${mail_name}
+
+登录后关注chzlclick-条数
+    公共-删除数据
+    频道专栏-关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_012    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后关注chzlclick-字段
+    公共-字段    ${result}
+
+登录后关注chzlclick-字段值
+    公共-字段值    ${result}
+
+登录后关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_22    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后关注columnist-字段
+    公共-字段    ${result}
+
+登录后关注columnist-字段值
+    公共-字段值    ${result}
+
+取消关注chzlclick-条数
+    公共-删除数据
+    频道专栏-取消关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_006    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消关注chzlclick-字段
+    公共-字段    ${result}
+
+取消关注chzlclick-字段值
+    公共-字段值    ${result}
+
+取消关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消关注columnist-字段
+    公共-字段    ${result}
+
+取消关注columnist-字段值
+    公共-字段值    ${result}

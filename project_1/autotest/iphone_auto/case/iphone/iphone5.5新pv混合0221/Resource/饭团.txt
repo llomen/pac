@@ -1,0 +1,169 @@
+*** Settings ***
+Resource          ./网络.txt
+Resource          ./Variables.txt
+Resource          ./公共事件.txt
+Resource          ./公共操作.txt
+
+*** Keywords ***
+饭团-推荐
+    公共－点击页面文本    推荐
+
+饭团-我的饭团
+    公共－点击页面文本    我的饭团
+
+饭团-电视台
+    公共－点击页面文本    Live Navigantion Bar Live TV
+
+饭团-我的头像
+    comment    公共－点击页面文本    headshot personal
+    公共－xpath    //XCUIElementTypeButton[@name="Live Navigantion Bar Live TV"]/following-sibling::XCUIElementTypeButton[1]
+
+饭团-我的头像-返回
+    comment    公共－点击页面文本    backbg icon
+    非播放页-返回
+
+饭团-消息
+    comment    公共－点击页面文本    Channel Notice iCON
+    公共－xpath    //XCUIElementTypeTextField[@name="search_textField"]/../following-sibling::XCUIElementTypeButton[1]
+
+饭团-搜索
+    公共－点击页面文本    search_textField
+
+饭团-搜索-输入
+    [Arguments]    ${text}
+    input text    xpath=//XCUIElementTypeTextField[@name="search_textField"]    ${text}
+    搜索－点击搜索
+    sleep    10
+
+饭团-发布
+    公共－点击页面文本    fantuan Homepage release
+
+饭团-发布-取消
+    公共－点击页面文本    取消
+
+饭团-发布-提交
+    公共－点击页面文本    Comment input Send
+
+饭团-发布-选择饭团
+    公共－点击页面文本    请选择
+
+饭团-发布-输入标题
+    [Arguments]    ${text}
+    input text    xpath=//XCUIElementTypeStaticText[@name="标题:"]/following-sibling::XCUIElementTypeTextField[1]    ${text}
+
+饭团-发布-输入内容
+    [Arguments]    ${text}
+    input text    xpath=//XCUIElementTypeStaticText[@name="我来说两句..."]/..    ${text}
+
+饭团-发布-选择图片
+    公共－点击页面文本    Addition Pictures Normal
+    ${aa}    if page contain text    不允许
+    run keyword if    ${aa}==1    公共－点击页面文本    不允许
+
+饭团-发布-选择视频
+    公共－点击页面文本    Addition Video Normal
+    ${aa}    if page contain text    不允许
+    run keyword if    ${aa}==1    公共－点击页面文本    不允许
+
+饭团-动态-分享
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]
+
+饭团-分享到
+    [Arguments]    ${name}
+    ${aa}    if page contain text    ${name}
+    run keyword if    ${aa}==0    拉起饭团分享
+    公共－点击页面文本    ${name}
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+
+拉起饭团分享
+    饭团-动态-分享
+    公共-删除数据
+
+饭团-动态-来自饭团
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+
+饭团-动态-评论
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeButton[2]
+    饭团-动态-关闭评论框
+
+饭团-动态-关闭评论框
+    ${aa}    if page contain text    稍后再验证
+    run keyword if    ${aa}==1    公共－点击页面文本    稍后再验证
+    ${bb}    Run Keyword And Return Status    Page Should Contain Element    xpath=//XCUIElementTypeButton[@name="Comment Iput Emoj"]/preceding-sibling::XCUIElementTypeButton[1]
+    run keyword if    ${bb}==True    公共－xpath    //XCUIElementTypeButton[@name="Comment Iput Emoj"]/preceding-sibling::XCUIElementTypeButton[1]
+
+饭团-动态-点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+
+饭团-动态-更多
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]
+
+饭团-动态-发布者
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeStaticText[last()]
+
+饭团-动态-内容
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeStaticText[last()-1]
+
+饭团-详情-饭团首页
+    公共－点击页面文本    fantuan_livesub_background
+
+饭团-详情-个人头像
+    公共－点击页面文本    headshot none
+
+饭团-明星-更多
+    公共－点击页面文本    web more
+
+饭团-明星-加入饭团
+    公共－点击页面文本    + 加入
+
+饭团-明星-作品
+    公共－点击页面文本    作品
+
+饭团-明星-全部动态
+    公共－点击页面文本    全部动态
+
+饭团-明星-退出饭团
+    ${aa}    if page contain text    已加入
+    run keyword if    ${aa}==1    退出饭团
+
+退出饭团
+    饭团-明星-更多
+    公共－点击页面文本    退出饭团
+
+饭团-我的饭团-饭团列表
+    公共－点击页面文本    arrow right
+
+饭团-我的饭团-更多饭团
+    公共－点击页面文本    更多饭团
+
+饭团-我的饭团-进入第一个饭团
+    公共－xpath    //XCUIElementTypeButton[@name="进饭团"][1]
+
+饭团-个人主页-粉丝
+    公共－点击页面文本    粉丝
+
+饭团-个人主页-关注
+    公共－xpath    //XCUIElementTypeButton[@name="关注"]
+
+饭团-个人主页-饭团
+    公共－xpath    //XCUIElementTypeButton[@name="饭团"]
+
+饭团-个人主页-加入的饭团
+    公共－点击页面文本    加入的饭团
+
+饭团-个人主页-返回
+    comment    公共－点击页面文本    backbg icon
+    非播放页-返回
+
+饭团-个人主页-更多
+    公共－点击页面文本    Combined Shape
+
+饭团-ta的饭团-加入第一个
+    ${aa}    Get Element Attribute    xpath=//XCUIElementTypeButton[@name="+ 加入"][1]/preceding-sibling::XCUIElementTypeStaticText[1]    name
+    公共－xpath    //XCUIElementTypeButton[@name="+ 加入"][1]
+    公共－点击页面文本    ${aa}
+
+饭团-结果页-饭团主页
+    ${aa}    if page contain text    + 加入
+    run keyword if    ${aa}==1    搜索结果页-点击饭团头像
+    ...    ELSE    公共－点击页面文本    进入

@@ -1,0 +1,136 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${recommended}    {'act':'recommended'}
+${relatepv}       {'act':'relatepv'}
+${hotpv}          {'act':'hotpv'}
+${interestpv}     {'act':'interestpv'}
+${recommend_hot}    {'act':'recommend_hot'}
+${recommended_user}    {'act':'recommend_user'}
+${more}           {'act':'more'}
+${change}         {'act':'change'}
+${pvs}            {'act':'pvs'}
+${aplay}          {'act':'aplay'}
+
+*** Test Cases ***
+电视剧看了会喜欢interestpv-条数
+    公共－点击页面文本    综艺
+    sleep    3
+    公共-删除数据
+    公共－点击页面文本    电视剧
+    ${result}    公共-获取结果    ${interestpv}    iphone_dianshiju_001    mpp_recommendpv_interestpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢interestpv-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢interestpv-字段值
+    公共-字段值    ${result}
+
+电视剧看了会喜欢recommended_user-条数
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="楚乔传"])[1]/following-sibling::XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${recommended_user}    iphone_dianshiju_001    mpp_recommend_user    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢recommended_user-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢recommended_user-字段值
+    公共-字段值    ${result}
+
+电视剧看了会喜欢change-条数
+    comment    线上环境点播返回
+    点播播放页-返回
+    comment    DNS环境点播返回：楚乔传播不出来
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAButton[12]
+    公共-滑动页面    看了还会看    你喜欢赵丽颖，所以猜你还喜欢
+    公共-删除数据
+    公共－点击页面文本    换一换
+    ${result}    公共-获取结果    ${change}    iphone_dianshiju_huanyihuan    mpp_recommendpv_more    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢change-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢change-字段值
+    公共-字段值    ${result}
+
+看了还会看点击“所以猜你喜欢”more-条数
+    公共-删除数据
+    公共－点击页面文本    你喜欢赵丽颖，所以猜你还喜欢
+    sleep    2
+    ${result}    公共-获取结果    ${more}    iphone_kanlehai_more    mpp_recommendpv_more    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看了还会看点击“所以猜你喜欢”more-字段
+    公共-字段    ${result}
+
+看了还会看点击“所以猜你喜欢”more-字段值
+    公共-字段值    ${result}
+
+看了还会看点击“所以猜你喜欢”interestpv-条数
+    ${result}    公共-获取结果    ${interestpv}    iphone_kanlehai_more    mpp_recommendpv_interestpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看了还会看点击“所以猜你喜欢”interestpv-字段
+    公共-字段    ${result}
+
+看了还会看点击“所以猜你喜欢”interestpv-字段值
+    公共-字段值    ${result}
+
+为您推荐切换tab的pvs-条数
+    ${result}    公共-获取结果    ${pvs}    weinituijian_tab    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    comment    公共－点击页面文本    你最喜欢的电影
+
+为您推荐切换tab的pvs-字段
+    公共-字段    ${result}
+
+为您推荐切换tab的pvs-字段值
+    公共-字段值    ${result}
+
+为您推荐视频点击recommend_user-条数
+    公共-删除数据
+    公共－点击页面文本    陈伟霆赵丽颖调皮扮初见
+    ${result}    公共-获取结果    ${recommended_user}    iphone_weinituijian    mpp_recommend_user    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+为您推荐视频点击recommend_user-字段
+    公共-字段    ${result}
+
+为您推荐视频点击recommend_user-字段值
+    公共-字段值    ${result}
+
+电视剧看了会喜欢aplay-条数
+    sleep    17
+    ${result}    公共-获取结果    ${aplay}    dianbokanxihuan_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢aplay-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_007    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}

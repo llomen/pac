@@ -1,0 +1,25 @@
+[ {
+  "values" : [ "1.1.1" ],
+  "name" : "Allure Adapter version"
+}, {
+  "values" : [ "Python" ],
+  "name" : "Interpreter"
+}, {
+  "values" : [ "['/Users/klyg/Desktop/autotest/iphone_auto/case/iphone/iphone5.5']" ],
+  "name" : "Robot Framework CLI Arguments"
+}, {
+  "values" : [ "3.0.2" ],
+  "name" : "Robot Framework Version"
+}, {
+  "values" : [ "darwin" ],
+  "name" : "Robot Framework Platform"
+}, {
+  "values" : [ "bznotrouble.local" ],
+  "name" : "Robot Framework Hostname"
+}, {
+  "values" : [ "3.0.2 (Python 2.7.10 on darwin)" ],
+  "name" : "Robot Framework Full Version"
+}, {
+  "values" : [ "2.7.10" ],
+  "name" : "Python version"
+} ]

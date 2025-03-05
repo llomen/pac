@@ -1,0 +1,25 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${fol}            {'act':'fol'}
+
+*** Test Cases ***
+视频播放页点击关注fol-条数
+    公共－用户登录    shuang3@yopmail.com    111111
+    首页－精选
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[1]
+    sleep    3
+    视频播放-关注
+    ${result}    公共-获取结果    ${fol}    fol_001    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+视频播放页点击关注fol-字段
+    公共-字段    ${result}
+
+视频播放页点击关注fol-字段名
+    公共-字段值    ${result}

@@ -1,0 +1,351 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1586422260015" stop="1586422262573">
+  <name>01覆盖安装</name>
+  <title>01覆盖安装</title>
+  <labels/>
+  <test-cases>
+    <test-case severity="normal" start="1586422260016" status="passed" stop="1586422260031">
+      <description>test</description>
+      <name>test</name>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps>
+        <step start="1586422260017" status="passed" stop="1586422260024">
+          <name>公共操作.select-xpath</name>
+          <title>公共操作.select-xpath</title>
+          <attachments/>
+          <steps>
+            <step start="1586422260018" status="passed" stop="1586422260021">
+              <name>BuiltIn.Run Keyword And Return Status</name>
+              <title>BuiltIn.Run Keyword And Return Status</title>
+              <attachments/>
+              <steps>
+                <step start="1586422260019" status="failed" stop="1586422260020">
+                  <name>BuiltIn.Should Match</name>
+                  <title>BuiltIn.Should Match</title>
+                  <attachments/>
+                  <steps/>
+                </step>
+              </steps>
+            </step>
+            <step start="1586422260021" status="passed" stop="1586422260022">
+              <name>BuiltIn.Set Variable If</name>
+              <title>BuiltIn.Set Variable If</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1586422260023" status="passed" stop="1586422260023">
+              <name>BuiltIn.Log</name>
+              <title>BuiltIn.Log</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+    <test-case severity="normal" start="1586422260034" status="failed" stop="1586422261181">
+      <description>无授权界面</description>
+      <name>无授权界面</name>
+      <failure>
+        <message>MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x72cbe10&gt;: Failed to establish a new connection: [Errno 61] Connection refused',))</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps>
+        <step start="1586422260034" status="passed" stop="1586422261146">
+          <name>网络.公共-删除数据</name>
+          <title>网络.公共-删除数据</title>
+          <attachments/>
+          <steps>
+            <step start="1586422260035" status="passed" stop="1586422260144">
+              <name>auto.Delete Data</name>
+              <title>auto.Delete Data</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1586422260145" status="passed" stop="1586422261146">
+              <name>BuiltIn.Sleep</name>
+              <title>BuiltIn.Sleep</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+        <step start="1586422261147" status="failed" stop="1586422261175">
+          <name>公共操作.启动应用</name>
+          <title>公共操作.启动应用</title>
+          <attachments/>
+          <steps>
+            <step start="1586422261148" status="failed" stop="1586422261174">
+              <name>公共操作.快速启动应用</name>
+              <title>公共操作.快速启动应用</title>
+              <attachments/>
+              <steps>
+                <step start="1586422261148" status="failed" stop="1586422261174">
+                  <name>AppiumLibrary.Open Application</name>
+                  <title>AppiumLibrary.Open Application</title>
+                  <attachments/>
+                  <steps>
+                    <step start="1586422261165" status="failed" stop="1586422261169">
+                      <name>AppiumLibrary.Capture Page Screenshot</name>
+                      <title>AppiumLibrary.Capture Page Screenshot</title>
+                      <attachments/>
+                      <steps/>
+                    </step>
+                  </steps>
+                </step>
+              </steps>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+    <test-case severity="normal" start="1586422261183" status="failed" stop="1586422261230">
+      <description>无权限提示</description>
+      <name>无权限提示</name>
+      <failure>
+        <message>Several failures occurred:
+
+1) No application is open
+
+2) No application is open</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps>
+        <step start="1586422261184" status="failed" stop="1586422261200">
+          <name>公共事件.公共-页面不包含元素</name>
+          <title>公共事件.公共-页面不包含元素</title>
+          <attachments/>
+          <steps>
+            <step start="1586422261185" status="failed" stop="1586422261199">
+              <name>BuiltIn.Run Keyword And Continue On Failure</name>
+              <title>BuiltIn.Run Keyword And Continue On Failure</title>
+              <attachments/>
+              <steps>
+                <step start="1586422261185" status="failed" stop="1586422261199">
+                  <name>AppiumLibrary.Page Should Not Contain Element</name>
+                  <title>AppiumLibrary.Page Should Not Contain Element</title>
+                  <attachments/>
+                  <steps>
+                    <step start="1586422261186" status="failed" stop="1586422261190">
+                      <name>AppiumLibrary.Capture Page Screenshot</name>
+                      <title>AppiumLibrary.Capture Page Screenshot</title>
+                      <attachments/>
+                      <steps/>
+                    </step>
+                  </steps>
+                </step>
+              </steps>
+            </step>
+          </steps>
+        </step>
+        <step start="1586422261201" status="failed" stop="1586422261223">
+          <name>公共事件.公共-页面不包含元素</name>
+          <title>公共事件.公共-页面不包含元素</title>
+          <attachments/>
+          <steps>
+            <step start="1586422261207" status="failed" stop="1586422261222">
+              <name>BuiltIn.Run Keyword And Continue On Failure</name>
+              <title>BuiltIn.Run Keyword And Continue On Failure</title>
+              <attachments/>
+              <steps>
+                <step start="1586422261208" status="failed" stop="1586422261222">
+                  <name>AppiumLibrary.Page Should Not Contain Element</name>
+                  <title>AppiumLibrary.Page Should Not Contain Element</title>
+                  <attachments/>
+                  <steps>
+                    <step start="1586422261209" status="failed" stop="1586422261214">
+                      <name>AppiumLibrary.Capture Page Screenshot</name>
+                      <title>AppiumLibrary.Capture Page Screenshot</title>
+                      <attachments/>
+                      <steps/>
+                    </step>
+                  </steps>
+                </step>
+              </steps>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+    <test-case severity="normal" start="1586422261232" status="failed" stop="1586422262488">
+      <description>初次启动st</description>
+      <name>初次启动st</name>
+      <failure>
+        <message>Execution terminated by signal</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps>
+        <step start="1586422261232" status="failed" stop="1586422262480">
+          <name>BuiltIn.Sleep</name>
+          <title>BuiltIn.Sleep</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case severity="normal" start="1586422262490" status="failed" stop="1586422262498">
+      <description>初次启动st1</description>
+      <name>初次启动st1</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262500" status="failed" stop="1586422262505">
+      <description>初次启动tf</description>
+      <name>初次启动tf</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262507" status="failed" stop="1586422262513">
+      <description>初次启动tf1</description>
+      <name>初次启动tf1</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262515" status="failed" stop="1586422262522">
+      <description>初次启动pvs</description>
+      <name>初次启动pvs</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262524" status="failed" stop="1586422262533">
+      <description>初次启动pvs1</description>
+      <name>初次启动pvs1</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262534" status="failed" stop="1586422262540">
+      <description>首页pd</description>
+      <name>首页pd</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262543" status="failed" stop="1586422262548">
+      <description>初次启动上报曝光show</description>
+      <name>初次启动上报曝光show</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1586422262550" status="failed" stop="1586422262558">
+      <description>点我的跳个人中心</description>
+      <name>点我的跳个人中心</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="g1"/>
+        <label name="issue" value="g2"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="1044608"/>
+      </labels>
+      <steps>
+        <step start="1586422262561" status="passed" stop="1586422262570">
+          <name>BuiltIn.Run Keyword And Ignore Error</name>
+          <title>BuiltIn.Run Keyword And Ignore Error</title>
+          <attachments/>
+          <steps>
+            <step start="1586422262562" status="passed" stop="1586422262569">
+              <name>AppiumLibrary.Close All Applications</name>
+              <title>AppiumLibrary.Close All Applications</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

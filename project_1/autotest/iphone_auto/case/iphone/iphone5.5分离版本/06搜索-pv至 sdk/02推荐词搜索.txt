@@ -1,0 +1,111 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${text}           kuaile
+${action}         {'act':'action'}
+
+*** Test Cases ***
+推荐词搜索search-条数
+    首页-搜索
+    搜索首页－输入搜索词    ${text}
+    公共－点击页面文本    确认
+    公共-删除数据
+    公共－点击页面文本    快乐大本营
+    sleep    3
+    ${result}    公共-获取结果    ${search}    suggest_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐词搜索search-字段
+    公共-字段    ${result}
+
+推荐词搜索search-字段值
+    公共-字段值    ${result}
+
+推荐词搜索view-条数
+    sleep    3
+    ${result}    公共-获取结果    ${view}    suggest_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐词搜索view-字段
+    公共-字段    ${result}
+
+推荐词搜索view-字段值
+    公共-字段值    ${result}
+
+翻页后点击合集click-条数
+    公共-删除数据
+    comment    公共-滑动页面    快乐大本营    查看更多
+    上滑
+    公共－点击页面文本    胡一天张亮携神秘礼物来袭
+    sleep    3
+    ${result}    公共-获取结果    ${click}    fanye_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+翻页后点击合集click-字段
+    公共-字段    ${result}
+
+翻页后点击合集click-字段值
+    公共-字段值    ${result}
+
+翻页后点击合集action-条数
+    ${result}    公共-获取结果    ${action}    fanye_001    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+翻页后点击合集action-字段
+    公共-字段    ${result}
+
+翻页后点击合集action-字段值
+    公共-字段值    ${result}
+
+视频播放返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    fanye_001    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+视频播放返回pvs-字段
+    公共-字段    ${result}
+
+视频播放返回pvs-字段值
+    公共-字段值    ${result}
+
+历史搜索search-条数
+    搜索－取消
+    首页-搜索
+    下滑
+    sleep    3
+    公共-删除数据
+    comment    搜索-历史搜索
+    公共－点击页面文本    ${text}
+    ${result}    公共-获取结果    ${search}    lishi_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+历史搜索search-字段
+    公共-字段    ${result}
+
+历史搜索search-字段值
+    公共-字段值    ${result}
+
+历史搜索view-条数
+    ${result}    公共-获取结果    ${view}    lishi_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+历史搜索view-字段
+    公共-字段    ${result}
+
+历史搜索view-字段值
+    公共-字段值    ${result}

@@ -1,0 +1,244 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${cdn2}           {'s':'2'}
+${share}          {'act':'share'}
+
+*** Test Cases ***
+直播页pvs1-条数
+    Comment    公共－手机登录    18274962349    lt123456
+    Comment    公共－用户登录    mgtest02@a.com    111111
+    公共－用户登录    ${mail_account}    ${mail_pwd}
+    首页－精选
+    公共-滑动页面    头条要闻    赵丽颖
+    公共-删除数据
+    公共－点击页面文本    多机位VIP直播测试
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    changjing_001    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播页pvs1-字段
+    公共-字段    ${result}
+
+直播页pvs1-字段值
+    公共-字段值    ${result}
+
+aplay-条数
+    sleep    25
+    Comment    公共－点击坐标点    25    28
+    ${result}    公共-获取结果    ${aplay}    aphone_changjing_001    mpp_aplay_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+aplay-字段
+    公共-字段    ${result}
+
+aplay-字段值
+    公共-字段值    ${result}
+
+开始定时卡顿-条数
+    ${result}    公共-获取结果    ${r1}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开始定时卡顿-字段
+    公共-字段    ${result}
+
+开始定时卡顿-字段值
+    公共-字段值    ${result}
+
+heartbeat-条数
+    sleep    65
+    ${result}    公共-获取结果    ${heartbeat}    aphone_changjing_001    mpp_heartbeat_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+heartbeat-字段
+    公共-字段    ${result}
+
+heartbeat-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    aphone_changjing_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    aphone_changjing_002    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn2-字段
+    公共-字段    ${result}
+
+cdn2-字段值
+    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    aphone_changjing_003    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    公共-字段    ${result}
+
+cdn3-字段值
+    公共-字段值    ${result}
+
+点击分享按钮share-条数
+    公共-删除数据
+    公共－点击页面文本    share player
+    ${result}    公共-获取结果    ${share}    share_changjing_002    mpp_jiaohu_iphone_newclick    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到朋友圈share-条数
+    公共-删除数据
+    公共－点击页面文本    朋友圈
+    ${result}    公共-获取结果    ${share}    share_changjing_002    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到朋友圈share-字段
+    公共-字段    ${result}
+
+分享到朋友圈share-字段值
+    公共-字段值    ${result}
+
+分享到微信share-条数
+    sleep    2
+    公共－点击页面文本－忽略错误    确认
+    公共－点击页面文本    share player
+    公共-删除数据
+    公共－点击页面文本    微信
+    ${result}    公共-获取结果    ${share}    share_changjing_003    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到微信share-字段
+    公共-字段    ${result}
+
+分享到微信share-字段值
+    公共-字段值    ${result}
+
+分享到微博share-条数
+    sleep    2
+    公共－点击页面文本－忽略错误    确认
+    公共－点击页面文本    share player
+    公共-删除数据
+    公共－点击页面文本    微博
+    ${result}    公共-获取结果    ${share}    share_changjing_004    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到微博share-字段
+    公共-字段    ${result}
+
+分享到微博share-字段值
+    公共-字段值    ${result}
+
+分享到QQshare-条数
+    sleep    2
+    公共－点击页面文本－忽略错误    确认
+    公共－点击页面文本    share player
+    公共-删除数据
+    公共－点击页面文本    QQ
+    ${result}    公共-获取结果    ${share}    share_changjing_005    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到QQshare-字段
+    公共-字段    ${result}
+
+分享到QQshare-字段值
+    公共-字段值    ${result}
+
+分享到QQ空间share-条数
+    sleep    2
+    公共－点击页面文本－忽略错误    确认
+    公共－点击页面文本    share player
+    公共-删除数据
+    公共－点击页面文本    QQ空间
+    ${result}    公共-获取结果    ${share}    share_changjing_006    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到QQ空间share-字段
+    公共-字段    ${result}
+
+分享到QQ空间share-字段值
+    公共-字段值    ${result}
+
+切换机位Vip播放aplay-条数
+    sleep    15
+    公共－点击页面文本－忽略错误    确认
+    公共－点击页面文本    live camera
+    公共-删除数据
+    公共－点击坐标点    240    320
+    sleep    20
+    ${result}    公共-获取结果    ${aplay}    aphone_changjing_002    mpp_aplay_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换机位Vip播放aplay-字段
+    公共-字段    ${result}
+
+切换机位Vip播放aplay-字段值
+    公共-字段值    ${result}
+
+切换机位Vip播放heartbeat-条数
+    sleep    63
+    ${result}    公共-获取结果    ${heartbeat}    aphone_changjing_002    mpp_heartbeat_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换机位Vip播放heartbeat-字段
+    公共-字段    ${result}
+
+切换机位Vip播放heartbeat-字段值
+    公共-字段值    ${result}
+
+退出直播pvs1-条数
+    公共－点击坐标点    150    170
+    公共-删除数据
+    公共－点击页面文本    close player
+    sleep    3
+    ${result}    公共-获取结果    ${pvs1}    changjing_002    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出直播pvs1-字段
+    公共-字段    ${result}
+
+退出直播pvs1-字段值
+    公共-字段值    ${result}
+
+退出完成卡顿-条数
+    ${result}    公共-获取结果    ${r3}    aphone_changjing_3    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出完成卡顿-字段
+    公共-字段    ${result}
+
+退出完成卡顿-字段值
+    公共-字段值    ${result}

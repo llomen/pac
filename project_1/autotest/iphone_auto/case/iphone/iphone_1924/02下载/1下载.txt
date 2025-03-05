@@ -1,0 +1,506 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${hb15}           {'act':'hb','ht':'3'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${cdn2}           {'s':'2'}
+${r3}             {‘r’:'3'}
+${r1}             {‘r’:'1'}
+${pfc16}          {'act':'pfc','pos':'16'}
+${pfc17}          {'act':'pfc','pos':'17'}
+${oc_start}       {'act':'oc','pos':'5'}
+${oc_end}         {'act':'oc','pos':'6'}
+${bdrecommend_rel}    {'act':'bdrecommend_rel'}
+${bdrelatepv}     {'act':'bdrelatepv'}
+${filmfreedown}    小猪佩奇全集
+${filmvipdown}    青云志
+${filmcannotdown}    汪汪队立大功
+
+*** Test Cases ***
+清空缓存
+    sleep    5
+    首页-缓存
+    删除全部缓存
+    非播放页-返回
+
+空白缓存页pvs-条数
+    sleep    2
+    公共-删除数据
+    首页-缓存
+    ${result}    公共-获取结果    ${pvs}    huancun_010    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存页pvs-字段
+    公共-字段    ${result}
+
+空白缓存页pvs-字段值
+    公共-字段值    ${result}
+
+空白缓存页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_010    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存页pvs1-字段
+    公共-字段    ${result}
+
+空白缓存页pvs1-字段值
+    公共-字段值    ${result}
+
+空白缓存页提示
+    Page Should Contain Text    暂无缓存视频
+
+空白缓存页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    huancun_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存页返回pvs-字段
+    公共-字段    ${result}
+
+空白缓存页返回pvs-字段值
+    公共-字段值    ${result}
+
+空白缓存页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_011    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存页返回pvs1-字段
+    公共-字段    ${result}
+
+空白缓存页返回pvs1-字段值
+    公共-字段值    ${result}
+
+不可下载点击下载按钮pfc-条数
+    首页-搜索
+    搜索首页－输入搜索词    ${filmcannotdown}
+    搜索－点击搜索
+    公共-删除数据
+    搜索－点击结果第一个
+    sleep    3
+    公共-删除数据
+    公共－点击页面文本    Player Floor DownLoad disabled
+    ${result}    公共-获取结果    ${pfc}    pfc-download    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+不可下载点击下载按钮pfc-字段
+    公共-字段    ${result}
+
+不可下载点击下载按钮pfc-字段值
+    公共-字段值    ${result}
+
+不可下载提示
+    公共-页面存在元素值    因版权限制，赞不支持本国家/地区缓存
+
+不可下载下载pvs-条数
+    ${result}    公共-获取结果    ${pvs}    xiazai_001    ${table_pvs}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+不可下载下载pvs-字段
+    comment    公共-字段    ${result}
+
+不可下载下载pvs-字段值
+    comment    公共-字段值    ${result}
+
+不可下载下载浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_03    ${table_cv}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+不可下载下载浮层曝光cv-字段
+    comment    公共-字段    ${result}
+
+不可下载下载浮层曝光cv-字段值
+    comment    公共-字段值    ${result}
+
+进入vip视频
+    点播播放页-返回
+    sleep    2
+    搜索－x
+    搜索首页－输入搜索词    ${filmvipdown}
+    搜索－点击结果第一个
+
+vip下载点击下载按钮pfc-条数
+    sleep    3
+    公共-删除数据
+    点播播放页-下载
+    ${result}    公共-获取结果    ${pfc}    pfc-download    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vip下载点击下载按钮pfc-字段
+    公共-字段    ${result}
+
+vip下载点击下载按钮pfc-字段值
+    公共-字段值    ${result}
+
+vip下载下载pvs-条数
+    ${result}    公共-获取结果    ${pvs}    xiazai_001    ${table_pvs}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vip下载下载pvs-字段
+    Comment    公共-字段    ${result}
+
+vip下载下载pvs-字段值
+    Comment    公共-字段值    ${result}
+
+vip下载下载浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_03    ${table_cv}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vip下载下载浮层曝光cv-字段
+    Comment    公共-字段    ${result}
+
+vip下载下载浮层曝光cv-字段值
+    Comment    公共-字段值    ${result}
+
+vip下载提示
+    公共-页面存在元素值    该视频为VIP专享，开通VIP即可缓存
+
+跳转会员页面pvs-条数
+    公共-删除数据
+    公共－点击页面文本    确定
+    ${result}    公共-获取结果    ${pvs}    xiazai_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转会员页面pvs-字段
+    公共-字段    ${result}
+
+跳转会员页面pvs-字段值
+    公共-字段值    ${result}
+
+跳转会员页面pvs1-条数
+    ${result}    公共-获取结果    ${pvs}    xiazai_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转会员页面pvs1-字段
+    公共-字段    ${result}
+
+跳转会员页面pvs1-字段值
+    公共-字段值    ${result}
+
+会员页面返回pvs-条数
+    公共-删除数据
+    开通会员－返回
+    ${result}    公共-获取结果    ${pvs}    xiazai_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员页面返回pvs-字段
+    公共-字段    ${result}
+
+会员页面返回pvs-字段值
+    公共-字段值    ${result}
+
+会员页面返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs}    xiazai_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员页面返回pvs1-字段
+    公共-字段    ${result}
+
+会员页面返回pvs1-字段值
+    公共-字段值    ${result}
+
+进入普通视频
+    点播播放页-返回
+    搜索－x
+    搜索首页－输入搜索词    ${filmfreedown}
+    搜索－点击结果第一个
+
+点击下载按钮pfc-条数
+    sleep    3
+    公共-删除数据
+    点播播放页-下载
+    ${result}    公共-获取结果    ${pfc}    pfc-download    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击下载按钮pfc-字段
+    公共-字段    ${result}
+
+点击下载按钮pfc-字段值
+    公共-字段值    ${result}
+
+下载pvs-条数
+    ${result}    公共-获取结果    ${pvs}    xiazai_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载pvs-字段
+    公共-字段    ${result}
+
+下载pvs-字段值
+    公共-字段值    ${result}
+
+下载pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiazai_001    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载pvs1-字段
+    comment    公共-字段    ${result}
+
+下载pvs1-字段值
+    comment    公共-字段值    ${result}
+
+下载浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_03    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载浮层曝光cv-字段
+    公共-字段    ${result}
+
+下载浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+查看缓存-空白pvs-条数
+    公共-删除数据
+    公共－点击页面文本    查看缓存
+    ${result}    公共-获取结果    ${pvs}    huancun_015    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存-空白pvs-字段
+    公共-字段    ${result}
+
+查看缓存-空白pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存-空白pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_015    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存-空白pvs1-字段
+    公共-字段    ${result}
+
+查看缓存-空白pvs1-字段值
+    公共-字段值    ${result}
+
+空白缓存返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    huancun_016    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存返回pvs-字段
+    公共-字段    ${result}
+
+空白缓存返回pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_016    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存返回pvs1-字段
+    公共-字段    ${result}
+
+查看缓存返回pvs1-字段值
+    公共-字段值    ${result}
+
+下载cdn1-条数
+    点播播放页-下载集数    (//XCUIElementTypeStaticText[@name="1"])[1]
+    sleep    5
+    ${result}    公共-获取结果    ${cdn1}    aphone_xiazai_001    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn1-字段
+    公共-字段    ${result}
+
+下载cdn1-字段值
+    公共-字段值    ${result}
+
+下载开始事件ds-条数
+    ${result}    公共-获取结果    {'act':'ds'}    ds_001    mpp_kpi_ds_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载开始事件ds-字段
+    公共-字段    ${result}
+
+下载开始事件ds-字段值
+    公共-字段值    ${result}
+
+开始下载oc-条数
+    Comment    公共-删除数据
+    Comment    点击不可见文本    xpath=(//XCUIElementTypeImage[@name="choice-iconD1"])[1]
+    ${result}    公共-获取结果    ${oc_start}    oc_start    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开始下载oc-字段
+    公共-字段    ${result}
+
+开始下载oc-字段值
+    公共-字段值    ${result}
+
+下载cdn2-条数
+    sleep    2
+    ${result}    公共-获取结果    ${cdn2}    aphone_xiazai_002    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn2-字段
+    公共-字段    ${result}
+
+下载cdn2-字段值
+    公共-字段值    ${result}
+
+下载cdn3-条数
+    #下载开始报z=0,下完报z=1
+    sleep    3
+    ${result}    公共-获取结果    ${cdn3}    aphone_xiazai_003    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn3-字段
+    公共-字段    ${result}
+
+下载cdn3-字段值
+    公共-字段值    ${result}
+
+下载结束oc-条数
+    sleep    5
+    ${result}    公共-获取结果    ${oc_end}    oc_end    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载结束oc-字段
+    公共-字段    ${result}
+
+下载结束oc-字段值
+    公共-字段值    ${result}
+
+查看缓存-已缓存pvs-条数
+    公共-删除数据
+    公共－点击页面文本    查看缓存
+    ${result}    公共-获取结果    ${pvs}    huancun_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存-已缓存pvs-字段
+    公共-字段    ${result}
+
+查看缓存-已缓存pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存-已缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_004    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存-已缓存pvs1-字段
+    公共-字段    ${result}
+
+查看缓存-已缓存pvs1-字段值
+    公共-字段值    ${result}
+
+查看缓存pfc-条数
+    ${result}    公共-获取结果    ${pfc}    pfc-huancun    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pfc-字段
+    公共-字段    ${result}
+
+查看缓存pfc-字段值
+    公共-字段值    ${result}
+
+已缓存返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    huancun_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+已缓存返回pvs-字段
+    公共-字段    ${result}
+
+已缓存返回pvs-字段值
+    公共-字段值    ${result}
+
+已缓存返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+已缓存返回pvs1-字段
+    公共-字段    ${result}
+
+已缓存返回pvs1-字段值
+    公共-字段值    ${result}
+
+点击全部缓存pfc-条数
+    公共－点击页面文本    全部缓存
+    ${result}    公共-获取结果    ${pfc16}    pfc-huancun-click    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击全部缓存pfc-字段
+    公共-字段    ${result}
+
+点击全部缓存pfc-字段值
+    公共-字段值    ${result}
+
+全部缓存展示pfc-条数
+    ${result}    公共-获取结果    ${pfc17}    pfc-huancun-show    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部缓存展示pfc-字段
+    公共-字段    ${result}
+
+全部缓存展示pfc-字段值
+    公共-字段值    ${result}
+
+全部缓存取消pfc-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pfc}    pfc-alldownload_cancle    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部缓存取消pfc-字段
+    公共-字段    ${result}
+
+全部缓存取消pfc-字段值
+    公共-字段值    ${result}
+
+退出下载pvs-条数
+    公共-删除数据
+    点播播放页-退出下载
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    xiazai_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出下载pvs-字段
+    公共-字段    ${result}
+
+退出下载pvs-字段值
+    公共-字段值    ${result}

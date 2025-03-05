@@ -1,0 +1,32 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+猜你喜欢-滑动到短片
+    comment    scroll    xpath=(//XCUIElementTypeButton[@name="Discuss More Gray"])[1]    xpath=(//XCUIElementTypeButton[@name="Discuss More Gray"])[3]
+
+猜你喜欢-滑动到长片
+    comment    scroll    xpath=(//XCUIElementTypeButton[@name="Discuss More Gray"])[1]    xpath=(//XCUIElementTypeButton[@name="ShortVideo Pause iCON"])[1]
+    上滑
+
+猜你喜欢-点短片标题
+    公共－点击页面文本    花儿与少年第二季第十期彩蛋
+
+猜你喜欢-点短片举报
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]
+
+猜你喜欢-点举报内容
+    公共－点击页面文本    对此条内容不感兴趣
+
+猜你喜欢-点长片标题
+    公共－点击页面文本    三生三世十里桃花
+
+猜你喜欢-点长片播放
+    公共－点击页面文本    ShortVideo Pause iCON
+
+猜你喜欢-点长片举报
+    公共－xpath    //XCUIElementTypeStaticText[@name="三生三世十里桃花"]/preceding-sibling::XCUIElementTypeButton[last()-1]
+    comment    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[5]
+
+猜你喜欢-点观看正片
+    公共－点击页面文本    看正片

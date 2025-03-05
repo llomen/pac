@@ -1,0 +1,287 @@
+*** Settings ***
+Documentation     正片、花絮、相关饭团、看了还会看
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***
+进入互动剧pvs-条数
+    sleep    3
+    首页-搜索
+    搜索首页－输入搜索词    明星大侦探5 互动版
+    搜索－点击搜索
+    公共-删除数据
+    公共－点击页面文本    2019-12-21 范丞丞陷入迷局等你来解救！
+    ${result}    公共-获取结果    ${pvs}    hudongju_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入互动剧pvs-字段
+    公共-字段    ${result}
+
+进入互动剧pvs-字段值
+    公共-字段值    ${result}
+
+进入互动剧pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    hudongju_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入互动剧pvs1-字段
+    公共-字段    ${result}
+
+进入互动剧pvs1-字段值
+    公共-字段值    ${result}
+
+进入互动剧sp-条数
+    ${result}    公共-获取结果    ${sp}    hudongju_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入互动剧sp-字段
+    公共-字段    ${result}
+
+进入互动剧sp-字段值
+    公共-字段值    ${result}
+
+正片加载事件vl-条数
+    sleep    3
+    ${result}    公共-获取结果    {'act':'vl','pos':'1'}    vl_hudongju    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片加载事件vl-字段
+    公共-字段    ${result}
+
+正片加载事件vl-字段值
+    公共-字段值    ${result}
+
+进入互动剧无vv-条数
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    ${table_vv}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入互动剧无vv-字段
+    comment    公共-字段    ${result}
+
+进入互动剧无vv-字段值
+    comment    公共-字段值    ${result}
+
+进入互动剧无buffer-条数
+    ${result}    公共-获取结果    ${buffer}    feed_001    ${table_buffer}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入互动剧无buffer-字段
+    comment    公共-字段    ${result}
+
+进入互动剧无buffer-字段值
+    comment    公共-字段值    ${result}
+
+进入互动剧无hb-条数
+    ${result}    公共-获取结果    ${hb3}    bodan_3    ${table_hb_sdk}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入互动剧无hb-字段
+    comment    公共-字段    ${result}
+
+进入互动剧无hb-字段值
+    comment    公共-字段值    ${result}
+
+互动剧分享点击pfc-条数
+    公共-删除数据
+    点播播放页-分享
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-share-hudongju    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+互动剧分享点击pfc-字段
+    公共-字段    ${result}
+
+互动剧分享点击pfc-字段值
+    公共-字段值    ${result}
+
+点击分享按钮share-条数
+    ${result}    公共-获取结果    {'act':'share','pos':'9'}    share_hudongju_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击分享按钮share-字段
+    公共-字段    ${result}
+
+点击分享按钮share-字段值
+    公共-字段值    ${result}
+
+分享浮层弹出share-条数
+    ${result}    公共-获取结果    {'act':'share','pos':'16'}    share_hudongju_16    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享浮层弹出share-字段
+    公共-字段    ${result}
+
+分享浮层弹出share-字段值
+    公共-字段值    ${result}
+
+分享到朋友圈share-条数
+    点播播放页-分享到    朋友圈
+    公共－点击页面文本    确认
+    sleep    2
+    ${result}    公共-获取结果    ${share}    share_hudongju_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到朋友圈share-字段
+    公共-字段    ${result}
+
+分享到朋友圈share-字段值
+    公共-字段值    ${result}
+
+切换下一个互动剧pvs-条数
+    公共-删除数据
+    公共－点击页面文本    难倒何炅魏大勋的难题等你来挑战
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    hudongju_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换下一个互动剧pvs-字段
+    公共-字段    ${result}
+
+切换下一个互动剧pvs-字段值
+    公共-字段值    ${result}
+
+切换下一个互动剧pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    hudongju_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换下一个互动剧pvs1-字段
+    公共-字段    ${result}
+
+切换下一个互动剧pvs1-字段值
+    公共-字段值    ${result}
+
+切换下一个互动剧sp-条数
+    ${result}    公共-获取结果    ${sp}    hudongju_002    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换下一个互动剧sp-字段
+    公共-字段    ${result}
+
+切换下一个互动剧sp-字段值
+    公共-字段值    ${result}
+
+退出互动剧pvs-条数
+    公共-删除数据
+    互动剧播放-返回
+    ${result}    公共-获取结果    ${pvs}    hudongju_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出互动剧pvs-字段
+    公共-字段    ${result}
+
+退出互动剧pvs-字段值
+    公共-字段值    ${result}
+
+退出互动剧pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    hudongju_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出互动剧pvs1-字段
+    公共-字段    ${result}
+
+退出互动剧pvs1-字段值
+    公共-字段值    ${result}
+
+互动剧vv-条数
+    公共－点击页面文本    2019-12-21 范丞丞陷入迷局等你来解救！
+    sleep    3
+    公共-删除数据
+    按坐标点击元素    nsp= name=="互动播放" and type=="XCUIElementTypeButton"
+    sleep    10
+    ${result}    公共-获取结果    ${aplay}    hudongju_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+互动剧vv-字段
+    公共-字段    ${result}
+
+互动剧vv-字段值
+    公共-字段值    ${result}
+
+互动剧buffer-条数
+    ${result}    公共-获取结果    ${buffer}    hudongju_001    ${table_buffer}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+互动剧buffer-字段
+    公共-字段    ${result}
+
+互动剧buffer-字段值
+    公共-字段值    ${result}
+
+互动剧3hb-条数
+    ${result}    公共-获取结果    ${hb3}    hudongju_03    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+互动剧3hb-字段
+    公共-字段    ${result}
+
+互动剧3hb-字段值
+    公共-字段值    ${result}
+
+互动剧5hb-条数
+    ${result}    公共-获取结果    ${hb5}    hudongju_05    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+互动剧5hb-字段
+    公共-字段    ${result}
+
+互动剧5hb-字段值
+    公共-字段值    ${result}
+
+点播播放定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    aphone_dianbo_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播播放定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+点播播放定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+退出卡顿-条数
+    sleep    5
+    ${result}    公共-获取结果    ${r3}    aphone_dianbo_3    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出卡顿-字段
+    公共-字段    ${result}
+
+退出卡顿-字段值
+    公共-字段值    ${result}
+
+互动剧结束hb-条数
+    ${result}    公共-获取结果    ${hb_end}    hudongju_end    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+互动剧结束hb-字段
+    公共-字段    ${result}
+
+互动剧结束hb-字段值
+    公共-字段值    ${result}

@@ -1,0 +1,273 @@
+*** Settings ***
+Documentation     页面跳转（首页-片库页-播放页）
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${table}          mpp_pv1_5_5_iphone_sdk_qita
+
+*** Test Cases ***
+我的信息pvs1-条数
+    公共－用户登录    ${mail_account_vip}    111111
+    sleep    2
+    公共-删除数据
+    公共－点击页面文本    test123123123
+    ${result}    公共-获取结果    ${pvs1}    shezhi_009    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的信息pvs1-字段
+    公共-字段    ${result}
+
+我的信息pvs1-字段名
+    公共-字段值    ${result}
+
+我的信息返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    shezhi_010    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的信息返回pvs1-字段
+    公共-字段    ${result}
+
+我的信息返回pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心赞pvs1-条数
+    公共－点击页面文本    消息中心
+    公共-删除数据
+    公共－点击页面文本    赞
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_bofang1    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心赞pvs1-字段
+    公共-字段    ${result}
+
+消息中心赞pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录播放pvs1-条数
+    非播放页－返回
+    公共－点击页面文本    播放记录
+    公共-删除数据
+    公共－点击页面文本    青云志 第1集 张小凡拜入青云大竹峰
+    sleep    3
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_bofang    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录播放pvs1-字段
+    公共-字段    ${result}
+
+播放记录播放pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录播放返回pvs1-条数
+    公共-删除数据
+    点播播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_bofangfanhui    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录播放返回pvs1-字段
+    公共-字段    ${result}
+
+播放记录播放返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的收藏播放pvs1-条数
+    Run Keyword And Ignore Error    非播放页－返回
+    公共-滑动页面    播放记录    我的收藏
+    公共－点击页面文本    我的收藏
+    公共-删除数据
+    公共－点击页面文本    青云志 第1集
+    ${result}    公共-获取结果    ${pvs1}    wodeshoucang_bofang1    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的收藏播放pvs1-字段
+    公共-字段    ${result}
+
+我的收藏播放pvs1-字段名
+    公共-字段值    ${result}
+
+我的收藏播放返回pvs1-条数
+    公共-删除数据
+    点播播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    wodeshoucang_bofang2    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的收藏播放返回pvs1-字段
+    公共-字段    ${result}
+
+我的收藏播放返回pvs1-字段名
+    非播放页－返回
+    公共-字段值    ${result}
+
+会员中心pvs1-条数
+    公共-删除数据
+    公共-滑动页面    我的收藏    消息中心
+    公共－点击页面文本    会员中心
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    huiyuanzhongxin_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员中心pvs1-字段
+    公共-字段    ${result}
+
+会员中心pvs1-字段名
+    公共-字段值    ${result}
+
+开通会员pvs1-条数
+    公共-删除数据
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]/UIAStaticText[5]
+    公共－点击页面文本    立即续费
+    ${result}    公共-获取结果    ${pvs1}    kaitonghuiyuan_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员pvs1-字段
+    公共-字段    ${result}
+
+开通会员pvs1-字段名
+    公共-字段值    ${result}
+
+开通会员返回pvs1-条数
+    公共-删除数据
+    开通会员－返回
+    ${result}    公共-获取结果    ${pvs1}    kaitonghuiyuan_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员返回pvs1-字段
+    公共-字段    ${result}
+
+开通会员返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的观影劵pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    观影券
+    ${result}    公共-获取结果    ${pvs1}    wodeguanyingjuan_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的观影劵pvs1-字段
+    公共-字段    ${result}
+
+我的观影劵pvs1-字段名
+    公共-字段值    ${result}
+
+我的观影劵返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    wodeguanyingjuan_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的观影劵返回pvs1-字段
+    公共-字段    ${result}
+
+我的观影劵返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的订单pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    交易记录
+    ${result}    公共-获取结果    ${pvs1}    wodedingdan_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的订单pvs1-字段
+    公共-字段    ${result}
+
+我的订单pvs1-字段名
+    公共-字段值    ${result}
+
+我的订单返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    wodedingdan_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的订单返回pvs1-字段
+    公共-字段    ${result}
+
+我的订单返回pvs1-字段名
+    公共-字段值    ${result}
+
+会员福利社pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    会员福利社
+    ${result}    公共-获取结果    ${pvs1}    huiyuanpianku_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员福利社pvs1-字段
+    公共-字段    ${result}
+
+会员福利社pvs1-字段名
+    公共-字段值    ${result}
+
+会员福利社返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    huiyuanpianku_004    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员福利社返回pvs1-字段
+    公共-字段    ${result}
+
+会员福利社返回pvs1-字段名
+    公共-字段值    ${result}
+
+会员片库pvs1-条数
+    公共-删除数据
+    公共-滑动页面    会员福利社    会员大片
+    公共－点击页面文本    会员大片
+    ${result}    公共-获取结果    ${pvs1}    huiyuanpianku_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员片库pvs1-字段
+    公共-字段    ${result}
+
+会员片库pvs1-字段名
+    公共-字段值    ${result}
+
+会员片库返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    huiyuanpianku_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员片库返回pvs1-字段
+    公共-字段    ${result}
+
+会员片库返回pvs1-字段值
+    公共-字段值    ${result}
+
+会员中心返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    huiyuanzhongxin_fanhui    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员中心返回pvs1-字段
+    公共-字段    ${result}
+
+会员中心返回pvs1-字段值
+    公共-字段值    ${result}

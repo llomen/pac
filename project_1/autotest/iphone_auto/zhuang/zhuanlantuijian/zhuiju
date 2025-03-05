@@ -1,0 +1,136 @@
+{
+	"msg": "操作成功",
+	"code": 200,
+	"data": {
+		"negativeFeedbackUrl": "http://tags.bz.mgtv.com/user_show_feedback",
+		"moduleType": "zhuifeed2",
+		"moduleName": "追剧推荐模块",
+		"moduleId": 123,
+		"fdModuleData": [{
+			"fdMobileImgUrl": "https://0img.hitv.com/preview/sp_images/2016/dongman/291091/2992126/20160224161002348.jpg",
+			"fdTitle": "偶像大师灰姑娘女孩",
+			"fdConnerTxtColor": "",
+			"fdNegativeFeedbackData": {
+				"fdNegativeType": "simple",
+				"fdNegativeOptions": [{
+					"name": "追剧信息不准",
+					"id": 101
+				}, {
+					"name": "不想追了",
+					"id": 106
+				}, {
+					"name": "举报",
+					"id": 309
+				}]
+			},
+			"fdReleaseTime": "2016-02-24",
+			"jumpid": 291091,
+			"childid": 2992126,
+			"fdDuration": 1440,
+			"fdPlayInfo": 0.7930555555555555,
+			"jumpkind": 12,
+			"fdParams": "rctype=201",
+			"fdOttImgUrl": "",
+			"fdWatchTime": 1142,
+			"fdPcImgUrl": "",
+			"fdConnerBgColor": "",
+			"fdConner": "",
+			"fdWatchInfo": "看到第2集79%",
+			"fdSubtitle": "竟有如此美丽的城堡"
+		}, {
+			"fdMobileImgUrl": "https://3img.hitv.com/preview/sp_images/2016/dongman/293306/3332251/20160728123609045.jpg",
+			"fdTitle": "精灵梦叶罗丽 第四季",
+			"fdConnerTxtColor": "",
+			"fdNegativeFeedbackData": {
+				"fdNegativeType": "simple",
+				"fdNegativeOptions": [{
+					"name": "追剧信息不准",
+					"id": 101
+				}, {
+					"name": "不想追了",
+					"id": 106
+				}, {
+					"name": "举报",
+					"id": 309
+				}]
+			},
+			"fdReleaseTime": "2016-07-28",
+			"jumpid": 293306,
+			"childid": 3332251,
+			"fdDuration": 1323,
+			"fdPlayInfo": 0.8352229780801209,
+			"jumpkind": 12,
+			"fdParams": "rctype=201",
+			"fdOttImgUrl": "",
+			"fdWatchTime": 1105,
+			"fdPcImgUrl": "",
+			"fdConnerBgColor": "",
+			"fdConner": "",
+			"fdWatchInfo": "看到第1集83%",
+			"fdSubtitle": "塔罗牌的时间"
+		}, {
+			"fdMobileImgUrl": "https://i2.hunantv.com/p1/20150921/2128221506C.jpg",
+			"fdTitle": "欢乐贱萌小黄人动画集锦",
+			"fdConnerTxtColor": "",
+			"fdNegativeFeedbackData": {
+				"fdNegativeType": "simple",
+				"fdNegativeOptions": [{
+					"name": "追剧信息不准",
+					"id": 101
+				}, {
+					"name": "不想追了",
+					"id": 106
+				}, {
+					"name": "举报",
+					"id": 309
+				}]
+			},
+			"fdReleaseTime": "2016-04-28",
+			"jumpid": 158776,
+			"childid": 1779693,
+			"fdDuration": 33,
+			"fdPlayInfo": 0.36363636363636365,
+			"jumpkind": 12,
+			"fdParams": "rctype=201",
+			"fdOttImgUrl": "",
+			"fdWatchTime": 12,
+			"fdPcImgUrl": "",
+			"fdConnerBgColor": "",
+			"fdConner": "",
+			"fdWatchInfo": "看到第1集36%",
+			"fdSubtitle": "小黄人创意家装"
+		}, {
+			"fdMobileImgUrl": "https://1img.hitv.com/preview/sp_images/2017/zongyi/315024/3965229/20170608152136359.jpg",
+			"fdTitle": "大本营的秘密花园 第二季",
+			"fdConnerTxtColor": "",
+			"fdNegativeFeedbackData": {
+				"fdNegativeType": "simple",
+				"fdNegativeOptions": [{
+					"name": "追剧信息不准",
+					"id": 101
+				}, {
+					"name": "不想追了",
+					"id": 106
+				}, {
+					"name": "举报",
+					"id": 309
+				}]
+			},
+			"fdReleaseTime": "2017-06-08",
+			"jumpid": 315024,
+			"childid": 3965229,
+			"fdDuration": 1363,
+			"fdPlayInfo": 0.6874541452677916,
+			"jumpkind": 12,
+			"fdParams": "rctype=201",
+			"fdOttImgUrl": "",
+			"fdWatchTime": 937,
+			"fdPcImgUrl": "",
+			"fdConnerBgColor": "",
+			"fdConner": "",
+			"fdWatchInfo": "看到第06-08期68%",
+			"fdSubtitle": "第4期：王源智商180狂赚几个亿"
+		}]
+	},
+	"seqId": "1d20280f72647ced879738e63c532495"
+}

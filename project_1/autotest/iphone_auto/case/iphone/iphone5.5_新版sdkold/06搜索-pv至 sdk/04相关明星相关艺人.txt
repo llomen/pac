@@ -1,0 +1,119 @@
+*** Settings ***
+Documentation     明星搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+明星搜索search-条数
+    [Setup]
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    成龙
+    公共-删除数据
+    Hide Keyboard    key_name=Return
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${search}    mingxing_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星搜索search-字段
+    公共-字段    ${result}
+
+明星搜索search-字段值
+    公共-字段值    ${result}
+
+明星搜索view-条数
+    ${result}    公共-获取结果    ${view}    mingxing_003    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星搜索view-字段
+    公共-字段    ${result}
+
+明星搜索view-字段值
+    公共-字段值    ${result}
+
+相关明星搜索search-条数
+    [Setup]
+    sleep    5
+    公共-滑动页面    成龙    洪金宝
+    Comment    scroll up    xpath=//XCUIElementTypeStaticText[@name="张曼玉"]
+    公共-删除数据
+    公共－点击页面文本    洪金宝
+    sleep    2
+    ${result}    公共-获取结果    ${search}    mingxing_004    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相关明星搜索search-字段
+    公共-字段    ${result}
+
+相关明星搜索search-字段值
+    公共-字段值    ${result}
+
+相关明星搜索view-条数
+    ${result}    公共-获取结果    ${view}    mingxing_003    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相关明星搜索view-字段
+    公共-字段    ${result}
+
+相关明星搜索view-字段值
+    公共-字段值    ${result}
+
+艺人搜索search-条数
+    [Setup]
+    sleep    5
+    搜索－取消
+    首页－搜索
+    搜索首页－输入搜索词    杨幂
+    公共-删除数据
+    搜索-点击搜索
+    sleep    2
+    ${result}    公共-获取结果    ${search}    mingyi_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+艺人搜索search-字段
+    公共-字段    ${result}
+
+艺人搜索search-字段值
+    公共-字段值    ${result}
+
+艺人搜索view-条数
+    ${result}    公共-获取结果    ${view}    mingxing_003    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+艺人搜索view-字段
+    公共-字段    ${result}
+
+艺人搜索view-字段值
+    公共-字段值    ${result}
+
+相关艺人点击click-条数
+    [Setup]
+    sleep    3
+    公共-滑动页面    杨幂    李易峰
+    公共-删除数据
+    公共－点击页面文本    李易峰
+    sleep    2
+    ${result}    公共-获取结果    ${click}    yiren_003    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相关艺人点击click-字段
+    公共-字段    ${result}
+
+相关艺人点击click-字段值
+    公共-字段值    ${result}

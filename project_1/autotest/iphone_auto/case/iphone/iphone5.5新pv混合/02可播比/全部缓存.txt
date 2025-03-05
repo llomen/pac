@@ -1,0 +1,201 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${pfc}            {'act':'pfc'}
+${dologin}        {'act':'dologin'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb','ht':'2'}
+${pfc16}          {'act':'pfc','pos':'16'}
+${pfc17}          {'act':'pfc','pos':'17'}
+${air}            {'act':'air'}
+
+*** Test Cases ***
+查看缓存pvs-条数
+    首页-青云志
+    点播播放页-下载
+    公共-删除数据
+    公共－点击页面文本    查看缓存
+    ${result}    公共-获取结果    ${pvs}    xiazai_huancun    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pvs-字段
+    公共-字段    ${result}
+
+查看缓存pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiazai_huancun    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pvs1-字段
+    公共-字段    ${result}
+
+查看缓存pvs1-字段值
+    公共-字段值    ${result}
+
+查看缓存pfc-条数
+    ${result}    公共-获取结果    ${pfc}    pfc-huancun    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pfc-字段
+    公共-字段    ${result}
+
+查看缓存pfc-字段值
+    公共-字段值    ${result}
+
+查看缓存返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    xiazai_huancun_back    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存返回pvs-字段
+    公共-字段    ${result}
+
+查看缓存返回pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiazai_huancun_back    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存返回pvs1-字段
+    公共-字段    ${result}
+
+查看缓存返回pvs1-字段值
+    公共-字段值    ${result}
+
+点击全部缓存pfc-条数
+    公共－点击页面文本    全部缓存
+    ${result}    公共-获取结果    ${pfc16}    pfc-huancun-click    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击全部缓存pfc-字段
+    公共-字段    ${result}
+
+点击全部缓存pfc-字段值
+    公共-字段值    ${result}
+
+全部缓存展示pfc-条数
+    ${result}    公共-获取结果    ${pfc17}    pfc-huancun-show    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部缓存展示pfc-字段
+    公共-字段    ${result}
+
+全部缓存展示pfc-字段值
+    公共-字段值    ${result}
+
+全部缓存取消pfc-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pfc}    pfc-alldownload_cancle    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部缓存取消pfc-字段
+    公共-字段    ${result}
+
+全部缓存取消pfc-字段值
+    公共-字段值    ${result}
+
+退出下载页
+    点播播放页-退出下载
+
+投屏air-条数
+    点播播放页-暂停
+    公共-删除数据
+    点播播放页-投屏
+    ${result}    公共-获取结果    ${air}    air-button_click    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+投屏air-字段
+    公共-字段    ${result}
+
+投屏air-字段值
+    公共-字段值    ${result}
+
+投屏pvs-条数
+    ${result}    公共-获取结果    ${pvs}    air_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+投屏pvs-字段
+    公共-字段    ${result}
+
+投屏pvs-字段值
+    公共-字段值    ${result}
+
+投屏pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    air_001    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+投屏半屏曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_15    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+投屏半屏曝光cv-字段
+    公共-字段    ${result}
+
+投屏半屏曝光cv-字段值
+    公共-字段值    ${result}
+
+Airplay air-条数
+    公共-删除数据
+    公共－点击页面文本    AirPlay
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${air}    air-airplay_click    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+Airplay air-字段
+    公共-字段    ${result}
+
+Airplay air-字段值
+    公共-字段值    ${result}
+
+Airplay pvs-条数
+    ${result}    公共-获取结果    ${pvs}    air_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+Airplay pvs-字段
+    公共-字段    ${result}
+
+Airplay pvs-字段值
+    公共-字段值    ${result}
+
+Airplay pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    air_002    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+*** Keywords ***
+删除全部缓存
+    ${aa}    if page contain text    暂无缓存视频
+    run keyword if    ${aa} ==0    删除缓存
+
+点播页-点击屏幕
+    click element    xpath=//XCUIElementTypeButton[@name="player back Shadow"]/..
+
+删除缓存
+    公共－点击页面文本    编辑
+    公共－点击页面文本    全选
+    click text    删除
+    公共－点击页面文本    删除

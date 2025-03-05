@@ -1,0 +1,114 @@
+{
+  "total" : 66,
+  "items" : [ {
+    "uid" : "5f36693f49b2b5e32b528d959104467e",
+    "name" : "1-点播",
+    "statistic" : {
+      "failed" : 122,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 124
+    }
+  }, {
+    "uid" : "76c27ffdb85dfe059caa65c04b522adf",
+    "name" : "10高级筛选 2（加自频道）",
+    "statistic" : {
+      "failed" : 114,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 114
+    }
+  }, {
+    "uid" : "60e61d123628d49af36131401f967377",
+    "name" : "下拉刷新&频道性能",
+    "statistic" : {
+      "failed" : 72,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 15,
+      "unknown" : 0,
+      "total" : 87
+    }
+  }, {
+    "uid" : "5f960be95cc928e67e3f5bd4a3eb7509",
+    "name" : "7会员片库",
+    "statistic" : {
+      "failed" : 66,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 66
+    }
+  }, {
+    "uid" : "63f5c092d5fb6b0459340ce20b7c41da",
+    "name" : "09高级筛选 1",
+    "statistic" : {
+      "failed" : 57,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 57
+    }
+  }, {
+    "uid" : "eca2e97cdf38f99427f8c75c290fdf4e",
+    "name" : "A库影片",
+    "statistic" : {
+      "failed" : 51,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 51
+    }
+  }, {
+    "uid" : "ddeaafc9779b3337fc2ea6d6de87f70b",
+    "name" : "15电视-集数-上传视频-热门搜索",
+    "statistic" : {
+      "failed" : 48,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 48
+    }
+  }, {
+    "uid" : "91f351792381f6b996f1a5e59ea6419c",
+    "name" : "9-频道 场景直播跳转",
+    "statistic" : {
+      "failed" : 47,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 49
+    }
+  }, {
+    "uid" : "3103cd8d9039398d5c0a7d68cffef9b2",
+    "name" : "8-频道 个人点播跳转",
+    "statistic" : {
+      "failed" : 42,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 38,
+      "unknown" : 0,
+      "total" : 80
+    }
+  }, {
+    "uid" : "208e43ef1c42203f4d97d519e5e44321",
+    "name" : "付费影片",
+    "statistic" : {
+      "failed" : 39,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 39
+    }
+  } ]
+}

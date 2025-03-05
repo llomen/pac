@@ -1,0 +1,134 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${tagselect}      {'act':'tag-select'}
+${list}           {'act':'list'}
+${dataclick}      {'act':'data-click'}
+
+*** Test Cases ***
+王牌综艺pvs-条数
+    sleep    2
+    首页-频道管理
+    公共－点击页面文本    综艺
+    sleep    2
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="王牌"]
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+王牌综艺pvs-字段
+    公共-字段    ${result}
+
+王牌综艺pvs-字段名
+    公共-字段值    ${result}
+
+全部list-条数
+    公共-删除数据
+    sleep    1
+    公共－xpath    (//XCUIElementTypeStaticText[contains(@name, "全部")])[1]
+    sleep    2
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_004    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部list-字段
+    公共-字段    ${result}
+
+全部list-字段名
+    公共-字段值    ${result}
+
+大咖秀场list-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "大咖秀场")]
+    sleep    3
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_005    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+大咖秀场list-字段
+    公共-字段    ${result}
+
+大咖秀场list-字段名
+    公共-字段值    ${result}
+
+港台list-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "港台")]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_006    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+港台list-字段
+    公共-字段    ${result}
+
+港台list-字段名
+    公共-字段值    ${result}
+
+最新list-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "最新")]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_007    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+最新list-字段
+    公共-字段    ${result}
+
+最新list-字段名
+    公共-字段值    ${result}
+
+香港变为全部list-条数
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[contains(@label, "全部")])[2]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_008    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+香港变为全部list-字段
+    公共-字段    ${result}
+
+香港变为全部list-字段名
+    公共-字段值    ${result}
+
+点击视频播放data-click-条数
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeImage[1]/following-sibling::XCUIElementTypeButton[1])[1]
+    sleep    2
+    ${result}    公共-获取结果    ${dataclick}    pianku_zongyi_009    mpp_pianku_dataclick_shaixuan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击视频播放data-click-字段
+    公共-字段    ${result}
+
+点击视频播放data-click-字段名
+    公共-字段值    ${result}
+
+点击视频播放pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_010    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击视频播放pvs-字段
+    公共-字段    ${result}
+
+点击视频播放pvs-字段名
+    公共-字段值    ${result}
+
+返回片库pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回片库pvs-字段
+    公共-字段    ${result}
+
+返回片库pvs-字段名
+    公共-字段值    ${result}

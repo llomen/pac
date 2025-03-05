@@ -1,0 +1,754 @@
+*** Settings ***
+Documentation     快捷icon、热门话题
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${pvs1_H5}        {'logtype':'pv','cntp':'qt_webview'}
+
+*** Test Cases ***
+饭团pvs-条数
+    公共-删除数据
+    首页-饭团
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团pvs-字段
+    公共-字段    ${result}
+
+饭团pvs-字段名
+    公共-字段值    ${result}
+
+饭团pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团pvs1-字段
+    公共-字段    ${result}
+
+饭团pvs1-字段名
+    公共-字段值    ${result}
+
+进入饭团show-条数
+    sleep    5
+    ${result}    公共-获取结果    ${show}    show_fantuan_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团show-字段
+    公共-字段    ${result}
+
+进入饭团show-字段名
+    公共-字段值    ${result}
+
+电视台pvs-条数
+    公共-删除数据
+    饭团-电视台
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台pvs-字段
+    公共-字段    ${result}
+
+电视台pvs-字段名
+    公共-字段值    ${result}
+
+电视台pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_004    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台pvs1-字段
+    公共-字段    ${result}
+
+电视台pvs1-字段名
+    公共-字段值    ${result}
+
+电视台fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台fantuan-字段
+    公共-字段    ${result}
+
+电视台fantuan-字段名
+    公共-字段值    ${result}
+
+广场stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_01    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广场stay-字段
+    公共-字段    ${result}
+
+广场stay-字段名
+    公共-字段值    ${result}
+
+电视台返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台返回pvs-字段
+    公共-字段    ${result}
+
+电视台返回pvs-字段名
+    公共-字段值    ${result}
+
+电视台返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_005    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台返回pvs1-字段
+    公共-字段    ${result}
+
+电视台返回pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心pvs-条数
+    公共-删除数据
+    饭团-消息
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_008    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心pvs-字段
+    公共-字段    ${result}
+
+消息中心pvs-字段名
+    公共-字段值    ${result}
+
+消息中心pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_008    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心pvs1-字段
+    公共-字段    ${result}
+
+消息中心pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心fantuan-字段
+    公共-字段    ${result}
+
+消息中心fantuan-字段名
+    公共-字段值    ${result}
+
+消息中心msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_tuijian    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心msgc-字段
+    公共-字段    ${result}
+
+消息中心msgc-字段名
+    公共-字段值    ${result}
+
+消息中心返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_009    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs-字段
+    公共-字段    ${result}
+
+消息中心返回pvs-字段名
+    公共-字段值    ${result}
+
+消息中心返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_009    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs1-字段
+    公共-字段    ${result}
+
+消息中心返回pvs1-字段名
+    公共-字段值    ${result}
+
+快捷icon-芒果人气榜pvs-条数
+    公共-删除数据
+    饭团广场-快捷icon芒果人气榜
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_01    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-芒果人气榜pvs-字段
+    公共-字段    ${result}
+
+快捷icon-芒果人气榜pvs-字段名
+    公共-字段值    ${result}
+
+快捷icon-芒果人气榜pvs1-条数
+    ${result}    公共-获取结果    ${pvs1_H5}    ft_guangchang_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-芒果人气榜pvs1-字段
+    公共-字段    ${result}
+
+快捷icon-芒果人气榜pvs1-字段名
+    公共-字段值    ${result}
+
+快捷icon-芒果人气榜fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-芒果人气榜fantuan-字段
+    公共-字段    ${result}
+
+快捷icon-芒果人气榜fantuan-字段名
+    公共-字段值    ${result}
+
+芒果人气榜返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_02    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+芒果人气榜返回pvs-字段
+    公共-字段    ${result}
+
+芒果人气榜返回pvs-字段名
+    公共-字段值    ${result}
+
+芒果人气榜返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_02    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+芒果人气榜返回pvs1-字段
+    公共-字段    ${result}
+
+芒果人气榜返回pvs1-字段名
+    公共-字段值    ${result}
+
+快捷icon-明星来了pvs-条数
+    公共-删除数据
+    饭团广场-快捷icon明星来了
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-明星来了pvs-字段
+    公共-字段    ${result}
+
+快捷icon-明星来了pvs-字段名
+    公共-字段值    ${result}
+
+快捷icon-明星来了pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_03    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-明星来了pvs1-字段
+    公共-字段    ${result}
+
+快捷icon-明星来了pvs1-字段名
+    公共-字段值    ${result}
+
+快捷icon-明星来了fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-明星来了fantuan-字段
+    公共-字段    ${result}
+
+快捷icon-明星来了fantuan-字段名
+    公共-字段值    ${result}
+
+明星来了show-条数
+    ${result}    公共-获取结果    ${show}    show_fantuan_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了show-字段
+    公共-字段    ${result}
+
+明星来了show-字段名
+    公共-字段值    ${result}
+
+明星来了点详情fantuan-条数
+    公共-删除数据
+    明星来了-查看详情
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了点详情fantuan-字段
+    公共-字段    ${result}
+
+明星来了点详情fantuan-字段名
+    公共-字段值    ${result}
+
+明星来了-明星说pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_05    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了-明星说pvs-字段
+    公共-字段    ${result}
+
+明星来了-明星说pvs-字段名
+    公共-字段值    ${result}
+
+明星来了-明星说pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_05    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了-明星说pvs1-字段
+    公共-字段    ${result}
+
+明星来了-明星说pvs1-字段名
+    公共-字段值    ${result}
+
+明星来了stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_01    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了stay-字段
+    公共-字段    ${result}
+
+明星来了stay-字段名
+    公共-字段值    ${result}
+
+明星说-明星来了pvs-条数
+    公共-删除数据
+    饭团-明星-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_06    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星说-明星来了pvs-字段
+    公共-字段    ${result}
+
+明星说-明星来了pvs-字段名
+    公共-字段值    ${result}
+
+明星说-明星来了pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_06    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星说-明星来了pvs1-字段
+    公共-字段    ${result}
+
+明星说-明星来了pvs1-字段名
+    公共-字段值    ${result}
+
+明星来了返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_04    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了返回pvs-字段
+    公共-字段    ${result}
+
+明星来了返回pvs-字段名
+    公共-字段值    ${result}
+
+明星来了返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_04    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星来了返回pvs1-字段
+    公共-字段    ${result}
+
+明星来了返回pvs1-字段名
+    公共-字段值    ${result}
+
+快捷icon-活动中心pvs-条数
+    公共-删除数据
+    饭团广场-快捷icon活动中心
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_07    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-活动中心pvs-字段
+    公共-字段    ${result}
+
+快捷icon-活动中心pvs-字段名
+    公共-字段值    ${result}
+
+快捷icon-活动中心pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_07    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-活动中心pvs1-字段
+    公共-字段    ${result}
+
+快捷icon-活动中心pvs1-字段名
+    公共-字段值    ${result}
+
+快捷icon-活动中心fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+快捷icon-活动中心fantuan-字段
+    公共-字段    ${result}
+
+快捷icon-活动中心fantuan-字段名
+    公共-字段值    ${result}
+
+活动中心show-条数
+    ${result}    公共-获取结果    ${show}    show_fantuan_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心show-字段
+    公共-字段    ${result}
+
+活动中心show-字段名
+    公共-字段值    ${result}
+
+活动中心-点活动fantuan-条数
+    公共-删除数据
+    活动中心-点活动
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心-点活动fantuan-字段
+    公共-字段    ${result}
+
+活动中心-点活动fantuan-字段名
+    公共-字段值    ${result}
+
+活动中心-活动详情页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_09    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心-活动详情页pvs-字段
+    公共-字段    ${result}
+
+活动中心-活动详情页pvs-字段名
+    公共-字段值    ${result}
+
+活动中心-活动详情页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_09    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心-活动详情页pvs1-字段
+    公共-字段    ${result}
+
+活动中心-活动详情页pvs1-字段名
+    公共-字段值    ${result}
+
+活动中心stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_01    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心stay-字段
+    公共-字段    ${result}
+
+活动中心stay-字段名
+    公共-字段值    ${result}
+
+活动详情页-活动中心pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_10    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动详情页-活动中心pvs-字段
+    公共-字段    ${result}
+
+活动详情页-活动中心pvs-字段名
+    公共-字段值    ${result}
+
+活动详情页-活动中心pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_10    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动详情页-活动中心pvs1-字段
+    公共-字段    ${result}
+
+活动详情页-活动中心pvs1-字段名
+    公共-字段值    ${result}
+
+活动中心-广场pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_08    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心-广场pvs-字段
+    公共-字段    ${result}
+
+活动中心-广场pvs-字段名
+    公共-字段值    ${result}
+
+活动中心-广场pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_08    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心-广场pvs1-字段
+    公共-字段    ${result}
+
+活动中心-广场pvs1-字段名
+    公共-字段值    ${result}
+
+点热门话题标题fantuan-条数
+    公共-删除数据
+    饭团广场-热门话题title
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点热门话题标题fantuan-字段
+    公共-字段    ${result}
+
+点热门话题标题fantuan-字段名
+    公共-字段值    ${result}
+
+热门话题pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_11    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题pvs-字段
+    公共-字段    ${result}
+
+热门话题pvs-字段名
+    公共-字段值    ${result}
+
+热门话题pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_11    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题pvs1-字段
+    公共-字段    ${result}
+
+热门话题pvs1-字段名
+    公共-字段值    ${result}
+
+热门话题show-条数
+    sleep    3
+    ${result}    公共-获取结果    ${show}    show_fantuan_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题show-字段
+    公共-字段    ${result}
+
+热门话题show-字段名
+    公共-字段值    ${result}
+
+热门话题页点话题fantuan-条数
+    公共-删除数据
+    饭团广场-热门话题第一个
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_07    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题页点话题fantuan-字段
+    公共-字段    ${result}
+
+热门话题页点话题fantuan-字段名
+    公共-字段值    ${result}
+
+热门话题-话题详情页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_13    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题-话题详情页pvs-字段
+    公共-字段    ${result}
+
+热门话题-话题详情页pvs-字段名
+    公共-字段值    ${result}
+
+热门话题-话题详情页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_13    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题-话题详情页pvs1-字段
+    公共-字段    ${result}
+
+热门话题-话题详情页pvs1-字段名
+    公共-字段值    ${result}
+
+热门话题stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_01    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题stay-字段
+    公共-字段    ${result}
+
+热门话题stay-字段名
+    公共-字段值    ${result}
+
+话题详情页-热门话题pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_14    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情页-热门话题pvs-字段
+    公共-字段    ${result}
+
+话题详情页-热门话题pvs-字段名
+    公共-字段值    ${result}
+
+话题详情页-热门话题pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_14    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情页-热门话题pvs1-字段
+    公共-字段    ${result}
+
+话题详情页-热门话题pvs1-字段名
+    公共-字段值    ${result}
+
+热门话题-广场pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_12    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题-广场pvs-字段
+    公共-字段    ${result}
+
+热门话题-广场pvs-字段名
+    公共-字段值    ${result}
+
+热门话题-广场pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_12    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题-广场pvs1-字段
+    公共-字段    ${result}
+
+热门话题-广场pvs1-字段名
+    公共-字段值    ${result}
+
+广场点第一个话题fantuan-条数
+    公共-删除数据
+    饭团广场-热门话题第一个
+    ${result}    公共-获取结果    ${fantuan}    fantuan_guangchang_08    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广场点第一个话题fantuan-字段
+    公共-字段    ${result}
+
+广场点第一个话题fantuan-字段名
+    公共-字段值    ${result}
+
+热门话题详情页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_15    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题详情页pvs-字段
+    公共-字段    ${result}
+
+热门话题详情页pvs-字段名
+    公共-字段值    ${result}
+
+热门话题详情页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_15    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题详情页pvs1-字段
+    公共-字段    ${result}
+
+热门话题详情页pvs1-字段名
+    公共-字段值    ${result}
+
+热门话题详情页show-条数
+    ${result}    公共-获取结果    ${show}    show_fantuan_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题详情页show-字段
+    公共-字段    ${result}
+
+热门话题详情页show-字段名
+    公共-字段值    ${result}
+
+话题详情页-广场pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_16    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情页-广场pvs-字段
+    公共-字段    ${result}
+
+话题详情页-广场pvs-字段名
+    公共-字段值    ${result}
+
+话题详情页-广场pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_16    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情页-广场pvs1-字段
+    公共-字段    ${result}
+
+话题详情页-广场pvs1-字段名
+    公共-字段值    ${result}
+
+话题详情页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_01    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情页stay-字段
+    公共-字段    ${result}
+
+话题详情页stay-字段名
+    公共-字段值    ${result}

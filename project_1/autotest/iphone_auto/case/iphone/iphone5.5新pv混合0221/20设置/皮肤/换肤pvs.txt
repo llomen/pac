@@ -1,0 +1,96 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+进入皮肤列表pvs-条数
+    首页-我
+    我-滑动到设置
+    公共-删除数据
+    我的-皮肤
+    ${result}    公共-获取结果    ${pvs}    pifu_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入皮肤列表pvs-字段
+    公共-字段    ${result}
+
+进入皮肤列表pvs-字段值
+    公共-字段值    ${result}
+
+进入皮肤列表pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pifu_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入皮肤列表pvs1-字段
+    公共-字段    ${result}
+
+进入皮肤列表pvs1-字段值
+    公共-字段值    ${result}
+
+点击皮肤my-条数
+    ${result}    公共-获取结果    {'act':'my'}    my_wode_pifu    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击皮肤my-字段
+    公共-字段    ${result}
+
+点击皮肤my-字段值
+    公共-字段值    ${result}
+
+进入皮肤详情页pvs-条数
+    公共-删除数据
+    进入芒果橙
+    ${result}    公共-获取结果    ${pvs}    pifu_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入皮肤详情页pvs-字段
+    公共-字段    ${result}
+
+进入皮肤详情页pvs-字段值
+    公共-字段值    ${result}
+
+皮肤详情页返回pvs-条数
+    公共-删除数据
+    皮肤详情页返回
+    ${result}    公共-获取结果    ${pvs}    pifu_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+皮肤详情页返回pvs-字段
+    公共-字段    ${result}
+
+皮肤详情页返回pvs-字段值
+    公共-字段值    ${result}
+
+皮肤列表换vip皮肤pvs-条数
+    公共-删除数据
+    皮肤详情页返回
+    ${result}    公共-获取结果    ${pvs}    pifu_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+皮肤列表换vip皮肤pvs-字段
+    公共-字段    ${result}
+
+皮肤列表换vip皮肤pvs-字段值
+    公共-字段值    ${result}
+
+皮肤列表换vip皮肤pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pifu_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+皮肤列表换vip皮肤pvs-字段
+    公共-字段    ${result}
+
+皮肤列表换vip皮肤pvs-字段值
+    公共-字段值    ${result}

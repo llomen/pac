@@ -1,0 +1,61 @@
+*** Settings ***
+Resource          ./网络.txt
+Resource          ./Variables.txt
+Resource          ./公共事件.txt
+Resource          ./公共操作.txt
+
+*** Keywords ***
+首页-精选
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[1]
+
+首页-直播
+    Click Element    name=直播
+    sleep    2
+
+首页-vip
+    Comment    Click Element    name=会员
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[3]
+    sleep    8
+
+首页-关注
+    公共－点击页面文本    关注
+    Comment    ${aa}    Run Keyword And Return Status    Wait Until Page Contains Element    name=followed_fans
+    Comment    run keyword if    ${aa}    关注-关闭浮层
+
+首页-我
+    comment    公共－点击页面文本    我
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]
+    放弃记录合并
+
+首页-饭团
+    comment    公共－点击页面文本    饭团
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[4]
+
+首页-缓存
+    公共－点击页面文本    Channel Download iCON
+
+首页-搜索
+    comment    公共－点击页面文本    search_textField
+    公共－xpath    //XCUIElementTypeTextField[@name="search_textField"]/..
+
+首页-播放记录
+    公共－点击页面文本    Channel History iCON
+
+首页-消息中心
+    公共－点击页面文本    Channel Notice iCON
+
+首页-频道管理
+    comment    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]
+    comment    click a point    260    35
+    comment    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeButton
+    公共－xpath    //XCUIElementTypeStaticText[@name="综艺"]/../../../following-sibling::XCUIElementTypeOther[1]/XCUIElementTypeButton
+
+首页-青云志
+    公共－xpath    (//XCUIElementTypeStaticText[@name="田不易逼李易峰杀赵丽颖以证清白"])[1]
+
+频道页-全部
+    公共－点击页面文本    全部
+
+首页-关闭历史记录
+    run keyword and ignore error    公共－点击页面文本    White Close
+    run keyword and ignore error    公共－点击页面文本    pushwindow close

@@ -1,0 +1,410 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${table}          mpp_pv1_5_5_iphone_sdk_qita
+
+*** Test Cases ***
+我pvs1-条数
+    公共-删除数据
+    首页－我
+    ${result}    公共-获取结果    ${pvs1}    wo_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我pvs1-字段
+    公共-字段    ${result}
+
+我pvs1-字段名
+    公共-字段值    ${result}
+
+登录pvs1-条数
+    公共-删除数据
+    click element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeStatusBar/XCUIElementTypeOther[1]
+    我－未登录
+    ${result}    公共-获取结果    ${pvs1}    denglu_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录pvs1-字段
+    公共-字段    ${result}
+
+登录pvs1-字段名
+    公共-字段值    ${result}
+
+邮箱登录pvs1-条数
+    公共－点击页面文本    使用其它账号登录
+    公共-删除数据
+    公共－点击页面文本    邮箱
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    loginmangguo_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录pvs1-字段
+    公共-字段    ${result}
+
+邮箱登录pvs1-字段名
+    公共-字段值    ${result}
+
+邮箱登录返回pvs1-条数
+    公共-删除数据
+    芒果登录－关闭
+    sleep    1
+    ${result}    公共-获取结果    ${pvs1}    loginmangguo_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录返回pvs1-字段
+    公共-字段    ${result}
+
+邮箱登录返回pvs1-字段名
+    公共-字段值    ${result}
+
+登录返回pvs1-条数
+    芒果登录－关闭
+    公共-删除数据
+    芒果登录－关闭
+    sleep    1
+    ${result}    公共-获取结果    ${pvs1}    loginmangguo_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录返回pvs1-字段
+    公共-字段    ${result}
+
+登录返回pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    消息中心
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心pvs1-字段
+    公共-字段    ${result}
+
+消息中心pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心无评论提醒
+    sleep    3
+    公共-页面存在元素值    暂无评论
+
+消息中心赞pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    赞
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心赞pvs1-字段
+    公共-字段    ${result}
+
+消息中心赞pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心无赞提醒
+    sleep    3
+    公共-页面存在元素值    还没有人给你点过赞
+
+消息中心会员pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    会员
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心会员pvs1-字段
+    公共-字段    ${result}
+
+消息中心会员pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心无会员消息提醒
+    sleep    3
+    公共-页面存在元素值    暂无会员消息
+
+消息中心通知pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    通知
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_004    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心通知pvs1-字段
+    公共-字段    ${result}
+
+消息中心通知pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心无系统通知提醒
+    sleep    3
+    公共-页面存在元素值    暂无系统通知
+
+消息中心返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_005    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs1-字段
+    公共-字段    ${result}
+
+消息中心返回pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    播放记录
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录pvs1-字段
+    公共-字段    ${result}
+
+播放记录pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录返回pvs1-字段
+    公共-字段    ${result}
+
+播放记录返回pvs1-字段名
+    公共-字段值    ${result}
+
+离线缓存pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    离线缓存
+    ${result}    公共-获取结果    ${pvs1}    lixianhuancun_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存pvs1-字段
+    公共-字段    ${result}
+
+离线缓存pvs1-字段名
+    公共-字段值    ${result}
+
+离线缓存返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    lixianhuancun_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存返回pvs1-字段
+    公共-字段    ${result}
+
+离线缓存返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的收藏pvs1-条数
+    公共-删除数据
+    公共-滑动页面    消息中心    我的收藏
+    公共－点击页面文本    我的收藏
+    ${result}    公共-获取结果    ${pvs1}    wodeshoucang_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的收藏pvs1-字段
+    公共-字段    ${result}
+
+我的收藏pvs1-字段名
+    公共-字段值    ${result}
+
+我的收藏无收藏
+    sleep    3
+    公共-页面存在元素值    暂无收藏
+
+我的收藏返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    wodeshoucang_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的收藏返回pvs1-字段
+    公共-字段    ${result}
+
+我的收藏返回pvs1-字段名
+    公共-字段值    ${result}
+
+活动中心pvs1-条数
+    公共-删除数据
+    公共-滑动页面    我的收藏    设置
+    公共－点击页面文本    活动中心
+    ${result}    公共-获取结果    ${pvs1}    huodongzhongxin_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心pvs1-字段
+    公共-字段    ${result}
+
+活动中心pvs1-字段名
+    公共-字段值    ${result}
+
+活动中心返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    huodongzhongxin_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心返回pvs1-字段
+    公共-字段    ${result}
+
+活动中心返回pvs1-字段名
+    公共-字段值    ${result}
+
+帮助反馈pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    帮助反馈
+    ${result}    公共-获取结果    ${pvs1}    bangzhufankui_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+帮助反馈pvs1-字段
+    公共-字段    ${result}
+
+帮助反馈pvs1-字段名
+    公共-字段值    ${result}
+
+帮助反馈返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    bangzhufankui_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+帮助反馈返回pvs1-字段
+    公共-字段    ${result}
+
+帮助反馈返回pvs1-字段名
+    公共-字段值    ${result}
+
+设置pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    设置
+    ${result}    公共-获取结果    ${pvs1}    shezhi_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置pvs1-字段
+    公共-字段    ${result}
+
+设置pvs1-字段名
+    公共-字段值    ${result}
+
+账号与安全pvs1-条数
+    公共－点击页面文本    账号与安全
+    公共－点击页面文本    登录
+    sleep    3
+    公共-删除数据
+    公共－点击页面文本    账号与安全
+    ${result}    公共-获取结果    ${pvs1}    shezhi_007    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+账号与安全pvs1-字段
+    公共-字段    ${result}
+
+账号与安全pvs1-字段名
+    公共-字段值    ${result}
+
+是否绑定手机
+    公共-页面存在元素值    未绑定
+
+绑定手机pvs1-条数
+    公共-删除数据
+    公共－点击页面文本    绑定手机
+    sleep    3
+    ${result}    公共-获取结果    ${pvs1}    shezhi_005    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+绑定手机pvs1-字段
+    公共-字段    ${result}
+
+绑定手机pvs1-字段名
+    公共-字段值    ${result}
+
+绑定手机返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    shezhi_006    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+绑定手机返回pvs1-字段
+    公共-字段    ${result}
+
+绑定手机返回pvs1-字段名
+    公共-字段值    ${result}
+
+账号与安全返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    shezhi_008    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+账号与安全返回pvs1-字段
+    公共-字段    ${result}
+
+账号与安全返回pvs1-字段名
+    公共-字段值    ${result}
+
+关于我们pvs1-条数
+    公共-删除数据
+    公共-滑动页面    账号与安全    关于我们
+    公共－点击页面文本    关于我们
+    sleep    3
+    ${result}    公共-获取结果    ${pvs1}    shezhi_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关于我们pvs1-字段
+    公共-字段    ${result}
+
+关于我们pvs1-字段名
+    公共-字段值    ${result}
+
+关于我们返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    shezhi_004    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关于我们返回pvs1-字段
+    公共-字段    ${result}
+
+关于我们返回pvs1-字段名
+    公共-字段值    ${result}
+
+设置返回pvs1-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs1}    shezhi_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置返回pvs1-字段
+    公共-字段    ${result}
+
+设置返回pvs1-字段名
+    公共-字段值    ${result}

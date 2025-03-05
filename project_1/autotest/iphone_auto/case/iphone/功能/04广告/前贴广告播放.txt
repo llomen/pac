@@ -1,0 +1,77 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+进入点播页impression-条数
+    公共-删除数据
+    首页-青云志
+    点播播放页-全屏
+    sleep    18
+    ${result}    公共-获取结果    {'t':'0'}    qiantie_01    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入点播页impression-字段
+    公共-字段    ${result}
+
+进入点播页impression-字段值
+    公共-字段值    ${result}
+
+四分之一监测t900-条数
+    ${result}    公共-获取结果    {'t':'900'}    qiantie_02    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+四分之一监测t900-字段
+    公共-字段    ${result}
+
+四分之一监测t900-字段值
+    公共-字段值    ${result}
+
+四分之二监测t1800-条数
+    ${result}    公共-获取结果    {'t':'1800'}    qiantie_03    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+四分之二监测t1800-字段
+    公共-字段    ${result}
+
+四分之二监测t1800-字段值
+    公共-字段值    ${result}
+
+四分之三监测t2700-条数
+    ${result}    公共-获取结果    {'t':'2700'}    qiantie_04    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+四分之三监测t2700-字段
+    公共-字段    ${result}
+
+四分之三监测t2700-字段值
+    公共-字段值    ${result}
+
+全屏监测t40000-条数
+    sleep    5
+    ${result}    公共-获取结果    {'t':'40000'}    qiantie_05    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全屏监测t40000-字段
+    公共-字段    ${result}
+
+全屏监测t40000-字段值
+    公共-字段值    ${result}
+
+完成监测t3600-条数
+    ${result}    公共-获取结果    {'t':'3600'}    qiantie_06    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+完成监测t3600-字段
+    公共-字段    ${result}
+
+完成监测t3600-字段值
+    公共-字段值    ${result}

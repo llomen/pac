@@ -1,0 +1,22 @@
+*** Settings ***
+Library           AppiumLibrary
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${platform3}      iPhoneiOS10.3.2
+${platform4}      iPhoneiOS12.0.1
+${platform2}      iPhoneiOS12.0.1
+${package}        MGTV-Simulator-5.5.5.171018.zip
+${udid2}          1f935067b12b9c546c1e31e4b0191e5f6ca38b89
+${udid4}          9888af9a2f7225fa99ac7182c161faa8525abf94
+${udid}           3a48b102de42ae32091c8b0a8150c4c259cf9349
+${udid3}          5a5405710456876380443328d2d7d6c2f5db7733
+${mail_account}    shuang2@yopmail.com
+${mail_pwd}       111111
+${mail_name}      shuang123
+${mail_account_vip}    siqian50@qq.com
+${mail_pwd_vip}    nishizhu
+${mail_name_vip}    sjidjididhh
+${firm_vip_free}    幕后玩家
+${firm_buy}       天钟
+${firm_vip_usecash}    完美音调3

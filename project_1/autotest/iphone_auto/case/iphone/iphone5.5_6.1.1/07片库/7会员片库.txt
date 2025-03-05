@@ -1,0 +1,316 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${tagselect}      {'act':'tag-select'}
+${list}           {'act':'list'}
+${dataclick}      {'act':'data-click'}
+${pvs}            {'act':'pvs'}
+${hb}             {'act':'hb'}
+${buffer}         {'act':'buffer'}
+${aplay}          {'act':'aplay'}
+
+*** Test Cases ***
+会员大片list-条数
+    公共－用户登录    ${mail_account_vip}    ${mail_pwd_vip}
+    我－会员中心
+    sleep    5
+    公共-滑动页面    会员福利社    会员大片
+    公共-删除数据
+    公共－点击页面文本    会员大片
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_001    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员大片list-字段
+    公共-字段    ${result}
+
+会员大片list-字段名
+    公共-字段值    ${result}
+
+真人秀list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    真人秀
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_002    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+真人秀list-字段
+    公共-字段    ${result}
+
+真人秀list-字段名
+    公共-字段值    ${result}
+
+电影list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    电影
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_003    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影list-字段
+    公共-字段    ${result}
+
+电影list-字段名
+    公共-字段值    ${result}
+
+美国list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    美国
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_004    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+美国list-字段
+    公共-字段    ${result}
+
+美国list-字段名
+    公共-字段值    ${result}
+
+动漫list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    动漫
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeCollectionView/XCUIElementTypeCell[4]/XCUIElementTypeOther/XCUIElementTypeStaticText
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_005    mpp_pianku_list_iphone_dongman    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫list-字段
+    公共-字段    ${result}
+
+动漫list-字段名
+    公共-字段值    ${result}
+
+4-6岁list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    4-6岁
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_006    mpp_pianku_list_iphone_dongman    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+4-6岁list-字段
+    公共-字段    ${result}
+
+4-6岁list-字段名
+    公共-字段值    ${result}
+
+7-10岁list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    7-10岁
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[4]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_007    mpp_pianku_list_iphone_dongman    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+7-10岁list-字段
+    公共-字段    ${result}
+
+7-10岁list-字段名
+    公共-字段值    ${result}
+
+音乐list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    音乐
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeCollectionView/XCUIElementTypeCell[4]/XCUIElementTypeOther/XCUIElementTypeStaticText
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_008    mpp_pianku_list_iphone_yinyue    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+音乐list-字段
+    公共-字段    ${result}
+
+音乐list-字段名
+    公共-字段值    ${result}
+
+摇滚list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    摇滚
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_009    mpp_pianku_list_iphone_yinyue    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+摇滚list-字段
+    公共-字段    ${result}
+
+摇滚list-字段名
+    公共-字段值    ${result}
+
+教育list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    教育
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeCollectionView/XCUIElementTypeCell[4]/XCUIElementTypeOther/XCUIElementTypeStaticText
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_010    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+教育list-字段
+    公共-字段    ${result}
+
+教育list-字段名
+    公共-字段值    ${result}
+
+幼儿list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    幼儿
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_011    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+幼儿list-字段
+    公共-字段    ${result}
+
+幼儿list-字段名
+    公共-字段值    ${result}
+
+最热list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    最热
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[2]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_012    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+最热list-字段
+    公共-字段    ${result}
+
+最热list-字段名
+    公共-字段值    ${result}
+
+体育list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    体育
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeCollectionView/XCUIElementTypeCell[5]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_013    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+体育list-字段
+    公共-字段    ${result}
+
+体育list-字段名
+    公共-字段值    ${result}
+
+极限list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    极限
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_014    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+极限list-字段
+    公共-字段    ${result}
+
+极限list-字段名
+    公共-字段值    ${result}
+
+视频播放data-click-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell[5]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton
+    ${result}    公共-获取结果    ${dataclick}    pianku_huiyuan_015    mpp_pianku_dataclick_shaixuan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+视频播放data-click-字段
+    公共-字段    ${result}
+
+视频播放data-click-字段名
+    公共-字段值    ${result}
+
+视频播放返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pianku_huiyuan_016    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+视频播放返回pvs-字段
+    公共-字段    ${result}
+
+视频播放返回pvs-字段名
+    公共-字段值    ${result}
+
+冷门tag-select-条数
+    公共-删除数据
+    公共－点击页面文本    冷门
+    ${result}    公共-获取结果    ${tagselect}    pianku_huiyuan_017    mpp_pianku_tagselect_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+冷门tag-select-字段
+    公共-字段    ${result}
+
+冷门tag-select-字段名
+    公共-字段值    ${result}
+
+冷门结果播放data-click-条数
+    公共-删除数据
+    sleep    2
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell[4]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton
+    sleep    3
+    ${result}    公共-获取结果    ${list}    pianku_huiyuan_018    mpp_pianku_dataclick_zuhe_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+冷门结果播放data-click-字段
+    公共-字段    ${result}
+
+冷门结果播放data-click-字段名
+    公共-字段值    ${result}
+
+VIP用户播放aplay-条数
+    sleep    17
+    ${result}    公共-获取结果    ${aplay}    dianbovipuser_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP用户播放aplay-字段
+    公共-字段    ${result}
+
+VIP用户播放aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_003    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+VIP用户播放buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianbovipuser_001    mpp_buffer_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP用户播放buffer-字段
+    公共-字段    ${result}
+
+VIP用户播放buffer-字段值
+    公共-字段值    ${result}
+
+VIP用户播放hb-条数
+    sleep    15
+    ${result}    公共-获取结果    ${hb}    dianbovipuser_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP用户播放hb-字段
+    公共-字段    ${result}
+
+VIP用户播放hb-字段值
+    公共-字段值    ${result}

@@ -1,0 +1,86 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+原词搜索pvs-条数
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    花儿与少年
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${pvs}    yuanci_001    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+原词搜索pvs-字段
+    公共-字段    ${result}
+
+原词搜索pvs-字段值
+    公共-字段值    ${result}
+
+新词搜索pvs-条数
+    搜索首页－输入搜索词    第三季
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${pvs}    yuanci_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+新词搜索pvs-字段
+    公共-字段    ${result}
+
+新词搜索pvs-字段值
+    公共-字段值    ${result}
+
+杨幂中间页展示pvs-条数
+    搜索－x
+    Comment    clear text    xpath=//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIATextField[1]
+    搜索首页－输入搜索词    杨幂
+    搜索-点击搜索
+    公共-删除数据
+    搜索-点击更多作品
+    ${result}    公共-获取结果    ${pvs}    yuanci_003    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+杨幂中间页展示pvs-字段
+    公共-字段    ${result}
+
+杨幂中间页展示pvs-字段值
+    公共-字段值    ${result}
+
+杨幂中间页切换筛选项pvs-条数
+    公共-删除数据
+    公共－点击页面文本    参加综艺
+    ${result}    公共-获取结果    ${pvs}    yuanci_004    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+杨幂中间页切换筛选项pvs-字段
+    公共-字段    ${result}
+
+杨幂中间页切换筛选项pvs-字段值
+    公共-字段值    ${result}
+
+杨幂中间页切换筛选项2pvs-条数
+    公共-删除数据
+    公共－点击页面文本    电影
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    yuanci_005    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+杨幂中间页切换筛选项2pvs-字段
+    公共-字段    ${result}
+
+杨幂中间页切换筛选项2pvs-字段值
+    公共-字段值    ${result}

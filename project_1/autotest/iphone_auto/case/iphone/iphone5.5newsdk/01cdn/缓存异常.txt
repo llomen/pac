@@ -1,0 +1,305 @@
+*** Settings ***
+Documentation     点播cdn异常
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${cdn1-error}     {'s':'1','f':'-1'}
+${cdn2-error}     {'s':'2','f':'-1'}
+${cdn1-error1}    {'s':'1','f':'0'}
+${cdn3-error}     {'s':'3','f':'-1'}
+
+*** Test Cases ***
+点播下载-cdn1-404－条数
+    首页－搜索
+    搜索首页－输入搜索词    活色生香
+    搜索－键盘搜索
+    Click Element    name=1
+    点播播放页－下载
+    公共-删除数据
+    公共－删除cdn配置
+    公共－cdn配置    404
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn1-error}    iphone_xiazai001    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-404－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-404－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn1-500－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    500
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn1-error}    iphone_xiazai002    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-500－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-500－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn1-解析错误－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    parse_error
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn1-error}    iphone_xiazai003    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-解析错误－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-解析错误－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn1-空－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    nul
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn1-error}    iphone_xiazai004    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-空－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-空－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn1-超时－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    timeout
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    40
+    ${result}    公共-获取结果    ${cdn1-error}    iphone_xiazai005    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-超时－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-超时－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn1-无版权－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    no_copyright
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn1-error1}    iphone_xiazai006    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-无版权－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-无版权－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn1-视频已下线－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    off_line
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn1-error1}    iphone_xiazai007    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn1-视频已下线－字段
+    公共-字段    ${result}
+
+点播下载-cdn1-视频已下线－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn2-404－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_404
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn2-error}    iphone_xiazai008    mpp_cdn_5_iphone_download    3
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn2-404－字段
+    公共-字段    ${result}
+
+点播下载-cdn2-404－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn2-500－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_500
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn2-error}    iphone_xiazai009    mpp_cdn_5_iphone_download    3
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn2-500－字段
+    公共-字段    ${result}
+
+点播下载-cdn2-500－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn2-解析错误－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_parse_error
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn2-error}    iphone_xiazai010    mpp_cdn_5_iphone_download    3
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn2-解析错误－字段
+    公共-字段    ${result}
+
+点播下载-cdn2-解析错误－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn2-空－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_nul
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn2-error}    iphone_xiazai011    mpp_cdn_5_iphone_download    3
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn2-空－字段
+    公共-字段    ${result}
+
+点播下载-cdn2-空－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn2-超时－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_timeout
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    40
+    ${result}    公共-获取结果    ${cdn2-error}    iphone_xiazai012    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn2-超时－字段
+    公共-字段    ${result}
+
+点播下载-cdn2-超时－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn2-status!=ok－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共－cdn配置    status_not_ok
+    公共-删除数据
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn2-error}    iphone_xiazai013    mpp_cdn_5_iphone_download    3
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn2-status!=ok－字段
+    公共-字段    ${result}
+
+点播下载-cdn2-status!=ok－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn3-404－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共-删除数据
+    公共－cdn配置    cdn3_404
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn3-error}    iphone_xiazai014    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn3-404－字段
+    公共-字段    ${result}
+
+点播下载-cdn3-404－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn3-500－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共-删除数据
+    公共－cdn配置    cdn3_500
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn3-error}    iphone_xiazai015    mpp_cdn_5_iphone_download    3
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn3-500－字段
+    公共-字段    ${result}
+
+点播下载-cdn3-500－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn3-timeout－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共-删除数据
+    公共－cdn配置    cdn3_timeout
+    Click Element    name=第1集
+    sleep    60
+    ${result}    公共-获取结果    ${cdn3-error}    iphone_xiazai016    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn3-timeout－字段
+    公共-字段    ${result}
+
+点播下载-cdn3-timeout－字段值
+    公共-字段值    ${result}
+
+点播下载-cdn3-空－条数
+    搜索－删除下载
+    公共－删除cdn配置
+    公共-删除数据
+    公共－cdn配置    cdn3_nul
+    Click Element    name=第1集
+    sleep    10
+    ${result}    公共-获取结果    ${cdn3-error}    iphone_xiazai017    mpp_cdn_5_iphone_download    2
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播下载-cdn3-空－字段
+    公共-字段    ${result}
+
+点播下载-cdn3-空－字段值
+    公共-字段值    ${result}

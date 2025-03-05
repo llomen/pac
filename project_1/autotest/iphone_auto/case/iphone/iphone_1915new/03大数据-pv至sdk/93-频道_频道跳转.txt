@@ -1,0 +1,617 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+精选pvs-条数
+    首页-我
+    公共-删除数据
+    首页-精选
+    ${result}    公共-获取结果    ${pvs}    shouye_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+精选pvs-字段
+    公共-字段    ${result}
+
+精选pvs-字段名
+    公共-字段值    ${result}
+
+精选pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shouye_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+精选pvs1-字段
+    公共-字段    ${result}
+
+精选pvs1-字段名
+    公共-字段值    ${result}
+
+频道管理pvs-条数
+    公共-删除数据
+    首页-频道管理
+    ${result}    公共-获取结果    ${pvs}    pingdao_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道管理pvs-字段
+    公共-字段    ${result}
+
+频道管理pvs-字段名
+    公共-字段值    ${result}
+
+频道管理pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pingdao_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道管理pvs1-字段
+    公共-字段    ${result}
+
+频道管理pvs1-字段名
+    公共-字段值    ${result}
+
+频道管理返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pingdao_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道管理返回pvs-字段
+    公共-字段    ${result}
+
+频道管理返回pvs-字段名
+    公共-字段值    ${result}
+
+频道管理返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pingdao_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道管理返回pvs1-字段
+    公共-字段    ${result}
+
+频道管理返回pvs1-字段名
+    公共-字段值    ${result}
+
+综艺pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-切换tab    综艺
+    ${result}    公共-获取结果    ${pvs}    zongyi_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺pvs-字段
+    公共-字段    ${result}
+
+综艺pvs-字段名
+    公共-字段值    ${result}
+
+综艺pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zongyi_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺pvs1-字段
+    公共-字段    ${result}
+
+综艺pvs1-字段名
+    公共-字段值    ${result}
+
+电视剧pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-切换tab    电视剧
+    ${result}    公共-获取结果    ${pvs}    dianshiju_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧pvs-字段
+    公共-字段    ${result}
+
+电视剧pvs-字段名
+    公共-字段值    ${result}
+
+电视剧pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianshiju_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧pvs1-字段
+    公共-字段    ${result}
+
+电视剧pvs1-字段名
+    公共-字段值    ${result}
+
+电视剧片库pvs-条数
+    公共-删除数据
+    频道页-全部
+    ${result}    公共-获取结果    ${pvs}    dianshiju_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧片库pvs-字段
+    公共-字段    ${result}
+
+电视剧片库pvs-字段名
+    公共-字段值    ${result}
+
+电视剧片库pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianshiju_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧片库pvs1-字段
+    公共-字段    ${result}
+
+电视剧片库pvs1-字段名
+    公共-字段值    ${result}
+
+电视剧片库返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    dianshiju_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧片库返回pvs-字段
+    公共-字段    ${result}
+
+电视剧片库返回pvs-字段名
+    公共-字段值    ${result}
+
+电视剧片库返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianshiju_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧片库返回pvs1-字段
+    公共-字段    ${result}
+
+电视剧片库返回pvs1-字段名
+    公共-字段值    ${result}
+
+电影pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-切换tab    电影
+    ${result}    公共-获取结果    ${pvs}    dianying_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影pvs-字段
+    公共-字段    ${result}
+
+电影pvs-字段名
+    公共-字段值    ${result}
+
+电影pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianying_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影pvs1-字段
+    公共-字段    ${result}
+
+电影pvs1-字段名
+    公共-字段值    ${result}
+
+电影片库pvs-条数
+    公共-删除数据
+    频道页-全部
+    ${result}    公共-获取结果    ${pvs}    dianying_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影片库pvs-字段
+    公共-字段    ${result}
+
+电影片库pvs-字段名
+    公共-字段值    ${result}
+
+电影片库pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianying_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影片库pvs1-字段
+    公共-字段    ${result}
+
+电影片库pvs1-字段名
+    公共-字段值    ${result}
+
+电影片库返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    dianying_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影片库返回pvs-字段
+    公共-字段    ${result}
+
+电影片库返回pvs-字段名
+    公共-字段值    ${result}
+
+电影片库返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianying_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影片库返回pvs1-字段
+    公共-字段    ${result}
+
+电影片库返回pvs1-字段名
+    公共-字段值    ${result}
+
+少儿pvs-条数
+    首页-频道管理
+    comment    公共－点击页面文本    直播
+    公共-删除数据
+    频道页-切换tab    少儿
+    ${result}    公共-获取结果    ${pvs}    shaoer_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+少儿pvs-字段
+    公共-字段    ${result}
+
+少儿pvs-字段名
+    公共-字段值    ${result}
+
+少儿pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shaoer_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+少儿pvs1-字段
+    公共-字段    ${result}
+
+少儿pvs1-字段名
+    公共-字段值    ${result}
+
+少儿片库pvs-条数
+    公共-删除数据
+    sleep    2
+    公共－点击页面文本    校园
+    ${result}    公共-获取结果    ${pvs}    shaoer_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+少儿片库pvs-字段
+    公共-字段    ${result}
+
+少儿片库pvs-字段名
+    公共-字段值    ${result}
+
+少儿片库pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shaoer_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+少儿片库pvs1-字段
+    公共-字段    ${result}
+
+少儿片库pvs1-字段名
+    公共-字段值    ${result}
+
+少儿片库返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    shaoer_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+少儿片库返回pvs-字段
+    公共-字段    ${result}
+
+少儿片库返回pvs-字段名
+    公共-字段值    ${result}
+
+少儿片库返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shaoer_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+少儿片库返回pvs1-字段
+    公共-字段    ${result}
+
+少儿片库返回pvs1-字段名
+    公共-字段值    ${result}
+
+动漫pvs-条数
+    公共-删除数据
+    频道页-切换tab    动漫
+    ${result}    公共-获取结果    ${pvs}    dongman_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫pvs-字段
+    公共-字段    ${result}
+
+动漫pvs-字段名
+    公共-字段值    ${result}
+
+动漫pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dongman_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫pvs1-字段
+    公共-字段    ${result}
+
+动漫pvs1-字段名
+    公共-字段值    ${result}
+
+动漫片库pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-全部
+    ${result}    公共-获取结果    ${pvs}    dongman_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫片库pvs-字段
+    公共-字段    ${result}
+
+动漫片库pvs-字段名
+    公共-字段值    ${result}
+
+动漫片库pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dongman_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫片库pvs1-字段
+    公共-字段    ${result}
+
+动漫片库pvs1-字段名
+    公共-字段值    ${result}
+
+动漫片库返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    dongman_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫片库返回pvs-字段
+    公共-字段    ${result}
+
+动漫片库返回pvs-字段名
+    公共-字段值    ${result}
+
+动漫片库返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dongman_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫片库返回pvs1-字段
+    公共-字段    ${result}
+
+动漫片库返回pvs1-字段名
+    公共-字段值    ${result}
+
+新闻pvs-条数
+    公共-删除数据
+    频道页-切换tab    新闻
+    ${result}    公共-获取结果    ${pvs}    xinwen_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+新闻pvs-字段
+    公共-字段    ${result}
+
+新闻pvs-字段名
+    公共-字段值    ${result}
+
+新闻pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xinwen_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+新闻pvs1-字段
+    公共-字段    ${result}
+
+新闻pvs1-字段名
+    公共-字段值    ${result}
+
+纪录片pvs-条数
+    公共-删除数据
+    频道页-切换tab    纪录片
+    ${result}    公共-获取结果    ${pvs}    jilupian_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+纪录片pvs-字段
+    公共-字段    ${result}
+
+纪录片pvs-字段名
+    公共-字段值    ${result}
+
+纪录片pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    jilupian_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+纪录片pvs1-字段
+    公共-字段    ${result}
+
+纪录片pvs1-字段名
+    公共-字段值    ${result}
+
+游戏pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-切换tab    游戏
+    ${result}    公共-获取结果    ${pvs}    youxi_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+游戏pvs-字段
+    公共-字段    ${result}
+
+游戏pvs-字段名
+    公共-字段值    ${result}
+
+游戏pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    youxi_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+游戏pvs1-字段
+    公共-字段    ${result}
+
+游戏pvs1-字段名
+    公共-字段值    ${result}
+
+原创pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-切换tab    原创
+    ${result}    公共-获取结果    ${pvs}    yuanchuang_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+原创pvs-字段
+    公共-字段    ${result}
+
+原创pvs-字段名
+    公共-字段值    ${result}
+
+原创pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    yuanchuang_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+原创pvs1-字段
+    公共-字段    ${result}
+
+原创pvs1-字段名
+    公共-字段值    ${result}
+
+爱豆pvs-条数
+    公共-删除数据
+    频道页-切换tab    爱豆
+    ${result}    公共-获取结果    ${pvs}    aidou_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+爱豆pvs-字段
+    公共-字段    ${result}
+
+爱豆pvs-字段名
+    公共-字段值    ${result}
+
+爱豆pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    aidou_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+爱豆pvs1-字段
+    公共-字段    ${result}
+
+爱豆pvs1-字段名
+    公共-字段值    ${result}
+
+乐活pvs-条数
+    公共-删除数据
+    频道页-切换tab    乐活
+    ${result}    公共-获取结果    ${pvs}    lehuo_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+乐活pvs-字段
+    公共-字段    ${result}
+
+乐活pvs-字段名
+    公共-字段值    ${result}
+
+乐活pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lehuo_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+乐活pvs1-字段
+    公共-字段    ${result}
+
+乐活pvs1-字段名
+    公共-字段值    ${result}
+
+教育pvs-条数
+    公共-删除数据
+    sleep    2
+    频道页-切换tab    教育
+    ${result}    公共-获取结果    ${pvs}    jiaoyu_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+教育pvs-字段
+    公共-字段    ${result}
+
+教育pvs-字段名
+    公共-字段值    ${result}
+
+教育pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    jiaoyu_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+教育pvs1-字段
+    公共-字段    ${result}
+
+教育pvs1-字段名
+    公共-字段值    ${result}
+
+音乐pvs-条数
+    公共-删除数据
+    频道页-切换tab    音乐
+    ${result}    公共-获取结果    ${pvs}    yinyue_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+音乐pvs-字段
+    公共-字段    ${result}
+
+音乐pvs-字段名
+    公共-字段值    ${result}
+
+音乐pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    yinyue_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+音乐pvs1-字段
+    公共-字段    ${result}
+
+音乐pvs1-字段名
+    公共-字段值    ${result}
+
+体育pvs-条数
+    公共-删除数据
+    频道页-切换tab    体育
+    ${result}    公共-获取结果    ${pvs}    tiyu_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+体育pvs-字段
+    公共-字段    ${result}
+
+体育pvs-字段名
+    公共-字段值    ${result}
+
+体育pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    tiyu_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+体育pvs1-字段
+    公共-字段    ${result}
+
+体育pvs1-字段名
+    公共-字段值    ${result}

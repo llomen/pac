@@ -1,0 +1,136 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Variables ***
+${zllist_share_top}    column share shadow
+${zlbodan_share_top}    column share shadow
+${zlbodan_back}    player back Shadow
+
+*** Keywords ***
+追剧-举报
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]
+    公共－点击页面文本    不想追了
+
+追剧-点标题
+    公共－点击页面文本    偶像大师灰姑娘女孩
+
+追剧-点图片
+    公共－xpath    //XCUIElementTypeStaticText[@name="偶像大师灰姑娘女孩"]/following-sibling::XCUIElementTypeButton[1]
+
+频道专栏-关注
+    comment    公共－xpath    (//XCUIElementTypeButton[@name="+ 关注"])[3]
+    公共－xpath    //XCUIElementTypeStaticText[@name="马栏山饲养员"]/following-sibling::XCUIElementTypeButton[@name="+ 关注"]
+
+频道专栏-取消关注
+    公共－xpath    (//XCUIElementTypeButton[@name="已关注"])[1]
+
+频道专栏-分享
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]
+
+频道专栏-点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/preceding-sibling::XCUIElementTypeButton[2]
+
+频道专栏-取消点赞
+    频道专栏-点赞
+
+频道专栏-点头像
+    公共－xpath    //XCUIElementTypeStaticText[@name="马栏山饲养员"]/preceding-sibling::XCUIElementTypeButton[1]
+
+频道专栏-点图片
+    公共－xpath    //XCUIElementTypeStaticText[@name="马栏山饲养员"]/following-sibling::XCUIElementTypeButton[1]
+
+频道专栏-点大图标题
+    公共－点击页面文本    那些年金鹰女神们绝技盘点
+
+频道专栏-点小图标题
+    公共－点击页面文本    迪丽热巴倾国倾城！
+
+频道专栏-点查看更多
+    公共－点击页面文本    查看更多
+
+频道专栏-滑动到图文
+    comment    scroll down    name=测试名字
+    scroll    name=偶像大师灰姑娘女孩    name=测试名字
+
+频道专栏-滑动到电影
+    scroll    name=偶像大师灰姑娘女孩    name=豆瓣评分：
+
+频道专栏-滑动到横图
+    comment    scroll down    name=马栏山饲养员
+    scroll    name=测试名字    name=马栏山饲养员
+
+频道专栏-滑动到大图带小图
+    comment    scroll down    name=查看更多
+    scroll    name=测试名字    name=查看更多
+
+专栏播单页-关注
+    公共－点击页面文本    + 关注
+
+专栏播单页-取消关注
+    公共－点击页面文本    已关注
+
+专栏播单页-返回
+    公共－点击页面文本    player back Shadow
+
+专栏播单页-顶部专栏分享
+    公共－点击页面文本    column share shadow
+
+专栏播单页-视频分享
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Sharegr iCON"])[1]
+
+专栏播单页-视频播放
+    公共－xpath    (//XCUIElementTypeButton[@name="ShortVideo Pause iCON"])[1]
+
+专栏播单页-视频暂停
+    click element    xpath=(//XCUIElementTypeButton[@name="ShortVideo Pause iCON"])[1]
+    click element    xpath=(//XCUIElementTypeButton[@name="ShortVideo Pause iCON"])[1]
+
+专栏播单页-底部分享
+    公共－点击页面文本    微信
+
+专栏播单页-声音关
+    公共－点击页面文本    Player Voice OFF
+
+专栏播单页-声音开
+    公共－点击页面文本    Player Voice ON
+
+专栏播单页-滑到看正片
+    scroll    name=马栏山饲养员    xpath=(//XCUIElementTypeButton[@name="看正片"])[1]
+
+专栏播单页-看正片
+    公共－xpath    (//XCUIElementTypeButton[@name="看正片"])[1]
+
+专栏播单页-滑到更多专栏
+    scroll    name=马栏山饲养员    name=更多专栏
+
+专栏播单页-更多专栏
+    专栏播单页-滑到更多专栏
+    公共－点击页面文本    更多专栏
+
+专栏播单页-点头像
+    公共－xpath    //XCUIElementTypeStaticText[@name="马栏山饲养员"]
+
+专栏列表页-顶栏分享
+    公共－点击页面文本    column share shadow
+
+专栏列表页-点专栏标题
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/preceding-sibling::XCUIElementTypeStaticText[last()]
+
+专栏列表页-点专栏分享
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]
+
+专栏列表页-点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+
+专栏列表页-取消点赞
+    专栏列表页-点赞
+
+专栏列表页-关注
+    公共－点击页面文本    + 关注
+
+专栏列表页-取消关注
+    公共－点击页面文本    已关注
+    公共－点击页面文本    取消关注
+
+专栏列表页-返回
+    公共－点击页面文本    player back Shadow

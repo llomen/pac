@@ -1,0 +1,24 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_chzlshow}    mpp_ip_chzlshow
+${table_chzlclick}    mpp_ip_chzlclick
+${chzlshow}       {'act':'chzlshow'}
+${chzlclick}      {'act':'chzlclick'}
+${columnist}      {'act':'columnist'}
+${share}          {'act':'share'}
+${table_stay}     mpp_stay_iphone
+
+*** Test Cases ***
+
+*** Keywords ***
+登录并关注
+    直接登录    ${mail_account}    ${mail_pwd}    ${mail_name}
+    公共-删除数据
+    专栏列表页-关注

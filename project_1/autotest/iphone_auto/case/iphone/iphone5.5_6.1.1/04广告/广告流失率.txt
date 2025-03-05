@@ -1,0 +1,20 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+未添加离线退出adlost-条数
+    公共-删除数据
+    首页-青云志
+    点播播放页-返回
+    ${result}    公共-获取结果    {'lostid':'1'}    adlost_01    mpp_ad_adlost_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未添加离线退出adlost-字段
+    公共-字段    ${result}
+
+未添加离线退出adlost-字段值
+    公共-字段值    ${result}

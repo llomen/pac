@@ -1,0 +1,80 @@
+*** Settings ***
+Documentation     实时播报、发布
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${pvs1_H5}        {'logtype':'pv','cntp':'qt_webview'}
+
+*** Test Cases ***
+最佳饭贴动态show-条数
+    首页-饭团
+    公共-删除数据
+    饭团广场-最佳饭贴标题
+    sleep    2
+    ${result}    公共-获取结果    {'logtype':'show','smod':'1'}    square_07    ${table_show_ft}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+最佳饭贴动态show-字段
+    公共-字段    ${result}
+
+最佳饭贴动态show-字段名
+    公共-字段值    ${result}
+
+入选规则pvs-条数
+    公共-删除数据
+    公共－点击页面文本    入选规则
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_01    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+入选规则pvs-字段
+    公共-字段    ${result}
+
+入选规则pvs-字段名
+    公共-字段值    ${result}
+
+入选规则pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+入选规则pvs1-字段
+    公共-字段    ${result}
+
+入选规则pvs1-字段名
+    公共-字段值    ${result}
+
+入选规则返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_02    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+入选规则返回pvs-字段
+    公共-字段    ${result}
+
+入选规则返回pvs-字段名
+    公共-字段值    ${result}
+
+入选规则返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_02    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+入选规则返回pvs1-字段
+    公共-字段    ${result}
+
+入选规则返回pvs1-字段名
+    公共-字段值    ${result}

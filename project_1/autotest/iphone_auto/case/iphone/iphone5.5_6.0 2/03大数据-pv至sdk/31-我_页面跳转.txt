@@ -1,0 +1,367 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table}          mpp_pv_5_5_iphone_sdk_qita
+
+*** Test Cases ***
+我pvs-条数
+    公共-删除数据
+    首页－我
+    ${result}    公共-获取结果    ${pvs}    wo_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我pvs-字段
+    公共-字段    ${result}
+
+我pvs-字段名
+    公共-字段值    ${result}
+
+登录pvs-条数
+    公共-删除数据
+    click element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeStatusBar/XCUIElementTypeOther[1]
+    我－未登录
+    ${result}    公共-获取结果    ${pvs}    denglu_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录pvs-字段
+    公共-字段    ${result}
+
+登录pvs-字段名
+    公共-字段值    ${result}
+
+邮箱登录pvs-条数
+    ${aa}    if page contain text    使用其它账号登录
+    run keyword if    ${aa}==1    公共－点击页面文本    使用其它账号登录
+    公共-删除数据
+    公共－点击页面文本    邮箱
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    loginmangguo_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录pvs-字段
+    公共-字段    ${result}
+
+邮箱登录pvs-字段名
+    公共-字段值    ${result}
+
+邮箱登录返回pvs-条数
+    公共-删除数据
+    芒果登录－关闭
+    sleep    1
+    ${result}    公共-获取结果    ${pvs}    loginmangguo_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录返回pvs-字段
+    公共-字段    ${result}
+
+邮箱登录返回pvs-字段名
+    公共-字段值    ${result}
+
+登录返回pvs-条数
+    芒果登录－关闭
+    公共-删除数据
+    芒果登录－关闭
+    sleep    1
+    ${result}    公共-获取结果    ${pvs}    loginmangguo_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录返回pvs-字段
+    公共-字段    ${result}
+
+登录返回pvs-字段名
+    公共-字段值    ${result}
+
+消息中心未登录pvs-条数
+    公共-删除数据
+    公共－点击页面文本    我的消息
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心未登录pvs-字段
+    公共-字段    ${result}
+
+消息中心未登录pvs-字段名
+    公共-字段值    ${result}
+
+消息中心未登录msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_xiaoxi_login_not    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心未登录msgc-字段
+    公共-字段    ${result}
+
+消息中心未登录msgc-字段名
+    公共-字段值    ${result}
+
+消息中心-登录pvs-条数
+    公共-删除数据
+    公共－点击页面文本    立即登录
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_login    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心-登录pvs-字段
+    公共-字段    ${result}
+
+消息中心-登录pvs-字段名
+    公共-字段值    ${result}
+
+消息中心-登录msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_xiaoxi_clicklogin    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心-登录msgc-字段
+    公共-字段    ${result}
+
+消息中心-登录msgc-字段名
+    公共-字段值    ${result}
+
+登录-消息中心pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_login_back    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录-消息中心pvs-字段
+    公共-字段    ${result}
+
+登录-消息中心pvs-字段名
+    公共-字段值    ${result}
+
+消息中心返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_005    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs-字段
+    公共-字段    ${result}
+
+消息中心返回pvs-字段名
+    公共-字段值    ${result}
+
+我的收藏pvs-条数
+    公共-删除数据
+    comment    公共-滑动页面    播放记录    我的收藏
+    点击文本    我的收藏
+    ${result}    公共-获取结果    ${pvs}    wodeshoucang_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的收藏pvs-字段
+    公共-字段    ${result}
+
+我的收藏pvs-字段名
+    公共-字段值    ${result}
+
+我的收藏无收藏
+    sleep    3
+    公共-页面存在元素值    暂无收藏
+
+我的收藏返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    wodeshoucang_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的收藏返回pvs-字段
+    公共-字段    ${result}
+
+我的收藏返回pvs-字段名
+    公共-字段值    ${result}
+
+活动中心pvs-条数
+    公共-删除数据
+    comment    公共-滑动页面    我的收藏    设置
+    comment    公共－点击页面文本    活动中心
+    点击文本    设置
+    ${result}    公共-获取结果    ${pvs}    huodongzhongxin_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心pvs-字段
+    公共-字段    ${result}
+
+活动中心pvs-字段名
+    公共-字段值    ${result}
+
+活动中心返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    huodongzhongxin_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+活动中心返回pvs-字段
+    公共-字段    ${result}
+
+活动中心返回pvs-字段名
+    公共-字段值    ${result}
+
+帮助反馈pvs-条数
+    公共-删除数据
+    公共－点击页面文本    帮助反馈
+    ${result}    公共-获取结果    ${pvs}    bangzhufankui_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+帮助反馈pvs-字段
+    公共-字段    ${result}
+
+帮助反馈pvs-字段名
+    公共-字段值    ${result}
+
+帮助反馈返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    bangzhufankui_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+帮助反馈返回pvs-字段
+    公共-字段    ${result}
+
+帮助反馈返回pvs-字段名
+    公共-字段值    ${result}
+
+设置pvs-条数
+    公共-删除数据
+    公共－点击页面文本    设置
+    ${result}    公共-获取结果    ${pvs}    shezhi_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置pvs-字段
+    公共-字段    ${result}
+
+设置pvs-字段名
+    公共-字段值    ${result}
+
+账号与安全pvs-条数
+    公共－点击页面文本    账号与安全
+    公共－点击页面文本    登录
+    sleep    3
+    公共-删除数据
+    公共－点击页面文本    账号与安全
+    ${result}    公共-获取结果    ${pvs}    shezhi_007    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+账号与安全pvs-字段
+    公共-字段    ${result}
+
+账号与安全pvs-字段名
+    公共-字段值    ${result}
+
+是否绑定手机
+    公共-页面存在元素值    未绑定
+
+绑定手机pvs-条数
+    公共-删除数据
+    公共－点击页面文本    绑定手机
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    shezhi_005    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+绑定手机pvs-字段
+    公共-字段    ${result}
+
+绑定手机pvs-字段名
+    公共-字段值    ${result}
+
+绑定手机返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    shezhi_006    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+绑定手机返回pvs-字段
+    公共-字段    ${result}
+
+绑定手机返回pvs-字段名
+    公共-字段值    ${result}
+
+账号与安全返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    shezhi_008    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+账号与安全返回pvs-字段
+    公共-字段    ${result}
+
+账号与安全返回pvs-字段名
+    公共-字段值    ${result}
+
+关于我们pvs-条数
+    公共-删除数据
+    公共-滑动页面    账号与安全    关于我们
+    公共－点击页面文本    关于我们
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    shezhi_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关于我们pvs-字段
+    公共-字段    ${result}
+
+关于我们pvs-字段名
+    公共-字段值    ${result}
+
+关于我们返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    shezhi_004    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关于我们返回pvs-字段
+    公共-字段    ${result}
+
+关于我们返回pvs-字段名
+    公共-字段值    ${result}
+
+设置返回pvs-条数
+    公共-删除数据
+    非播放页－返回
+    ${result}    公共-获取结果    ${pvs}    shezhi_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置返回pvs-字段
+    公共-字段    ${result}
+
+设置返回pvs-字段名
+    公共-字段值    ${result}
+
+*** Keywords ***
+点击文本
+    [Arguments]    ${text}
+    ${aa}    Run Keyword And Return Status    text should be visible    ${text}
+    run keyword if    ${aa}==False    滑动    ${text}
+    公共－点击页面文本    ${text}
+
+滑动
+    [Arguments]    ${text}
+    公共-滑动页面    播放记录    ${text}

@@ -1,0 +1,32 @@
+*** Keywords ***
+看单-删除
+    ${aa}=    Run Keyword And Return Status    Page Should Contain Text    看单中还没有
+    run keyword if    ${aa}==False    删除视频
+
+删除视频
+    公共－点击页面文本    编辑
+    公共－点击页面文本    全选
+    公共－xpath    //XCUIElementTypeButton[@name="取消全选"]//following-sibling::XCUIElementTypeButton[1]
+
+看单-点单视频
+    ${passed} =    Run Keyword And Return Status    Element Should Be Visible    name=杨洋赵丽颖大谈拍剧趣事
+    run keyword if    ${passed}==False    上滑
+    公共－点击页面文本    杨洋赵丽颖大谈拍剧趣事
+
+看单-节目
+    公共－点击页面文本    节目
+
+看单-视频
+    公共－点击页面文本    视频
+
+每日放送-加入看单
+    公共－xpath    //XCUIElementTypeStaticText[@name="粉彩回忆"]/following-sibling::XCUIElementTypeButton[1]
+
+每日放送-取消加入看单
+    公共－xpath    //XCUIElementTypeStaticText[@name="粉彩回忆"]/following-sibling::XCUIElementTypeButton[1]
+
+每日放送-点视频
+    公共－点击页面文本    粉彩回忆
+
+每日放送-切换tab
+    公共－点击页面文本    周三

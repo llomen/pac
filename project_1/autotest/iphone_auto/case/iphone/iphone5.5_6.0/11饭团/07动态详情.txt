@@ -1,0 +1,216 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${share}          {'act':'share'}
+${shareresult}    {'act':'shareresult'}
+${comment}        {'act':'comment'}
+${table}          mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${table_click}    mpp_jiaohu_iphone
+${aplay}          {"act":"aplay"}
+${buffer2}        {"act":"buffer"}
+${hb3}            {'act':'hb','ht':'0'}
+${hb5}            {'act':'hb','ht':'1'}
+${hb_end}         {'act':'hb','ht':'2'}
+
+*** Test Cases ***
+进入饭团主页pvs-条数
+    comment    公共－用户登录    ${mail_account}    ${mail_pwd}
+    首页-饭团
+    饭团-动态-内容
+    公共-删除数据
+    饭团-详情页-饭团主页
+    ${result}    公共-获取结果    ${pvs}    ft_xiangqing_01    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团主页pvs-字段
+    公共-字段    ${result}
+
+进入饭团主页pvs-字段名
+    公共-字段值    ${result}
+
+饭团主页返回pvs-条数
+    公共-删除数据
+    page should contain text    全部动态
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_xiangqing_02    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团主页返回pvs-字段
+    公共-字段    ${result}
+
+饭团主页返回pvs-字段名
+    公共-字段值    ${result}
+
+点击更多fantuan-条数
+    公共-删除数据
+    饭团-动态-更多
+    ${result}    公共-获取结果    ${fantuan}    fantuan_xiangqing_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击更多fantuan-字段
+    公共-字段    ${result}
+
+点击更多fantuan-字段名
+    公共-字段值    ${result}
+
+更多取消fantuan-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${fantuan}    fantuan_xiangqing_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+更多取消fantuan-字段
+    公共-字段    ${result}
+
+更多取消fantuan-字段名
+    公共-字段值    ${result}
+
+点赞fantuan-条数
+    公共-删除数据
+    饭团-动态-点赞
+    ${result}    公共-获取结果    ${fantuan}    fantuan_xiangqing_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞fantuan-字段
+    公共-字段    ${result}
+
+点赞fantuan-字段名
+    公共-字段值    ${result}
+
+评论fantuan-条数
+    公共-删除数据
+    饭团-动态-评论
+    ${result}    公共-获取结果    ${fantuan}    fantuan_xiangqing_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论fantuan-字段
+    公共-字段    ${result}
+
+评论fantuan-字段名
+    公共-字段值    ${result}
+
+分享fantuan-条数
+    公共-删除数据
+    饭团-动态-分享
+    ${result}    公共-获取结果    ${fantuan}    fantuan_xiangqing_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享fantuan-字段
+    公共-字段    ${result}
+
+分享fantuan-字段名
+    公共-字段值    ${result}
+
+分享到复制链接share-条数
+    公共-删除数据
+    饭团-分享到    QQ空间
+    ${result}    公共-获取结果    ${share}    fantuan_xiangqing_07    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到复制链接share-字段
+    公共-字段    ${result}
+
+分享到复制链接share-字段名
+    公共-字段值    ${result}
+
+点评论输入框comment-条数
+    公共-删除数据
+    饭团-详情页-评论输入框
+    ${result}    公共-获取结果    ${comment}    fantuan_xiangqing_08    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论输入框comment-字段
+    公共-字段    ${result}
+
+点评论输入框comment-字段名
+    公共-字段值    ${result}
+
+点视频fantuan-条数
+    公共-删除数据
+    饭团-详情页-点视频
+    ${result}    公共-获取结果    ${fantuan}    fantuan_xiangqing_09    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点视频fantuan-字段
+    公共-字段    ${result}
+
+点视频fantuan-字段名
+    公共-字段值    ${result}
+
+点击播放aplay-条数
+    ${result}    公共-获取结果    ${aplay}    tuijian_duanshipin_001    mpp_vv_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放aplay-字段
+    公共-字段    ${result}
+
+点击播放aplay-字段值
+    公共-字段值    ${result}
+
+点击播放buffer-条数
+    ${result}    公共-获取结果    ${buffer2}    tuijian_duanshipin_001    mpp_buffer_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放buffer-字段
+    公共-字段    ${result}
+
+点击播放buffer-字段值
+    公共-字段值    ${result}
+
+点击播放hb3-条数
+    ${result}    公共-获取结果    ${hb3}    tuijian_duanshipin_001    mpp_hb_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放hb3-字段
+    公共-字段    ${result}
+
+点击播放hb3-字段值
+    公共-字段值    ${result}
+
+点击播放hb5-条数
+    ${result}    公共-获取结果    ${hb5}    tuijian_duanshipin_001    mpp_hb_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放hb5-字段
+    公共-字段    ${result}
+
+点击播放hb5-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+饭团-详情页-饭团主页
+    公共－点击页面文本    fantuan_livesub_background
+
+饭团-详情页-发布者头像
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeStaticText[last()-1]
+
+饭团-详情页-评论输入框
+    公共－点击页面文本    添加评论...
+    ${aa}    if page contain text    稍后再验证
+    run keyword if    ${aa}==1    公共－点击页面文本    稍后再验证
+
+饭团-详情页-点视频
+    公共－xpath    //XCUIElementTypeStaticText[@name="00:32"]

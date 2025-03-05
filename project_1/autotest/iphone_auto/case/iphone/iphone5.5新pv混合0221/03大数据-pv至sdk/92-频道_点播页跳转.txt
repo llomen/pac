@@ -1,0 +1,353 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***
+列表频道pvs-条数
+    公共-删除数据
+    公共－点击页面文本    更多VIP福利等你拿
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    liebiao_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道pvs-字段
+    公共-字段    ${result}
+
+列表频道pvs-字段值
+    公共-字段值    ${result}
+
+列表频道pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    liebiao_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道pvs1-字段
+    公共-字段    ${result}
+
+列表频道pvs1-字段值
+    公共-字段值    ${result}
+
+列表频道返回pvs-条数
+    sleep    3
+    公共-删除数据
+    非播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    liebiao_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道返回pvs-字段
+    公共-字段    ${result}
+
+列表频道返回pvs-字段值
+    公共-字段值    ${result}
+
+列表频道返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    liebiao_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道返回pvs1-字段
+    公共-字段    ${result}
+
+列表频道返回pvs1-字段值
+    公共-字段值    ${result}
+
+频道专题页pvs-条数
+    公共-删除数据
+    频道上滑
+    Comment    公共-滑动页面    更多VIP福利等你拿    田亮带娃记未播版
+    公共－点击页面文本    今日热门
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhuanti_1    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页pvs-字段
+    公共-字段    ${result}
+
+频道专题页pvs-字段值
+    公共-字段值    ${result}
+
+频道专题页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanti_1    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页pvs1-字段
+    公共-字段    ${result}
+
+频道专题页pvs1-字段值
+    公共-字段值    ${result}
+
+频道专题页返回pvs-条数
+    sleep    3
+    公共-删除数据
+    非播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhuanti_2    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页返回pvs-字段
+    公共-字段    ${result}
+
+频道专题页返回pvs-字段值
+    公共-字段值    ${result}
+
+频道专题页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanti_2    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页返回pvs1-字段
+    公共-字段    ${result}
+
+频道专题页返回pvs1-字段值
+    公共-字段值    ${result}
+
+正片列表pvs-条数
+    频道下滑
+    首页-青云志
+    点播-关闭右滑按钮
+    点播页-关闭角标
+    公共-删除数据
+    点播播放页-正片列表
+    ${result}    公共-获取结果    ${pvs}    dianbo_zhengpian_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片列表pvs-字段
+    公共-字段    ${result}
+
+正片列表pvs-字段值
+    公共-字段值    ${result}
+
+正片列表pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_zhengpian_001    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片列表浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_04    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片列表浮层曝光cv-字段
+    公共-字段    ${result}
+
+正片列表浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+正片列表pfc-条数
+    ${result}    公共-获取结果    ${pfc}    pfc-zhengpian    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片列表pfc-字段
+    公共-字段    ${result}
+
+正片列表pfc-字段值
+    公共-字段值    ${result}
+
+正片更多播放pvs-条数
+    公共-删除数据
+    comment    公共－点击页面文本    碧瑶张小凡街头初遇
+    公共－xpath    (//XCUIElementTypeStaticText[@name="2"])[2]
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    dianbo_zhengpian_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片更多播放pvs-字段
+    公共-字段    ${result}
+
+正片更多播放pvs-字段值
+    公共-字段值    ${result}
+
+正片更多播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_zhengpian_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片更多播放pvs1-字段
+    公共-字段    ${result}
+
+正片更多播放pvs1-字段值
+    公共-字段值    ${result}
+
+正片列表返回pvs-条数
+    Comment    点播播放页-返回
+    公共-删除数据
+    comment    点播播放页-正片列表关闭
+    公共－xpath    (//XCUIElementTypeStaticText[@name="青云志 DVD版"])[2]/following-sibling::XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${pvs}    dianbo_zhengpian_003    ${table_pvs_dianbo}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮列表pvs-条数
+    公共-删除数据
+    点播播放页-花絮
+    ${result}    公共-获取结果    ${pvs}    dianbo_duanpian_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮列表pvs-字段
+    公共-字段    ${result}
+
+花絮列表pvs-字段值
+    公共-字段值    ${result}
+
+花絮列表pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_duanpian_001    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮列表浮层曝光cv-条数
+    公共-删除数据
+    点播播放页-花絮
+    ${result}    公共-获取结果    ${cv}    play_05    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮列表浮层曝光cv-字段
+    公共-字段    ${result}
+
+花絮列表浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+花絮列表pfc-条数
+    ${result}    公共-获取结果    ${pfc}    pfc-huaxu    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮列表pfc-字段
+    公共-字段    ${result}
+
+花絮列表pfc-字段值
+    公共-字段值    ${result}
+
+更多短片返回pvs-条数
+    公共-删除数据
+    点播播放页-花絮列表关闭
+    ${result}    公共-获取结果    ${pvs}    dianbo_duanpian_002    ${table_pvs_dianbo}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星饭团pvs-条数
+    公共-删除数据
+    comment    点播播放页-明星空间
+    上滑
+    公共－点击页面文本    赵丽颖
+    ${result}    公共-获取结果    ${pvs}    dianbo_mingxing_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星饭团pvs-字段
+    公共-字段    ${result}
+
+明星饭团pvs-字段值
+    公共-字段值    ${result}
+
+明星饭团pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_mingxing_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星饭团pvs1-字段
+    公共-字段    ${result}
+
+明星饭团pvs1-字段值
+    公共-字段值    ${result}
+
+明星饭团返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    dianbo_mingxing_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星饭团返回pvs-字段
+    公共-字段    ${result}
+
+明星饭团返回pvs-字段值
+    公共-字段值    ${result}
+
+明星饭团返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_mingxing_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星饭团返回pvs1-字段
+    公共-字段    ${result}
+
+明星饭团返回pvs1-字段值
+    公共-字段值    ${result}
+
+节目饭团pvs-条数
+    点播-关闭右滑按钮
+    Comment    sleep    5
+    公共-删除数据
+    Comment    公共－点击坐标点    310    400
+    公共－xpath    (//XCUIElementTypeStaticText[@name="青云志"])[1]
+    ${result}    公共-获取结果    ${pvs}    dianbo_jiemu    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目饭团pvs-字段
+    公共-字段    ${result}
+
+节目饭团pvs-字段值
+    公共-字段值    ${result}
+
+节目饭团pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_jiemu    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目饭团pvs1-字段
+    公共-字段    ${result}
+
+节目饭团pvs1-字段值
+    公共-字段值    ${result}
+
+节目饭团返回pvs-条数
+    Comment    公共－点击坐标点    100    100
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    dianbo_jiemu1    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目饭团返回pvs-字段
+    公共-字段    ${result}
+
+节目饭团返回pvs-字段值
+    公共-字段值    ${result}
+
+节目饭团返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    dianbo_jiemu1    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目饭团返回pvs1-字段
+    公共-字段    ${result}
+
+节目饭团返回pvs1-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+频道上滑
+    comment    swipe    128    450    11    -300
+    comment    scroll    更多VIP福利等你拿    田亮带娃记未播版
+    capture page screenshot
+
+频道下滑
+    swipe    136    132    -3    358
+    capture page screenshot

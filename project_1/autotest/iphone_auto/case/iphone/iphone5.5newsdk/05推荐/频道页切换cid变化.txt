@@ -1,0 +1,136 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${recommended}    {'act':'recommended'}
+${relatepv}       {'act':'relatepv'}
+${hotpv}          {'act':'hotpv'}
+${interestpv}     {'act':'interestpv'}
+${recommend_hot}    {'act':'recommend_hot'}
+${recommended_user}    {'act':'recommend_user'}
+${more}           {'act':'more'}
+${change}         {'act':'change'}
+${pvs}            {'act':'pvs'}
+${aplay}          {'act':'aplay'}
+
+*** Test Cases ***
+电视剧看了会喜欢interestpv-条数
+    公共－点击页面文本    综艺
+    sleep    5
+    公共-删除数据
+    公共－点击页面文本    电视剧
+    ${result}    公共-获取结果    ${interestpv}    iphone_dianshiju_001    mpp_recommendpv_interestpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢interestpv-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢interestpv-字段值
+    公共-字段值    ${result}
+
+电视剧看了会喜欢recommended_user-条数
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="楚乔传"])[1]/following-sibling::XCUIElementTypeButton[1]
+    sleep    5
+    上滑
+    Comment    公共－点击坐标点    140    350
+    ${result}    公共-获取结果    ${recommended_user}    iphone_dianshiju_001    mpp_recommend_user    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢recommended_user-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢recommended_user-字段值
+    公共-字段值    ${result}
+
+返回电视频道
+    点播播放页-返回
+
+电影看了会喜欢interestpv-条数
+    公共-删除数据
+    公共－点击页面文本    电影
+    sleep    2
+    comment    公共-滑动页面    看了还会看    新的
+    上滑
+    ${result}    公共-获取结果    ${interestpv}    iphone_dianying_001    mpp_recommendpv_interestpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影看了会喜欢interestpv-字段
+    公共-字段    ${result}
+
+电影看了会喜欢interestpv-字段值
+    公共-字段值    ${result}
+
+电影看了会喜欢change-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="换一换"]
+    ${result}    公共-获取结果    ${change}    iphone_dianying_001    mpp_recommendpv_more    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影看了会喜欢change-字段
+    公共-字段    ${result}
+
+电影看了会喜欢change-字段值
+    公共-字段值    ${result}
+
+电影看了会喜欢recommended_user-条数
+    公共-删除数据
+    公共－点击页面文本    茉莉之恋
+    ${result}    公共-获取结果    ${recommended_user}    iphone_dianying_001    mpp_recommend_user    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影看了会喜欢recommended_user-字段
+    公共-字段    ${result}
+
+电影看了会喜欢recommended_user-字段值
+    公共-字段值    ${result}
+
+返回电影频道
+    点播播放页-返回
+
+再次电视剧看了会喜欢interestpv-条数
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAButton[12]
+    公共-删除数据
+    公共－点击页面文本    电视剧
+    上滑
+    上滑
+    sleep    5
+    ${result}    公共-获取结果    ${interestpv}    iphone_dianshiju_001    mpp_recommendpv_interestpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+再次电视剧看了会喜欢interestpv-字段
+    公共-字段    ${result}
+
+再次电视剧看了会喜欢interestpv-字段值
+    公共-字段值    ${result}
+
+电视剧看了会喜欢change-条数
+    公共-删除数据
+    公共－点击页面文本    换一换
+    ${result}    公共-获取结果    ${change}    iphone_dianshiju_huanyihuan    mpp_recommendpv_more    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧看了会喜欢change-字段
+    公共-字段    ${result}
+
+电视剧看了会喜欢change-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+上滑
+    ${x1} =    evaluate    ${屏幕宽度}*0.3
+    ${y1} =    evaluate    ${屏幕高度}*0.6
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    -${屏幕高度}*0.4
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}

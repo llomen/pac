@@ -1,0 +1,157 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${fol}            {'act':'click','type':'fol'}
+${pvs}            {'act':'pvs'}
+${share}          {'act':'click','type':'share'}
+${pjr}            {'act':'click','type':'pjr'}
+${pfc}            {'act':'click','type':'pfc'}
+
+*** Test Cases ***
+点播页pjr-条数
+    公共-删除数据
+    comment    点击频道首页大图第一个图，跳转到视频《青云志》
+    首页－青云志
+    sleep    3
+    ${result}    公共-获取结果    ${pjr}    big_dianbo    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页pjr-字段
+    公共-字段    ${result}
+
+点播页pjr-字段值
+    公共-字段值    ${result}
+
+正片加载事件vl-条数
+    公共-上滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeTable/XCUIElementTypeCell[9]
+    公共-下滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeTable/XCUIElementTypeCell[1]
+    sleep    3
+    ${result}    公共-获取结果    {'act':'click','type':'vl','pos':'1'}    vl_zhengpian    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片加载事件vl-字段
+    公共-字段    ${result}
+
+正片加载事件vl-字段值
+    公共-字段值    ${result}
+
+花絮加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'click','type':'vl','pos':'2'}    vl_huaxu    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮加载事件vl-字段
+    公共-字段    ${result}
+
+花絮加载事件vl-字段值
+    公共-字段值    ${result}
+
+节目账号加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'click','type':'vl','pos':'4'}    vl_zhanghao    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目账号加载事件vl-字段
+    公共-字段    ${result}
+
+节目账号加载事件vl-字段值
+    公共-字段值    ${result}
+
+猜你喜欢加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'click','type':'vl','pos':'8'}    vl_xihuan    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+猜你喜欢加载事件vl-字段
+    公共-字段    ${result}
+
+猜你喜欢加载事件vl-字段值
+    公共-字段值    ${result}
+
+相关明星加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'click','type':'vl','pos':'5'}    vl_xiangguan    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相关明星加载事件vl-字段
+    公共-字段    ${result}
+
+相关明星加载事件vl-字段值
+    公共-字段值    ${result}
+
+点击下载按钮pfc-条数
+    公共-删除数据
+    点播播放页－下载
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-download    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击下载按钮pfc-字段
+    公共-字段    ${result}
+
+点击下载按钮pfc-字段值
+    公共-字段值    ${result}
+
+点击赞pfc-条数
+    公共－点击页面文本    close icon
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/preceding-sibling::XCUIElementTypeButton[2]
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-zan    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击赞pfc-字段
+    公共-字段    ${result}
+
+点击赞pfc-字段值
+    公共-字段值    ${result}
+
+点击踩pfc-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/preceding-sibling::XCUIElementTypeButton[1]
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-cai    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击踩pfc-字段
+    公共-字段    ${result}
+
+点击踩pfc-字段值
+    公共-字段值    ${result}
+
+点击收藏pfc-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/following-sibling::XCUIElementTypeButton[1]
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-collect    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击收藏pfc-字段
+    公共-字段    ${result}
+
+点击收藏pfc-字段值
+    公共-字段值    ${result}
+
+点击节目简介pfc-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/preceding-sibling::XCUIElementTypeButton[3]
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-brief    mpp_jiaohu_iphone_newclick    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击节目简介pfc-字段
+    公共-字段    ${result}
+
+点击节目简介pfc-字段值
+    公共-字段值    ${result}

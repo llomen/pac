@@ -1,0 +1,60 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+热门up主-点击第一个
+    sleep    1
+    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[2]/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeButton[1]
+    sleep    1
+
+热门up主详情-关注
+    sleep    1
+    公共－xpath    //XCUIElementTypeStaticText[@name="啊哈啊哈啊哈啊哈哈"]/following-sibling::XCUIElementTypeButton[@name="+ 关注"]
+    comment    Click Element    xpath=(//XCUIElementTypeButton[@name="+ 关注"])[1]
+    sleep    1
+
+热门up主详情-返回
+    sleep    1
+    comment    公共－xpath    //XCUIElementTypeButton[@name="back icon"]
+    公共－点击页面文本    back icon
+    sleep    1
+
+热门up主详情-点击第一个用户
+    sleep    1
+    comment    Click Element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
+    comment    Click Element    xpath=//XCUIElementTypeStaticText[@name="想要非常认真严肃的承诺地老天荒哈哈哈哈啊哈哈哈啊哈哈哈啊哈哈啊哈哈啊哈哈哈哈哈啊哈哈哈啊哈哈啊哈哈啊哈哈"]
+    Click Element    xpath=//XCUIElementTypeStaticText[@name="啊哈啊哈啊哈啊哈哈"]
+    sleep    1
+
+热门up主用户详情-返回
+    sleep    1
+    comment    公共－xpath    //XCUIElementTypeButton[@name="player back Shadow"]
+    comment    click element    name=player back Shadow
+    公共－点击页面文本    player back Shadow
+    sleep    1
+
+热门up主用户详情-分享
+    sleep    1
+    Click Element    xpath=//XCUIElementTypeButton[@name="column share shadow"]
+    sleep    1
+
+热门up主用户详情-关注
+    sleep    1
+    Click Element    xpath=(//XCUIElementTypeButton[@name="+ 关注"])[1]
+    sleep    1
+
+热门专栏-点击第一个用户头像
+    sleep    1
+    Click Element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeButton[2]
+    sleep    1
+
+热门专栏-点击第一个专栏详情
+    sleep    1
+    公共－xpath    (//XCUIElementTypeStaticText[@name=" 专栏 "])[1]
+    comment    Click Element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeButton[3]
+    sleep    1
+
+热门专栏-点击第一个专栏-关注
+    sleep    1
+    Click Element    xpath=(//XCUIElementTypeButton[@name="+ 关注"])[1]
+    sleep    1

@@ -1,0 +1,367 @@
+*** Settings ***
+Documentation     实时播报、发布
+Suite Setup       启动应用2
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${pvs1_H5}        {'logtype':'pv','cntp':'qt_webview'}
+
+*** Test Cases ***
+带图片动态曝光show-条数
+    首页-饭团
+    上滑
+    公共-删除数据
+    sleep    1
+    swipe    200    500    200    200
+    sleep    2
+    ${result}    公共-获取结果    {'logtype':'show','smod':'1'}    square_07    ${table_show_ft}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+带图片动态曝光show-字段
+    公共-字段    ${result}
+
+带图片动态曝光show-字段名
+    公共-字段值    ${result}
+
+图片曝光show-条数
+    ${result}    公共-获取结果    {'logtype':'show','smod':'19'}    square_08    ${table_show_ft}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片曝光show-字段
+    公共-字段    ${result}
+
+图片曝光show-字段名
+    公共-字段值    ${result}
+
+左滑第二张图片曝光show-条数
+    公共-删除数据
+    sleep    1
+    swipe    400    500    100    500
+    sleep    2
+    ${result}    公共-获取结果    {'logtype':'show','smod':'19'}    square_08    ${table_show_ft}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+左滑第二张图片曝光show-字段
+    公共-字段    ${result}
+
+左滑第二张图片曝光show-字段名
+    公共-字段值    ${result}
+
+点图片进入图片浏览页fantuan-条数
+    公共-删除数据
+    饭团-点图片
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点图片进入图片浏览页fantuan-字段
+    公共-字段    ${result}
+
+点图片进入图片浏览页fantuan-字段名
+    公共-字段值    ${result}
+
+进入图片预览页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_033    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入图片预览页pvs-字段
+    公共-字段    ${result}
+
+进入图片预览页pvs-字段名
+    公共-字段值    ${result}
+
+进入图片预览页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_033    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入图片预览页pvs1-字段
+    公共-字段    ${result}
+
+进入图片预览页pvs1-字段名
+    公共-字段值    ${result}
+
+图片预览点展开fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-展开
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_21    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点展开fantuan-字段
+    公共-字段    ${result}
+
+图片预览点展开fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览点内容fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-点内容
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_23    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点内容fantuan-字段
+    公共-字段    ${result}
+
+图片预览点内容fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览-饭团详情pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_035    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览-饭团详情pvs-字段
+    公共-字段    ${result}
+
+图片预览-饭团详情pvs-字段名
+    公共-字段值    ${result}
+
+图片预览-饭团详情pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_035    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览-饭团详情pvs1-字段
+    公共-字段    ${result}
+
+图片预览-饭团详情pvs1-字段名
+    公共-字段值    ${result}
+
+饭团详情-图片预览pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_036    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团详情-图片预览pvs-字段
+    公共-字段    ${result}
+
+饭团详情-图片预览pvs-字段名
+    公共-字段值    ${result}
+
+饭团详情-图片预览pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_036    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团详情-图片预览pvs1-字段
+    公共-字段    ${result}
+
+饭团详情-图片预览pvs1-字段名
+    公共-字段值    ${result}
+
+图片预览点赞fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-点赞
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_24    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点赞fantuan-字段
+    公共-字段    ${result}
+
+图片预览点赞fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览-登录页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_037    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览-登录页pvs-字段
+    公共-字段    ${result}
+
+图片预览-登录页pvs-字段名
+    公共-字段值    ${result}
+
+登录页-图片预览pvs-条数
+    公共-删除数据
+    登录页-关闭
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_038    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页-图片预览pvs-字段
+    公共-字段    ${result}
+
+登录页-图片预览pvs-字段名
+    公共-字段值    ${result}
+
+图片预览点评论fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-点评论
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_25    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点评论fantuan-字段
+    公共-字段    ${result}
+
+图片预览点评论fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览点下载fantuan-条数
+    非播放页-返回
+    公共-删除数据
+    饭团-图片浏览-点下载
+    判断后点击    取消
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_26    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点下载fantuan-字段
+    公共-字段    ${result}
+
+图片预览点下载fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览点话题fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-点内容中的话题
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_27    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点话题fantuan-字段
+    公共-字段    ${result}
+
+图片预览点话题fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览-话题详情pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_039    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览-话题详情pvs-字段
+    公共-字段    ${result}
+
+图片预览-话题详情pvs-字段名
+    公共-字段值    ${result}
+
+图片预览-话题详情pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_039    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览-话题详情pvs1-字段
+    公共-字段    ${result}
+
+图片预览-话题详情pvs1-字段名
+    公共-字段值    ${result}
+
+话题详情-图片预览pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_040    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情-图片预览pvs-字段
+    公共-字段    ${result}
+
+话题详情-图片预览pvs-字段名
+    公共-字段值    ${result}
+
+话题详情-图片预览pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_040    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情-图片预览pvs1-字段
+    公共-字段    ${result}
+
+话题详情-图片预览pvs1-字段名
+    公共-字段值    ${result}
+
+图片预览点收起fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-收起
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_22    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点收起fantuan-字段
+    公共-字段    ${result}
+
+图片预览点收起fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览点分享fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-点分享
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_28    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点分享fantuan-字段
+    公共-字段    ${result}
+
+图片预览点分享fantuan-字段名
+    公共-字段值    ${result}
+
+图片预览分享弹出share-条数
+    ${result}    公共-获取结果    ${share}    fantuan_share_09    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览分享弹出share-字段
+    公共-字段    ${result}
+
+图片预览分享弹出share-字段名
+    公共-字段值    ${result}
+
+图片预览复制链接share-条数
+    公共-删除数据
+    公共－点击页面文本    复制链接
+    ${result}    公共-获取结果    {'act':'share','pos':'8'}    fantuan_share_10    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览复制链接share-字段
+    公共-字段    ${result}
+
+图片预览复制链接share-字段名
+    公共-字段值    ${result}
+
+图片预览点大图fantuan-条数
+    公共-删除数据
+    饭团-图片浏览-点图片
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_29    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片预览点大图fantuan-字段
+    公共-字段    ${result}
+
+图片预览点大图fantuan-字段名
+    公共-字段值    ${result}
+
+退出图片预览pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_034    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出图片预览pvs-字段
+    公共-字段    ${result}
+
+退出图片预览pvs-字段名
+    公共-字段值    ${result}
+
+*** Keywords ***

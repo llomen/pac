@@ -1,0 +1,68 @@
+*** Settings ***
+Documentation     电影搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+电影搜索pvs-条数
+    [Setup]
+    sleep    5
+    首页－搜索
+    公共-删除数据
+    搜索首页－输入搜索词    茉等花开
+    搜索-点击搜索
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影搜索pvs-字段
+    公共-字段    ${result}
+
+电影搜索pvs-字段值
+    公共-字段值    ${result}
+
+电影搜索search-条数
+    ${result}    公共-获取结果    ${search}    dianying_003    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影搜索search-字段
+    公共-字段    ${result}
+
+电影搜索search-字段值
+    公共-字段值    ${result}
+
+电影搜索view-条数
+    ${result}    公共-获取结果    ${view}    dianying_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影搜索view-字段
+    公共-字段    ${result}
+
+电影搜索view-字段值
+    公共-字段值    ${result}
+
+电影搜索click-条数
+    Comment    公共-点击页面文本    "钢铁侠3"
+    公共－点击页面文本    甜到掉渣！微微过后杨洋郑爽《茉等花开》再掀虐狗狂潮
+    sleep    5
+    ${result}    公共-获取结果    ${click}    dianying_003    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影搜索click-字段
+    公共-字段    ${result}
+
+电影搜索click-字段值
+    公共-字段值    ${result}

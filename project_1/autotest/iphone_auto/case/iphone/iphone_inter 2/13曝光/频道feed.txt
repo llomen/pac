@@ -1,0 +1,397 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_pvs_dianbo}    mpp_pv_5_5_iphone_sdk_dianbo
+${table_chfeedshow}    mpp_ip_chzlshow
+${table_chfeedclick}    mpp_ip_chfeedclick_1
+${table_chfeedhb}    mpp_ip_chfeedhb
+${table_chfeedclick_jubao}    mpp_ip_chfeedclick_3
+${chfeedshow}     {'act':'chfeedshow'}
+${chfeedclick}    {'act':'chfeedclick'}
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${cdn1}           {'s':'1','type':'0'}
+${cdn3}           {'s':'3','type':'2'}
+${cdn2}           {'s':'2','type':'1'}
+${buffer}         {'act':'buffer'}
+${hb_end}         {'act':'hb','ht':'2'}
+${hb3}            {'act':'hb','ht':'0'}
+${hb5}            {'act':'hb','ht':'1'}
+${chfeedhb3}      {'act':'hb','ht':'0','platform':'iphone'}
+${chfeedhb5}      {'act':'hb','ht':'1','platform':'iphone'}
+${chfeedhb_end}    {'act':'hb','ht':'2','platform':'iphone'}
+
+*** Test Cases ***
+进入频道show-条数
+    首页-频道管理
+    公共-删除数据
+    公共－点击页面文本    新闻
+    sleep    5
+    ${result}    公共-获取结果    ${show}    show_feed_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入频道show-字段
+    公共-字段    ${result}
+
+进入频道show-字段值
+    公共-字段值    ${result}
+
+进入频道曝光chfeedshow-条数
+    ${result}    公共-获取结果    ${chfeedshow}    chfeedshow_001    ${table_chfeedshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入频道曝光chfeedshow-字段
+    公共-字段    ${result}
+
+进入频道曝光chfeedshow-字段值
+    公共-字段值    ${result}
+
+滑动曝光show-条数
+    公共-删除数据
+    comment    猜你喜欢-滑动到短片
+    sleep    2
+    ${result}    公共-获取结果    ${show}    show_feed_02    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+滑动曝光show-字段
+    公共-字段    ${result}
+
+滑动曝光show-字段值
+    公共-字段值    ${result}
+
+滑动曝光短片chfeedshow-条数
+    ${result}    公共-获取结果    ${chfeedshow}    chfeedshow_002    ${table_chfeedshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+滑动曝光短片chfeedshow-字段
+    公共-字段    ${result}
+
+滑动曝光短片chfeedshow-字段值
+    公共-字段值    ${result}
+
+短片-点标题chfeedclick-条数
+    公共-删除数据
+    猜你喜欢-点短片标题
+    ${result}    公共-获取结果    ${chfeedclick}    chfeedclick_001    ${table_chfeedclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+短片-点标题chfeedclick-字段
+    公共-字段    ${result}
+
+短片-点标题chfeedclick-字段值
+    公共-字段值    ${result}
+
+跳转点播页pvs-条数
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    feed_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转点播页pvs-字段
+    公共-字段    ${result}
+
+跳转点播页pvs-字段值
+    公共-字段值    ${result}
+
+跳转点播页pvs1-条数
+    sleep    3
+    ${result}    公共-获取结果    ${pvs1}    feed_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转点播页pvs1-字段
+    公共-字段    ${result}
+
+跳转点播页pvs1-字段值
+    公共-字段值    ${result}
+
+点播页返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    feed_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回pvs-字段
+    公共-字段    ${result}
+
+点播页返回pvs-字段值
+    公共-字段值    ${result}
+
+点播页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    feed_03    ${table_pvs1}    1
+    ${result}    公共-获取结果    ${pvs1}    feed_03    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回pvs1-字段
+    公共-字段    ${result}
+
+点播页返回pvs1-字段值
+    公共-字段值    ${result}
+
+短片举报chfeedclick-条数
+    公共-删除数据
+    猜你喜欢-点短片举报
+    猜你喜欢-点举报内容
+    ${result}    公共-获取结果    ${chfeedclick}    chfeedclick_008    ${table_chfeedclick_jubao}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+短片举报chfeedclick-字段
+    公共-字段    ${result}
+
+短片举报chfeedclick-字段值
+    公共-字段值    ${result}
+
+猜你喜欢2show-条数
+    公共-删除数据
+    上滑
+    sleep    5
+    ${result}    公共-获取结果    ${show}    show_feed_03    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+猜你喜欢2show-字段
+    公共-字段    ${result}
+
+猜你喜欢2show-字段值
+    公共-字段值    ${result}
+
+长片曝光chfeedshow-条数
+    ${result}    公共-获取结果    ${chfeedshow}    chfeedshow_003    ${table_chfeedshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+长片曝光chfeedshow-字段
+    公共-字段    ${result}
+
+长片曝光chfeedshow-字段值
+    公共-字段值    ${result}
+
+长片点播放chfeedclick-条数
+    公共-删除数据
+    猜你喜欢-点长片播放
+    ${result}    公共-获取结果    ${chfeedclick}    chfeedclick_003    ${table_chfeedclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+长片点播放chfeedclick-字段
+    公共-字段    ${result}
+
+长片点播放chfeedclick-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    sleep    3
+    ${result}    公共-获取结果    ${cdn1}    ke2_07    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    ke2_08    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn2-字段
+    公共-字段    ${result}
+
+cdn2-字段值
+    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    ke2_09    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    公共-字段    ${result}
+
+cdn3-字段值
+    公共-字段值    ${result}
+
+播放视频buffer-条数
+    ${result}    公共-获取结果    ${buffer}    pindao_feed_01    ${table_buffer}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放视频buffer-字段
+    公共-字段    ${result}
+
+播放视频buffer-字段值
+    公共-字段值    ${result}
+
+视频播放aplay-条数
+    ${result}    公共-获取结果    ${aplay}    pindao_feed_01    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+视频播放aplay-字段
+    公共-字段    ${result}
+
+视频播放aplay-字段值
+    公共-字段值    ${result}
+
+心跳hb3-条数
+    sleep    3
+    ${result}    公共-获取结果    ${hb3}    pindao_feed_01    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳hb3-字段
+    公共-字段    ${result}
+
+心跳hb3-字段值
+    公共-字段值    ${result}
+
+心跳hb5-条数
+    sleep    3
+    ${result}    公共-获取结果    ${hb5}    pindao_feed_02    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳hb5-字段
+    公共-字段    ${result}
+
+心跳hb5-字段值
+    公共-字段值    ${result}
+
+心跳chfeedhb3-条数
+    ${result}    公共-获取结果    ${chfeedhb3}    chfeedhb_01    ${table_chfeedhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳chfeedhb3-字段
+    公共-字段    ${result}
+
+心跳chfeedhb3-字段值
+    公共-字段值    ${result}
+
+心跳chfeedhb5-条数
+    ${result}    公共-获取结果    ${chfeedhb5}    chfeedhb_02    ${table_chfeedhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳chfeedhb5-字段
+    公共-字段    ${result}
+
+心跳chfeedhb5-字段值
+    公共-字段值    ${result}
+
+长片-点标题chfeedclick-条数
+    公共-删除数据
+    猜你喜欢-点长片标题
+    ${result}    公共-获取结果    ${chfeedclick}    chfeedclick_002    ${table_chfeedclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+长片-点标题chfeedclick-字段
+    公共-字段    ${result}
+
+长片-点标题chfeedclick-字段值
+    公共-字段值    ${result}
+
+跳转点播页2pvs-条数
+    ${result}    公共-获取结果    ${pvs}    feed_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转点播页2pvs-字段
+    公共-字段    ${result}
+
+跳转点播页2pvs-字段值
+    公共-字段值    ${result}
+
+跳转点播页2pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    feed_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转点播页2pvs1-字段
+    公共-字段    ${result}
+
+跳转点播页2pvs1-字段值
+    公共-字段值    ${result}
+
+心跳hb停止-条数
+    sleep    3
+    ${result}    公共-获取结果    ${hb_end}    dianboxiayige_001    ${table_hb_sdk}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳chfeedhb停止-条数
+    sleep    3
+    ${result}    公共-获取结果    ${chfeedhb_end}    chfeedhb_03    ${table_chfeedhb}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回2pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    feed_04    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回2pvs-字段
+    公共-字段    ${result}
+
+点播页返回2pvs-字段值
+    公共-字段值    ${result}
+
+点播页返回2pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    feed_04    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回2pvs1-字段
+    公共-字段    ${result}
+
+点播页返回2pvs1-字段值
+    公共-字段值    ${result}
+
+点观看正片chfeedclick-条数
+    公共-删除数据
+    comment    猜你喜欢-点长片标题
+    猜你喜欢-点观看正片
+    ${result}    公共-获取结果    ${chfeedclick}    chfeedclick_004    ${table_chfeedclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点观看正片chfeedclick-字段
+    公共-字段    ${result}
+
+点观看正片chfeedclick-字段值
+    公共-字段值    ${result}
+
+长片举报chfeedclick-条数
+    点播播放页-返回
+    公共-删除数据
+    猜你喜欢-点长片举报
+    猜你喜欢-点举报内容
+    ${result}    公共-获取结果    ${chfeedclick}    chfeedclick_008    ${table_chfeedclick_jubao}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+长片举报chfeedclick-字段
+    公共-字段    ${result}
+
+长片举报chfeedclick-字段值
+    公共-字段值    ${result}

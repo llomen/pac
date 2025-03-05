@@ -1,0 +1,478 @@
+*** Settings ***
+Documentation     综艺推荐和搜索按钮搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+综艺search-条数
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    快乐大本营
+    公共-删除数据
+    搜索-点击搜索
+    公共-删除数据
+    公共－点击页面文本    综艺
+    sleep    2
+    ${result}    公共-获取结果    ${search}    zongyi_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺search-字段
+    公共-字段    ${result}
+
+综艺search-字段值
+    公共-字段值    ${result}
+
+综艺view-条数
+    ${result}    公共-获取结果    ${view}    zongyi_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺view-字段
+    公共-字段    ${result}
+
+综艺view-字段值
+    公共-字段值    ${result}
+
+综艺pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_001    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺pv-字段
+    公共-字段    ${result}
+
+综艺pv-字段值
+    公共-字段值    ${result}
+
+电视剧search-条数
+    公共-删除数据
+    公共－点击页面文本    电视剧
+    sleep    3
+    ${result}    公共-获取结果    ${search}    dianshiju_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧search-字段
+    公共-字段    ${result}
+
+电视剧search-字段值
+    公共-字段值    ${result}
+
+电视剧view-条数
+    ${result}    公共-获取结果    ${view}    dianshiju_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧view-字段
+    公共-字段    ${result}
+
+电视剧view-字段值
+    公共-字段值    ${result}
+
+电视剧pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧pv-字段
+    公共-字段    ${result}
+
+电视剧pv-字段值
+    公共-字段值    ${result}
+
+电影search-条数
+    公共-删除数据
+    公共－点击页面文本    电影
+    sleep    3
+    ${result}    公共-获取结果    ${search}    dianying_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影search-字段
+    公共-字段    ${result}
+
+电影search-字段值
+    公共-字段值    ${result}
+
+电影view-条数
+    ${result}    公共-获取结果    ${view}    dianying_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影view-字段
+    公共-字段    ${result}
+
+电影view-字段值
+    公共-字段值    ${result}
+
+电影pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_003    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电影pv-字段
+    公共-字段    ${result}
+
+电影pv-字段值
+    公共-字段值    ${result}
+
+动漫search-条数
+    公共-删除数据
+    公共－点击页面文本    动漫
+    sleep    3
+    ${result}    公共-获取结果    ${search}    dongman_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫search-字段
+    公共-字段    ${result}
+
+动漫search-字段值
+    公共-字段值    ${result}
+
+动漫view-条数
+    ${result}    公共-获取结果    ${view}    dongman_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫view-字段
+    公共-字段    ${result}
+
+动漫view-字段值
+    公共-字段值    ${result}
+
+动漫pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_004    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫pv-字段
+    公共-字段    ${result}
+
+动漫pv-字段值
+    公共-字段值    ${result}
+
+音乐search-条数
+    公共-删除数据
+    公共－点击页面文本    音乐
+    sleep    3
+    ${result}    公共-获取结果    ${search}    yinyue_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+音乐search-字段
+    公共-字段    ${result}
+
+音乐search-字段值
+    公共-字段值    ${result}
+
+音乐view-条数
+    ${result}    公共-获取结果    ${view}    yinyue_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+音乐view-字段
+    公共-字段    ${result}
+
+音乐view-字段值
+    公共-字段值    ${result}
+
+音乐pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_005    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+音乐pv-字段
+    公共-字段    ${result}
+
+音乐pv-字段值
+    公共-字段值    ${result}
+
+纪录片search-条数
+    公共-删除数据
+    公共－点击页面文本    纪录片
+    sleep    3
+    ${result}    公共-获取结果    ${search}    jilupian_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+纪录片search-字段
+    公共-字段    ${result}
+
+纪录片search-字段值
+    公共-字段值    ${result}
+
+纪录片view-条数
+    ${result}    公共-获取结果    ${view}    jilupian_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+纪录片view-字段
+    公共-字段    ${result}
+
+纪录片view-字段值
+    公共-字段值    ${result}
+
+纪录片pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_006    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+纪录片pv-字段
+    公共-字段    ${result}
+
+纪录片pv-字段值
+    公共-字段值    ${result}
+
+新闻search-条数
+    公共-删除数据
+    公共－点击页面文本    新闻
+    sleep    3
+    ${result}    公共-获取结果    ${search}    xinwen_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+新闻search-字段
+    公共-字段    ${result}
+
+新闻search-字段值
+    公共-字段值    ${result}
+
+新闻view-条数
+    ${result}    公共-获取结果    ${view}    xinwen_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+新闻view-字段
+    公共-字段    ${result}
+
+新闻view-字段值
+    公共-字段值    ${result}
+
+新闻pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_007    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+新闻pv-字段
+    公共-字段    ${result}
+
+新闻pv-字段值
+    公共-字段值    ${result}
+
+原创search-条数
+    公共-删除数据
+    公共－点击页面文本    原创
+    sleep    3
+    ${result}    公共-获取结果    ${search}    yuanchuang_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+原创search-字段
+    公共-字段    ${result}
+
+原创search-字段值
+    公共-字段值    ${result}
+
+原创view-条数
+    ${result}    公共-获取结果    ${view}    yuanchuang_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+原创view-字段
+    公共-字段    ${result}
+
+原创view-字段值
+    公共-字段值    ${result}
+
+原创pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_008    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+原创pv-字段
+    公共-字段    ${result}
+
+原创pv-字段值
+    公共-字段值    ${result}
+
+生活search-条数
+    公共-删除数据
+    公共－点击页面文本    生活
+    sleep    3
+    ${result}    公共-获取结果    ${search}    shenghuo_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+生活search-字段
+    公共-字段    ${result}
+
+生活search-字段值
+    公共-字段值    ${result}
+
+生活view-条数
+    ${result}    公共-获取结果    ${view}    shenghuo_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+生活view-字段
+    公共-字段    ${result}
+
+生活view-字段值
+    公共-字段值    ${result}
+
+生活pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_009    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+生活pv-字段
+    公共-字段    ${result}
+
+生活pv-字段值
+    公共-字段值    ${result}
+
+教育search-条数
+    公共-删除数据
+    公共－点击页面文本    教育
+    sleep    3
+    ${result}    公共-获取结果    ${search}    jiaoyu_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+教育search-字段
+    公共-字段    ${result}
+
+教育search-字段值
+    公共-字段值    ${result}
+
+教育view-条数
+    ${result}    公共-获取结果    ${view}    jiaoyu_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+教育view-字段
+    公共-字段    ${result}
+
+教育view-字段值
+    公共-字段值    ${result}
+
+教育pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_010    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+教育pv-字段
+    公共-字段    ${result}
+
+教育pv-字段值
+    公共-字段值    ${result}
+
+体育search-条数
+    公共-删除数据
+    公共－点击页面文本    体育
+    sleep    3
+    ${result}    公共-获取结果    ${search}    tiyu_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+体育search-字段
+    公共-字段    ${result}
+
+体育search-字段值
+    公共-字段值    ${result}
+
+体育view-条数
+    ${result}    公共-获取结果    ${view}    tiyu_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+体育view-字段
+    公共-字段    ${result}
+
+体育view-字段值
+    公共-字段值    ${result}
+
+体育pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_011    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+体育pv-字段
+    公共-字段    ${result}
+
+体育pv-字段值
+    公共-字段值    ${result}
+
+自频道search-条数
+    公共－点击页面文本    原创
+    公共－点击页面文本    纪录片
+    公共－点击页面文本    动漫
+    公共-删除数据
+    公共－点击页面文本    自频道
+    sleep    3
+    ${result}    公共-获取结果    ${search}    zipindao_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+自频道search-字段
+    公共-字段    ${result}
+
+自频道search-字段值
+    公共-字段值    ${result}
+
+自频道view-条数
+    ${result}    公共-获取结果    ${view}    tiyu_002    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+自频道view-字段
+    公共-字段    ${result}
+
+自频道view-字段值
+    公共-字段值    ${result}
+
+自频道pv-条数
+    ${result}    公共-获取结果    ${pvs}    gaoshai_012    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+自频道pv-字段
+    公共-字段    ${result}
+
+自频道pv-字段值
+    公共-字段值    ${result}
+
+进入空间click-条数
+    公共-删除数据
+    公共－点击页面文本    进入空间
+    sleep    2
+    ${result}    公共-获取结果    ${click}    shaixuan_kongjian    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入空间click-字段
+    公共-字段    ${result}
+
+进入空间click-字段值
+    公共-字段值    ${result}
+
+进入空间pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_kongjian1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入空间pvs-字段
+    公共-字段    ${result}
+
+进入空间pvs-字段值
+    公共-字段值    ${result}

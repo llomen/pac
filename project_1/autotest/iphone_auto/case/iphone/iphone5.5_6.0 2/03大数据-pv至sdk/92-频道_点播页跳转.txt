@@ -1,0 +1,210 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+列表频道pvs-条数
+    公共-删除数据
+    公共－点击页面文本    更多VIP福利等你拿
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    liebiao_002    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道pvs-字段
+    公共-字段    ${result}
+
+列表频道pvs-字段值
+    公共-字段值    ${result}
+
+列表频道返回pvs-条数
+    sleep    3
+    公共-删除数据
+    非播放页－返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    liebiao_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道返回pvs-字段
+    公共-字段    ${result}
+
+列表频道返回pvs-字段值
+    公共-字段值    ${result}
+
+频道专题页pvs-条数
+    公共-删除数据
+    下滑
+    Comment    公共-滑动页面    更多VIP福利等你拿    今日热门
+    公共－点击页面文本    今日热门
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhuanti_1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页pvs-字段
+    公共-字段    ${result}
+
+频道专题页pvs-字段值
+    公共-字段值    ${result}
+
+频道专题页返回pvs-条数
+    sleep    3
+    公共-删除数据
+    非播放页－返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhuanti_2    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页返回pvs-字段
+    公共-字段    ${result}
+
+频道专题页返回pvs-字段值
+    公共-字段值    ${result}
+
+节目空间pvs-条数
+    上滑
+    Comment    公共-滑动页面    今日热门    更多VIP福利等你拿
+    首页－青云志
+    点播-关闭右滑按钮
+    Comment    sleep    5
+    公共-删除数据
+    Comment    公共－点击坐标点    310    400
+    公共－xpath    (//XCUIElementTypeStaticText[@name="青云志"])[1]
+    ${result}    公共-获取结果    ${pvs}    dianbo_jiemu    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目空间pvs-字段
+    公共-字段    ${result}
+
+节目空间pvs-字段值
+    公共-字段值    ${result}
+
+节目空间返回pvs-条数
+    Comment    公共－点击坐标点    100    100
+    公共-删除数据
+    空间-返回
+    ${result}    公共-获取结果    ${pvs}    dianbo_jiemu1    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目空间返回pvs-字段
+    公共-字段    ${result}
+
+节目空间返回pvs-字段值
+    公共-字段值    ${result}
+
+正片列表pvs-条数
+    点播-关闭右滑按钮
+    公共-删除数据
+    点播播放页－正片列表
+    ${result}    公共-获取结果    ${pvs}    dianbo_zhengpian_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片列表pvs-字段
+    公共-字段    ${result}
+
+正片列表pvs-字段值
+    公共-字段值    ${result}
+
+正片更多播放pvs-条数
+    公共-删除数据
+    公共－点击页面文本    碧瑶张小凡街头初遇
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    dianbo_zhengpian_002    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片更多播放pvs-字段
+    公共-字段    ${result}
+
+正片更多播放pvs-字段值
+    公共-字段值    ${result}
+
+正片列表返回pvs-条数
+    公共-删除数据
+    点播播放页－正片列表关闭
+    ${result}    公共-获取结果    ${pvs}    dianbo_zhengpian_003    mpp_pv_5_5_iphone_sdk_dianbo    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+更多短片pvs-条数
+    公共-删除数据
+    点播播放页－花絮
+    ${result}    公共-获取结果    ${pvs}    dianbo_duanpian_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+更多短片pvs-字段
+    公共-字段    ${result}
+
+更多短片pvs-字段值
+    公共-字段值    ${result}
+
+更多短片返回pvs-条数
+    公共-删除数据
+    点播播放页－正片列表关闭
+    ${result}    公共-获取结果    ${pvs}    dianbo_duanpian_002    mpp_pv_5_5_iphone_sdk_dianbo    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星空间pvs-条数
+    公共-删除数据
+    点播播放页－明星空间
+    ${result}    公共-获取结果    ${pvs}    dianbo_mingxing_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星空间pvs-字段
+    公共-字段    ${result}
+
+明星空间pvs-字段值
+    公共-字段值    ${result}
+
+明星空间返回pvs-条数
+    公共-删除数据
+    空间-返回
+    ${result}    公共-获取结果    ${pvs}    dianbo_mingxing_002    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星空间返回pvs-字段
+    公共-字段    ${result}
+
+明星空间返回pvs-字段值
+    公共-字段值    ${result}
+
+评论pvs-条数
+    公共-删除数据
+    公共－点击页面文本    评论
+    Comment    公共－点击坐标点    200    630
+    ${result}    公共-获取结果    ${pvs}    dianbo_pinglun    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论pvs-字段
+    公共-字段    ${result}
+
+评论pvs-字段值
+    公共-字段值    ${result}
+
+评论返回pvs-条数
+    公共-删除数据
+    点播播放页－正片列表关闭
+    ${result}    公共-获取结果    ${pvs}    dianbo_pinglun1    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论返回pvs-字段
+    公共-字段    ${result}
+
+评论返回pvs-字段值
+    公共-字段值    ${result}

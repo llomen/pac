@@ -1,0 +1,569 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${sp}             {'act':'sp'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_cjplayshow}    mpp_ip_cjplayshow
+${table_cjplayclick}    mpp_ip_cjpalyclick
+${table_cjplayhb}    mpp_ip_cjplayhb
+${cjplayshow}     {'act':'cjplayshow'}
+${cjplayclick}    {'act':'cjplayclick'}
+${table_sp}       mpp_sp_iphone
+${share}          {'act':'share'}
+${cdn1}           {'s':'1','type':'0'}
+${cdn3}           {'s':'3','type':'2'}
+${cdn2}           {'s':'2','type':'1'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${hb3}            {'ht':'0','act':'hb'}
+${hb5}            {'ht':'1','act':'hb'}
+${hb_end}         {'ht':'2','act':'hb'}
+${hb3_cj}         {'ht':'0','act':'hb'}
+${hb5_cj}         {'ht':'1','act':'hb'}
+${hb_end_cj}      {'ht':'2','act':'hb'}
+
+*** Test Cases ***
+频道页进入沉浸式pvs-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="漫威之父斯坦李去世"]/following-sibling::XCUIElementTypeButton[1]
+    Comment    沉浸式-暂停
+    Comment    沉浸式-播放框
+    ${result}    公共-获取结果    ${pvs}    cjs_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道页进入沉浸式pvs-字段
+    公共-字段    ${result}
+
+频道页进入沉浸式pvs-字段值
+    公共-字段值    ${result}
+
+频道页进入沉浸式pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    cjs_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道页进入沉浸式pvs1-字段
+    公共-字段    ${result}
+
+频道页进入沉浸式pvs1-字段值
+    公共-字段值    ${result}
+
+进入频道show-条数
+    ${result}    公共-获取结果    ${show}    index_shantu    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入频道show-字段
+    公共-字段    ${result}
+
+进入频道show-字段值
+    公共-字段值    ${result}
+
+进入频道cjplayshow-条数
+    ${result}    公共-获取结果    ${cjplayshow}    cjplayshow_001    ${table_cjplayshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入频道cjplayshow-字段
+    公共-字段    ${result}
+
+进入频道cjplayshow-字段值
+    公共-字段值    ${result}
+
+沉浸式可播比cp10-条数
+    ${result}    公共-获取结果    ${cp10}    ke2_10    ${table_cp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+沉浸式可播比cp10-字段
+    公共-字段    ${result}
+
+沉浸式可播比cp10-字段值
+    公共-字段值    ${result}
+
+连播sp-条数
+    ${result}    公共-获取结果    ${sp}    chenjin_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+连播sp-条数-字段
+    公共-字段    ${result}
+
+连播sp-条数-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    ke2_07    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    ke2_08    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn2-字段
+    公共-字段    ${result}
+
+cdn2-字段值
+    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    ke2_09    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    公共-字段    ${result}
+
+cdn3-字段值
+    公共-字段值    ${result}
+
+点播播放定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播播放定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+点播播放定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianboxiayige_001    mpp_buffer_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+buffer-字段
+    公共-字段    ${result}
+
+buffer-字段值
+    公共-字段值    ${result}
+
+视频播放aplay-条数
+    ${result}    公共-获取结果    ${aplay}    dianboxiayige_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+视频播放aplay-字段
+    公共-字段    ${result}
+
+视频播放aplay-字段值
+    公共-字段值    ${result}
+
+大数据心跳hb3-条数
+    ${result}    公共-获取结果    ${hb3}    dianboxiayige_001    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+大数据心跳hb3-字段
+    公共-字段    ${result}
+
+大数据心跳hb3-字段值
+    公共-字段值    ${result}
+
+大数据心跳hb5-条数
+    ${result}    公共-获取结果    ${hb5}    dianboxiayige_001    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+大数据心跳hb5-字段
+    公共-字段    ${result}
+
+大数据心跳hb5-字段值
+    公共-字段值    ${result}
+
+沉浸式心跳hb3-条数
+    ${result}    公共-获取结果    ${hb3_cj}    cjplayhb_01    ${table_cjplayhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+沉浸式心跳hb3-字段
+    公共-字段    ${result}
+
+沉浸式心跳hb3-字段值
+    公共-字段值    ${result}
+
+沉浸式心跳hb5-条数
+    ${result}    公共-获取结果    ${hb5_cj}    cjplayhb_02    ${table_cjplayhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+沉浸式心跳hb5-字段
+    公共-字段    ${result}
+
+沉浸式心跳hb5-字段值
+    公共-字段值    ${result}
+
+点评论cjplayclick-条数
+    公共-删除数据
+    沉浸式-点评论
+    ${result}    公共-获取结果    ${cjplayclick}    cjplayclick_001    ${table_cjplayclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论cjplayclick-字段
+    公共-字段    ${result}
+
+点评论cjplayclick-字段值
+    公共-字段值    ${result}
+
+评论页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    cjs_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论页pvs-字段
+    公共-字段    ${result}
+
+评论页pvs-字段值
+    公共-字段值    ${result}
+
+评论页返回pvs-条数
+    公共-删除数据
+    沉浸式-评论返回
+    ${result}    公共-获取结果    ${pvs}    cjs_012    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论页返回pvs-字段
+    公共-字段    ${result}
+
+评论页返回pvs-字段值
+    公共-字段值    ${result}
+
+点击分享按钮share-条数
+    公共-删除数据
+    沉浸式-点分享
+    ${result}    公共-获取结果    ${share}    share_bodan_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击分享按钮share-字段
+    公共-字段    ${result}
+
+点击分享按钮share-字段值
+    公共-字段值    ${result}
+
+点分享cjplayclick-条数
+    公共-删除数据
+    沉浸式-分享到朋友圈
+    ${result}    公共-获取结果    ${cjplayclick}    cjplayclick_001    ${table_cjplayclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点分享cjplayclick-字段
+    公共-字段    ${result}
+
+点分享cjplayclick-字段值
+    公共-字段值    ${result}
+
+分享到朋友圈share-条数
+    ${result}    公共-获取结果    ${share}    share_bodan_02    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到朋友圈share-字段
+    公共-字段    ${result}
+
+分享到朋友圈share-字段值
+    公共-字段值    ${result}
+
+点收藏cjplayclick-条数
+    comment    沉浸式-点分享
+    公共-删除数据
+    沉浸式-点加看单
+    ${result}    公共-获取结果    ${cjplayclick}    cjplayclick_001    ${table_cjplayclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点收藏cjplayclick-字段
+    公共-字段    ${result}
+
+点收藏cjplayclick-字段值
+    公共-字段值    ${result}
+
+点下载cjplayclick-条数
+    沉浸式-点分享
+    公共-删除数据
+    沉浸式-缓存
+    ${result}    公共-获取结果    ${cjplayclick}    cjplayclick_001    ${table_cjplayclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点下载cjplayclick-字段
+    公共-字段    ${result}
+
+点下载cjplayclick-字段值
+    公共-字段值    ${result}
+
+点下一个视频cjplayclick-条数
+    公共-删除数据
+    沉浸式-点下一个视频
+    ${result}    公共-获取结果    ${cjplayclick}    cjplayclick_001    ${table_cjplayclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点下一个视频cjplayclick-字段
+    公共-字段    ${result}
+
+点下一个视频cjplayclick-字段值
+    公共-字段值    ${result}
+
+播放下一个pvs-条数
+    ${result}    公共-获取结果    ${pvs}    cjs_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放下一个pvs-字段
+    公共-字段    ${result}
+
+播放下一个pvs-字段值
+    公共-字段值    ${result}
+
+大数据心跳停止hb-条数
+    ${result}    公共-获取结果    ${hb_end}    dianboxiayige_001    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+大数据心跳停止hb-字段
+    公共-字段    ${result}
+
+大数据心跳停止hb-字段值
+    公共-字段值    ${result}
+
+沉浸式心跳停止hb-条数
+    ${result}    公共-获取结果    ${hb_end_cj}    cjplayhb_03    ${table_cjplayhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+沉浸式心跳停止hb-字段
+    公共-字段    ${result}
+
+沉浸式心跳停止hb-字段值
+    公共-字段值    ${result}
+
+点播播放定时上报cdn-r3-条数
+    ${result}    公共-获取结果    ${r3}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播播放定时上报cdn-r3-字段
+    公共-字段    ${result}
+
+点播播放定时上报cdn-r3-字段值
+    公共-字段值    ${result}
+
+滑动show-条数
+    ${result}    公共-获取结果    ${show}    index_shantu    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+滑动show-字段
+    公共-字段    ${result}
+
+滑动show-字段值
+    公共-字段值    ${result}
+
+滑动cjplayshow-条数
+    ${result}    公共-获取结果    ${cjplayshow}    cjplayshow_002    ${table_cjplayshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+滑动cjplayshow-字段
+    公共-字段    ${result}
+
+滑动cjplayshow-字段值
+    公共-字段值    ${result}
+
+下一个可播比cp10-条数
+    ${result}    公共-获取结果    ${cp10}    ke2_01    ${table_cp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个可播比cp10-字段
+    公共-字段    ${result}
+
+下一个可播比cp10-字段值
+    公共-字段值    ${result}
+
+下一个连播sp-条数
+    ${result}    公共-获取结果    ${sp}    chenjin_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个连播sp-条数-字段
+    公共-字段    ${result}
+
+下一个连播sp-条数-字段值
+    公共-字段值    ${result}
+
+下一个cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    ke2_07    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个cdn1-字段
+    公共-字段    ${result}
+
+下一个cdn1-字段值
+    公共-字段值    ${result}
+
+下一个cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    ke2_08    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个cdn2-字段
+    公共-字段    ${result}
+
+下一个cdn2-字段值
+    公共-字段值    ${result}
+
+下一个cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    ke2_09    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个cdn3-字段
+    公共-字段    ${result}
+
+下一个cdn3-字段值
+    公共-字段值    ${result}
+
+下一个点播播放定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个点播播放定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+下一个点播播放定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+下一个buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianboxiayige_001    ${table_buffer}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个buffer-字段
+    公共-字段    ${result}
+
+下一个buffer-字段值
+    公共-字段值    ${result}
+
+下一个视频播放aplay-条数
+    ${result}    公共-获取结果    ${aplay}    dianboxiayige_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个视频播放aplay-字段
+    公共-字段    ${result}
+
+下一个视频播放aplay-字段值
+    公共-字段值    ${result}
+
+下一个大数据心跳hb3-条数
+    sleep    3
+    ${result}    公共-获取结果    ${hb3}    dianboxiayige_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个大数据心跳hb3-字段
+    公共-字段    ${result}
+
+下一个大数据心跳hb3-字段值
+    公共-字段值    ${result}
+
+下一个大数据心跳hb5-条数
+    ${result}    公共-获取结果    ${hb5}    dianboxiayige_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个大数据心跳hb5-字段
+    公共-字段    ${result}
+
+下一个大数据心跳hb5-字段值
+    公共-字段值    ${result}
+
+下一个沉浸式心跳hb3-条数
+    ${result}    公共-获取结果    ${hb_end_cj}    cjplayhb_01    ${table_cjplayhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个沉浸式心跳hb3-字段
+    公共-字段    ${result}
+
+下一个沉浸式心跳hb3-字段值
+    公共-字段值    ${result}
+
+下一个沉浸式心跳hb5-条数
+    ${result}    公共-获取结果    ${hb_end_cj}    cjplayhb_01    ${table_cjplayhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下一个沉浸式心跳hb5-字段
+    公共-字段    ${result}
+
+下一个沉浸式心跳hb5-字段值
+    公共-字段值    ${result}
+
+退出沉浸式pvs-条数
+    公共-删除数据
+    沉浸式-返回
+    ${result}    公共-获取结果    ${pvs}    cjs_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出沉浸式pvs-字段
+    公共-字段    ${result}
+
+退出沉浸式pvs-字段值
+    公共-字段值    ${result}
+
+退出沉浸式cdn-r3-条数
+    ${result}    公共-获取结果    ${r3}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出沉浸式cdn-r3-字段
+    公共-字段    ${result}
+
+退出沉浸式cdn-r3-字段值
+    公共-字段值    ${result}
+
+退出-大数据心跳停止hb-条数
+    ${result}    公共-获取结果    ${hb_end}    dianboxiayige_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出-大数据心跳停止hb-字段
+    公共-字段    ${result}
+
+退出-大数据心跳停止hb-字段值
+    公共-字段值    ${result}
+
+退出-沉浸式心跳停止hb-条数
+    ${result}    公共-获取结果    ${hb_end_cj}    cjplayhb_03    ${table_cjplayhb}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出-沉浸式心跳停止hb-字段
+    公共-字段    ${result}
+
+退出-沉浸式心跳停止hb-字段值
+    公共-字段值    ${result}

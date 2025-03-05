@@ -1,0 +1,455 @@
+*** Settings ***
+Documentation     饭团人气榜、热门话题详情页
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${pvs1_H5}        {'logtype':'pv','cntp':'qt_webview'}
+
+*** Test Cases ***
+饭团人气榜分享弹出share-条数
+    首页-饭团
+    饭团广场-实时播报
+    sleep    3
+    公共-删除数据
+    饭团-顶部分享
+    ${result}    公共-获取结果    ${share}    ft_share_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享弹出share-字段
+    公共-字段    ${result}
+
+饭团人气榜分享弹出share-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享到朋友圈share-条数
+    公共-删除数据
+    公共－点击页面文本    朋友圈
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享到朋友圈share-字段
+    公共-字段    ${result}
+
+饭团人气榜分享到朋友圈share-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享到微信share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    微信
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享到微信share-字段
+    公共-字段    ${result}
+
+饭团人气榜分享到微信share-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享到微博share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    微博
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享到微博share-字段
+    公共-字段    ${result}
+
+饭团人气榜分享到微博share-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享到饭团share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    饭团
+    ${result}    公共-获取结果    ${share}    ft_share_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享到饭团share-字段
+    公共-字段    ${result}
+
+饭团人气榜分享到饭团share-字段名
+    公共-字段值    ${result}
+
+跳转登录页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_37    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录页pvs-字段
+    公共-字段    ${result}
+
+跳转登录页pvs-字段名
+    公共-字段值    ${result}
+
+跳转登录页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_37    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录页pvs1-字段
+    公共-字段    ${result}
+
+跳转登录页pvs1-字段名
+    公共-字段值    ${result}
+
+登录页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_38    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回pvs-字段
+    公共-字段    ${result}
+
+登录页返回pvs-字段名
+    公共-字段值    ${result}
+
+登录页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_38    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回pvs1-字段
+    公共-字段    ${result}
+
+登录页返回pvs1-字段名
+    公共-字段值    ${result}
+
+饭团人气榜复制链接share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    复制链接
+    ${result}    公共-获取结果    ${share}    ft_share_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜复制链接share-字段
+    公共-字段    ${result}
+
+饭团人气榜复制链接share-字段名
+    公共-字段值    ${result}
+
+饭团人气榜刷新share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    刷新
+    ${result}    公共-获取结果    ${share}    ft_share_07    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜刷新share-字段
+    公共-字段    ${result}
+
+饭团人气榜刷新share-字段名
+    公共-字段值    ${result}
+
+饭团人气榜打开浏览器share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    浏览器打开
+    ${result}    公共-获取结果    ${share}    ft_share_08    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜打开浏览器share-字段
+    公共-字段    ${result}
+
+饭团人气榜打开浏览器share-字段名
+    公共-字段值    ${result}
+
+浏览器返回芒果TVpvs-条数
+    公共-删除数据
+    返回芒果TV
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_39    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+浏览器返回芒果TVpvs-字段
+    公共-字段    ${result}
+
+浏览器返回芒果TVpvs-字段名
+    公共-字段值    ${result}
+
+浏览器返回芒果TVpvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_39    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+浏览器返回芒果TVpvs1-字段
+    公共-字段    ${result}
+
+浏览器返回芒果TVpvs1-字段名
+    公共-字段值    ${result}
+
+浏览器返回app启动st-条数
+    ${result}    公共-获取结果    ${st}    iphone_qidong    ${table_st}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+浏览器返回app启动st-字段
+    公共-字段    ${result}
+
+浏览器返回app启动st-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享到QQshare-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    QQ
+    ${result}    公共-获取结果    ${share}    ft_share_09    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享到QQshare-字段
+    公共-字段    ${result}
+
+饭团人气榜分享到QQshare-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享到QQshareresult-条数
+    公共-删除数据
+    分享到QQ
+    sleep    3
+    ${result}    公共-获取结果    ${shareresult}    ft_share_10    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享到QQshareresult-字段
+    公共-字段    ${result}
+
+饭团人气榜分享到QQshareresult-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享后台切前台pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_39    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享后台切前台pvs-字段
+    公共-字段    ${result}
+
+饭团人气榜分享后台切前台pvs-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享后台切前台pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_39    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享后台切前台pvs1-字段
+    公共-字段    ${result}
+
+饭团人气榜分享后台切前台pvs1-字段名
+    公共-字段值    ${result}
+
+饭团人气榜分享app启动st-条数
+    ${result}    公共-获取结果    ${st}    iphone_qidong    ${table_st}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团人气榜分享app启动st-字段
+    公共-字段    ${result}
+
+饭团人气榜分享app启动st-字段名
+    公共-字段值    ${result}
+
+分享到QQ取消分享shareresult-条数
+    饭团-顶部分享
+    公共－点击页面文本    QQ
+    公共-删除数据
+    分享到QQ取消
+    ${result}    公共-获取结果    ${shareresult}    ft_share_11    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到QQ取消分享shareresult-字段
+    公共-字段    ${result}
+
+分享到QQ取消分享shareresult-字段名
+    公共-字段值    ${result}
+
+饭团人气榜返回
+    饭团人气榜-返回
+
+热门话题顶部分享弹出share-条数
+    饭团广场-热门话题第一个
+    公共-删除数据
+    饭团-顶部分享
+    ${result}    公共-获取结果    ${share}    ft_share_12    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享弹出share-字段
+    公共-字段    ${result}
+
+热门话题顶部分享弹出share-字段名
+    公共-字段值    ${result}
+
+热门话题顶部分享到朋友圈share-条数
+    公共-删除数据
+    公共－点击页面文本    朋友圈
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_13    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享到朋友圈share-字段
+    公共-字段    ${result}
+
+热门话题顶部分享到朋友圈share-字段名
+    公共-字段值    ${result}
+
+热门话题顶部分享到微信share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    微信
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_14    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享到微信share-字段
+    公共-字段    ${result}
+
+热门话题顶部分享到微信share-字段名
+    公共-字段值    ${result}
+
+热门话题顶部分享到微博share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    微博
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_15    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享到微博share-字段
+    公共-字段    ${result}
+
+热门话题顶部分享到微博share-字段名
+    公共-字段值    ${result}
+
+热门话题顶部分享到QQ空间share-条数
+    饭团-顶部分享
+    公共-删除数据
+    公共－点击页面文本    QQ空间
+    ${result}    公共-获取结果    ${share}    ft_share_16    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享到QQ空间share-字段
+    公共-字段    ${result}
+
+热门话题顶部分享到QQ空间share-字段名
+    公共-字段值    ${result}
+
+热门话题顶部分享到QQ空间shareresult-条数
+    公共-删除数据
+    分享到QQ空间
+    sleep    3
+    ${result}    公共-获取结果    ${shareresult}    ft_share_17    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享到QQ空间shareresult-字段
+    公共-字段    ${result}
+
+热门话题顶部分享到QQ空间shareresult-字段名
+    公共-字段值    ${result}
+
+热门话题顶部分享到QQ空间取消shareresult-条数
+    饭团-顶部分享
+    公共－点击页面文本    QQ空间
+    公共-删除数据
+    分享到QQ取消
+    sleep    3
+    ${result}    公共-获取结果    ${shareresult}    ft_share_18    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题顶部分享到QQ空间取消shareresult-字段
+    公共-字段    ${result}
+
+热门话题顶部分享到QQ空间取消shareresult-字段名
+    公共-字段值    ${result}
+
+热门话题取消分享后台切前台pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_guangchang_40    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题取消分享后台切前台pvs-字段
+    公共-字段    ${result}
+
+热门话题取消分享后台切前台pvs-字段名
+    公共-字段值    ${result}
+
+热门话题取消分享后台切前台pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_guangchang_40    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题取消分享后台切前台pvs1-字段
+    公共-字段    ${result}
+
+热门话题取消分享后台切前台pvs1-字段名
+    公共-字段值    ${result}
+
+热门话题取消分享app启动st-条数
+    ${result}    公共-获取结果    ${st}    iphone_qidong    ${table_st}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题取消分享app启动st-字段
+    公共-字段    ${result}
+
+热门话题取消分享app启动st-字段名
+    公共-字段值    ${result}
+
+热门话题动态分享弹出share-条数
+    公共-删除数据
+    热门互动-动态分享
+    ${result}    公共-获取结果    ${share}    ft_share_12    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题动态分享弹出share-字段
+    公共-字段    ${result}
+
+热门话题动态分享弹出share-字段名
+    公共-字段值    ${result}
+
+热门话题动态分享到朋友圈share-条数
+    公共-删除数据
+    公共－点击页面文本    朋友圈
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    ft_share_13    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门话题动态分享到朋友圈share-字段
+    公共-字段    ${result}
+
+热门话题动态分享到朋友圈share-字段名
+    公共-字段值    ${result}

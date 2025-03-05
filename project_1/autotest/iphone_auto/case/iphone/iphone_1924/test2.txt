@@ -1,0 +1,6 @@
+*** Settings ***
+Documentation     正片、花絮、相关饭团、看了还会看
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***

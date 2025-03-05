@@ -1,0 +1,462 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${pfc}            {'act':'pfc'}
+${dologin}        {'act':'DoLogin'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb','ht':'2'}
+${pjr}            {'act':'pjr'}
+${share}          {'act':'share'}
+${shareresult}    {'act':'shareresult'}
+${oflhb}          {'act':'oflhb'}
+${ppv}            {'act':'ppv'}
+${pvv}            {'act':'pvv'}
+${pend}           {'act':'pend'}
+
+*** Test Cases ***
+进已缓存pvs-条数
+    首页-我
+    公共-删除数据
+    我的-缓存
+    page should contain text    小猪佩奇
+    ${result}    公共-获取结果    ${pvs}    huancun_013    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进已缓存pvs-字段
+    公共-字段    ${result}
+
+进已缓存pvs-字段值
+    公共-字段值    ${result}
+
+进已缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_013    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进已缓存pvs1-字段
+    公共-字段    ${result}
+
+进已缓存pvs1-字段值
+    公共-字段值    ${result}
+
+离线缓存页进入剧集页pvs-条数
+    公共-删除数据
+    公共－点击页面文本    小猪佩奇 全集
+    ${result}    公共-获取结果    ${pvs}    lixian_01    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存页进入剧集页pvs-字段
+    公共-字段    ${result}
+
+离线缓存页进入剧集页pvs-字段值
+    公共-字段值    ${result}
+
+离线缓存页进入剧集页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixian_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存页进入剧集页pvs1-字段
+    公共-字段    ${result}
+
+离线缓存页进入剧集页pvs1-字段值
+    公共-字段值    ${result}
+
+播放离线视频pvs-条数
+    公共-删除数据
+    公共－点击页面文本    第1集
+    sleep    18
+    ${result}    公共-获取结果    ${pvs}    lixian_02    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放离线视频pvs-字段
+    公共-字段    ${result}
+
+播放离线视频pvs-字段值
+    公共-字段值    ${result}
+
+播放离线视频pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixian_02    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放离线视频pvs1-字段
+    公共-字段    ${result}
+
+播放离线视频pvs1-字段值
+    公共-字段值    ${result}
+
+离线ppv-条数
+    ${result}    公共-获取结果    ${ppv}    ppv_ofl    mobile_ppv_ipad    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线ppv-字段
+    公共-字段    ${result}
+
+离线ppv-字段值
+    公共-字段值    ${result}
+
+离线pvv-条数
+    sleep    18
+    ${result}    公共-获取结果    ${pvv}    mobile_02    mobile_pvv_ipad    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线pvv-字段
+    公共-字段    ${result}
+
+离线pvv-字段值
+    公共-字段值    ${result}
+
+离线vv-条数
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线vv-字段
+    公共-字段    ${result}
+
+离线vv-字段值
+    公共-字段值    ${result}
+
+buffer-条数
+    ${result}    公共-获取结果    ${buffer}    iphone_001    ${table_buffer}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+buffer-字段
+    comment    公共-字段    ${result}
+
+buffer-字段值
+    comment    公共-字段值    ${result}
+
+可播比cp1-条数
+    ${result}    公共-获取结果    {'act':'cp1'}    iphone_001    ${table_cp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+可播比cp1-字段
+    公共-字段    ${result}
+
+可播比cp1-字段值
+    公共-字段值    ${result}
+
+连播sp-条数
+    ${result}    公共-获取结果    ${sp}    feed_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+连播sp-条数-字段
+    公共-字段    ${result}
+
+连播sp-条数-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    aphone_dianbo_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    aphone_dianbo_002    mpp_cdn_5_iphone    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn2-字段
+    comment    公共-字段    ${result}
+
+cdn2-字段值
+    comment    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    aphone_dianbo_003    mpp_cdn_5_iphone    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    comment    公共-字段    ${result}
+
+cdn3-字段值
+    comment    公共-字段值    ${result}
+
+在线3hb-条数
+    ${result}    公共-获取结果    ${hb3}    shikan_3    ${table_hb_sdk}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线3hb-字段
+    comment    公共-字段    ${result}
+
+在线3hb-字段值
+    comment    公共-字段值    ${result}
+
+在线5hb-条数
+    ${result}    公共-获取结果    ${hb5}    shikan_5    ${table_hb_sdk}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线5hb-字段
+    comment    公共-字段    ${result}
+
+在线5hb-字段值
+    comment    公共-字段值    ${result}
+
+退出播放pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    lixian_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs-字段
+    公共-字段    ${result}
+
+退出播放pvs-字段值
+    公共-字段值    ${result}
+
+退出播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixian_03    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs1-字段
+    公共-字段    ${result}
+
+退出播放pvs1-字段值
+    公共-字段值    ${result}
+
+退出pend-条数
+    sleep    5
+    ${result}    公共-获取结果    ${pend}    mobile_02    mobile_pend_ipad    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出pend-字段
+    公共-字段    ${result}
+
+退出pend-字段值
+    公共-字段值    ${result}
+
+离线oflhb-条数
+    ${result}    公共-获取结果    ${oflhb}    002    mpp_ap_oflhb    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线oflhb-字段
+    公共-字段    ${result}
+
+离线oflhb-字段值
+    公共-字段值    ${result}
+
+退出剧集页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    lixian_04    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出剧集页pvs-字段
+    公共-字段    ${result}
+
+退出剧集页pvs-字段值
+    公共-字段值    ${result}
+
+退出剧集页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixian_04    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出剧集页pvs1-字段
+    公共-字段    ${result}
+
+退出剧集页pvs1-字段值
+    公共-字段值    ${result}
+
+已缓存返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    huancun_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+已缓存返回pvs-字段
+    公共-字段    ${result}
+
+已缓存返回pvs-字段值
+    公共-字段值    ${result}
+
+已缓存返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huancun_014    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+已缓存返回pvs1-字段
+    公共-字段    ${result}
+
+已缓存返回pvs1-字段值
+    公共-字段值    ${result}
+
+点播放记录进入离线切换在线剧集
+    sleep    5
+    公共－点击页面文本    小猪佩奇全集 第1集 泥坑
+    sleep    5
+    公共-删除数据
+    公共－点击页面文本    2
+
+切换剧集pend-条数
+    ${result}    公共-获取结果    ${pend}    mobile_02    mobile_pend_ipad    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换剧集pend-字段
+    公共-字段    ${result}
+
+切换剧集pend-字段值
+    公共-字段值    ${result}
+
+切换剧集离线oflhb-条数
+    ${result}    公共-获取结果    ${oflhb}    002    mpp_ap_oflhb    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换剧集离线oflhb-字段
+    公共-字段    ${result}
+
+切换剧集离线oflhb-字段值
+    公共-字段值    ${result}
+
+切换剧集pvs-条数
+    ${result}    公共-获取结果    ${pvs}    lixian_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换剧集pvs-字段
+    公共-字段    ${result}
+
+切换剧集pvs-字段值
+    公共-字段值    ${result}
+
+切换剧集pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixian_03    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换剧集pvs1-字段
+    公共-字段    ${result}
+
+切换剧集pvs1-字段值
+    公共-字段值    ${result}
+
+在线vv-条数
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线vv-字段
+    公共-字段    ${result}
+
+在线vv-字段值
+    公共-字段值    ${result}
+
+在线buffer-条数
+    ${result}    公共-获取结果    ${buffer}    iphone_001    ${table_buffer}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线buffer-字段
+    公共-字段    ${result}
+
+在线buffer-字段值
+    公共-字段值    ${result}
+
+在线视频可播比cp1-条数
+    ${result}    公共-获取结果    {'act':'cp1'}    iphone_001    ${table_cp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线视频可播比cp1-字段
+    公共-字段    ${result}
+
+在线视频可播比cp1-字段值
+    公共-字段值    ${result}
+
+切换剧集连播sp-条数
+    ${result}    公共-获取结果    ${sp}    feed_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换剧集连播sp-字段
+    公共-字段    ${result}
+
+切换剧集连播sp-字段值
+    公共-字段值    ${result}
+
+在线cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    aphone_dianbo_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线cdn1-字段
+    公共-字段    ${result}
+
+在线cdn1-字段值
+    公共-字段值    ${result}
+
+在线cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    aphone_dianbo_002    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线cdn2-字段
+    公共-字段    ${result}
+
+在线cdn2-字段值
+    公共-字段值    ${result}
+
+在线cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    aphone_dianbo_003    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+在线cdn3-字段
+    公共-字段    ${result}
+
+在线cdn3-字段值
+    公共-字段值    ${result}
+
+切换在线3hb-条数
+    ${result}    公共-获取结果    ${hb3}    shikan_3    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换在线3hb-字段
+    公共-字段    ${result}
+
+切换在线3hb-字段值
+    公共-字段值    ${result}
+
+切换在线5hb-条数
+    ${result}    公共-获取结果    ${hb5}    shikan_5    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换在线5hb-字段
+    公共-字段    ${result}
+
+切换在线5hb-字段值
+    公共-字段值    ${result}

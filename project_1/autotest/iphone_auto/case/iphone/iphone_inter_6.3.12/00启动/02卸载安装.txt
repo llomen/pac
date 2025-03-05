@@ -1,0 +1,119 @@
+*** Settings ***
+Suite Setup
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+授权界面
+    公共-删除数据
+    启动应用
+    sleep    5
+    公共-页面包含元素    同意并继续
+    公共-页面包含元素    不同意
+
+初次进入未上报pvs
+    ${result}    公共-获取结果    ${pvs}    setup_pvs    ${table_pvs}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次进入未上报pvs1
+    ${result}    公共-获取结果    ${pvs1}    setup_pvs    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次进入未上报st
+    ${result}    公共-获取结果    ${st}    iphone_qidong2    mpp_st_iphone    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次进入未上报st1
+    ${result}    公共-获取结果    ${st1}    iphone_qidong2    mpp_st_iphone_v2    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次进入未上报tf
+    ${result}    公共-获取结果    ${tf}    iphone_tf    mpp_st_iphone    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次进入未上报tf1
+    ${result}    公共-获取结果    ${tf1}    iphone_tf    mpp_st_iphone_v2    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点不同意
+    公共－点击页面文本    不同意
+    sleep    2
+    #页面未跳转
+    公共-页面包含元素    同意并继续
+    公共-页面包含元素    不同意
+
+不同意点击disagree
+
+点同意
+    公共－点击页面文本    同意并继续
+    sleep    5
+    #页面跳转
+    公共-页面不包含元素    同意并继续
+    公共-页面不包含元素    不同意
+
+点同意agree
+
+初次启动st
+    sleep    3
+    ${result}    公共-获取结果    ${st}    iphone_qidong2    mpp_st_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动st1
+    ${result}    公共-获取结果    ${st1}    iphone_qidong2    mpp_st_iphone_v2    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动tf
+    ${result}    公共-获取结果    ${tf}    iphone_tf    mpp_st_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动tf1
+    ${result}    公共-获取结果    ${tf1}    iphone_tf    mpp_st_iphone_v2    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动pvs
+    ${result}    公共-获取结果    ${pvs}    setup_pvs    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动pvs1
+    ${result}    公共-获取结果    ${pvs1}    setup_pvs    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页pd
+    ${result}    公共-获取结果    ${pd}    pd_1    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动上报曝光show
+    ${result}    公共-获取结果    {'logtype':'show'}    show_dianbo_1    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+权限-位置
+    公共-页面包含元素    允许“芒果TV”访问您的位置？
+    公共-页面包含元素    允许一次
+    公共-页面包含元素    不允许
+    公共-页面包含元素    使用App时允许
+
+同意权限
+    公共－点击页面文本    使用App时允许
+
+权限-通知
+    公共-页面包含元素    “芒果TV”想给您发送通知
+    公共-页面包含元素    允许
+    公共-页面包含元素    不允许
+
+同意推送
+    公共－点击页面文本    允许

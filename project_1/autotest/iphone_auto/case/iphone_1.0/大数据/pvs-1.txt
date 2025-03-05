@@ -1,0 +1,263 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    关闭应用
+Force Tags
+Resource          ../../iphone/对象库.txt
+
+*** Variables ***
+${act}            iphone.v0.mgtv.com
+${uuid}           ${EMPTY}
+
+*** Test Cases ***
+启动页-上报时机
+    判断页面是否存在文本    精选
+
+启动页-上报条数
+    上报条数    ${act}    ${count}    1
+
+启动页-字段验证
+    pvsource字段验证    ${uuid}    ${EMPTY}    ${EMPTY}    1    1001    ${EMPTY}
+    ...    ${EMPTY}
+
+启动页-字段值验证
+    pvsource字段值验证    ${uuid}    ${EMPTY}    ${EMPTY}    1    1001    ${EMPTY}
+    ...    ${EMPTY}
+
+综艺页-上报时机
+    点击频道    综艺
+    sleep    1s
+
+综艺页-上报条数
+    上报条数    ${act}    ${count}    1
+
+综艺页-字段验证
+    pvsource字段验证    ${uuid}    1    1027    1    1003    ${EMPTY}
+    ...    ${EMPTY}
+
+综艺页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1001    1    1003    ${EMPTY}
+    ...    ${EMPTY}
+
+电视剧页-上报时机
+    清空数据
+    点击频道    电视剧
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+电视剧页-上报条数
+    上报条数    ${act}    ${count}    1
+
+电视剧页-字段验证
+    pvsource字段验证    ${uuid}    1    1003    1    1004    ${EMPTY}
+    ...    ${EMPTY}
+
+电视剧页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1003    1    1004    ${EMPTY}
+    ...    ${EMPTY}
+
+电影页-上报时机
+    清空数据
+    点击频道    电影
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+电影页-上报条数
+    上报条数    ${act}    ${count}    1
+
+电影页-字段验证
+    pvsource字段验证    ${uuid}    1    1004    1    1006    ${EMPTY}
+    ...    ${EMPTY}
+
+电影页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1004    1    1005    ${EMPTY}
+    ...    ${EMPTY}
+
+电影片库页-上报时机
+    清空数据
+    查看片库    电影
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+电影片库页-上报条数
+    上报条数    ${act}    ${count}    1
+
+电影片库页-字段验证
+    pvsource字段验证    ${uuid}    1    1004    1    1006    ${EMPTY}
+    ...    ${EMPTY}
+
+电影片库页-字段值验证
+    返回（非播放页）
+    pvsource字段值验证    ${uuid}    1    1005    57    3    ${EMPTY}
+    ...    ${EMPTY}
+
+动漫页-上报时机
+    sleep    2s
+    清空数据
+    点击频道    动漫
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+动漫页-上报条数
+    上报条数    ${act}    ${count}    1
+
+动漫页-字段验证
+    pvsource字段验证    ${uuid}    1    1006    1    1001    ${EMPTY}
+    ...    ${EMPTY}
+
+动漫页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1005    1    1006    ${EMPTY}
+    ...    ${EMPTY}
+
+热榜页-上报时机
+    清空数据
+    点击频道    热榜
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+热榜页-上报条数
+    上报条数    ${act}    ${count}    1
+
+热榜页-字段验证
+    pvsource字段验证    ${uuid}    1    1006    1    1021    ${EMPTY}
+    ...    ${EMPTY}
+
+热榜页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1006    1    1012    ${EMPTY}
+    ...    ${EMPTY}
+
+生活页-上报时机
+    清空数据
+    点击频道    生活
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+生活页-上报条数
+    上报条数    ${act}    ${count}    1
+
+生活页-字段验证
+    pvsource字段验证    ${uuid}    1    1021    1    1024    ${EMPTY}
+    ...    ${EMPTY}
+
+生活页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1012    1    1009    ${EMPTY}
+    ...    ${EMPTY}
+
+音乐页-上报时机
+    清空数据
+    点击频道    音乐
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+音乐页-上报条数
+    上报条数    ${act}    ${count}    1
+
+音乐页-字段验证
+    pvsource字段验证    ${uuid}    1    1024    1    1007    ${EMPTY}
+    ...    ${EMPTY}
+
+音乐页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1009    1    1007    ${EMPTY}
+    ...    ${EMPTY}
+
+纪录片页-上报时机
+    清空数据
+    点击频道    纪录片
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+纪录片页-上报条数
+    上报条数    ${act}    ${count}    1
+
+纪录片页-字段验证
+    pvsource字段验证    ${uuid}    1    1007    1    1026    ${EMPTY}
+    ...    ${EMPTY}
+
+纪录片页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1007    1    1008    ${EMPTY}
+    ...    ${EMPTY}
+
+新闻页-上报时机
+    清空数据
+    点击频道    新闻
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+新闻页-上报条数
+    上报条数    ${act}    ${count}    1
+
+新闻页-字段验证
+    pvsource字段验证    ${uuid}    1    1026    1    1010    ${EMPTY}
+    ...    ${EMPTY}
+
+新闻页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1008    1    1010    ${EMPTY}
+    ...    ${EMPTY}
+
+直播页-上报时机
+    清空数据
+    点击频道    直播
+    sleep    1s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+直播页-上报条数
+    上报条数    ${act}    ${count}    1
+
+直播页-字段验证
+    pvsource字段验证    ${uuid}    ${EMPTY}    ${EMPTY}    1    1001    ${EMPTY}
+    ...    ${EMPTY}
+
+直播页-字段值验证
+    pvsource字段值验证    ${uuid}    1    1010    1    1011    ${EMPTY}
+    ...    ${EMPTY}
+
+直播播放页-上报时机
+    sleep    1s
+    清空数据
+    点击电视直播
+    sleep    5s
+    ${count}    ${data}    获取上报数据
+    Set Global Variable    ${count}
+    Set Global Variable    ${data}
+    上报时机    ${act}    ${count}
+
+直播播放页-上报条数
+    上报条数    ${act}    ${count}    2
+
+直播播放页-字段验证
+    pvsource字段验证    ${uuid}    ${EMPTY}    ${EMPTY}    1    1001    ${EMPTY}
+    ...    ${EMPTY}
+
+直播播放页-字段值验证
+    电视直播点击返回
+    pvsource字段值验证    ${uuid}    1    1011    44    ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}

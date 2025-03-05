@@ -1,0 +1,719 @@
+*** Settings ***
+Documentation     页面跳转（首页-片库页-播放页）
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${my}             {'act':'my'}
+${msgc}           {'act':'msgc'}
+${account}        yh1@mgtv.com
+${password}       111111
+${account_name}    yh139gcW
+${account_vip}    yh2@mgtv.com
+${password_vip}    111111
+
+*** Test Cases ***
+个人动态pvs-条数
+    comment    公共－用户登录    ${mail_account}    ${mail_pwd}
+    首页-我
+    sleep    2
+    公共-删除数据
+    comment    进入个人头像
+    公共－点击页面文本    ${mail_name}
+    ${result}    公共-获取结果    ${pvs}    shezhi_009    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人动态pvs-字段
+    公共-字段    ${result}
+
+个人动态pvs-字段名
+    公共-字段值    ${result}
+
+个人动态pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shezhi_009    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人动态pvs1-字段
+    公共-字段    ${result}
+
+个人动态pvs1-字段名
+    公共-字段值    ${result}
+
+点击头像my-条数
+    ${result}    公共-获取结果    ${my}    my_touxiang    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击头像my-字段
+    公共-字段    ${result}
+
+点击头像my-字段名
+    公共-字段值    ${result}
+
+个人动态返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    comment    公共－点击页面文本    backbg icon
+    ${result}    公共-获取结果    ${pvs}    shezhi_010    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人动态返回pvs-字段
+    公共-字段    ${result}
+
+个人动态返回pvs-字段名
+    公共-字段值    ${result}
+
+个人动态返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shezhi_010    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人动态返回pvs1-字段
+    公共-字段    ${result}
+
+个人动态返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的消息pvs-条数
+    公共-删除数据
+    公共－点击页面文本    我的消息
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_list    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的消息pvs-字段
+    公共-字段    ${result}
+
+我的消息pvs-字段名
+    公共-字段值    ${result}
+
+我的消息pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_list    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的消息pvs1-字段
+    公共-字段    ${result}
+
+我的消息pvs1-字段名
+    公共-字段值    ${result}
+
+我的消息my-条数
+    ${result}    公共-获取结果    ${my}    my_xiaoxi    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的消息my-字段
+    公共-字段    ${result}
+
+我的消息my-字段名
+    公共-字段值    ${result}
+
+我的消息msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_xiaoxi_login    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的消息msgc-字段
+    公共-字段    ${result}
+
+我的消息msgc-字段名
+    公共-字段值    ${result}
+
+评论回复pvs-条数
+    公共-删除数据
+    公共－点击页面文本    评论/回复
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论回复pvs-字段
+    公共-字段    ${result}
+
+评论回复pvs-字段名
+    公共-字段值    ${result}
+
+评论回复pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论回复pvs1-字段
+    公共-字段    ${result}
+
+评论回复pvs1-字段名
+    公共-字段值    ${result}
+
+评论回复msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_pinglun    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论回复msgc-字段
+    公共-字段    ${result}
+
+评论回复msgc-字段名
+    公共-字段值    ${result}
+
+评论设置msgc-条数
+    公共-删除数据
+    公共－点击页面文本    设置
+    ${result}    公共-获取结果    ${msgc}    msgc_pinglun_set    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论设置msgc-字段
+    公共-字段    ${result}
+
+评论设置msgc-字段名
+    公共-字段值    ${result}
+
+评论设置取消msgc-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${msgc}    msgc_pinglun_setcancel    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论设置取消msgc-字段
+    公共-字段    ${result}
+
+评论设置取消msgc-字段名
+    公共-字段值    ${result}
+
+评论回复返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    back icon
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_back_pinglun    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论回复返回pvs-字段
+    公共-字段    ${result}
+
+评论回复返回pvs-字段名
+    公共-字段值    ${result}
+
+评论回复返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_back_pinglun    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论回复返回pvs1-字段
+    公共-字段    ${result}
+
+评论回复返回pvs1-字段名
+    公共-字段值    ${result}
+
+点赞pvs-条数
+    公共-删除数据
+    公共－点击页面文本    点赞
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞pvs-字段
+    公共-字段    ${result}
+
+点赞pvs-字段名
+    公共-字段值    ${result}
+
+点赞pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞pvs1-字段
+    公共-字段    ${result}
+
+点赞pvs1-字段名
+    公共-字段值    ${result}
+
+点赞msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_zan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞msgc-字段
+    公共-字段    ${result}
+
+点赞msgc-字段名
+    公共-字段值    ${result}
+
+点赞设置置顶msgc-条数
+    公共－点击页面文本    设置
+    公共-删除数据
+    公共－点击页面文本    消息置顶
+    ${result}    公共-获取结果    ${msgc}    msgc_dianzan_up    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞设置置顶msgc-字段
+    公共-字段    ${result}
+
+点赞设置置顶msgc-字段名
+    公共-字段值    ${result}
+
+点赞取消置顶msgc-条数
+    公共－点击页面文本    设置
+    公共-删除数据
+    公共－点击页面文本    取消置顶
+    ${result}    公共-获取结果    ${msgc}    msgc_dianzan_upcancel    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞取消置顶msgc-字段
+    公共-字段    ${result}
+
+点赞取消置顶msgc-字段名
+    公共-字段值    ${result}
+
+点赞返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    back icon
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_back_dianzan    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞返回pvs-字段
+    公共-字段    ${result}
+
+点赞返回pvs-字段名
+    公共-字段值    ${result}
+
+点赞返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_back_dianzan    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞返回pvs1-字段
+    公共-字段    ${result}
+
+点赞返回pvs1-字段名
+    公共-字段值    ${result}
+
+系统消息pvs-条数
+    公共-删除数据
+    公共－点击页面文本    系统消息
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+系统消息pvs-字段
+    公共-字段    ${result}
+
+系统消息pvs-字段名
+    公共-字段值    ${result}
+
+系统消息pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+系统消息pvs1-字段
+    公共-字段    ${result}
+
+系统消息pvs1-字段名
+    公共-字段值    ${result}
+
+系统消息msgc-条数
+    ${result}    公共-获取结果    ${msgc}    msgc_xitongxiaoxi    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+系统消息msgc-字段
+    公共-字段    ${result}
+
+系统消息msgc-字段名
+    公共-字段值    ${result}
+
+消息免打扰msgc-条数
+    公共－点击页面文本    设置
+    公共-删除数据
+    公共－点击页面文本    消息免打扰
+    ${result}    公共-获取结果    ${msgc}    msgc_xitongxiaoxi_01    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息免打扰msgc-字段
+    公共-字段    ${result}
+
+消息免打扰msgc-字段名
+    公共-字段值    ${result}
+
+取消消息免打扰msgc-条数
+    公共－点击页面文本    设置
+    公共-删除数据
+    公共－点击页面文本    恢复消息提醒
+    ${result}    公共-获取结果    ${msgc}    msgc_xitongxiaoxi_02    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消消息免打扰msgc-字段
+    公共-字段    ${result}
+
+取消消息免打扰msgc-字段名
+    公共-字段值    ${result}
+
+系统消息返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    back icon
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_back_xitong    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+系统消息返回pvs-字段
+    公共-字段    ${result}
+
+系统消息返回pvs-字段名
+    公共-字段值    ${result}
+
+系统消息返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_back_xitong    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+系统消息返回pvs1-字段
+    公共-字段    ${result}
+
+系统消息返回pvs1-字段名
+    公共-字段值    ${result}
+
+消息中心返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    back icon
+    ${result}    公共-获取结果    ${pvs}    xiaoxizhongxin_back    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs-字段
+    公共-字段    ${result}
+
+消息中心返回pvs-字段名
+    公共-字段值    ${result}
+
+消息中心返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    xiaoxizhongxin_back    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs1-字段
+    公共-字段    ${result}
+
+消息中心返回pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录列表播放pvs-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="播放记录"]/following-sibling::XCUIElementTypeStaticText[last()]
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_bofang_02    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录列表播放pvs-字段
+    公共-字段    ${result}
+
+播放记录列表播放pvs-字段名
+    公共-字段值    ${result}
+
+播放记录列表播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_bofang_02    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录列表播放pvs1-字段
+    公共-字段    ${result}
+
+播放记录列表播放pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录列表播放my-条数
+    ${result}    公共-获取结果    ${my}    my_bofang_play_list    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录列表播放my-字段
+    公共-字段    ${result}
+
+播放记录列表播放my-字段名
+    公共-字段值    ${result}
+
+点播页返回个人中心pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_back_list    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回个人中心pvs-字段
+    公共-字段    ${result}
+
+点播页返回个人中心pvs-字段名
+    公共-字段值    ${result}
+
+点播页返回个人中心pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_back_list    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回个人中心pvs1-字段
+    公共-字段    ${result}
+
+点播页返回个人中心pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录pvs-条数
+    Comment    点播播放页-返回
+    公共-删除数据
+    公共－点击页面文本    播放记录
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录pvs-字段
+    公共-字段    ${result}
+
+播放记录pvs-字段名
+    公共-字段值    ${result}
+
+播放记录pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录pvs1-字段
+    公共-字段    ${result}
+
+播放记录pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录my-条数
+    ${result}    公共-获取结果    ${my}    my_bofang_enter    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录my-字段
+    公共-字段    ${result}
+
+播放记录my-字段名
+    公共-字段值    ${result}
+
+播放记录页播放pvs-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[1]
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_bofang    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录页播放pvs-字段
+    公共-字段    ${result}
+
+播放记录页播放pvs-字段名
+    公共-字段值    ${result}
+
+播放记录页播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_bofang    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录页播放pvs1-字段
+    公共-字段    ${result}
+
+播放记录页播放pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录页播放my-条数
+    ${result}    公共-获取结果    ${my}    my_bofang_play_page    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录页播放my-字段
+    公共-字段    ${result}
+
+播放记录页播放my-字段名
+    公共-字段值    ${result}
+
+播放记录播放返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_back_page    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录播放返回pvs-字段
+    公共-字段    ${result}
+
+播放记录播放返回pvs-字段名
+    公共-字段值    ${result}
+
+播放记录播放返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_back_page    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录播放返回pvs1-字段
+    公共-字段    ${result}
+
+播放记录播放返回pvs1-字段名
+    公共-字段值    ${result}
+
+播放记录返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录返回pvs-字段
+    公共-字段    ${result}
+
+播放记录返回pvs-字段名
+    公共-字段值    ${result}
+
+播放记录返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bofangjilu_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录返回pvs1-字段
+    公共-字段    ${result}
+
+播放记录返回pvs1-字段名
+    公共-字段值    ${result}
+
+离线缓存pvs-条数
+    公共-删除数据
+    我的-缓存
+    ${result}    公共-获取结果    ${pvs}    lixianhuancun_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存pvs-字段
+    公共-字段    ${result}
+
+离线缓存pvs-字段名
+    公共-字段值    ${result}
+
+离线缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixianhuancun_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存pvs1-字段
+    公共-字段    ${result}
+
+离线缓存pvs1-字段名
+    公共-字段值    ${result}
+
+离线缓存my-条数
+    ${result}    公共-获取结果    ${my}    my_lixian    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存my-字段
+    公共-字段    ${result}
+
+离线缓存my-字段名
+    公共-字段值    ${result}
+
+离线缓存返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    lixianhuancun_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存返回pvs-字段
+    公共-字段    ${result}
+
+离线缓存返回pvs-字段名
+    公共-字段值    ${result}
+
+离线缓存返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    lixianhuancun_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存返回pvs1-字段
+    公共-字段    ${result}
+
+离线缓存返回pvs1-字段名
+    公共-字段值    ${result}
+
+会员中心pvs-条数
+    公共-删除数据
+    comment    公共-滑动页面    我的收藏    消息中心
+    我－会员中心
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    huiyuanzhongxin_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员中心pvs-字段
+    公共-字段    ${result}
+
+会员中心pvs-字段名
+    公共-字段值    ${result}
+
+会员中心pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huiyuanzhongxin_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员中心pvs1-字段
+    公共-字段    ${result}
+
+会员中心pvs1-字段名
+    公共-字段值    ${result}
+
+VIP会员my-条数
+    ${result}    公共-获取结果    ${my}    my_huiyuan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP会员my-字段
+    公共-字段    ${result}
+
+VIP会员my-字段名
+    公共-字段值    ${result}
+
+VIP会员返回pvs-条数
+    公共-删除数据
+    开通会员－返回
+    ${result}    公共-获取结果    ${pvs}    huiyuanzhongxin_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP会员返回pvs-字段
+    公共-字段    ${result}
+
+VIP会员返回pvs-字段名
+    公共-字段值    ${result}
+
+VIP会员返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    huiyuanzhongxin_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP会员返回pvs1-字段
+    公共-字段    ${result}
+
+VIP会员返回pvs1-字段名
+    公共-字段值    ${result}
+
+*** Keywords ***
+进入个人头像
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeButton[1]
+    ${aa}    Run Keyword And Return Status    page should contain text    加入的饭团
+    run keyword if    ${aa} ==False    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeButton[1]

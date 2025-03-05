@@ -1,0 +1,3 @@
+*** Settings ***
+Force Tags        5.7.0.04第五轮
+Variables         Resource/iphone8plus.py

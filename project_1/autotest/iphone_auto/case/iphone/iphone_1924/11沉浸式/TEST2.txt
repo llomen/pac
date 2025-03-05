@@ -1,0 +1,7 @@
+*** Test Cases ***
+printTEST
+    [Tags]    test
+    log    ${udid}
+
+printTEST2
+    log    2222

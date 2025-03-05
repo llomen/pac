@@ -1,0 +1,146 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${livepmm}        {'act':'livepmm'}
+
+*** Test Cases ***
+直播性能livepmm-条数
+    公共－点击页面文本    直播
+    sleep    2
+    ${result}    公共-获取结果    ${livepmm}    iphone_zhibo    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播性能livepmm-字段
+    公共-字段    ${result}
+
+直播性能livepmm-字段值
+    公共-字段值    ${result}
+
+直播关注pvs1-条数
+    公共-删除数据
+    Comment    直播－搜索
+    公共－点击页面文本    直播关注
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    zhiboguanzhu_001    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播关注pvs1-字段
+    公共-字段    ${result}
+
+直播关注pvs1-字段值
+    公共-字段值    ${result}
+
+关注动态页pvs1-条数
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAButton[3]
+    公共－点击页面文本    更多关注
+    公共－点击页面文本    电视节目
+    公共-删除数据
+    公共－点击页面文本    芒果TV会员
+    sleep    1
+    ${result}    公共-获取结果    ${pvs1}    zhiboguanzhu_002    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关注动态页pvs1-字段
+    公共-字段    ${result}
+
+关注动态页pvs1-字段值
+    公共-字段值    ${result}
+
+直播大厅pvs1-条数
+    空间-返回
+    非播放页－返回
+    公共-删除数据
+    公共－点击页面文本    直播大厅
+    sleep    1
+    ${result}    公共-获取结果    ${pvs1}    dianshitai_001    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播大厅pvs1-字段
+    公共-字段    ${result}
+
+直播大厅pvs1-字段值
+    公共-字段值    ${result}
+
+电视播放pvs1-条数
+    Comment    公共-上滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[3]
+    Comment    公共-上滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[4]
+    Comment    公共-上滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[5]
+    公共-删除数据
+    Comment    公共-上滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[5]
+    comment    公共-滑动页面    湖南卫视王牌综艺    电视台
+    公共－点击页面文本    湖南经视
+    公共－左滑屏幕
+    sleep    15
+    ${result}    公共-获取结果    ${pvs1}    dianshitai_002    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视播放pvs1-字段
+    公共-字段    ${result}
+
+电视播放pvs1-字段值
+    公共-字段值    ${result}
+
+aplay-条数
+    ${result}    公共-获取结果    ${aplay}    aphone_dianshi_001    mpp_aplay_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+aplay-字段
+    公共-字段    ${result}
+
+aplay-字段值
+    公共-字段值    ${result}
+
+退出播放pvs1-条数
+    公共-删除数据
+    电视播放－返回    close player
+    sleep    1
+    ${result}    公共-获取结果    ${pvs1}    dianshitai_003    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs1-字段
+    公共-字段    ${result}
+
+退出播放pvs1-字段值
+    公共-字段值    ${result}
+
+直播大事件pvs1-条数
+    Comment    公共-下滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[2]
+    公共-滑动页面    湖南经视    湖南卫视王牌综艺
+    公共-删除数据
+    公共－点击页面文本    湖南卫视王牌综艺
+    sleep    5
+    ${result}    公共-获取结果    ${pvs1}    zhibo_dashijian1    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播大事件pvs1-字段
+    公共-字段    ${result}
+
+直播大事件pvs1-字段值
+    公共-字段值    ${result}
+
+直播大事件返回pvs1-条数
+    公共-删除数据
+    电视播放－返回    close player
+    sleep    1
+    ${result}    公共-获取结果    ${pvs1}    zhibo_dashijian2    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播大事件返回pvs1-字段
+    公共-字段    ${result}
+
+直播大事件返回pvs1-字段值
+    公共-字段值    ${result}

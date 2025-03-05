@@ -1,0 +1,439 @@
+{
+    "code":200,
+    "msg":"success",
+    "seqId": "cd6cf619127265b8e4d734a433486882",
+    "data":{
+        "list": [
+                    {
+                        "user":{
+                            "uuid":"af75b8ffe4b44847a69ddb801b45f397",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"颖宝最爱萤火虫",
+                            "photo":"https://avatar.hitv.com/0/af75b8ff/bd6sl7s7mq0rr1k9vm0g.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"f169a827000796e96367d1c8c6865c29",
+                            "accountType": 2,
+                            "fantuanName":"赵丽颖",
+                            "photo":"https://userpic.api.max.mgtv.com/person5965b6b9820b7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1030128,
+                        "label": [],
+                        "title":"",
+                        "content":"颖宝《向往》回忆杀，今日份美美的小仙女来报道啦，快来pick一下啦?",
+                        "type":2,
+                        "state":1,
+                        "date":"05月08日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://3img.hitv.com/preview/sp_images/2018/yuanchuang/320207/4380132/20180507154758348.jpg",
+                                "duration":193,
+                                "videoId":"4380132",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5965b6b9820b7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "颖宝《向往》回忆杀，今日份美美的小仙女来报道啦，快来pick一下啦?",
+                            "url": "https://m.mgtv.com/fantuan/f169a827000796e96367d1c8c6865c29/list.html?feedid=1030128",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1030128&fantuanId=f169a827000796e96367d1c8c6865c29&uuid=af75b8ffe4b44847a69ddb801b45f397&typ=2&state=1&st=c1.7.2&score=419",
+                        "praiseNum":"0",
+                        "commentNum":"3",
+                        "readNum":"151"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"1fd278a30140406d95d1de75e1aeedc6",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"1fd278a30140406d95d1de75e1aeedc6",
+                            "accountType": 3,
+                            "fantuanName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028980,
+                        "label": [],
+                        "title":"《嫌疑人K的现身》第Ⅰ章：大张伟无敌伪装竟遇滑铁卢 全票出局简直",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月03日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://3img.hitv.com/preview/sp_images/2018/zongyi/322712/4339632/20180403113530065.jpg",
+                                "duration":257,
+                                "videoId":"4339632",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【《嫌疑人K的现身》第Ⅰ章：大张伟无敌伪装竟遇滑铁卢 全票出局简直】",
+                            "url": "https://m.mgtv.com/fantuan/1fd278a30140406d95d1de75e1aeedc6/list.html?feedid=1028980",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028980&fantuanId=1fd278a30140406d95d1de75e1aeedc6&uuid=1fd278a30140406d95d1de75e1aeedc6&typ=2&state=1&st=c1.7.2&score=419",
+                        "praiseNum":"0",
+                        "commentNum":"14",
+                        "readNum":"2373"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"f09c0e8ef35a4f7780168431a6334f9e",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"我是大佬的秋裤",
+                            "photo":"https://avatar.hitv.com/0/f09c0e8e/bd65c2c7mq0m9oqef510.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"cf70533e88a34660b04b4b19413e3a66",
+                            "accountType": 2,
+                            "fantuanName":"易烊千玺",
+                            "photo":"https://userpic.api.max.mgtv.com/person59783d7a40583.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1031789,
+                        "label": [],
+                        "title":"",
+                        "content":"易大佬气场爆棚，走路带风苏到爆炸，酷黑系boy没错了",
+                        "type":2,
+                        "state":1,
+                        "date":"06月05日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://3img.hitv.com/preview/sp_images/2018/yuanchuang/320207/4409923/20180529163843274.jpg",
+                                "duration":53,
+                                "videoId":"4409923",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person59783d7a40583.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "易大佬气场爆棚，走路带风苏到爆炸，酷黑系boy没错了",
+                            "url": "https://m.mgtv.com/fantuan/cf70533e88a34660b04b4b19413e3a66/list.html?feedid=1031789",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1031789&fantuanId=cf70533e88a34660b04b4b19413e3a66&uuid=f09c0e8ef35a4f7780168431a6334f9e&typ=2&state=1&st=c1.7.2&score=429",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"1273"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"1fd278a30140406d95d1de75e1aeedc6",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"1fd278a30140406d95d1de75e1aeedc6",
+                            "accountType": 3,
+                            "fantuanName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028938,
+                        "label": [],
+                        "title":"高甜！邓伦演绎完整版《同桌的你》表白马思纯",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月02日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://0img.hitv.com/preview/sp_images/2018/zongyi/322712/4338527/20180402154039174.jpg",
+                                "duration":137,
+                                "videoId":"4338527",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【高甜！邓伦演绎完整版《同桌的你》表白马思纯】",
+                            "url": "https://m.mgtv.com/fantuan/1fd278a30140406d95d1de75e1aeedc6/list.html?feedid=1028938",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028938&fantuanId=1fd278a30140406d95d1de75e1aeedc6&uuid=1fd278a30140406d95d1de75e1aeedc6&typ=2&state=1&st=c1.7.2&score=410",
+                        "praiseNum":"0",
+                        "commentNum":"6",
+                        "readNum":"974"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"af75b8ffe4b44847a69ddb801b45f397",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"颖宝最爱萤火虫",
+                            "photo":"https://avatar.hitv.com/0/af75b8ff/bd6sl7s7mq0rr1k9vm0g.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"f169a827000796e96367d1c8c6865c29",
+                            "accountType": 2,
+                            "fantuanName":"赵丽颖",
+                            "photo":"https://userpic.api.max.mgtv.com/person5965b6b9820b7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1030069,
+                        "label": [],
+                        "title":"",
+                        "content":"【赵丽颖】乡村女团出道？颖宝化身劳动干部下地摘葱，样子实在是太可爱啦?>>",
+                        "type":2,
+                        "state":1,
+                        "date":"05月07日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://1img.hitv.com/preview/sp_images/2018/zongyi/322865/4377895/20180504200956808.jpg",
+                                "duration":111,
+                                "videoId":"4377895",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5965b6b9820b7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【赵丽颖】乡村女团出道？颖宝化身劳动干部下地摘葱，样子实在是太可爱啦?>>",
+                            "url": "https://m.mgtv.com/fantuan/f169a827000796e96367d1c8c6865c29/list.html?feedid=1030069",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1030069&fantuanId=f169a827000796e96367d1c8c6865c29&uuid=af75b8ffe4b44847a69ddb801b45f397&typ=2&state=1&st=c1.7.2&score=419",
+                        "praiseNum":"0",
+                        "commentNum":"9",
+                        "readNum":"208"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"1fd278a30140406d95d1de75e1aeedc6",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"1fd278a30140406d95d1de75e1aeedc6",
+                            "accountType": 3,
+                            "fantuanName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028940,
+                        "label": [],
+                        "title":"侦探对对碰：百搭邓伦速配马思纯李沁  理想男友甜蜜双击",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月02日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://2img.hitv.com/preview/sp_images/2018/zongyi/322712/4338663/20180402162310312.jpg",
+                                "duration":174,
+                                "videoId":"4338663",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【侦探对对碰：百搭邓伦速配马思纯李沁  理想男友甜蜜双击】",
+                            "url": "https://m.mgtv.com/fantuan/1fd278a30140406d95d1de75e1aeedc6/list.html?feedid=1028940",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028940&fantuanId=1fd278a30140406d95d1de75e1aeedc6&uuid=1fd278a30140406d95d1de75e1aeedc6&typ=2&state=1&st=c1.7.2&score=419",
+                        "praiseNum":"0",
+                        "commentNum":"8",
+                        "readNum":"381"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"ecae8ca0929848cba1511d61ba4d19a1",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"密室逃脱·暗夜古宅",
+                            "photo":"https://userpic.api.max.mgtv.com/person5acc268b8fc91.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"ecae8ca0929848cba1511d61ba4d19a1",
+                            "accountType": 3,
+                            "fantuanName":"密室逃脱·暗夜古宅",
+                            "photo":"https://userpic.api.max.mgtv.com/person5acc268b8fc91.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1029669,
+                        "label": [],
+                        "title":"《密室逃脱·暗夜古宅》嘉宾档案：“大嫂”徐冬冬与刘德华甄子丹飙戏",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月26日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://2img.hitv.com/preview/sp_images/2018/zongyi/323234/4368174/20180426094550309.jpg",
+                                "duration":82,
+                                "videoId":"4368174",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5acc268b8fc91.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【《密室逃脱·暗夜古宅》嘉宾档案：“大嫂”徐冬冬与刘德华甄子丹飙戏】",
+                            "url": "https://m.mgtv.com/fantuan/ecae8ca0929848cba1511d61ba4d19a1/list.html?feedid=1029669",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1029669&fantuanId=ecae8ca0929848cba1511d61ba4d19a1&uuid=ecae8ca0929848cba1511d61ba4d19a1&typ=2&state=1&st=c1.7.2&score=429",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"1304"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"f174bd7b5afc4ccd9260a06194ad7d46",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"最爱甜甜小奶源",
+                            "photo":"https://avatar.hitv.com/0/f174bd7b/bd65c2c7mq0m9oqef53g.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"3856a04d7c5446a3882c7e56ad9022a9",
+                            "accountType": 2,
+                            "fantuanName":"王源",
+                            "photo":"https://userpic.api.max.mgtv.com/person59783d6765ab7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1031629,
+                        "label": [],
+                        "title":"",
+                        "content":"【王源】《我想和你唱3》，现场唱嗨了，小哥哥都忍不住尬舞一段?>>",
+                        "type":2,
+                        "state":1,
+                        "date":"05月05日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://3img.hitv.com/preview/sp_images/2018/yuanchuang/321558/4378057/20180504233236146.jpg",
+                                "duration":10,
+                                "videoId":"4378057",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person59783d6765ab7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【王源】《我想和你唱3》，现场唱嗨了，小哥哥都忍不住尬舞一段?>>",
+                            "url": "https://m.mgtv.com/fantuan/3856a04d7c5446a3882c7e56ad9022a9/list.html?feedid=1031629",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1031629&fantuanId=3856a04d7c5446a3882c7e56ad9022a9&uuid=f174bd7b5afc4ccd9260a06194ad7d46&typ=2&state=1&st=c1.7.2&score=429",
+                        "praiseNum":"0",
+                        "commentNum":"1",
+                        "readNum":"685"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"48399d3d06aa428b8c7c05e7786f7751",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"沈月管理-蜜糖少女",
+                            "photo":"https://avatar.hitv.com/0/48399d3d/bd65c2k7mq0m9oqef5bg.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"52c65139d22146febcfed867de88a1ca",
+                            "accountType": 2,
+                            "fantuanName":"沈月",
+                            "photo":"https://userpic.api.max.mgtv.com/person5b3ae1513b370.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1033953,
+                        "label": [],
+                        "title":"",
+                        "content":"90秒带你看完《新流星花园》第四集?杉菜天台“约会”花泽类 遭曝光，道明寺吃醋到飞起，“幼稚寺”你还不努力追就来不及啦！",
+                        "type":2,
+                        "state":1,
+                        "date":"07月11日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://1img.hitv.com/preview/sp_images/2018/dianshiju/323323/4460747/20180711150053133.jpg",
+                                "duration":4,
+                                "videoId":"4460747",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5b3ae1513b370.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "90秒带你看完《新流星花园》第四集?杉菜天台“约会”花泽类 遭曝光，道明寺吃醋到飞起，“幼稚寺”你还不努力追就来不及啦！",
+                            "url": "https://m.mgtv.com/fantuan/52c65139d22146febcfed867de88a1ca/list.html?feedid=1033953",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1033953&fantuanId=52c65139d22146febcfed867de88a1ca&uuid=48399d3d06aa428b8c7c05e7786f7751&typ=2&state=1&st=c1.7.2&score=429",
+                        "praiseNum":"0",
+                        "commentNum":"24",
+                        "readNum":"693"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"5bd6194aa1384081a10a041c19bca3a7",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"养猫秘密基地",
+                            "photo":"https://avatar.hitv.com/0/5bd6194a/bd65c2c7mq0m9oqef520.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"9e2715ecf1a454b61bd40ac4409adf10",
+                            "accountType": 2,
+                            "fantuanName":"李易峰",
+                            "photo":"https://userpic.api.max.mgtv.com/person58b6878d3591b.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1029891,
+                        "label": [],
+                        "title":"",
+                        "content":"【李易峰】实力宠粉！峰峰生日会为完成粉丝心愿，竟然现场大跳海草舞?？>>",
+                        "type":2,
+                        "state":1,
+                        "date":"05月02日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://3img.hitv.com/preview/sp_images/2018/yuanchuang/321558/4373295/20180430223438311.jpg",
+                                "duration":475,
+                                "videoId":"4373295",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "externalLink":[
+                        ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person58b6878d3591b.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【李易峰】实力宠粉！峰峰生日会为完成粉丝心愿，竟然现场大跳海草舞?？>>",
+                            "url": "https://m.mgtv.com/fantuan/9e2715ecf1a454b61bd40ac4409adf10/list.html?feedid=1029891",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1029891&fantuanId=9e2715ecf1a454b61bd40ac4409adf10&uuid=5bd6194aa1384081a10a041c19bca3a7&typ=2&state=1&st=c1.7.2&score=429",
+                        "praiseNum":"0",
+                        "commentNum":"13",
+                        "readNum":"625"
+                    }
+                    
+        ]
+    }
+}

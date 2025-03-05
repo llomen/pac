@@ -1,0 +1,20 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+
+*** Test Cases ***
+未登录评论提醒
+    首页-我
+    公共-滑动页面    消息中心    设置
+    公共－点击页面文本    设置
+    Element Value Should Be    //XCUIElementTypeSwitch[@name="评论提醒"]    0
+    公共－xpath    //XCUIElementTypeSwitch[@name="评论提醒"]
+    公共－xpath    //XCUIElementTypeButton[@name="登录"]
+    公共－点击页面文本    登录
+    sleep    3
+    Element Value Should Be    //XCUIElementTypeSwitch[@name="评论提醒"]    1

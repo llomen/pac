@@ -1,0 +1,161 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${account}        siqian50@qq.com
+${password}       111111
+
+*** Test Cases ***
+首页-缓存pvs-条数
+    公共-删除数据
+    sleep    5
+    首页-缓存
+    ${result}    公共-获取结果    ${pvs}    bu2_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-缓存pvs-字段
+    公共-字段    ${result}
+
+首页-缓存pvs-字段值
+    公共-字段值    ${result}
+
+首页-缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-缓存pvs1-字段
+    公共-字段    ${result}
+
+首页-缓存pvs1-字段值
+    公共-字段值    ${result}
+
+缓存-首页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+缓存-首页pvs-字段
+    公共-字段    ${result}
+
+缓存-首页pvs-字段值
+    公共-字段值    ${result}
+
+缓存-首页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_004    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+缓存-首页pvs1-字段
+    公共-字段    ${result}
+
+缓存-首页pvs1-字段值
+    公共-字段值    ${result}
+
+直播大厅-登录页pvs-条数
+    首页-频道管理
+    公共－点击页面文本    直播
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeButton[@name="关注"])[1]
+    ${result}    公共-获取结果    ${pvs}    bu2_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播大厅-登录页pvs-字段
+    公共-字段    ${result}
+
+直播大厅-登录页pvs-字段值
+    公共-字段值    ${result}
+
+直播大厅-登录页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_005    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播大厅-登录页pvs1-字段
+    公共-字段    ${result}
+
+直播大厅-登录页pvs1-字段值
+    公共-字段值    ${result}
+
+登录页-直播大厅pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_006    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页-直播大厅pvs-字段
+    公共-字段    ${result}
+
+登录页-直播大厅pvs-字段值
+    公共-字段值    ${result}
+
+登录页-直播大厅pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_006    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页-直播大厅pvs1-字段
+    公共-字段    ${result}
+
+登录页-直播大厅pvs1-字段值
+    公共-字段值    ${result}
+
+邮箱登录-忘记密码pvs-条数
+    首页-我
+    我－未登录
+    公共－点击页面文本    使用其它账号登录
+    公共－点击页面文本    邮箱
+    公共-删除数据
+    公共－点击页面文本    忘记密码
+    ${result}    公共-获取结果    ${pvs}    bu2_010    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录-忘记密码pvs-字段
+    公共-字段    ${result}
+
+邮箱登录-忘记密码pvs-字段值
+    公共-字段值    ${result}
+
+邮箱登录-忘记密码pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_010    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录-忘记密码pvs1-字段
+    公共-字段    ${result}
+
+邮箱登录-忘记密码pvs1-字段值
+    公共-字段值    ${result}
+
+忘记密码-邮箱登录pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+忘记密码-邮箱登录pvs-字段
+    公共-字段    ${result}
+
+忘记密码-邮箱登录pvs-字段值
+    公共-字段值    ${result}
+
+忘记密码-邮箱登录pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_011    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+忘记密码-邮箱登录pvs1-字段
+    公共-字段    ${result}
+
+忘记密码-邮箱登录pvs1-字段值
+    公共-字段值    ${result}

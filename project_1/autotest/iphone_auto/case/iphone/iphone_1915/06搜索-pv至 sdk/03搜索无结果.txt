@@ -1,0 +1,102 @@
+*** Settings ***
+Documentation     电影搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${interestpv}     {'act':'interestpv'}
+${recommended_user}    {'act':'recommend_user'}
+
+*** Test Cases ***
+搜索无结果search-条数
+    [Setup]
+    sleep    3
+    首页-搜索
+    sleep    1
+    公共-删除数据
+    搜索首页－输入搜索词    Djjjjjjj
+    搜索－点击搜索
+    ${result}    公共-获取结果    ${search}    wujieguo_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索无结果search-字段
+    公共-字段    ${result}
+
+搜索无结果search-字段值
+    公共-字段值    ${result}
+
+搜索无结果view-条数
+    ${result}    公共-获取结果    ${view}    wujieguo_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索无结果view-字段
+    公共-字段    ${result}
+
+搜索无结果view-字段值
+    公共-字段值    ${result}
+
+无结果pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_006    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+无结果pvs-字段
+    公共-字段    ${result}
+
+无结果pvs-字段值
+    公共-字段值    ${result}
+
+无结果pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_006    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+无结果pvs1-字段
+    公共-字段    ${result}
+
+无结果pvs1-字段值
+    公共-字段值    ${result}
+
+精选看了会喜欢interestpv-条数
+    ${result}    公共-获取结果    ${interestpv}    iphone_jingxuan_001    mpp_recommendpv_interestpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+精选看了会喜欢interestpv-字段
+    公共-字段    ${result}
+
+精选看了会喜欢interestpv-字段值
+    公共-字段值    ${result}
+
+搜索无结果click-条数
+    公共-删除数据
+    公共－点击页面文本    冒险组近距离喂食白鲸
+    sleep    2
+    ${result}    公共-获取结果    ${click}    cainixihuan_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索无结果click-字段
+    公共-字段    ${result}
+
+搜索无结果click-字段值
+    公共-字段值    ${result}
+
+精选看了会喜欢recommended_user-条数
+    ${result}    公共-获取结果    ${recommended_user}    iphone_jingxuan_001    mpp_recommend_user    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+精选看了会喜欢recommended_user-字段
+    公共-字段    ${result}
+
+精选看了会喜欢recommended_user-字段值
+    公共-字段值    ${result}

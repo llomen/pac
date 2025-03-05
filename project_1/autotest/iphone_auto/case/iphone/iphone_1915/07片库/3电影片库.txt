@@ -1,0 +1,180 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${tagselect}      {'act':'tag-select'}
+${list}           {'act':'list'}
+${dataclick}      {'act':'data-click'}
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+全部list-条数
+    首页-频道管理
+    公共－点击页面文本    电影
+    公共-删除数据
+    sleep    2
+    公共－xpath    //XCUIElementTypeButton[@name="全部"]
+    sleep    2
+    ${result}    公共-获取结果    ${list}    pianku_dianying_001    mpp_pianku_list_iphone_dianying    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部list-字段
+    公共-字段    ${result}
+
+全部list-字段名
+    公共-字段值    ${result}
+
+进入片库show-条数
+    ${result}    公共-获取结果    ${show}    index_pianku_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入片库show-字段
+    公共-字段    ${result}
+
+进入片库show-字段名
+    公共-字段值    ${result}
+
+华语强档list
+    公共-删除数据
+    comment    公共－点击页面文本    华语强档
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "华语强档")]
+    ${result}    公共-获取结果    ${list}    pianku_dianying_002    mpp_pianku_list_iphone_dianying    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+华语强档list-字段
+    公共-字段    ${result}
+
+华语强档list-字段名
+    公共-字段值    ${result}
+
+切换标签show-条数
+    sleep    2
+    ${result}    公共-获取结果    ${show}    index_pianku_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换标签show-字段
+    公共-字段    ${result}
+
+切换标签show-字段名
+    公共-字段值    ${result}
+
+VIP免费list-条数
+    公共-删除数据
+    comment    公共－点击页面文本    VIP免费
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "VIP免费")]
+    ${result}    公共-获取结果    ${list}    pianku_dianying_004    mpp_pianku_list_iphone_dianying    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP免费list-字段
+    公共-字段    ${result}
+
+VIP免费list-字段名
+    公共-字段值    ${result}
+
+评分list-条数
+    公共-删除数据
+    comment    公共－点击页面文本    评分
+    公共－xpath    //XCUIElementTypeStaticText[contains(@label, "评分")]
+    ${result}    公共-获取结果    ${list}    pianku_dianying_005    mpp_pianku_list_iphone_dianying    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评分list-字段
+    公共-字段    ${result}
+
+评分list-字段名
+    公共-字段值    ${result}
+
+点第6个视频data-click
+    公共-删除数据
+    公共－点击页面文本    红海行动
+    ${result}    公共-获取结果    ${dataclick}    pianku_dianying_004    mpp_pianku_dataclick_zuhe_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点第6个视频data-click-字段
+    公共-字段    ${result}
+
+点第6个视频data-click-字段名
+    公共-字段值    ${result}
+
+点播页返回
+    sleep    3
+    公共-删除数据
+    点播播放页-返回
+
+其他页面返回show-条数
+    sleep    2
+    ${result}    公共-获取结果    ${show}    index_pianku_01    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+其他页面返回show-字段
+    公共-字段    ${result}
+
+其他页面返回show-字段名
+    公共-字段值    ${result}
+
+点热搜跳搜索结果页pvs-条数
+    公共-删除数据
+    公共－点击页面文本    周星驰
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点热搜跳搜索结果页pvs-字段
+    公共-字段    ${result}
+
+点热搜跳搜索结果页pvs-字段名
+    公共-字段值    ${result}
+
+取消返回片库pvs-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消返回片库pvs-字段
+    公共-字段    ${result}
+
+取消返回片库pvs-字段名
+    公共-字段值    ${result}
+
+点搜索跳搜索页pvs-条数
+    公共-删除数据
+    公共－点击页面文本    navigantionbar search
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点搜索跳搜索页pvs-字段
+    公共-字段    ${result}
+
+点搜索跳搜索页pvs-字段名
+    公共-字段值    ${result}
+
+返回片库pvs-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_006    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回片库pvs-字段
+    公共-字段    ${result}
+
+返回片库pvs-字段名
+    公共-字段值    ${result}
+
+*** Keywords ***
+片库下拉刷新
+    swipe    150    300    0    150

@@ -1,0 +1,137 @@
+*** Settings ***
+Documentation     片库'fstlvlId', 'chargeInfo'字段删除
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${tagselect}      {'act':'tag-select'}
+${list}           {'act':'list'}
+${dataclick}      {'act':'data-click'}
+
+*** Test Cases ***
+全部list-条数
+    公共－点击页面文本    综艺
+    公共－点击页面文本    电视剧
+    公共-删除数据
+    公共－点击页面文本    全部
+    sleep    2
+    ${result}    公共-获取结果    ${list}    pianku_dianshi_001    mpp_pianku_list_iphone_dianshiju    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部list-字段
+    公共-字段    ${result}
+
+全部list-字段名
+    公共-字段值    ${result}
+
+全部pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pianku_dianshi_002    ${pvs_table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部pvs-字段
+    公共-字段    ${result}
+
+全部pvs-字段名
+    公共-字段值    ${result}
+
+甜蜜互宠list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    甜蜜互宠
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]
+    ${result}    公共-获取结果    ${list}    pianku_dianshi_003    mpp_pianku_list_iphone_dianshiju    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+甜蜜互宠list-字段
+    公共-字段    ${result}
+
+甜蜜互宠list-字段名
+    公共-字段值    ${result}
+
+虐恋情深list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    虐恋情深
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_dianshi_004    mpp_pianku_list_iphone_dianshiju    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+虐恋情深list-字段
+    公共-字段    ${result}
+
+虐恋情深list-字段名
+    公共-字段值    ${result}
+
+日韩list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    韩国
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_dianshi_005    mpp_pianku_list_iphone_dianshiju    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+日韩list-字段
+    公共-字段    ${result}
+
+日韩list-字段名
+    公共-字段值    ${result}
+
+点击视频播放data-click-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeCollectionView/XCUIElementTypeCell[2]
+    ${result}    公共-获取结果    ${dataclick}    pianku_dianshi_007    mpp_pianku_dataclick_zuhe_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击视频播放data-click-字段
+    公共-字段    ${result}
+
+点击视频播放data-click-字段名
+    公共-字段值    ${result}
+
+返回片库pvs-条数
+    sleep    3
+    公共-删除数据
+    sleep    2
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pianku_dianshi_008    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回片库pvs-字段
+    公共-字段    ${result}
+
+返回片库pvs-字段名
+    公共-字段值    ${result}
+
+全部2list-条数
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[1])[2]
+    sleep    2
+    ${result}    公共-获取结果    ${list}    pianku_dianshi_009    mpp_pianku_list_iphone_dianshiju    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部2list-字段
+    公共-字段    ${result}
+
+全部2list-字段名
+    公共-字段值    ${result}
+
+最新list-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[2]
+    sleep    2
+    ${result}    公共-获取结果    ${list}    pianku_dianshi_010    mpp_pianku_list_iphone_dianshiju    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+最新list-字段
+    公共-字段    ${result}
+
+最新list-字段名
+    公共-字段值    ${result}

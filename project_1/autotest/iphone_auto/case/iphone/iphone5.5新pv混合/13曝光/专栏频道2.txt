@@ -1,0 +1,332 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_pvs1}     mpp_pv_5_5_iphone_newsdk
+${table_pvs_dianbo}    mpp_pv_5_5_iphone_sdk_dianbo
+${table_chzlshow}    mpp_ip_chzlshow
+${table_chzlclick}    mpp_ip_chzlclick
+${chzlshow}       {'act':'chzlshow'}
+${chzlclick}      {'act':'chzlclick'}
+${columnist}      {'act':'columnist'}
+
+*** Test Cases ***
+专栏pvs-条数
+    首页-频道管理
+    公共-删除数据
+    上滑
+    公共－点击页面文本    专栏
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_013    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏pvs-字段
+    公共-字段    ${result}
+
+专栏pvs-字段值
+    公共-字段值    ${result}
+
+专栏pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_013    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏pvs1-字段
+    公共-字段    ${result}
+
+专栏pvs1-字段值
+    公共-字段值    ${result}
+
+热门专栏pvs-条数
+    公共-删除数据
+    公共－点击页面文本    热门专栏
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_018    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门专栏pvs-字段
+    公共-字段    ${result}
+
+热门专栏pvs-字段值
+    公共-字段值    ${result}
+
+热门专栏pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_018    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门专栏pvs1-字段
+    公共-字段    ${result}
+
+热门专栏pvs1-字段值
+    公共-字段值    ${result}
+
+专栏详情pvs-条数
+    公共-删除数据
+    热门专栏-点击第一个专栏详情
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏详情pvs-字段
+    公共-字段    ${result}
+
+专栏详情pvs-字段值
+    公共-字段值    ${result}
+
+专栏详情pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_005    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏详情pvs1-字段
+    公共-字段    ${result}
+
+专栏详情pvs1-字段值
+    公共-字段值    ${result}
+
+返回-热门专栏pvs-条数
+    公共-删除数据
+    热门up主用户详情-返回
+
+热门专栏-周榜pvs-条数
+    公共-删除数据
+    公共－点击页面文本    周榜
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_021    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门专栏-周榜pvs-字段
+    公共-字段    ${result}
+
+热门专栏-周榜pvs-字段值
+    公共-字段值    ${result}
+
+热门专栏-周榜pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_021    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门专栏-周榜pvs1-字段
+    公共-字段    ${result}
+
+热门专栏-周榜pvs1-字段值
+    公共-字段值    ${result}
+
+热门专栏-月榜pvs-条数
+    公共-删除数据
+    公共－点击页面文本    月榜
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_022    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门专栏-月榜pvs-字段
+    公共-字段    ${result}
+
+热门专栏-月榜pvs-字段值
+    公共-字段值    ${result}
+
+热门专栏-月榜pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_022    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门专栏-月榜pvs1-字段
+    公共-字段    ${result}
+
+热门专栏-月榜pvs1-字段值
+    公共-字段值    ${result}
+
+返回-专栏页pvs-条数
+    公共-删除数据
+    热门up主详情-返回
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_017    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回-专栏页pvs-字段
+    公共-字段    ${result}
+
+返回-专栏页pvs-字段值
+    公共-字段值    ${result}
+
+返回-专栏页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_017    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回-专栏页pvs1-字段
+    公共-字段    ${result}
+
+返回-专栏页pvs1-字段值
+    公共-字段值    ${result}
+
+专栏-点击第一个热门up主头像pvs-条数
+    公共-删除数据
+    热门up主-点击第一个
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏-点击第一个热门up主头像pvs-字段
+    公共-字段    ${result}
+
+专栏-点击第一个热门up主头像pvs-字段值
+    公共-字段值    ${result}
+
+专栏-点击第一个热门up主头像pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_014    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏-点击第一个热门up主头像pvs1-字段
+    公共-字段    ${result}
+
+专栏-点击第一个热门up主头像pvs1-字段值
+    公共-字段值    ${result}
+
+热门up主pvs-条数
+    公共-删除数据
+    公共－点击页面文本    热门up主
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门up主pvs-字段
+    公共-字段    ${result}
+
+热门up主pvs-字段值
+    公共-字段值    ${result}
+
+热门up主pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_014    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门up主pvs1-字段
+    公共-字段    ${result}
+
+热门up主pvs1-字段值
+    公共-字段值    ${result}
+
+未登录关注chzlclick-条数
+    公共-删除数据
+    热门up主详情-关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_002    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未登录关注chzlclick-字段
+    公共-字段    ${result}
+
+未登录关注chzlclick-字段值
+    公共-字段值    ${result}
+
+未登录关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未登录关注columnist-字段
+    公共-字段    ${result}
+
+未登录关注columnist-字段值
+    公共-字段值    ${result}
+
+跳转登录页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录页pvs-字段
+    公共-字段    ${result}
+
+跳转登录页pvs-字段值
+    公共-字段值    ${result}
+
+跳转登录页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_005    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录页pvs1-字段
+    公共-字段    ${result}
+
+跳转登录页pvs1-字段值
+    公共-字段值    ${result}
+
+登录后跳转回专栏频道
+    直接登录    ${mail_account}    ${mail_pwd}    ${mail_name}
+
+登录后关注chzlclick-条数
+    公共-删除数据
+    热门up主详情-关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_012    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后关注chzlclick-字段
+    公共-字段    ${result}
+
+登录后关注chzlclick-字段值
+    公共-字段值    ${result}
+
+登录后关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_22    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后关注columnist-字段
+    公共-字段    ${result}
+
+登录后关注columnist-字段值
+    公共-字段值    ${result}
+
+热门up主详情-点击第一个pvs-条数
+    公共-删除数据
+    热门up主详情-点击第一个用户
+
+热门up主详情-点击第一个pvs-字段
+    公共-字段    ${result}
+
+热门up主详情-点击第一个pvs-字段值
+    公共-字段值    ${result}
+
+热门up主详情-点击第一个pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_015    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门up主详情-点击第一个pvs1-字段
+    公共-字段    ${result}
+
+热门up主详情-点击第一个pvs1-字段值
+    公共-字段值    ${result}
+
+热门up主详情-返回第一个pvs-条数
+    公共-删除数据
+    热门up主用户详情-返回
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_016    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门up主详情-返回第一个pvs-字段
+    公共-字段    ${result}
+
+热门up主详情-返回第一个pvs-字段值
+    公共-字段值    ${result}
+
+热门up主详情-返回第一个pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanlan_016    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门up主详情-返回第一个pvs1-字段
+    公共-字段    ${result}
+
+热门up主详情-返回第一个pvs1-字段值
+    公共-字段值    ${result}

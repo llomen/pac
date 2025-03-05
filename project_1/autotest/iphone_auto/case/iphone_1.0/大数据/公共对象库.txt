@@ -1,0 +1,11 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+启动应用
+    Open Application    http://127.0.0.1:4723/wd/hub    platformName=IOS    deviceName=iPhone 6    app=/Users/klyg/Desktop/iphone_auto/package/ImgoTV-iphone4.7.0.160601.zip    platformVersion=9.2    newCommandTimeout=180
+    sleep    1
+
+点击频道
+    [Arguments]    ${arg1}
+    点击频道    name=${arg1}

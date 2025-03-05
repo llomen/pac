@@ -1,0 +1,115 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${switch}         {'act':'switch'}
+${pvs}            {'act':'pvs'}
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_pvs_dianbo}    mpp_pv_5_5_iphone_sdk_dianbo
+${aplay}          {'act':'aplay'}
+${oflhb}          {'act':'oflhb'}
+${ppv}            {'act':'ppv'}
+${pvv}            {'act':'pvv'}
+${pend}           {'act':'pend'}
+
+*** Test Cases ***
+离线缓存页进入剧集页pvs-条数
+    首页-我
+    我-滑动到设置
+    我的-缓存
+    公共-删除数据
+    page should contain text    青云志
+    公共－点击页面文本    青云志
+    ${result}    公共-获取结果    ${pvs}    kandan_back_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存页进入剧集页pvs-字段
+    公共-字段    ${result}
+
+离线缓存页进入剧集页pvs-字段值
+    公共-字段值    ${result}
+
+播放离线视频pvs-条数
+    公共-删除数据
+    公共－点击页面文本    第1集
+    sleep    18
+    ${result}    公共-获取结果    ${pvs}    kandan_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放离线视频pvs-字段
+    公共-字段    ${result}
+
+播放离线视频pvs-字段值
+    公共-字段值    ${result}
+
+离线ppv-条数
+    ${result}    公共-获取结果    ${ppv}    ppv_ofl    mobile_ppv_ipad    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线ppv-字段
+    公共-字段    ${result}
+
+离线ppv-字段值
+    公共-字段值    ${result}
+
+离线广告-条数在
+    sleep    4
+    ${result}    公共-获取结果    {'type':'4'}    ke2_05    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线广告-字段
+    公共-字段    ${result}
+
+离线广告-字段值
+    公共-字段值    ${result}
+
+离线pvv-条数
+    sleep    15
+    ${result}    公共-获取结果    ${pvv}    pvv_ofl    mobile_pvv_ipad    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线pvv-字段
+    公共-字段    ${result}
+
+离线pvv-字段值
+    公共-字段值    ${result}
+
+离线vv
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    ${table_aplay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs-条数
+    click a point    100    100
+    公共-删除数据
+    click element    name=backbg icon
+    ${result}    公共-获取结果    ${pvs}    kandan_back_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs-字段
+    公共-字段    ${result}
+
+退出播放pvs-字段值
+    公共-字段值    ${result}
+
+退出pend
+
+离线oflhb
+    ${result}    公共-获取结果    ${cdn1}    ke2_07    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+*** Keywords ***
+暂停视频
+    wq_double_tap    xpath=//XCUIElementTypeButton[@name="player back Shadow"]/..

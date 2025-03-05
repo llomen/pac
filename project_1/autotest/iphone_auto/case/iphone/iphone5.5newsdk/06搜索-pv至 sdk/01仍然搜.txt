@@ -1,0 +1,144 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+搜索首页pvs-条数
+    [Setup]
+    sleep    5
+    公共-删除数据
+    首页-搜索
+    ${result}    公共-获取结果    ${pvs}    sousuo_001    ${pvs_table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索首页pvs-字段
+    公共-字段    ${result}
+
+搜索首页pvs-字段值
+    公共-字段值    ${result}
+
+search按钮搜索search-条数
+    Comment    公共-删除数据
+    搜索首页－输入搜索词    kuaile
+    Comment    公共－选中键盘第一个
+    公共-删除数据
+    公共－点击页面文本    确认
+    公共－点击页面文本    搜索
+    sleep    3
+    ${result}    公共-获取结果    ${search}    button_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+search按钮搜索search-字段
+    公共-字段    ${result}
+
+search按钮搜索search-字段值
+    公共-字段值    ${result}
+
+search按钮搜索view-条数
+    sleep    3
+    ${result}    公共-获取结果    ${view}    button_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+search按钮搜索view-字段
+    公共-字段    ${result}
+
+search按钮搜索view-字段值
+    公共-字段值    ${result}
+
+搜索结果pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    ${pvs_table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索结果pvs-字段
+    公共-字段    ${result}
+
+搜索结果pvs-字段值
+    公共-字段值    ${result}
+
+综艺合集click-条数
+    公共-删除数据
+    搜索-点击纠错前合集
+    sleep    3
+    ${result}    公共-获取结果    ${click}    zongyi_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺合集click-字段
+    公共-字段    ${result}
+
+综艺合集click-字段值
+    公共-字段值    ${result}
+
+搜索播放pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_bofang    ${pvs_table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索播放pvs-字段
+    公共-字段    ${result}
+
+搜索播放pvs-字段值
+    公共-字段值    ${result}
+
+搜索播放返回pvs-条数
+    Comment    公共－点击坐标点    50    40
+    公共-删除数据
+    点播播放页-返回
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    sousuo_bofang1    ${pvs_table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索播放返回pvs-字段
+    公共-字段    ${result}
+
+搜索播放返回pvs-字段值
+    公共-字段值    ${result}
+
+仍然搜search-条数
+    公共-删除数据
+    搜索－仍然搜索
+    sleep    5
+    ${result}    公共-获取结果    ${search}    rengran_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+仍然搜search-字段
+    公共-字段    ${result}
+
+仍然搜search-字段值
+    公共-字段值    ${result}
+
+仍然搜view-条数
+    ${result}    公共-获取结果    ${view}    rengran_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+仍然搜view-字段
+    公共-字段    ${result}
+
+仍然搜view-字段值
+    公共-字段值    ${result}
+
+退出搜索页pvs-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pvs}    quxiao_001    ${pvs_table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出搜索页pvs-字段
+    公共-字段    ${result}
+
+退出搜索页pvs-字段值
+    公共-字段值    ${result}

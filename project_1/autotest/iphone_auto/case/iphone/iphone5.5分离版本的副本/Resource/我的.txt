@@ -1,0 +1,33 @@
+*** Settings ***
+Resource          ./网络.txt
+Resource          ./Variables.txt
+Resource          ./公共事件.txt
+Resource          ./公共操作.txt
+
+*** Keywords ***
+我－未登录
+    公共－点击页面文本    点击登录
+
+我－会员中心
+    公共－点击页面文本    VIP会员
+    sleep    2
+
+我-滑动到设置
+    公共-滑动页面    VIP会员    设置
+
+我的-元素
+    [Arguments]    ${locator}
+    ${aa}    run keyword and return status    element should be visible    name=${locator}
+    run keyword if    ${aa}==False    滚动到设置
+    公共－点击页面文本    ${locator}
+
+我的-缓存
+    ${aa}    if page contain text    离线缓存
+    run keyword if    ${aa}==1    公共－点击页面文本    离线缓存
+    ...    ELSE    公共－点击页面文本    离线下载
+
+我的-看单
+    公共－点击页面文本    我的看单
+
+滚动到设置
+    scroll    name=播放记录    name=设置

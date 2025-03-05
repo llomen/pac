@@ -1,0 +1,432 @@
+{
+    "code":200,
+    "msg":"success",
+    "seqId": "402f01e00add05aadbaa9da746782f1b",
+    "data":{
+        "tips":"为您推荐了10条新内容",
+        "list":[
+                    {
+                        "user":{
+                            "uuid":"91f3961e8f4a49eabec888ab1d4f1fb6",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"甜言幂语",
+                            "photo":"https://avatar.hitv.com/0/91f3961e/bd65c2c7mq0m9oqef560.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"5cd031eb8b88ffd66f813188045d6a82",
+                            "accountType": 2,
+                            "fantuanName":"杨幂",
+                            "photo":"https://userpic.api.max.mgtv.com/person57e8e9fe83165.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1029248,
+                        "label": [
+                        ],
+                        "title":"",
+                        "content":"【杨幂】问答环节，坦言想要消失一段时间，变成男生的话自己一定很酷>>",
+                        "type":2,
+                        "state":1,
+                        "date":"04月12日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://2img.hitv.com/preview/sp_images/2018/yuanchuang/320206/4349939/20180412115345380.jpg",
+                                "duration":32,
+                                "videoId":"4349939",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person57e8e9fe83165.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【杨幂】问答环节，坦言想要消失一段时间，变成男生的话自己一定很酷>>",
+                            "url": "https://m.mgtv.com/fantuan/5cd031eb8b88ffd66f813188045d6a82/list.html?feedid=1029248",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1029248&fantuanId=5cd031eb8b88ffd66f813188045d6a82&uuid=91f3961e8f4a49eabec888ab1d4f1fb6&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"57"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"f5dc61cdea76497c9894538f967e502d",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"爱丽丝牌甜热热",
+                            "photo":"https://avatar.hitv.com/0/f5dc61cd/bd65c2c7mq0m9oqef500.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"3753d4bcd2edc95bc33f95e06bddcd14",
+                            "accountType": 2,
+                            "fantuanName":"迪丽热巴",
+                            "photo":"https://userpic.api.max.mgtv.com/person586f62f98416f.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1029185,
+                        "label": [
+                        ],
+                        "title":"",
+                        "content":"【迪丽热巴】喵喵喵~奶迪实力模仿小朋友“喵帕斯”，最后一帧笑得相当特别哈哈>>",
+                        "type":2,
+                        "state":1,
+                        "date":"04月09日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://1img.hitv.com/preview/sp_images/2018/yuanchuang/320206/4344837/20180408191106674.jpg",
+                                "duration":45,
+                                "videoId":"4344837",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person586f62f98416f.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【迪丽热巴】喵喵喵~奶迪实力模仿小朋友“喵帕斯”，最后一帧笑得相当特别哈哈>>",
+                            "url": "https://m.mgtv.com/fantuan/3753d4bcd2edc95bc33f95e06bddcd14/list.html?feedid=1029185",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1029185&fantuanId=3753d4bcd2edc95bc33f95e06bddcd14&uuid=f5dc61cdea76497c9894538f967e502d&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"49"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"d749729274004596bca2d53291d9869b",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"像我们一样年轻",
+                            "photo":"https://userpic.api.max.mgtv.com/person5b189e443f87a.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"d749729274004596bca2d53291d9869b",
+                            "accountType": 3,
+                            "fantuanName":"像我们一样年轻",
+                            "photo":"https://userpic.api.max.mgtv.com/person5b189e443f87a.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1032109,
+                        "label": [
+                        ],
+                        "title":"",
+                        "content":"陈翔六一出行计划！整蛊心上人很开心！",
+                        "type":2,
+                        "state":1,
+                        "date":"06月11日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://1img.hitv.com/preview/sp_images/2018/dianshiju/323665/4414412/20180601140159227.jpg",
+                                "duration":44,
+                                "videoId":"4414412",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5b189e443f87a.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "陈翔六一出行计划！整蛊心上人很开心！",
+                            "url": "https://m.mgtv.com/fantuan/d749729274004596bca2d53291d9869b/list.html?feedid=1032109",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1032109&fantuanId=d749729274004596bca2d53291d9869b&uuid=d749729274004596bca2d53291d9869b&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"79"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"cb16224a5cd59da61dbe070411e81033",
+                            "level":3,
+                            "accountType":0,
+                            "nickName":"搞错哒哒aaa红色警戒就直接",
+                            "photo":"https://avatar.hitv.com/DlXH8OxP2NodfahRrjiDaccmCl2g0c.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"f6874f86953ed4194722a8bb2a9fefa6",
+                            "accountType": 3,
+                            "fantuanName":"湖南卫视跨年演唱会",
+                            "photo":"https://userpic.api.max.mgtv.com/person5a38dba11f399.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":402,
+                        "label": [
+                        ],
+                        "title":"123",
+                        "content":"不是斤斤计较的家",
+                        "type":1,
+                        "state":1,
+                        "date":"19小时前",
+                        "source": 1,
+                            "images":[
+                                    {
+                                        "big":"https://ugc.hitv.com/2180722154020103360150.jpg?x-oss-process=image/auto-orient,1/quality,q_90",
+                                        "small":"https://ugc.hitv.com/2180722154020103360150.jpg?x-oss-process=image/auto-orient,1/quality,q_90",
+                                        "size": "3264*2448",
+                                        "type": 0
+                                    }
+                                    
+                            ],
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5a38dba11f399.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【123】不是斤斤计较的家",
+                            "url": "https://m.mgtv.com/fantuan/f6874f86953ed4194722a8bb2a9fefa6/list.html?feedid=402",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=402&fantuanId=f6874f86953ed4194722a8bb2a9fefa6&uuid=cb16224a5cd59da61dbe070411e81033&typ=1&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"258"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"af75b8ffe4b44847a69ddb801b45f397",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"颖宝最爱萤火虫",
+                            "photo":"https://avatar.hitv.com/0/af75b8ff/bd6sl7s7mq0rr1k9vm0g.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"f169a827000796e96367d1c8c6865c29",
+                            "accountType": 2,
+                            "fantuanName":"赵丽颖",
+                            "photo":"https://userpic.api.max.mgtv.com/person5965b6b9820b7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028975,
+                        "label": [
+                        ],
+                        "title":"",
+                        "content":"【赵丽颖】《知否知否应是绿肥红瘦》杀青特辑，明丫儿哭戏，跳水戏份都来了！",
+                        "type":2,
+                        "state":1,
+                        "date":"04月03日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://1img.hitv.com/preview/sp_images/2018/yuanchuang/321558/4339414/20180403095127491.jpg",
+                                "duration":131,
+                                "videoId":"4339414",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5965b6b9820b7.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【赵丽颖】《知否知否应是绿肥红瘦》杀青特辑，明丫儿哭戏，跳水戏份都来了！",
+                            "url": "https://m.mgtv.com/fantuan/f169a827000796e96367d1c8c6865c29/list.html?feedid=1028975",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028975&fantuanId=f169a827000796e96367d1c8c6865c29&uuid=af75b8ffe4b44847a69ddb801b45f397&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"267"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"1fd278a30140406d95d1de75e1aeedc6",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"1fd278a30140406d95d1de75e1aeedc6",
+                            "accountType": 3,
+                            "fantuanName":"我是大侦探",
+                            "photo":"https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028896,
+                        "label": [
+                        ],
+                        "title":"何炅cut：细思极恐！何炅秒破“真相” 神反转吓碎膝盖",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月01日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://2img.hitv.com/preview/sp_images/2018/zongyi/322712/4337465/20180331235951082.jpg",
+                                "duration":519,
+                                "videoId":"4337465",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5aaf72c1a96b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【何炅cut：细思极恐！何炅秒破“真相” 神反转吓碎膝盖】",
+                            "url": "https://m.mgtv.com/fantuan/1fd278a30140406d95d1de75e1aeedc6/list.html?feedid=1028896",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028896&fantuanId=1fd278a30140406d95d1de75e1aeedc6&uuid=1fd278a30140406d95d1de75e1aeedc6&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"280"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"914a76a8e5a74b2ab4664f19f592f648",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"老男孩",
+                            "photo":"https://userpic.api.max.mgtv.com/person5a90d7b50b331.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"914a76a8e5a74b2ab4664f19f592f648",
+                            "accountType": 3,
+                            "fantuanName":"老男孩",
+                            "photo":"https://userpic.api.max.mgtv.com/person5a90d7b50b331.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028913,
+                        "label": [
+                        ],
+                        "title":"《老男孩》回忆下集：不是每个女人都像林小欧那样爱吴争！",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月01日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://2img.hitv.com/preview/sp_images/2018/dianshiju/322253/4337663/20180401153316667.jpg",
+                                "duration":131,
+                                "videoId":"4337663",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person5a90d7b50b331.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【《老男孩》回忆下集：不是每个女人都像林小欧那样爱吴争！】",
+                            "url": "https://m.mgtv.com/fantuan/914a76a8e5a74b2ab4664f19f592f648/list.html?feedid=1028913",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028913&fantuanId=914a76a8e5a74b2ab4664f19f592f648&uuid=914a76a8e5a74b2ab4664f19f592f648&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"268"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"fc891792e346444785b1de4ec9a9304d",
+                            "level":0,
+                            "accountType":3,
+                            "nickName":"我想和你唱",
+                            "photo":"https://userpic.api.max.mgtv.com/person58c610581fed8.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "fantuan":{
+                            "fantuanId":"fc891792e346444785b1de4ec9a9304d",
+                            "accountType": 3,
+                            "fantuanName":"我想和你唱",
+                            "photo":"https://userpic.api.max.mgtv.com/person58c610581fed8.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028932,
+                        "label": [
+                        ],
+                        "title":"《我想和你唱》第三季新闻发布会蔡依林加盟 芒果TV4月2日14：",
+                        "content":"",
+                        "type":2,
+                        "state":1,
+                        "date":"04月02日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://1img.hitv.com/preview/sp_images/2018/zongyi/322735/4338211/20180402104804366.jpg",
+                                "duration":570,
+                                "videoId":"4338211",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person58c610581fed8.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【《我想和你唱》第三季新闻发布会蔡依林加盟 芒果TV4月2日14：】",
+                            "url": "https://m.mgtv.com/fantuan/fc891792e346444785b1de4ec9a9304d/list.html?feedid=1028932",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028932&fantuanId=fc891792e346444785b1de4ec9a9304d&uuid=fc891792e346444785b1de4ec9a9304d&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"204"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"f277e8c6a0bb4f82845ad943216a0771",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"正版的大壳",
+                            "photo":"https://avatar.hitv.com/0/f277e8c6/bd65c2c7mq0m9oqef50g.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"e7753008a4e52ab3cbe0cf6cf26113cb",
+                            "accountType": 2,
+                            "fantuanName":"郑爽",
+                            "photo":"https://userpic.api.max.mgtv.com/person57ea2d83c18cc.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1028966,
+                        "label": [
+                        ],
+                        "title":"",
+                        "content":"【郑爽】卡通痘痘贴，和张一山吴尊合影，抓到一只不愿站起来的爽妹子，今日份清爽好看的小姐姐送给你❤",
+                        "type":2,
+                        "state":1,
+                        "date":"04月02日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://0img.hitv.com/preview/sp_images/2018/yuanchuang/321558/4338729/20180402170151339.jpg",
+                                "duration":82,
+                                "videoId":"4338729",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person57ea2d83c18cc.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【郑爽】卡通痘痘贴，和张一山吴尊合影，抓到一只不愿站起来的爽妹子，今日份清爽好看的小姐姐送给你❤",
+                            "url": "https://m.mgtv.com/fantuan/e7753008a4e52ab3cbe0cf6cf26113cb/list.html?feedid=1028966",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1028966&fantuanId=e7753008a4e52ab3cbe0cf6cf26113cb&uuid=f277e8c6a0bb4f82845ad943216a0771&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"156"
+                    }
+                    ,
+                    {
+                        "user":{
+                            "uuid":"91f3961e8f4a49eabec888ab1d4f1fb6",
+                            "level":0,
+                            "accountType":0,
+                            "nickName":"甜言幂语",
+                            "photo":"https://avatar.hitv.com/0/91f3961e/bd65c2c7mq0m9oqef560.jpg?x-oss-process=style/large"
+                        },
+                        "fantuan":{
+                            "fantuanId":"5cd031eb8b88ffd66f813188045d6a82",
+                            "accountType": 2,
+                            "fantuanName":"杨幂",
+                            "photo":"https://userpic.api.max.mgtv.com/person57e8e9fe83165.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+                        },
+                        "feedId":1029390,
+                        "label": [
+                        ],
+                        "title":"",
+                        "content":"【杨幂】太燃了！看完这个版本《扶摇》剪辑，迫不及待想看正片！",
+                        "type":2,
+                        "state":1,
+                        "date":"04月16日",
+                        "source": 1,
+                            "video":{
+                                "coverUrl":"https://0img.hitv.com/preview/sp_images/2018/yuanchuang/320207/4350502/20180412171240055.jpg",
+                                "duration":60,
+                                "videoId":"4350502",
+                                "state":1,
+                                "size": "848*476"
+                            },
+                        "shareInfo": {
+                            "img": "https://userpic.api.max.mgtv.com/person57e8e9fe83165.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+                            "title": "【杨幂】太燃了！看完这个版本《扶摇》剪辑，迫不及待想看正片！",
+                            "url": "https://m.mgtv.com/fantuan/5cd031eb8b88ffd66f813188045d6a82/list.html?feedid=1029390",
+                            "desc": "来自芒果饭团的分享"
+                        },
+                        "params": "feedId=1029390&fantuanId=5cd031eb8b88ffd66f813188045d6a82&uuid=91f3961e8f4a49eabec888ab1d4f1fb6&typ=2&state=1&st=test",
+                        "praiseNum":"0",
+                        "commentNum":"0",
+                        "readNum":"26"
+                    }
+                    
+        ]
+    }
+}

@@ -1,0 +1,105 @@
+*** Settings ***
+Documentation     明星搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+明星搜索pvs-条数
+    [Setup]
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    赵丽颖
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星搜索pvs-字段
+    公共-字段    ${result}
+
+明星搜索pvs-字段值
+    公共-字段值    ${result}
+
+明星搜索search-条数
+    ${result}    公共-获取结果    ${search}    mingxing_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星搜索search-字段
+    公共-字段    ${result}
+
+明星搜索search-字段值
+    公共-字段值    ${result}
+
+明星搜索view-条数
+    ${result}    公共-获取结果    ${view}    mingxing_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星搜索view-字段
+    公共-字段    ${result}
+
+明星搜索view-字段值
+    公共-字段值    ${result}
+
+明星空间click-条数
+    公共-删除数据
+    公共－点击页面文本    进入空间
+    sleep    2
+    ${result}    公共-获取结果    ${click}    mingxing_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星空间click-字段
+    公共-字段    ${result}
+
+明星空间click-字段值
+    公共-字段值    ${result}
+
+进入空间action-条数
+    sleep    2
+    ${result}    公共-获取结果    ${action}    mingxing_kongjian    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入空间action-字段
+    公共-字段    ${result}
+
+进入空间action-字段值
+    公共-字段值    ${result}
+
+明星空间pvs-条数
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sousuo_geren1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星空间pvs-字段
+    公共-字段    ${result}
+
+明星空间pvs-字段值
+    公共-字段值    ${result}
+
+明星空间返回pvs-条数
+    公共-删除数据
+    空间-返回
+    ${result}    公共-获取结果    ${pvs}    sousuo_geren2    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星空间返回pvs-字段
+    公共-字段    ${result}
+
+明星空间返回pvs-字段值
+    公共-字段值    ${result}

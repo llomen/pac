@@ -1,0 +1,295 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${pfc}            {'act':'pfc'}
+${dologin}        {'act':'DoLogin'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb','ht':'2'}
+${pjr}            {'act':'pjr'}
+${share}          {'act':'share'}
+${shareresult}    {'act':'shareresult'}
+
+*** Test Cases ***
+进入点播页pjr-条数
+    公共-删除数据
+    首页-青云志
+    sleep    18
+    ${result}    公共-获取结果    ${pjr}    pjr-xiafa    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入点播页pjr-字段
+    公共-字段    ${result}
+
+进入点播页pjr-字段值
+    公共-字段值    ${result}
+
+进入放映厅pjr-条数
+    点播播放页-暂停
+    公共-删除数据
+    点播播放页-反映厅
+    ${result}    公共-获取结果    ${pjr}    pjr-click    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入放映厅pjr-字段
+    公共-字段    ${result}
+
+进入放映厅pjr-字段值
+    公共-字段值    ${result}
+
+放映厅pvs-条数
+    ${result}    公共-获取结果    ${pvs}    fangying_01    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+放映厅pvs-字段
+    公共-字段    ${result}
+
+放映厅pvs-字段值
+    公共-字段值    ${result}
+
+跳转登录pvs-条数
+    公共-删除数据
+    公共－点击页面文本    登录
+    ${result}    公共-获取结果    ${pvs}    fangying_02    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录pvs-字段
+    公共-字段    ${result}
+
+跳转登录pvs-字段值
+    公共-字段值    ${result}
+
+登录dologin-条数
+    公共-删除数据
+    公共－点击页面文本    登录
+    sleep    5
+    ${result}    公共-获取结果    ${dologin}    login_002    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录dologin-字段
+    公共-字段    ${result}
+
+登录dologin-字段值
+    公共-字段值    ${result}
+
+登录成功跳转pvs-条数
+    ${result}    公共-获取结果    ${pvs}    fangying_03    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录成功跳转pvs-字段
+    公共-字段    ${result}
+
+登录成功跳转pvs-字段值
+    公共-字段值    ${result}
+
+邀请成员pjr-条数
+    ${aa}    if page contain text    知道了
+    run keyword if    ${aa}==1    公共－点击页面文本    知道了
+    公共-删除数据
+    公共－点击页面文本    VideoHall_Invitation_Button
+    ${result}    公共-获取结果    ${pjr}    pjr-yaoqing    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邀请成员pjr-字段
+    公共-字段    ${result}
+
+邀请成员pjr-字段值
+    公共-字段值    ${result}
+
+分享到微信share-条数
+    公共-删除数据
+    公共－点击页面文本    微信
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    pjr-share-wechat    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到微信share-字段
+    公共-字段    ${result}
+
+分享到微信share-字段值
+    公共-字段值    ${result}
+
+分享到QQshare-条数
+    公共－点击页面文本    VideoHall_Invitation_Button
+    公共-删除数据
+    公共－点击页面文本    QQ
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    pjr-share-QQ    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到QQshare-字段
+    公共-字段    ${result}
+
+分享到QQshare-字段值
+    公共-字段值    ${result}
+
+复制链接share-条数
+    公共－点击页面文本    VideoHall_Invitation_Button
+    公共-删除数据
+    公共－点击页面文本    复制链接
+    ${result}    公共-获取结果    ${share}    pjr-share-copy    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+复制链接share-字段
+    公共-字段    ${result}
+
+复制链接share-字段值
+    公共-字段值    ${result}
+
+复制链接shareresult-条数
+    ${result}    公共-获取结果    ${shareresult}    pjr-shareresult-copy    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+复制链接shareresult-字段
+    公共-字段    ${result}
+
+复制链接shareresult-字段值
+    公共-字段值    ${result}
+
+点击选集pjr-条数
+    点击屏幕右侧
+    公共-删除数据
+    公共－点击页面文本    选集
+    ${result}    公共-获取结果    ${pjr}    pjr-xuanji    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击选集pjr-字段
+    公共-字段    ${result}
+
+点击选集pjr-字段值
+    公共-字段值    ${result}
+
+选集pvs-条数
+    ${result}    公共-获取结果    ${pvs}    fangying_04    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集pvs-字段
+    公共-字段    ${result}
+
+选集pvs-字段值
+    公共-字段值    ${result}
+
+选择下一集pvs-条数
+    公共-删除数据
+    公共－点击页面文本    碧瑶张小凡街头初遇
+    ${result}    公共-获取结果    ${pvs}    fangying_05    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选择下一集pvs-字段
+    公共-字段    ${result}
+
+选择下一集pvs-字段值
+    公共-字段值    ${result}
+
+点击搜索pjr-条数
+    comment    点击屏幕右侧
+    公共-删除数据
+    公共－点击页面文本    VideoHall Switchover
+    ${result}    公共-获取结果    ${pjr}    pjr-search    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击搜索pjr-字段
+    公共-字段    ${result}
+
+点击搜索pjr-字段值
+    公共-字段值    ${result}
+
+搜索页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    fangying_06    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页pvs-字段
+    公共-字段    ${result}
+
+搜索页pvs-字段值
+    公共-字段值    ${result}
+
+搜索结果页pvs-条数
+    公共-删除数据
+    饭团-搜索-输入    快乐大本营
+    ${result}    公共-获取结果    ${pvs}    fangying_07    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索结果页pvs-字段
+    公共-字段    ${result}
+
+搜索结果页pvs-字段值
+    公共-字段值    ${result}
+
+结果页-中间页pvs-条数
+    公共-删除数据
+    公共－点击页面文本    全部
+    ${result}    公共-获取结果    ${pvs}    fangying_08    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-中间页pvs-字段
+    公共-字段    ${result}
+
+结果页-中间页pvs-字段值
+    公共-字段值    ${result}
+
+中间页返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    close icon
+    ${result}    公共-获取结果    ${pvs}    fangying_09    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+中间页返回pvs-字段
+    公共-字段    ${result}
+
+中间页返回pvs-字段值
+    公共-字段值    ${result}
+
+播放第一个pvs-条数
+    公共-删除数据
+    搜索－点击结果第一个
+    ${result}    公共-获取结果    ${pvs}    fangying_10    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放第一个pvs-字段
+    公共-字段    ${result}
+
+播放第一个pvs-字段值
+    公共-字段值    ${result}
+
+退出反映厅pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    公共－点击页面文本    退出
+    ${result}    公共-获取结果    ${pvs}    fangying_11    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出反映厅pvs-字段
+    公共-字段    ${result}
+
+退出反映厅pvs-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+点击屏幕右侧
+    click a point    280    160

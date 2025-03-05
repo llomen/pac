@@ -1,0 +1,174 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${tagselect}      {'act':'tag-select'}
+${list}           {'act':'list'}
+${dataclick}      {'act':'data-click'}
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+王牌综艺tag-select-条数
+    公共－点击页面文本    综艺
+    公共-删除数据
+    公共－点击页面文本    王牌综艺
+    sleep    2
+    ${result}    公共-获取结果    ${tagselect}    pianku_zongyi_001    mpp_pianku_tagselect_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+王牌综艺tag-select-字段
+    公共-字段    ${result}
+
+王牌综艺tag-select-字段名
+    公共-字段值    ${result}
+
+王牌综艺pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_002    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+王牌综艺pvs-字段
+    公共-字段    ${result}
+
+王牌综艺pvs-字段名
+    公共-字段值    ${result}
+
+切换至FUNS娱乐tag-select-条数
+    公共-删除数据
+    公共－点击页面文本    FUNS娱乐
+    sleep    2
+    ${result}    公共-获取结果    ${tagselect}    pianku_zongyi_003    mpp_pianku_tagselect_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换至FUNS娱乐tag-select-字段
+    公共-字段    ${result}
+
+切换至FUNS娱乐tag-select-字段名
+    公共-字段值    ${result}
+
+全部list-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="全部"]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_004    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部list-字段
+    公共-字段    ${result}
+
+全部list-字段名
+    公共-字段值    ${result}
+
+芒果出品list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    芒果出品
+    Comment    公共－xpath    //XCUIElementTypeStaticText[@name="芒果出品 "]
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeStaticText[2]
+    Comment    公共－点击页面文本    芒果出品
+    sleep    3
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_005    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+芒果出品list-字段
+    公共-字段    ${result}
+
+芒果出品list-字段名
+    公共-字段值    ${result}
+
+中国香港list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    中国香港
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_006    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+中国香港list-字段
+    公共-字段    ${result}
+
+中国香港list-字段名
+    公共-字段值    ${result}
+
+最热list-条数
+    公共-删除数据
+    Comment    公共－点击页面文本    最热
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeStaticText[2]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_007    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+最热list-字段
+    公共-字段    ${result}
+
+最热list-字段名
+    公共-字段值    ${result}
+
+内地变为全部list-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeStaticText[1]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_008    mpp_pianku_list_iphone_zongyi    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+内地变为全部list-字段
+    公共-字段    ${result}
+
+内地变为全部list-字段名
+    公共-字段值    ${result}
+
+点击视频播放data-click-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton
+    sleep    2
+    ${result}    公共-获取结果    ${dataclick}    pianku_zongyi_009    mpp_pianku_dataclick_shaixuan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击视频播放data-click-字段
+    公共-字段    ${result}
+
+点击视频播放data-click-字段名
+    公共-字段值    ${result}
+
+点击视频播放pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_010    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击视频播放pvs-字段
+    公共-字段    ${result}
+
+点击视频播放pvs-字段名
+    公共-字段值    ${result}
+
+返回片库pvs-条数
+    公共-删除数据
+    点播播放页－返回
+    ${result}    公共-获取结果    ${pvs}    pianku_zongyi_011    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回片库pvs-字段
+    公共-字段    ${result}
+
+返回片库pvs-字段名
+    公共-字段值    ${result}
+
+VIP免费list-条数
+    comment    公共-删除数据
+    Comment    公共－点击页面文本    VIP免费
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeTable/XCUIElementTypeCell[4]/XCUIElementTypeStaticText[3]
+    ${result}    公共-获取结果    ${list}    pianku_zongyi_012    mpp_pianku_list_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP免费list-字段
+    公共-字段    ${result}
+
+VIP免费list-字段名
+    公共-字段值    ${result}

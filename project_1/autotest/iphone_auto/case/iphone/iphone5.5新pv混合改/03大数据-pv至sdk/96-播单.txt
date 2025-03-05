@@ -1,0 +1,160 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${hb15}           {'act':'hb','ht':'3'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${cdn2}           {'s':'2'}
+${r3}             {‘r’:'3'}
+${r1}             {‘r’:'1'}
+${bdrecommend_rel}    {'act':'bdrecommend_rel'}
+${bdrelatepv}     {'act':'bdrelatepv'}
+
+*** Test Cases ***
+播单页pvs-条数
+    首页-搜索
+    搜索首页－输入搜索词    我的特工爷爷
+    公共－点击页面文本    确认
+    公共－点击页面文本    搜索
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="我的特工爷爷"])[2]
+    sleep    5
+    ${result}    公共-获取结果    ${pvs}    bodan_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播单页pvs-字段
+    公共-字段    ${result}
+
+播单页pvs-字段值
+    公共-字段值    ${result}
+
+播单页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bodan_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播单页pvs1-字段
+    公共-字段    ${result}
+
+播单页pvs1-字段值
+    公共-字段值    ${result}
+
+播单列表加载vl-条数
+    comment    点播-关闭右滑按钮
+    comment    公共-滑动页面    《我的特工爷爷》MV—爷爷的情书    中国警察惊呆FBI！看刘德华王凯彭于晏如何花式智斗罪犯
+    ${result}    公共-获取结果    {'act':'vl','pos':'3'}    vl_bodan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播单列表视频加载vl-字段
+    公共-字段    ${result}
+
+播单列表视频加载vl-字段值
+    公共-字段值    ${result}
+
+aplay-条数
+    sleep    18
+    ${result}    公共-获取结果    ${aplay}    iphone_bodan_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+aplay-字段
+    公共-字段    ${result}
+
+aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    bodan_001    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+点播hb15-条数
+    sleep    10
+    ${result}    公共-获取结果    ${hb15}    bodan_15    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播hb15-字段
+    公共-字段    ${result}
+
+点播hb15-字段值
+    公共-字段值    ${result}
+
+播单曝光bdrelatepv-条数
+    Comment    公共-删除数据
+    Comment    公共-滑动页面    down icon nor    看了还会看
+    Comment    公共-滑动页面    down icon nor    刘德华张学友陈伟霆！演戏唱歌两不误的香港歌手
+    ${result}    公共-获取结果    ${bdrelatepv}    iphone_bodan_001    mpp_recommendpv_bdrelatepv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播单曝光bdrelatepv-字段
+    公共-字段    ${result}
+
+播单曝光bdrelatepv-字段值
+    公共-字段值    ${result}
+
+看了还会看视频加载vl-条数
+    公共-滑动页面    我的特工爷爷    刘德华：对于电影一直很认真
+    ${result}    公共-获取结果    {'act':'vl','pos':'8'}    vl_kanlehai_bodan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看了还会看视频加载vl-字段
+    公共-字段    ${result}
+
+看了还会看视频加载vl-字段值
+    公共-字段值    ${result}
+
+播单点击bdrecommend_rel-条数
+    公共-删除数据
+    公共－点击页面文本    刘德华：对于电影一直很认真
+    ${result}    公共-获取结果    ${bdrecommend_rel}    iphone_bodan_001    mpp_bdrecommend_rel    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播单点击bdrecommend_rel-字段
+    公共-字段    ${result}
+
+播单点击bdrecommend_rel-字段值
+    公共-字段值    ${result}
+
+退出播放pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    bodan_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs-字段
+    公共-字段    ${result}
+
+退出播放pvs-字段值
+    公共-字段值    ${result}
+
+退出播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bodan_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs1-字段
+    公共-字段    ${result}
+
+退出播放pvs1-字段值
+    公共-字段值    ${result}

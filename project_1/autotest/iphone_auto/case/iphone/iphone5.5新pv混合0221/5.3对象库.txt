@@ -1,0 +1,20 @@
+*** Settings ***
+Library           AppiumLibrary
+Library           ../../../../ios_auto/src/auto.py
+Library           AllureReportLibrary    Allure
+Resource          ./Resource/网络.txt
+Resource          ./Resource/Variables.txt
+Resource          ./Resource/公共事件.txt
+Resource          ./Resource/公共操作.txt
+Resource          ./Resource/我的.txt
+Resource          ./Resource/搜索.txt
+Resource          ./Resource/点播页.txt
+Resource          ./Resource/饭团.txt
+Resource          ./Resource/首页.txt
+Resource          ./Resource/皮肤.txt
+Resource          ./Resource/点播.txt
+Resource          ./Resource/追剧专栏.txt
+Resource          ./Resource/猜你喜欢.txt
+Resource          ./Resource/沉浸式.txt
+Resource          ./Resource/看单.txt
+Resource          ./Resource/直播.txt

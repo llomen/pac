@@ -1,0 +1,157 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+vippvs-条数
+    sleep    2
+    公共-删除数据
+    首页-vip
+    ${result}    公共-获取结果    ${pvs}    vip_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vippvs-字段
+    公共-字段    ${result}
+
+vippvs-字段名
+    公共-字段值    ${result}
+
+vippvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    vip_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vippvs1-字段
+    公共-字段    ${result}
+
+vippvs1-字段名
+    公共-字段值    ${result}
+
+搜索页pvs-条数
+    公共-删除数据
+    vip-搜索
+    ${result}    公共-获取结果    ${pvs}    vip_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页pvs-字段
+    公共-字段    ${result}
+
+搜索页pvs-字段名
+    公共-字段值    ${result}
+
+搜索页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    vip_004    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页pvs1-字段
+    公共-字段    ${result}
+
+搜索页pvs1-字段名
+    公共-字段值    ${result}
+
+搜索页返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pvs}    vip_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页返回pvs-字段
+    公共-字段    ${result}
+
+搜索页返回pvs-字段名
+    公共-字段值    ${result}
+
+搜索页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    vip_005    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页返回pvs1-字段
+    公共-字段    ${result}
+
+搜索页返回pvs1-字段名
+    公共-字段值    ${result}
+
+开通会员pvs-条数
+    公共-删除数据
+    公共－点击页面文本    立即开通
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    vip_006    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员pvs-字段
+    公共-字段    ${result}
+
+开通会员pvs-字段名
+    公共-字段值    ${result}
+
+开通会员pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    vip_006    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员pvs1-字段
+    公共-字段    ${result}
+
+开通会员pvs1-字段名
+    公共-字段值    ${result}
+
+开通会员返回pvs-条数
+    公共-删除数据
+    开通会员－返回
+    ${result}    公共-获取结果    ${pvs}    vip_007    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员返回pvs-字段
+    公共-字段    ${result}
+
+开通会员返回pvs-字段名
+    公共-字段值    ${result}
+
+开通会员返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    vip_007    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员返回pvs1-字段
+    公共-字段    ${result}
+
+开通会员返回pvs1-字段名
+    公共-字段值    ${result}
+
+播放页pvs-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[1]
+    Comment    公共－点击坐标点    100    480
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    vip_008    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页pvs-字段
+    公共-字段    ${result}
+
+播放页pvs-字段名
+    公共-字段值    ${result}
+
+播放页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    vip_008    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页pvs1-字段
+    公共-字段    ${result}
+
+播放页pvs1-字段名
+    公共-字段值    ${result}
+
+删除数据
+    公共-删除数据

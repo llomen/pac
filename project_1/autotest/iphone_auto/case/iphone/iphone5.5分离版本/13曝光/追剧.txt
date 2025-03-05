@@ -1,0 +1,116 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_chfwatchshow}    mpp_ip_chfwatchshow
+${table_chfwatchclick}    mpp_ip_chfwatchclick
+${table_chfwatchclick_jubao}    mpp_ip_chfwatchclick_jubao
+${chfwatchshow}    {'act':'chfwatchshow'}
+${chfwatchclick}    {'act':'chfwatchclick'}
+
+*** Test Cases ***
+频道追剧show-条数
+    首页-频道管理
+    公共－点击页面文本    动漫
+    公共-删除数据
+    ${result}    公共-获取结果    {'logtype':'show'}    index_zhuiju    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道追剧show-字段
+    公共-字段    ${result}
+
+频道追剧show-字段值
+    公共-字段值    ${result}
+
+频道追剧chfwatchshow-条数
+    ${result}    公共-获取结果    ${chfwatchshow}    chfwatchshow_001    ${table_chfwatchshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道追剧chfwatchshow-字段
+    公共-字段    ${result}
+
+频道追剧chfwatchshow-字段值
+    公共-字段值    ${result}
+
+点标题chfwatchclick-条数
+    公共-删除数据
+    追剧-点标题
+    ${result}    公共-获取结果    ${chfwatchclick}    chfwatchclick_001    ${table_chfwatchclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点标题chfwatchclick-字段
+    公共-字段    ${result}
+
+点标题chfwatchclick-字段值
+    公共-字段值    ${result}
+
+点标题pvs-条数
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhuiju_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点标题pvs-字段
+    公共-字段    ${result}
+
+点标题pvs-字段值
+    公共-字段值    ${result}
+
+点播页返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    zhuiju_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回pvs-字段
+    公共-字段    ${result}
+
+点播页返回pvs-字段值
+    公共-字段值    ${result}
+
+点图片chfwatchclick-条数
+    公共-删除数据
+    追剧-点图片
+    ${result}    公共-获取结果    ${chfwatchclick}    chfwatchclick_001    ${table_chfwatchclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点图片chfwatchclick-字段
+    公共-字段    ${result}
+
+点图片chfwatchclick-字段值
+    公共-字段值    ${result}
+
+退出点播页
+    点播播放页-返回
+
+举报chfwatchclick-条数
+    公共-删除数据
+    追剧-举报
+    ${result}    公共-获取结果    ${chfwatchclick}    chfwatchclick_002    ${table_chfwatchclick_jubao}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+举报chfwatchclick-字段
+    公共-字段    ${result}
+
+举报chfwatchclick-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+测试上滑
+    ${x1} =    evaluate    ${屏幕宽度}*0.5
+    ${y1} =    evaluate    ${屏幕高度}*0.7
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    -${屏幕高度}*0.5
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}

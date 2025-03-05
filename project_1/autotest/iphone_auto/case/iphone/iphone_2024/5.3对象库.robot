@@ -1,0 +1,23 @@
+*** Settings ***
+Library           AppiumLibrary
+Library           ../../../../ios_auto/src/auto.py
+Resource          ./Resource/网络.robot
+Resource          ./Resource/Variables.robot
+Resource          ./Resource/Variables_table.robot
+Resource          ./Resource/公共事件.robot
+Resource          ./Resource/公共操作.robot
+Resource          ./Resource/我的.robot
+Resource          ./Resource/搜索.robot
+Resource          ./Resource/点播页.robot
+Resource          ./Resource/饭团.robot
+Resource          ./Resource/首页.robot
+Resource          ./Resource/皮肤.robot
+Resource          ./Resource/点播.robot
+Resource          ./Resource/追剧专栏.robot
+Resource          ./Resource/猜你喜欢.robot
+Resource          ./Resource/沉浸式.robot
+Resource          ./Resource/看单.robot
+Resource          ./Resource/直播.robot
+Resource          ./Resource/播放sdk.robot
+Resource          ./Resource/首页模块.robot
+Resource          ./Resource/自建频道.robot

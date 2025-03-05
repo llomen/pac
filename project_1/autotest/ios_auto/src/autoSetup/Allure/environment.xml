@@ -1,0 +1,45 @@
+<ns0:environment xmlns:ns0="urn:model.commons.qatools.yandex.ru">
+  <id>Robot Framework</id>
+  <name>lottietestdeMacBook-Pro.local</name>
+  <url>http://lottietestdeMacBook-Pro.local:8000</url>
+  <parameter>
+    <key>Robot Framework Platform</key>
+    <name>Robot Framework Platform</name>
+    <value>darwin</value>
+  </parameter>
+  <parameter>
+    <key>Robot Framework Version</key>
+    <name>Robot Framework Version</name>
+    <value>3.0</value>
+  </parameter>
+  <parameter>
+    <key>Robot Framework Full Version</key>
+    <name>Robot Framework Full Version</name>
+    <value>3.0 (Python 2.7.10 on darwin)</value>
+  </parameter>
+  <parameter>
+    <key>Python version</key>
+    <name>Python version</name>
+    <value>2.7.10</value>
+  </parameter>
+  <parameter>
+    <key>Interpreter</key>
+    <name>Interpreter</name>
+    <value>Python</value>
+  </parameter>
+  <parameter>
+    <key>Robot Framework Hostname</key>
+    <name>Robot Framework Hostname</name>
+    <value>lottietestdeMacBook-Pro.local</value>
+  </parameter>
+  <parameter>
+    <key>Allure Adapter version</key>
+    <name>Allure Adapter version</name>
+    <value>1.1.1</value>
+  </parameter>
+  <parameter>
+    <key>Robot Framework CLI Arguments</key>
+    <name>Robot Framework CLI Arguments</name>
+    <value>['-V', '/Users/lottie/Downloads/autotest/iphone_auto/case/iphone/iphone_2001/config/iphone8plus.py', '-d', '/Users/lottie/Downloads/autotest/iphone_auto/case/iphone/iphone_2001/report/2020-04-09_17:20:55/iphone8plus', '-i', 'g1', '/Users/lottie/Downloads/autotest/iphone_auto/case/iphone/iphone_2001']</value>
+  </parameter>
+</ns0:environment>

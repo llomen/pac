@@ -1,0 +1,271 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${account}        siqian50@qq.com
+${password}       111111
+
+*** Test Cases ***
+首页-缓存pvs-条数
+    公共-删除数据
+    sleep    5
+    首页-缓存
+    ${result}    公共-获取结果    ${pvs}    bu2_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-缓存pvs-字段
+    公共-字段    ${result}
+
+首页-缓存pvs-字段值
+    公共-字段值    ${result}
+
+首页-缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-缓存pvs1-字段
+    公共-字段    ${result}
+
+首页-缓存pvs1-字段值
+    公共-字段值    ${result}
+
+缓存-首页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+缓存-首页pvs-字段
+    公共-字段    ${result}
+
+缓存-首页pvs-字段值
+    公共-字段值    ${result}
+
+缓存-首页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_004    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+缓存-首页pvs1-字段
+    公共-字段    ${result}
+
+缓存-首页pvs1-字段值
+    公共-字段值    ${result}
+
+首页-扫一扫pvs-条数
+    公共-删除数据
+    首页-扫一扫
+    ${result}    公共-获取结果    ${pvs}    bu2_016    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-扫一扫pvs-字段
+    公共-字段    ${result}
+
+首页-扫一扫pvs-字段值
+    公共-字段值    ${result}
+
+首页-扫一扫pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_016    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-扫一扫pvs1-字段
+    公共-字段    ${result}
+
+首页-扫一扫pvs1-字段值
+    公共-字段值    ${result}
+
+同意相机权限
+    判断后点击    好
+
+扫一扫-首页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_017    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+扫一扫-首页pvs-字段
+    公共-字段    ${result}
+
+扫一扫-首页pvs-字段值
+    公共-字段值    ${result}
+
+扫一扫-首页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_017    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+扫一扫-首页pvs1-字段
+    公共-字段    ${result}
+
+扫一扫-首页pvs1-字段值
+    公共-字段值    ${result}
+
+列表频道pvs-条数
+    公共-删除数据
+    公共－点击页面文本    更多VIP福利等你拿
+    ${result}    公共-获取结果    ${pvs}    liebiao_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道pvs-字段
+    公共-字段    ${result}
+
+列表频道pvs-字段值
+    公共-字段值    ${result}
+
+列表频道pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    liebiao_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道pvs1-字段
+    公共-字段    ${result}
+
+列表频道pvs1-字段值
+    公共-字段值    ${result}
+
+列表频道返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    liebiao_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道返回pvs-字段
+    公共-字段    ${result}
+
+列表频道返回pvs-字段值
+    公共-字段值    ${result}
+
+列表频道返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    liebiao_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+列表频道返回pvs1-字段
+    公共-字段    ${result}
+
+列表频道返回pvs1-字段值
+    公共-字段值    ${result}
+
+频道专题页pvs-条数
+    公共-删除数据
+    频道上滑
+    sleep    2
+    tap    今日热门    20    10
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhuanti_1    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页pvs-字段
+    公共-字段    ${result}
+
+频道专题页pvs-字段值
+    公共-字段值    ${result}
+
+频道专题页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanti_1    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页pvs1-字段
+    公共-字段    ${result}
+
+频道专题页pvs1-字段值
+    公共-字段值    ${result}
+
+频道专题页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    zhuanti_2    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页返回pvs-字段
+    公共-字段    ${result}
+
+频道专题页返回pvs-字段值
+    公共-字段值    ${result}
+
+频道专题页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    zhuanti_2    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道专题页返回pvs1-字段
+    公共-字段    ${result}
+
+频道专题页返回pvs1-字段值
+    公共-字段值    ${result}
+
+邮箱登录-忘记密码pvs-条数
+    首页-我
+    我的-点击登录
+    公共－点击页面文本    使用其它账号登录
+    公共－点击页面文本    邮箱
+    公共-删除数据
+    公共－点击页面文本    忘记密码
+    ${result}    公共-获取结果    ${pvs}    bu2_010    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录-忘记密码pvs-字段
+    公共-字段    ${result}
+
+邮箱登录-忘记密码pvs-字段值
+    公共-字段值    ${result}
+
+邮箱登录-忘记密码pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_010    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录-忘记密码pvs1-字段
+    公共-字段    ${result}
+
+邮箱登录-忘记密码pvs1-字段值
+    公共-字段值    ${result}
+
+忘记密码-邮箱登录pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+忘记密码-邮箱登录pvs-字段
+    公共-字段    ${result}
+
+忘记密码-邮箱登录pvs-字段值
+    公共-字段值    ${result}
+
+忘记密码-邮箱登录pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    bu2_011    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+忘记密码-邮箱登录pvs1-字段
+    公共-字段    ${result}
+
+忘记密码-邮箱登录pvs1-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+频道上滑
+    swipe    128    450    120    200
+    comment    scroll    更多VIP福利等你拿    田亮带娃记未播版
+    capture page screenshot
+
+频道下滑
+    swipe    250    276    240    600
+    capture page screenshot

@@ -1,0 +1,22 @@
+*** Settings ***
+Library           ../../../../../ios_auto/src/auto.py
+
+*** Keywords ***
+公共－删除cdn配置
+    delete cdn
+    sleep    2
+
+公共－cdn配置
+    [Arguments]    ${text}
+    sleep    2
+    Insert Cdn Config    ${text}
+    sleep    2
+
+公共-获取结果
+    [Arguments]    ${field}    ${test_point}    ${field_table}    ${act_count}
+    ${result}    Check Result    ${field}    MGTV-iPhone-appstore5s_6    ${test_point}    ${field_table}    ${act_count}
+    [Return]    ${result}
+
+公共-删除数据
+    delete data    MGTV-iPhone-appstore5s_6
+    sleep    1

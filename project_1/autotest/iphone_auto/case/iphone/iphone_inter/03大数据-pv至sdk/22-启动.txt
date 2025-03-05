@@ -1,0 +1,42 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${table}          mpp_show_5_iphone_sdk
+
+*** Test Cases ***
+启动pvs-字段
+    ${result}    公共-获取结果    ${pvs}    setup_pvs    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-字段    ${result}
+
+启动pvs-字段名
+    公共-字段值    ${result}
+
+首页闪图show-条数
+    公共-删除数据
+    启动应用
+    sleep    8
+    ${result}    公共-获取结果    {'logtype':'show'}    index_shantu    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页闪图show-字段
+    公共-字段    ${result}
+
+首页闪图show-字段名
+    公共-字段值    ${result}
+
+小窗播放xc-条数
+    ${result}    公共-获取结果    {'act':'xc'}    setup_xc    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+小窗播放xc-字段
+    公共-字段    ${result}
+
+小窗播放xc-字段名
+    公共-字段值    ${result}

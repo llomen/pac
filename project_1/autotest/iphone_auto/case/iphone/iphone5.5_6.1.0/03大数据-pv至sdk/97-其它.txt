@@ -1,0 +1,260 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${account}        siqian50@qq.com
+${password}       111111
+${pvs}            {'act':'pvs'}
+
+*** Test Cases ***
+首页-播放记录pvs-条数
+    公共-删除数据
+    首页-播放记录
+    ${result}    公共-获取结果    ${pvs}    bu2_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-播放记录pvs-字段
+    公共-字段    ${result}
+
+首页-播放记录pvs-字段值
+    公共-字段值    ${result}
+
+播放记录-首页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_002    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录-首页pvs-字段
+    公共-字段    ${result}
+
+播放记录-首页pvs-字段值
+    公共-字段值    ${result}
+
+首页-缓存pvs-条数
+    公共-删除数据
+    首页-缓存
+    ${result}    公共-获取结果    ${pvs}    bu2_003    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页-缓存pvs-字段
+    公共-字段    ${result}
+
+首页-缓存pvs-字段值
+    公共-字段值    ${result}
+
+缓存-首页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_004    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+缓存-首页pvs-字段
+    公共-字段    ${result}
+
+缓存-首页pvs-字段值
+    公共-字段值    ${result}
+
+直播大厅-登录页pvs-条数
+    公共－点击页面文本    直播
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeButton[@name="关注"])[1]
+    ${result}    公共-获取结果    ${pvs}    bu2_005    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播大厅-登录页pvs-字段
+    公共-字段    ${result}
+
+直播大厅-登录页pvs-字段值
+    公共-字段值    ${result}
+
+登录页-直播大厅pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_006    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页-直播大厅pvs-字段
+    公共-字段    ${result}
+
+登录页-直播大厅pvs-字段值
+    公共-字段值    ${result}
+
+会员首页-VIP俱乐部pvs-条数
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[3]
+    公共-删除数据
+    sleep    10
+    公共－点击页面文本    VIP俱乐部
+    ${result}    公共-获取结果    ${pvs}    bu2_007    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员首页-VIP俱乐部pvs-字段
+    公共-字段    ${result}
+
+会员首页-VIP俱乐部pvs-字段值
+    公共-字段值    ${result}
+
+VIP俱乐部-芒果二次元pvs-条数
+    按元素右滑    name=VIP俱乐部
+    公共-删除数据
+    公共－点击页面文本    芒果二次元
+    ${result}    公共-获取结果    ${pvs}    bu2_008    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+VIP俱乐部-芒果二次元pvs-字段
+    公共-字段    ${result}
+
+VIP俱乐部-芒果二次元pvs-字段值
+    公共-字段值    ${result}
+
+芒果二次元-会员首页pvs-条数
+    公共-删除数据
+    按元素左滑    name=芒果二次元
+    按元素左滑    name=一周追剧指南
+    公共－xpath    //XCUIElementTypeStaticText[@name="精选"]
+    ${result}    公共-获取结果    ${pvs}    bu2_009    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+芒果二次元-会员首页pvs-字段
+    公共-字段    ${result}
+
+芒果二次元-会员首页pvs-字段值
+    公共-字段值    ${result}
+
+邮箱登录-忘记密码pvs-条数
+    首页-我
+    我－未登录
+    公共－点击页面文本    使用其它账号登录
+    公共－点击页面文本    邮箱
+    公共-删除数据
+    公共－点击页面文本    忘记密码
+    ${result}    公共-获取结果    ${pvs}    bu2_010    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录-忘记密码pvs-字段
+    公共-字段    ${result}
+
+邮箱登录-忘记密码pvs-字段值
+    公共-字段值    ${result}
+
+忘记密码-邮箱登录pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_011    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+忘记密码-邮箱登录pvs-字段
+    公共-字段    ${result}
+
+忘记密码-邮箱登录pvs-字段值
+    公共-字段值    ${result}
+
+会员中心-个人资产pvs-条数
+    芒果登录－输入账号    ${account}
+    芒果登录－输入密码    ${password}
+    我－会员中心
+    公共-删除数据
+    公共－点击页面文本    个人资产
+    ${result}    公共-获取结果    ${pvs}    bu2_012    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员中心-个人资产pvs-字段
+    公共-字段    ${result}
+
+会员中心-个人资产pvs-字段值
+    公共-字段值    ${result}
+
+个人资产-会员中心pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_013    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人资产-会员中心pvs-字段
+    公共-字段    ${result}
+
+个人资产-会员中心pvs-字段值
+    公共-字段值    ${result}
+
+芒果账户登录-历史账户登录pvs-条数
+    非播放页-返回
+    公共-滑动页面    我的消息    设置
+    公共－点击页面文本    设置
+    公共-滑动页面    账号与安全    退出登录
+    公共－点击页面文本    退出登录
+    公共－点击页面文本    退出
+    公共-删除数据
+    click element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeStatusBar/XCUIElementTypeOther[1]
+    我－未登录
+    ${result}    公共-获取结果    ${pvs}    bu2_014    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+芒果账户登录-历史账户登录pvs-字段
+    公共-字段    ${result}
+
+芒果账户登录-历史账户登录pvs-字段值
+    公共-字段值    ${result}
+
+历史账户登录-我pvs-条数
+    公共-删除数据
+    公共－点击页面文本    登录
+    ${result}    公共-获取结果    ${pvs}    bu2_015    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+历史账户登录-我pvs-字段
+    公共-字段    ${result}
+
+历史账户登录-我pvs-字段值
+    公共-字段值    ${result}
+
+切换暗夜nd-条数
+    公共-删除数据
+    我-滑动到设置
+    comment    Page Should Contain Text    芒果橙
+    公共－点击页面文本    皮肤
+    公共－点击页面文本    暗夜
+    comment    Page Should Contain Text    暗夜
+    ${result}    公共-获取结果    {'act':'nd'}    shift_nd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换暗夜nd-字段
+    公共-字段    ${result}
+
+切换暗夜nd-字段值
+    公共-字段值    ${result}
+
+切换芒果橙nd-条数
+    公共-删除数据
+    comment    我-滑动到设置
+    comment    Page Should Contain Text    暗夜
+    公共－点击页面文本    皮肤
+    公共－点击页面文本    芒果橙
+    comment    Page Should Contain Text    芒果橙
+    ${result}    公共-获取结果    {'act':'nd'}    shift_mgnd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换芒果橙nd-字段
+    公共-字段    ${result}
+
+切换芒果橙nd-字段值
+    公共-字段值    ${result}

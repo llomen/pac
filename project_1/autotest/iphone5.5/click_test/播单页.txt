@@ -1,0 +1,50 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${hb}             {'act':'hb'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${pvs}            {'act':'pvs'}
+${cdn2}           {'s':'2'}
+${r3}             {‘r’:'3'}
+${r1}             {‘r’:'1'}
+${bdrecommend_rel}    {'act':'bdrecommend_rel'}
+${bdrelatepv}     {'act':'bdrelatepv'}
+
+*** Test Cases ***
+播单列表加载vl-条数
+    首页－搜索
+    搜索首页－输入搜索词    我的特工爷爷
+    公共－点击页面文本    确认
+    公共－点击页面文本    搜索
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="我的特工爷爷"])[2]
+    sleep 5
+    公共-滑动页面    《我的特工爷爷》MV—爷爷的情书    中国警察惊呆FBI！看刘德华王凯彭于晏如何花式智斗罪犯
+    ${result}    公共-获取结果    {'act':'vl','pos':'3'}    vl_bodan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播单列表视频加载vl-字段
+    公共-字段    ${result}
+
+播单列表视频加载vl-字段值
+    公共-字段值    ${result}
+
+看了还会看视频加载vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'8'}    vl_kanlehai_bodan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看了还会看视频加载vl-字段
+    公共-字段    ${result}
+
+看了还会看视频加载vl-字段值
+    公共-字段值    ${result}

@@ -1,0 +1,70 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${recommended}    {'act':'recommended'}
+${relatepv}       {'act':'relatepv'}
+${aplay}          {'act':'aplay'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb'}
+
+*** Test Cases ***
+点播曝光relatepv-条数
+    首页－搜索
+    搜索首页－输入搜索词    ${firm_vip_free}
+    搜索-点击搜索
+    公共-删除数据
+    搜索－点击结果第一个
+    sleep    3
+    点播-关闭右滑按钮
+    上滑
+    ${result}    公共-获取结果    ${relatepv}    iphone_dianbo_001    mpp_recommendpv_relatepv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播曝光relatepv-字段
+    公共-字段    ${result}
+
+点播曝光relatepv-字段值
+    公共-字段值    ${result}
+
+点播点击recommended-条数
+    Comment    公共－滑动到某一控件    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[5]/UIAButton[1]
+    公共-删除数据
+    公共－点击页面文本    我不是药神
+    sleep    2
+    ${result}    公共-获取结果    ${recommended}    iphone_dianbo_001    mpp_recommend    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播点击recommended-字段
+    公共-字段    ${result}
+
+点播点击recommended-字段值
+    公共-字段值    ${result}
+
+播放页看了还会看跳转播放aplay-条数
+    sleep    17
+    ${result}    公共-获取结果    ${aplay}    dianbokanlehai_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页看了还会看跳转播放aplay-字段
+    公共-字段    ${result}
+
+播放页看了还会看跳转播放aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_006    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}

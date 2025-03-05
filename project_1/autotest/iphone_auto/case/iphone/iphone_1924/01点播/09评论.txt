@@ -1,0 +1,543 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${comment}        {'act':'comment'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_cjplayshow}    mpp_ip_chzlshow
+${table_cjlayclick}    mpp_ip_chzlclick_2
+${cjplayshow}     {'act':'cjplayshow'}
+${cjplayclick}    {'act':'cjplayclick'}
+${table_sp}       mpp_sp_iphone
+${share}          {'act':'share'}
+${cp10}           {'act':'cp1'}
+${cdn1}           {'s':'1','type':'0'}
+${cdn3}           {'s':'3','type':'2'}
+${cdn2}           {'s':'2','type':'1'}
+${r3}             {'r':'3'}
+${r1}             {'r’:'1'}
+${hb3}            {'ht':'0','act':'hb'}
+${hb5}            {'ht':'1','act':'hb'}
+${hb_end}         {'ht':'2','act':'hb'}
+${hb3_cj}         {'ht':'0','act':'hb'}
+${hb5_cj}         {'ht':'1','act':'hb'}
+${hb_end_cj}      {'ht':'2','act':'hb'}
+
+*** Test Cases ***
+点击评论pfc-条数
+    首页-搜索
+    搜索首页－输入搜索词    楚乔传
+    搜索－点击搜索
+    sleep    5
+    搜索-点击剧集的集数
+    sleep    5
+    公共-删除数据
+    点播播放页-评论
+    ${result}    公共-获取结果    ${pfc}    pfc_pinglun_new    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击评论pfc-字段
+    公共-字段    ${result}
+
+点击评论pfc-字段值
+    公共-字段值    ${result}
+
+点评论pvs-条数
+    #已用浮层上报代替
+    ${result}    公共-获取结果    ${pvs}    pinglun_001    ${table_pvs}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论pvs-字段
+    comment    公共-字段    ${result}
+
+点评论pvs-字段值
+    comment    公共-字段值    ${result}
+
+点评论pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_001    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论pvs1-字段
+    comment    公共-字段    ${result}
+
+点评论pvs1-字段值
+    comment    公共-字段值    ${result}
+
+评论浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    comment_2    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论浮层曝光cv-字段
+    公共-字段    ${result}
+
+评论浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+热门评论show-条数
+    ${result}    公共-获取结果    ${show}    show_pinglun_remen    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门评论show-字段
+    公共-字段    ${result}
+
+热门评论show-字段值
+    公共-字段值    ${result}
+
+点话题更多comment-条数
+    公共-删除数据
+    新版评论-点更多话题
+    comment    tap    话题    10    20
+    ${result}    公共-获取结果    ${comment}    comment_007    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点话题更多comment-字段
+    公共-字段    ${result}
+
+点话题更多comment-字段值
+    公共-字段值    ${result}
+
+跳转话题列表pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转话题列表pvs-字段
+    公共-字段    ${result}
+
+跳转话题列表pvs-字段值
+    公共-字段值    ${result}
+
+跳转话题列表pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_011    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转话题列表pvs1-字段
+    公共-字段    ${result}
+
+跳转话题列表pvs1-字段值
+    公共-字段值    ${result}
+
+话题列表返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pinglun_012    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题列表返回pvs-字段
+    公共-字段    ${result}
+
+话题列表返回pvs-字段值
+    公共-字段值    ${result}
+
+话题列表返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_012    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题列表返回pvs1-字段
+    公共-字段    ${result}
+
+话题列表返回pvs1-字段值
+    公共-字段值    ${result}
+
+点单个话题comment-条数
+    公共-删除数据
+    新版评论-点单个话题
+    sleep    2
+    ${result}    公共-获取结果    ${comment}    comment_008    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点单个话题comment-字段
+    公共-字段    ${result}
+
+点单个话题comment-字段值
+    公共-字段值    ${result}
+
+跳转话题详情pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_013    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转话题详情pvs-字段
+    公共-字段    ${result}
+
+跳转话题详情pvs-字段值
+    公共-字段值    ${result}
+
+跳转话题详情pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_013    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转话题详情pvs1-字段
+    公共-字段    ${result}
+
+跳转话题详情pvs1-字段值
+    公共-字段值    ${result}
+
+话题详情返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pinglun_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情返回pvs-字段
+    公共-字段    ${result}
+
+话题详情返回pvs-字段值
+    公共-字段值    ${result}
+
+话题详情返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_014    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情返回pvs1-字段
+    公共-字段    ${result}
+
+话题详情返回pvs1-字段值
+    公共-字段值    ${result}
+
+评论页点赞comment-条数
+    sleep    1
+    公共-删除数据
+    新版评论-点赞
+    ${result}    公共-获取结果    {'act':'comment','pos':'1'}    comment_002    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论页点赞comment-字段
+    公共-字段    ${result}
+
+评论页点赞comment-字段值
+    公共-字段值    ${result}
+
+点赞跳转登录页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞跳转登录页pvs-字段
+    公共-字段    ${result}
+
+点赞跳转登录页pvs-字段值
+    公共-字段值    ${result}
+
+点赞跳转登录页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞跳转登录页pvs1-字段
+    公共-字段    ${result}
+
+点赞跳转登录页pvs1-字段值
+    公共-字段值    ${result}
+
+登录页返回评论pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pinglun_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回评论pvs-字段
+    公共-字段    ${result}
+
+登录页返回评论pvs-字段值
+    公共-字段值    ${result}
+
+登录页返回评论pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回评论pvs1-字段
+    公共-字段    ${result}
+
+登录页返回评论pvs1-字段值
+    公共-字段值    ${result}
+
+评论页点评论comment-条数
+    公共-删除数据
+    新版评论-点回复
+    ${result}    公共-获取结果    {'act':'comment','pos':'1'}    comment_001    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论页点评论comment-字段
+    公共-字段    ${result}
+
+评论页点评论comment-字段值
+    公共-字段值    ${result}
+
+点评论跳转登录页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论跳转登录页pvs-字段
+    公共-字段    ${result}
+
+点评论跳转登录页pvs-字段值
+    公共-字段值    ${result}
+
+点评论跳转登录页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_001    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论跳转登录页pvs1-字段
+    公共-字段    ${result}
+
+点评论跳转登录页pvs1-字段值
+    公共-字段值    ${result}
+
+登录页返回评论2pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pinglun_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回评论2pvs-字段
+    公共-字段    ${result}
+
+登录页返回评论2pvs-字段值
+    公共-字段值    ${result}
+
+登录页返回评论2pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回评论2pvs1-字段
+    公共-字段    ${result}
+
+登录页返回评论2pvs1-字段值
+    公共-字段值    ${result}
+
+点评论头像comment-条数
+    公共-删除数据
+    新版评论-点评论者头像
+    ${result}    公共-获取结果    ${comment}    comment_004    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论头像comment-字段
+    公共-字段    ${result}
+
+点评论头像comment-字段值
+    公共-字段值    ${result}
+
+跳转个人主页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_003    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转个人主页pvs-字段
+    公共-字段    ${result}
+
+跳转个人主页pvs-字段值
+    公共-字段值    ${result}
+
+跳转个人主页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_003    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转个人主页pvs1-字段
+    公共-字段    ${result}
+
+跳转个人主页pvs1-字段值
+    公共-字段值    ${result}
+
+个人主页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pinglun_004    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人主页返回pvs-字段
+    公共-字段    ${result}
+
+个人主页返回pvs-字段值
+    公共-字段值    ${result}
+
+个人主页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_004    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人主页返回pvs1-字段
+    公共-字段    ${result}
+
+个人主页返回pvs1-字段值
+    公共-字段值    ${result}
+
+点分享comment-条数
+    公共-删除数据
+    新版评论-点更多
+    ${result}    公共-获取结果    ${comment}    comment_006    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点分享comment-字段
+    公共-字段    ${result}
+
+点分享comment-字段值
+    公共-字段值    ${result}
+
+分享框弹出share-条数
+    ${result}    公共-获取结果    ${share}    comment_share_005    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享框弹出share-字段
+    公共-字段    ${result}
+
+分享框弹出share-字段值
+    公共-字段值    ${result}
+
+分享到微信share-条数
+    公共-删除数据
+    公共－点击页面文本    微信
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    comment_share_006    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到微信share-字段
+    公共-字段    ${result}
+
+分享到微信share-字段值
+    公共-字段值    ${result}
+
+点举报comment-条数
+    新版评论-点更多
+    公共-删除数据
+    公共－点击页面文本    举报
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${comment}    comment_014    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点举报comment-字段
+    公共-字段    ${result}
+
+点举报comment-字段值
+    公共-字段值    ${result}
+
+点评论中话题comment-条数
+    公共-删除数据
+    新版评论-点评论中话题
+    ${result}    公共-获取结果    ${comment}    comment_021    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论中话题comment-字段
+    公共-字段    ${result}
+
+点评论中话题comment-字段值
+    公共-字段值    ${result}
+
+跳转话题详情2pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_013    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转话题详情2pvs-字段
+    公共-字段    ${result}
+
+跳转话题详情2pvs-字段值
+    公共-字段值    ${result}
+
+跳转话题详情2pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_013    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转话题详情2pvs1-字段
+    公共-字段    ${result}
+
+跳转话题详情2pvs1-字段值
+    公共-字段值    ${result}
+
+话题详情返回2pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    pinglun_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情返回2pvs-字段
+    公共-字段    ${result}
+
+话题详情返回2pvs-字段值
+    公共-字段值    ${result}
+
+话题详情返回2pvs1-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+话题详情返回2pvs1-字段
+    公共-字段    ${result}
+
+话题详情返回2pvs1-字段值
+    公共-字段值    ${result}
+
+点添加评论comment-条数
+    公共-删除数据
+    新版评论-点添加评论
+    ${result}    公共-获取结果    {'act':'comment','pos':'1'}    comment_005    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点添加评论comment-字段
+    公共-字段    ${result}
+
+点添加评论comment-字段值
+    公共-字段值    ${result}
+
+离开评论页stay-条数
+    非播放页-返回
+    公共-删除数据
+    公共－点击页面文本    视频
+    ${result}    公共-获取结果    ${stay}    stay_24    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离开评论页stay-字段
+    公共-字段    ${result}
+
+离开评论页stay-字段值
+    公共-字段值    ${result}
+
+点评论tab切换cv-条数
+    公共-删除数据
+    公共－点击页面文本    评论
+    ${result}    公共-获取结果    ${cv}    comment_2    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点评论tab切换cv-字段
+    公共-字段    ${result}
+
+点评论tab切换cv-字段值
+    公共-字段值    ${result}

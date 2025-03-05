@@ -1,0 +1,230 @@
+*** Settings ***
+Documentation     电视剧搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+动漫pvs1-条数
+    [Setup]
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    宝宝巴士儿歌
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${pvs1}    sousuo_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫pvs1-字段
+    公共-字段    ${result}
+
+动漫pvs1-字段值
+    公共-字段值    ${result}
+
+动漫search-条数
+    ${result}    公共-获取结果    ${search}    dianshi_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫search-字段
+    公共-字段    ${result}
+
+动漫search-字段值
+    公共-字段值    ${result}
+
+动漫view-条数
+    ${result}    公共-获取结果    ${view}    dianshi_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫view-字段
+    公共-字段    ${result}
+
+动漫view-字段值
+    公共-字段值    ${result}
+
+动漫click-条数
+    公共-删除数据
+    搜索-点击剧集的集数
+    sleep    2
+    ${result}    公共-获取结果    ${click}    dianshi_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫click-字段
+    公共-字段    ${result}
+
+动漫click-字段值
+    公共-字段值    ${result}
+
+动漫播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    soudianshi_002    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫播放pvs1-字段
+    公共-字段    ${result}
+
+动漫播放pvs1-字段值
+    公共-字段值    ${result}
+
+动漫播放返回pvs1-条数
+    公共-删除数据
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAButton[5]/UIAImage[1]
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAButton[14]/UIAImage[1]
+    点播播放页－返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    soudianshiju_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫播放返回pvs1-字段
+    公共-字段    ${result}
+
+动漫播放返回pvs1-字段值
+    公共-字段值    ${result}
+
+搜素结果返回搜素首页pvs1-条数
+    公共-删除数据
+    搜索－x
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    sousuo_003    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜素结果返回搜素首页pvs1-字段
+    公共-字段    ${result}
+
+搜素结果返回搜素首页pvs1-字段值
+    公共-字段值    ${result}
+
+热门搜索search-条数
+    Comment    下滑
+    Comment    sleep    2
+    公共-删除数据
+    公共－点击页面文本    1
+    sleep    2
+    ${result}    公共-获取结果    ${search}    remen_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门搜索search-字段
+    公共-字段    ${result}
+
+热门搜索search-字段值
+    公共-字段值    ${result}
+
+热门搜索view-条数
+    ${result}    公共-获取结果    ${view}    remen_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门搜索view-字段
+    公共-字段    ${result}
+
+热门搜索view-字段值
+    公共-字段值    ${result}
+
+热门搜素结果返回搜素首页pvs1-条数
+    公共-删除数据
+    搜索－x
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    sousuo_003    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门搜索结果返回搜素首页pvs1-字段
+    公共-字段    ${result}
+
+热门搜素结果返回搜素首页pvs1-字段值
+    公共-字段值    ${result}
+
+返回首页pvs1-条数
+    公共-删除数据
+    搜索－取消
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    sousuo_007    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回首页pvs1-字段
+    公共-字段    ${result}
+
+返回首页pvs1-字段值
+    公共-字段值    ${result}
+
+电视剧pvs1-条数
+    [Setup]
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    楚乔传
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${pvs1}    sousuo_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧pvs1-字段
+    公共-字段    ${result}
+
+电视剧pvs1-字段值
+    公共-字段值    ${result}
+
+电视剧search-条数
+    ${result}    公共-获取结果    ${search}    dianshi_003    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧search-字段
+    公共-字段    ${result}
+
+电视剧search-字段值
+    公共-字段值    ${result}
+
+电视剧view-条数
+    ${result}    公共-获取结果    ${view}    dianshi_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧view-字段
+    公共-字段    ${result}
+
+电视剧view-字段值
+    公共-字段值    ${result}
+
+电视剧上传视频click-条数
+    公共-删除数据
+    公共－点击页面文本    电影
+    公共－点击页面文本    自频道
+    公共－点击页面文本    超帅！热血楚乔斩
+    sleep    3
+    ${result}    公共-获取结果    ${click}    dianshi_shangchuan    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧上传视频click-字段
+    公共-字段    ${result}
+
+电视剧上传视频click-字段值
+    公共-字段值    ${result}
+
+电视剧上传视频action-条数
+    sleep    3
+    ${result}    公共-获取结果    ${action}    dianshi_shangchuan    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧上传视频action-字段
+    公共-字段    ${result}
+
+电视剧上传视频action-字段值
+    公共-字段值    ${result}

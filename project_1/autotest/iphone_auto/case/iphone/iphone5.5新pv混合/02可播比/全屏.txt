@@ -1,0 +1,17 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${pfc}            {'act':'pfc'}
+${dologin}        {'act':'DoLogin'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb','ht':'2'}
+${pjr}            {'act':'pjr'}
+${share}          {'act':'share'}
+${shareresult}    {'act':'shareresult'}
+
+*** Test Cases ***

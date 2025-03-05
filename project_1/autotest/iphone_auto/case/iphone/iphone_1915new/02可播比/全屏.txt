@@ -1,0 +1,27 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${pfc}            {'act':'pfc'}
+${dologin}        {'act':'DoLogin'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb','ht':'2'}
+${pjr}            {'act':'pjr'}
+${share}          {'act':'share'}
+${shareresult}    {'act':'shareresult'}
+
+*** Test Cases ***
+节目账号加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'4'}    vl_zhanghao    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目账号加载事件vl-字段
+    公共-字段    ${result}
+
+节目账号加载事件vl-字段值
+    公共-字段值    ${result}

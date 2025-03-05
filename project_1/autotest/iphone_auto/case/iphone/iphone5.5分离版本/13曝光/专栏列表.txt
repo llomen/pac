@@ -1,0 +1,234 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_chzlshow}    mpp_ip_chzlshow
+${table_chzlclick}    mpp_ip_chzlclick
+${chzlshow}       {'act':'chzlshow'}
+${chzlclick}      {'act':'chzlclick'}
+${columnist}      {'act':'columnist'}
+${table_click}    mpp_jiaohu_iphone
+${share}          {'act':'share'}
+${table_stay}     mpp_stay_iphone
+
+*** Test Cases ***
+频道页点头像chzlclick-条数
+    首页-频道管理
+    公共－点击页面文本    动漫
+    公共-删除数据
+    scroll    name=偶像大师灰姑娘女孩    name=马栏山饲养员
+    频道专栏-点头像
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_005    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+频道页点头像chzlclick-字段
+    公共-字段    ${result}
+
+频道页点头像chzlclick-字段值
+    公共-字段值    ${result}
+
+点头像columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点头像columnist-字段
+    公共-字段    ${result}
+
+点头像columnist-字段值
+    公共-字段值    ${result}
+
+进入专栏列表页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入专栏列表页pvs-字段
+    公共-字段    ${result}
+
+进入专栏列表页pvs-字段值
+    公共-字段值    ${result}
+
+专栏列表页返回pvs-条数
+    公共-删除数据
+    专栏列表页-返回
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_002    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏列表页返回pvs-字段
+    公共-字段    ${result}
+
+专栏列表页返回pvs-字段值
+    公共-字段值    ${result}
+
+专栏列表页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_19    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏列表页stay-字段
+    公共-字段    ${result}
+
+专栏列表页stay-字段值
+    公共-字段值    ${result}
+
+再次进入列表页
+    频道专栏-点头像
+
+关注columnist-条数
+    公共-删除数据
+    专栏列表页-关注
+    ${aa}    if page contain text    登录
+    run keyword if    ${aa}==1    登录并关注
+    ${result}    公共-获取结果    ${columnist}    columnist_17    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关注columnist-字段
+    公共-字段    ${result}
+
+关注columnist-字段值
+    公共-字段值    ${result}
+
+取消关注columnist-条数
+    公共-删除数据
+    专栏列表页-取消关注
+    ${result}    公共-获取结果    ${columnist}    columnist_18    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消关注columnist-字段
+    公共-字段    ${result}
+
+取消关注columnist-字段值
+    公共-字段值    ${result}
+
+顶栏分享弹出share-条数
+    公共-删除数据
+    专栏列表页-顶栏分享
+    ${result}    公共-获取结果    ${share}    columnist_share_08    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+顶栏分享弹出share-字段
+    公共-字段    ${result}
+
+顶栏分享弹出share-字段值
+    公共-字段值    ${result}
+
+顶栏分享到QQshare-条数
+    公共-删除数据
+    公共－点击页面文本    QQ空间
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    columnist_share_09    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+顶栏分享到QQshare-字段
+    公共-字段    ${result}
+
+顶栏分享到QQshare-字段值
+    公共-字段值    ${result}
+
+点赞columnist-条数
+    公共-删除数据
+    专栏列表页-点赞
+    ${result}    公共-获取结果    ${columnist}    columnist_19    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点赞columnist-字段
+    公共-字段    ${result}
+
+点赞columnist-字段值
+    公共-字段值    ${result}
+
+取消点赞columnist-条数
+    公共-删除数据
+    专栏列表页-取消点赞
+    ${result}    公共-获取结果    ${columnist}    columnist_20    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消点赞columnist-字段
+    公共-字段    ${result}
+
+取消点赞columnist-字段值
+    公共-字段值    ${result}
+
+内容分享弹出share-条数
+    公共-删除数据
+    专栏列表页-点专栏分享
+    ${result}    公共-获取结果    ${share}    columnist_share_10    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+内容分享弹出share-字段
+    公共-字段    ${result}
+
+内容分享弹出share-字段值
+    公共-字段值    ${result}
+
+内容分享到微信share-条数
+    公共-删除数据
+    公共－点击页面文本    微信
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    columnist_share_11    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+内容分享到微信share-字段
+    公共-字段    ${result}
+
+内容分享到微信share-字段值
+    公共-字段值    ${result}
+
+点内容标题columnist-条数
+    公共-删除数据
+    专栏列表页-点专栏标题
+    ${result}    公共-获取结果    ${columnist}    columnist_21    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点内容标题columnist-字段
+    公共-字段    ${result}
+
+点内容标题columnist-字段值
+    公共-字段值    ${result}
+
+进入专栏播单页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入专栏播单页pvs-字段
+    公共-字段    ${result}
+
+进入专栏播单页pvs-字段值
+    公共-字段值    ${result}
+
+专栏播单页返回pvs-条数
+    公共-删除数据
+    专栏列表页-返回
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_012    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏播单页返回pvs-字段
+    公共-字段    ${result}
+
+专栏播单页返回pvs-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+登录并关注
+    直接登录    ${mail_account}    ${mail_pwd}    ${mail_name}
+    公共-删除数据
+    专栏列表页-关注

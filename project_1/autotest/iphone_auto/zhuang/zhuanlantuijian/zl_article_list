@@ -1,0 +1,32 @@
+{
+	"msg": "success",
+	"code": 200,
+	"data": {
+		"list": [{
+			"date": "7天前",
+			"image": "https://ugc.hitv.com/3/181022112431726324700.png",
+			"shareInfo": {
+				"desc": "谁也拯救不了Angelababy的新剧",
+				"img": "https://ugc.hitv.com/3/181022112431726324700.png",
+				"title": "谁也拯救不了Angelabab",
+				"url": "https://m.mgtv.com/zhuanlan/7bebf7fd70710f735e52de921ea37263/9.html"
+			},
+			"articleId": 9,
+			"praiseNum": "9",
+			"title": "谁也拯救不了Angelababy的新剧"
+		}, {
+			"date": "10月22日",
+			"image": "https://ugc.hitv.com/3/181022094206726372570.png",
+			"shareInfo": {
+				"desc": "狗，被冠以“人类最好朋友”的美称。聪明、忠诚、护主。",
+				"img": "https://ugc.hitv.com/3/181022094206726372570.png",
+				"title": "扮狗拿影帝，你了不起",
+				"url": "https://m.mgtv.com/zhuanlan/7bebf7fd70710f735e52de921ea37263/1.html"
+			},
+			"articleId": 1,
+			"praiseNum": "14",
+			"title": "扮狗拿影帝，你了不起"
+		}]
+	},
+	"seqId": "1124aabba8bfe7b1612518e284221627"
+}

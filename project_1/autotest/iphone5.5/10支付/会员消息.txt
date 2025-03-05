@@ -1,0 +1,92 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${buy}            {'act':'buy'}
+${order}          {'act':'order'}
+${result1}        {'act':'result'}
+${vip}            {'act':'vip'}
+${pvs}            {'act':'pvs'}
+${cancel}         {'act':'cancel'}
+
+*** Test Cases ***
+vip入口buy-条数
+    公共－用户登录    siqian50@qq.com    111111
+    公共－点击页面文本    消息中心
+    公共－点击页面文本    会员
+    公共-删除数据
+    Comment    公共－点击页面文本    点击立即续费
+    公共－xpath    (//XCUIElementTypeButton[@name=" 点击立即续费"])[1]
+    sleep    5
+    ${result}    公共-获取结果    ${vip}    vip_message_001    mpp_buy_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vip入口buy-字段
+    公共-字段    ${result}
+
+vip入口buy-字段名
+    公共-字段值    ${result}
+
+收银台展示show_store-条数
+    ${result}    公共-获取结果    {'act':'show_store'}    show_11    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+收银台展示show_store-字段
+    公共-字段    ${result}
+
+收银台展示show_store-字段名
+    公共-字段值    ${result}
+
+order-条数
+    公共-删除数据
+    开通会员－点击开通
+    sleep    5
+    ${result}    公共-获取结果    ${order}    vip_message_001    mpp_order_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+order-字段
+    公共-字段    ${result}
+
+order-字段名
+    公共-字段值    ${result}
+
+点击购买按钮click_pay_button-条数
+    ${result}    公共-获取结果    {'act':'click_pay_button'}    click_11    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击购买按钮click_pay_button-字段
+    公共-字段    ${result}
+
+点击购买按钮click_pay_button-字段名
+    公共-字段值    ${result}
+
+result-条数
+    sleep    10
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${result1}    vip_message_001    mpp_result_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+result-字段
+    公共-字段    ${result}
+
+result-字段名
+    公共-字段值    ${result}
+
+取消支付cance-条数
+    ${result}    公共-获取结果    ${cancel}    cancel_11    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消支付cance-字段
+    公共-字段    ${result}
+
+取消支付cance-字段名
+    公共-字段值    ${result}

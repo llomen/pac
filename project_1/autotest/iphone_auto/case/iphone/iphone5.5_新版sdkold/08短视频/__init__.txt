@@ -1,0 +1,4 @@
+*** Settings ***
+Documentation     5.7.0版本之后
+Force Tags        1
+Library           AppiumLibrary

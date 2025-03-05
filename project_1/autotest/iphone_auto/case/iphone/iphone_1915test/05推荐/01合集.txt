@@ -1,0 +1,47 @@
+*** Settings ***
+Suite Setup
+Suite Teardown    公共－关闭应用
+Force Tags        g2
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${buffer}         {'act':'buffer'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${cdn2}           {'s':'2'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${st}             {'act':'st'}
+${as}             {'act':'as'}
+${ae}             {'act':'ae'}
+${pv}             {'act':'pv'}
+${vv}             {'act':'vv'}
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***
+点播页pvs
+    #sleep    5
+    #公共-删除数据
+    #点击频道首页闪图，跳转到视频《青云志》
+    #首页-青云志
+    #sleep    3
+    公共-校验数据    ${pvs}    big_dianbo    ${table_pvs_dianbo}    1
+
+点播页pvs1
+    公共-校验数据    ${pvs1}    big_dianbo    ${table_pvs1}    1
+
+可播比cp1
+    公共-校验数据    ${cp1}    iphone_001    ${table_cp}    1
+
+点播前贴广告开始as
+    公共-校验数据    ${as}    dianbo_001    mpp_kpi_iphone    1
+
+aplay
+    sleep    18
+    公共-校验数据    ${aplay}    big_dianbo    ${table_vv}    1
+
+

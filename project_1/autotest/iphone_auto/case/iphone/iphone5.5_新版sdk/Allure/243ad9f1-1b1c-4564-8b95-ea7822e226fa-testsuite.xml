@@ -1,0 +1,309 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1548036914610" stop="1548036957238">
+  <name>11-Vip 1</name>
+  <title>11-Vip 1</title>
+  <labels/>
+  <test-cases>
+    <test-case severity="normal" start="1548036949078" status="failed" stop="1548036949084">
+      <description>vippvs1-条数</description>
+      <name>vippvs1-条数</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949087" status="failed" stop="1548036949090">
+      <description>vippvs1-字段</description>
+      <name>vippvs1-字段</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949095" status="failed" stop="1548036949101">
+      <description>vippvs1-字段名</description>
+      <name>vippvs1-字段名</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949104" status="failed" stop="1548036949110">
+      <description>搜索页pvs1-条数</description>
+      <name>搜索页pvs1-条数</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949113" status="failed" stop="1548036949118">
+      <description>搜索页pvs1-字段</description>
+      <name>搜索页pvs1-字段</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949121" status="failed" stop="1548036949126">
+      <description>搜索页pvs1-字段名</description>
+      <name>搜索页pvs1-字段名</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949131" status="failed" stop="1548036949138">
+      <description>搜索页返回pvs1-条数</description>
+      <name>搜索页返回pvs1-条数</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949141" status="failed" stop="1548036949144">
+      <description>搜索页返回pvs1-字段</description>
+      <name>搜索页返回pvs1-字段</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949146" status="failed" stop="1548036949150">
+      <description>搜索页返回pvs1-字段名</description>
+      <name>搜索页返回pvs1-字段名</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949152" status="failed" stop="1548036949156">
+      <description>开通会员pvs1-条数</description>
+      <name>开通会员pvs1-条数</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949158" status="failed" stop="1548036949162">
+      <description>开通会员pvs1-字段</description>
+      <name>开通会员pvs1-字段</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949165" status="failed" stop="1548036949168">
+      <description>开通会员pvs1-字段名</description>
+      <name>开通会员pvs1-字段名</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949173" status="failed" stop="1548036949177">
+      <description>开通会员返回pvs1-条数</description>
+      <name>开通会员返回pvs1-条数</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949184" status="failed" stop="1548036949189">
+      <description>开通会员返回pvs1-字段</description>
+      <name>开通会员返回pvs1-字段</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949194" status="failed" stop="1548036949198">
+      <description>开通会员返回pvs1-字段名</description>
+      <name>开通会员返回pvs1-字段名</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949205" status="failed" stop="1548036949209">
+      <description>播放页pvs1-条数</description>
+      <name>播放页pvs1-条数</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949211" status="failed" stop="1548036949215">
+      <description>播放页pvs1-字段</description>
+      <name>播放页pvs1-字段</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036949217" status="failed" stop="1548036949220">
+      <description>播放页pvs1-字段名</description>
+      <name>播放页pvs1-字段名</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot-exit"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps>
+        <step start="1548036949225" status="passed" stop="1548036957231">
+          <name>BuiltIn.Run Keyword And Ignore Error</name>
+          <title>BuiltIn.Run Keyword And Ignore Error</title>
+          <attachments/>
+          <steps>
+            <step start="1548036949226" status="passed" stop="1548036957230">
+              <name>AppiumLibrary.Close All Applications</name>
+              <title>AppiumLibrary.Close All Applications</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

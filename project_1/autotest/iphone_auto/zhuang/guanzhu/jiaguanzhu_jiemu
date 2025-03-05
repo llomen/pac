@@ -1,0 +1,155 @@
+{
+    "code":0,
+    "msg":"success",
+    "data":[
+		        {
+		            "uid":"048fe6fed4da46a19d6f202432721e0f",
+		            "accountType": "3",
+		            "nickName":"妈妈是超人",
+		            "fans":"107961",
+		            "isFollowed":"0",
+		            "photo":"http://userpic.cdn.max.mgtv.com/person58c613e53d982.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+		            "lastDynamic":{
+	        			"dynamicId":"90e33b4f7d4d4864b60b3058c738e67a",
+		                "uid":"048fe6fed4da46a19d6f202432721e0f",
+		                "accountType": "3",
+		                "nickName":"妈妈是超人",
+		                "photo":"http://userpic.cdn.max.mgtv.com/person58c613e53d982.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+						"isadvert":"false",
+						"type":3,
+						"date":"06-01 11:50",
+						"title":"妈妈是超人第二季20170601期：超人特工锦荣陪伴主食姐妹 鲫鱼兄弟变身小军人霸气全开",
+						"content":"",
+						"tips":"",
+						"linkurl":"",
+						"video":{
+							"cover":"http://2img.mgtv.com/preview/sp_images/2017/zongyi/312733/3955185/20170601074446841.jpg",
+							"url":"{\"vid\":3955185,\"cid\":312733,\"pid\":0}"
+						},
+						"images":[
+									{
+										"big":"http://2img.mgtv.com/preview/sp_images/2017/zongyi/312733/3955185/20170601074446841.jpg",
+										"small":"http://2img.mgtv.com/preview/sp_images/2017/zongyi/312733/3955185/20170601074446841.jpg"
+									}
+									
+						],					
+							"field1":"《妈妈是超人》是芒果TV重磅自制的明星育儿观察类真人秀节目。节目集结了不同类型、个性和背景的明星妈妈，她们将在节目中展示最原汁原味的家庭生活和最真性情的育儿经历。3月23日起每�",
+							"field2":"5330",
+							"field3":"",
+							"field4":"http://2img.mgtv.com/preview/sp_images/2017/zongyi/312733/3955185/20170601074446841.jpg",
+							"field5":"{\"vid\":3955185,\"cid\":312733,\"pid\":0}",
+						"praiseCount":0,
+						"commentCount":0
+		            }
+		        }
+		        ,
+		        {
+		            "uid":"f58b44f499f74cd69060157bbc203b35",
+		            "accountType": "3",
+		            "nickName":"楚乔传",
+		            "fans":"247412",
+		            "isFollowed":"0",
+		            "photo":"http://userpic.cdn.max.mgtv.com/person5923f234997b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+		            "lastDynamic":{
+	        			"dynamicId":"50b7aea20c774ab0a7cd12ef7b21d740",
+		                "uid":"f58b44f499f74cd69060157bbc203b35",
+		                "accountType": "3",
+		                "nickName":"楚乔传",
+		                "photo":"http://userpic.cdn.max.mgtv.com/person5923f234997b5.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+						"isadvert":"false",
+						"type":2,
+						"date":"05-31 11:03",
+						"title":"《楚乔传》燕洵篇：情深恨重 窦骁极致演绎纠葛命运",
+						"content":"此恨无期，此憾绵长！一声“阿楚”，背后是多遥远的风雨同行路？",
+						"tips":"",
+						"linkurl":"",
+						"video":{
+							"cover":"http://0img.mgtv.com/preview/sp_images/2017/dianshiju/293193/3952957/20170529211350834.jpg",
+							"url":"c8c04f9125c0464c801e9dbe34611418"
+						},
+						"images":[
+						],					
+							"field1":"改编自潇湘冬儿的《11处特工皇妃》，讲述谍者楚乔在失忆后沦为奴隶，被送入人猎场供贵族娱乐射杀，幸得西凉世子燕洵暗中相救。随后她被带进权倾朝野的门阀宇文家，目睹兄姐相继惨死，",
+							"field2":"40",
+							"field3":"赵丽颖/林更新/窦骁/李沁/邓伦/王彦霖/牛骏峰",
+							"field4":"http://0img.mgtv.com/preview/sp_images/2017/dianshiju/293193/3952957/20170529211350834.jpg",
+							"field5":"{\"vid\":3952957,\"cid\":293193,\"pid\":0}",
+						"praiseCount":0,
+						"commentCount":0
+		            }
+		        }
+		        ,
+		        {
+		            "uid":"8f1fd0fec080e64c5247d2272a5b2dbc",
+		            "accountType": "3",
+		            "nickName":"2017快乐男声",
+		            "fans":"226634",
+		            "isFollowed":"0",
+		            "photo":"http://userpic.cdn.max.mgtv.com/person591c0f8418101.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+		            "lastDynamic":{
+	        			"dynamicId":"3c48ff02d69b4ce694a05a3d0453da83",
+		                "uid":"8f1fd0fec080e64c5247d2272a5b2dbc",
+		                "accountType": "3",
+		                "nickName":"2017快乐男声",
+		                "photo":"http://userpic.cdn.max.mgtv.com/person591c0f8418101.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+						"isadvert":"false",
+						"type":2,
+						"date":"05-23 11:22",
+						"title":"快男焦迈奇饭制视频：全能园长竟最爱“二哈”？",
+						"content":"",
+						"tips":"",
+						"linkurl":"",
+						"video":{
+							"cover":"http://1img.mgtv.com/preview/sp_images/2017/zongyi/309918/3944744/20170523103333584.jpg",
+							"url":"902bac5fc28646c1b2d76ee4956537e5"
+						},
+						"images":[
+						],					
+							"field1":"2017乐丰手机快乐男声全国晋级赛即将打响，全国300强炙热集结，三大召唤师李健、罗志祥、陈粒为快男护航！6月9日20:18首播快男全国晋级赛，300进30，战火升级，敬请期待。",
+							"field2":"107",
+							"field3":"",
+							"field4":"http://1img.mgtv.com/preview/sp_images/2017/zongyi/309918/3944744/20170523103333584.jpg",
+							"field5":"{\"vid\":3944744,\"cid\":309918,\"pid\":0}",
+						"praiseCount":0,
+						"commentCount":0
+		            }
+		        }
+		        ,
+		        {
+		            "uid":"df0ebd82f8954e3eb83ab77de9a2a727",
+		            "accountType": "3",
+		            "nickName":"花儿与少年",
+		            "fans":"100494",
+		            "isFollowed":"0",
+		            "photo":"http://userpic.cdn.max.mgtv.com/person58f05a74d4cc3.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+		            "lastDynamic":{
+	        			"dynamicId":"d6f6f8b7a1ea4b1f8f9d7526b41e4162",
+		                "uid":"df0ebd82f8954e3eb83ab77de9a2a727",
+		                "accountType": "3",
+		                "nickName":"花儿与少年",
+		                "photo":"http://userpic.cdn.max.mgtv.com/person58f05a74d4cc3.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr",
+						"isadvert":"false",
+						"type":2,
+						"date":"06-01 15:19",
+						"title":"《花少粉碎机》第七期：社会我昀哥上线！张若昀撩妹技能再升级",
+						"content":"",
+						"tips":"",
+						"linkurl":"",
+						"video":{
+							"cover":"http://1img.mgtv.com/preview/sp_images/2017/zongyi/312692/3953354/20170530181027099.jpg",
+							"url":"6b62c0d0cf664ce1b3daeeb9df074446"
+						},
+						"images":[
+						],					
+							"field1":"《花儿与少年 第三季》是湖南卫视推出的大型明星自助远行真人秀节目。这一季的成员是4名“少年”和4位“花儿”将在没有助理、经纪人在身边的“无助”情况下，完成一段异域的背包旅行。",
+							"field2":"61",
+							"field3":"",
+							"field4":"http://1img.mgtv.com/preview/sp_images/2017/zongyi/312692/3953354/20170530181027099.jpg",
+							"field5":"{\"vid\":3953354,\"cid\":312692,\"pid\":0}",
+						"praiseCount":0,
+						"commentCount":0
+		            }
+		        }
+		        
+    ]
+}

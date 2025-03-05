@@ -1,0 +1,113 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+
+*** Test Cases ***
+个人直播pvs-条数
+    公共－点击页面文本    直播
+    公共-删除数据
+    公共-滑动页面    电视台    精彩回顾
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeButton[1]
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    geren_zhibo1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人直播pvs-字段
+    公共-字段    ${result}
+
+个人直播pvs-字段值
+    公共-字段值    ${result}
+
+aplay-条数
+    sleep    2
+    ${result}    公共-获取结果    ${aplay}    iphone_geren_001    mpp_aplay_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+aplay-字段
+    公共-字段    ${result}
+
+aplay-字段值
+    公共-字段值    ${result}
+
+开始定时卡顿-条数
+    ${result}    公共-获取结果    ${r1}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开始定时卡顿-字段
+    公共-字段    ${result}
+
+开始定时卡顿-字段值
+    公共-字段值    ${result}
+
+heartbeat-条数
+    sleep    65
+    ${result}    公共-获取结果    ${heartbeat}    iphone_geren_001    mpp_heartbeat_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+heartbeat-字段
+    公共-字段    ${result}
+
+heartbeat-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    aphone_geren_zhibo1    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    aphone_geren_zhibo3    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    公共-字段    ${result}
+
+cdn3-字段值
+    公共-字段值    ${result}
+
+退出直播pvs-条数
+    Comment    公共－点击坐标点    25    28
+    公共-删除数据
+    个人直播-关闭
+    ${result}    公共-获取结果    ${pvs}    geren_zhibo2    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出直播pvs-字段
+    公共-字段    ${result}
+
+退出直播pvs-字段值
+    公共-字段值    ${result}
+
+退出卡顿-条数
+    ${result}    公共-获取结果    ${r3}    aphone_changjing_3    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出卡顿-字段
+    公共-字段    ${result}
+
+退出卡顿-字段值
+    公共-字段值    ${result}

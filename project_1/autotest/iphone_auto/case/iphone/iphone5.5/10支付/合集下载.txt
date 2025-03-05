@@ -1,0 +1,142 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${buy}            {'act':'buy'}
+${order}          {'act':'order'}
+${result1}        {'act':'result'}
+${vip}            {'act':'vip'}
+${pvs}            {'act':'pvs'}
+${cancel}         {'act':'cancel'}
+
+*** Test Cases ***
+会员去广告VIP-条数
+    公共－用户登录    ${mail_account}    ${mail_pwd}
+    首页－精选
+    首页－搜索
+    搜索首页－输入搜索词    旋风少女第二季纪录片
+    搜索-点击搜索
+    公共－点击页面文本    1
+    公共-删除数据
+    sleep    150
+    公共－点击页面文本    立即开通
+    comment    click a point    256    48
+    comment    公共－点击页面文本    买3送1
+    sleep    5
+    Comment    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeButton
+    Comment    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeButton/XCUIElementTypeStaticText[2]
+    ${result}    公共-获取结果    ${vip}    aphone_heji_guankan    mpp_buy_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员去广告VIP-字段
+    公共-字段    ${result}
+
+会员去广告VIP-字段名
+    公共-字段值    ${result}
+
+收银台展示show_store-条数
+    ${result}    公共-获取结果    {'act':'show_store'}    show_09    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+收银台展示show_store-字段
+    公共-字段    ${result}
+
+收银台展示show_store-字段名
+    公共-字段值    ${result}
+
+会员去广告order-条数
+    开通会员－点击开通
+    sleep    5
+    ${result}    公共-获取结果    ${order}    aphone_heji_guankan    mpp_order_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员去广告order-字段
+    公共-字段    ${result}
+
+会员去广告order-字段名
+    公共-字段值    ${result}
+
+会员去广告result-条数
+    sleep    10
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${result1}    aphone_heji_xiazai    mpp_result_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+会员去广告result-字段
+    公共-字段    ${result}
+
+会员去广告result-字段名
+    公共-字段值    ${result}
+
+合集下载入口buy-条数
+    开通会员－返回
+    公共-删除数据
+    点播播放页－下载
+    sleep    3
+    公共－点击页面文本    确定
+    sleep    3
+    ${result}    公共-获取结果    ${vip}    aphone_heji_xiazai    mpp_buy_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+合集下载入口buy-字段
+    公共-字段    ${result}
+
+合集下载入口buy-字段名
+    公共-字段值    ${result}
+
+order-条数
+    开通会员－点击开通
+    sleep    5
+    ${result}    公共-获取结果    ${order}    aphone_heji_xiazai    mpp_order_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+order-字段
+    公共-字段    ${result}
+
+order-字段名
+    公共-字段值    ${result}
+
+点击购买按钮click_pay_button-条数
+    ${result}    公共-获取结果    {'act':'click_pay_button'}    click_09    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击购买按钮click_pay_button-字段
+    公共-字段    ${result}
+
+点击购买按钮click_pay_button-字段名
+    公共-字段值    ${result}
+
+result-条数
+    sleep    10
+    公共－点击页面文本    取消
+    sleep    2
+    ${result}    公共-获取结果    ${result1}    aphone_heji_xiazai    mpp_result_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+result-字段
+    公共-字段    ${result}
+
+result-字段名
+    公共-字段值    ${result}
+
+取消支付cance-条数
+    ${result}    公共-获取结果    ${cancel}    cancel_09    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消支付cance-字段
+    公共-字段    ${result}
+
+取消支付cance-字段名
+    公共-字段值    ${result}

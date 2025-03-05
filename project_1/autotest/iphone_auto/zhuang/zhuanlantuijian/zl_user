@@ -1,0 +1,23 @@
+{
+	"code": 200,
+	"msg": "success",
+	"seqId": "ea666591-6206-4032-b0d9-98eccc6f1d98",
+	"data": {
+		"user": {
+			"level": 0,
+			"nickName": "啊哈啊哈啊哈啊哈哈",
+			"accountType": 6,
+			"photo": "http://avatar.hitv.com/iT4FqEJ4sIVv9cm6yLI8fogRE1CIqU.jpg?x-oss-process=style/large",
+			"uuid": "7bebf7fd70710f735e52de921ea37263",
+			"sign": "想要非常认真严肃的承诺地老天荒",
+			"bgImg": "https://ugc.hitv.com/3/181022094151726363900.jpeg"
+		},
+		"isFollow": 0,
+		"shareInfo": {
+			"img": "http://avatar.hitv.com/iT4FqEJ4sIVv9cm6yLI8fogRE1CIqU.jpg?x-oss-process=style/large",
+			"title": "芒果TV 啊哈啊哈啊哈啊哈哈的个人专栏",
+			"url": "https://m.mgtv.com/zhuanlan/7bebf7fd70710f735e52de921ea37263.html",
+			"desc": "想要非常认真严肃的承诺地老天荒"
+		}
+	}
+}

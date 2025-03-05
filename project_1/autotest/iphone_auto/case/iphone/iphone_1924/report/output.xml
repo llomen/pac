@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20191028 15:47:50.092" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/klyg/Downloads/autotest/iphone_auto/case/iphone/iphone_1924" id="s1" name="SuiteName">
+<suite source="/Users/klyg/Downloads/autotest/iphone_auto/case/iphone/iphone_1924/11沉浸式" id="s1-s1" name="11沉浸式">
+<suite source="/Users/klyg/Downloads/autotest/iphone_auto/case/iphone/iphone_1924/11沉浸式/TEST2.txt" id="s1-s1-s1" name="TEST2">
+<test id="s1-s1-s1-t1" name="printTEST">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${udid}</arg>
+</arguments>
+<msg timestamp="20191028 15:47:50.124" level="INFO">123456</msg>
+<status status="PASS" endtime="20191028 15:47:50.124" starttime="20191028 15:47:50.124"></status>
+</kw>
+<tags>
+<tag>5.7.0.04第五轮</tag>
+<tag>test</tag>
+</tags>
+<status status="PASS" endtime="20191028 15:47:50.124" critical="yes" starttime="20191028 15:47:50.123"></status>
+</test>
+<status status="PASS" endtime="20191028 15:47:50.125" starttime="20191028 15:47:50.121"></status>
+</suite>
+<status status="PASS" endtime="20191028 15:47:50.126" starttime="20191028 15:47:50.119"></status>
+</suite>
+<suite source="/Users/klyg/Downloads/autotest/iphone_auto/case/iphone/iphone_1924/17离线播放" id="s1-s2" name="17离线播放">
+<suite source="/Users/klyg/Downloads/autotest/iphone_auto/case/iphone/iphone_1924/17离线播放/drm.txt" id="s1-s2-s1" name="Drm">
+<test id="s1-s2-s1-t1" name="printtext">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${udid}</arg>
+</arguments>
+<msg timestamp="20191028 15:47:50.846" level="INFO">123456</msg>
+<status status="PASS" endtime="20191028 15:47:50.846" starttime="20191028 15:47:50.846"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${platform2}</arg>
+</arguments>
+<msg timestamp="20191028 15:47:50.847" level="INFO">iPhoneiOS9.3.1</msg>
+<status status="PASS" endtime="20191028 15:47:50.847" starttime="20191028 15:47:50.847"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${platform3}</arg>
+</arguments>
+<msg timestamp="20191028 15:47:50.848" level="INFO">iPhoneiOS12.3.1</msg>
+<status status="PASS" endtime="20191028 15:47:50.848" starttime="20191028 15:47:50.848"></status>
+</kw>
+<tags>
+<tag>5.7.0.04第五轮</tag>
+<tag>test</tag>
+</tags>
+<status status="PASS" endtime="20191028 15:47:50.849" critical="yes" starttime="20191028 15:47:50.845"></status>
+</test>
+<doc>正片、花絮、相关饭团、看了还会看</doc>
+<status status="PASS" endtime="20191028 15:47:50.853" starttime="20191028 15:47:50.129"></status>
+</suite>
+<status status="PASS" endtime="20191028 15:47:50.859" starttime="20191028 15:47:50.127"></status>
+</suite>
+<status status="PASS" endtime="20191028 15:47:50.860" starttime="20191028 15:47:50.097"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="2">5.7.0.04第五轮</stat>
+<stat fail="0" pass="2">test</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="SuiteName" pass="2">SuiteName</stat>
+<stat fail="0" id="s1-s1" name="11沉浸式" pass="1">SuiteName.11沉浸式</stat>
+<stat fail="0" id="s1-s1-s1" name="TEST2" pass="1">SuiteName.11沉浸式.TEST2</stat>
+<stat fail="0" id="s1-s2" name="17离线播放" pass="1">SuiteName.17离线播放</stat>
+<stat fail="0" id="s1-s2-s1" name="Drm" pass="1">SuiteName.17离线播放.Drm</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

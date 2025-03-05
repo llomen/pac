@@ -1,0 +1,141 @@
+[ {
+  "buildOrder" : 77,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/77/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 1622
+  }
+}, {
+  "buildOrder" : 76,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/76/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 1696
+  }
+}, {
+  "buildOrder" : 75,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/75/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 2078
+  }
+}, {
+  "buildOrder" : 74,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/74/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 1049
+  }
+}, {
+  "buildOrder" : 73,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/73/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 729
+  }
+}, {
+  "buildOrder" : 72,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/72/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 1201
+  }
+}, {
+  "buildOrder" : 70,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/70/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 789
+  }
+}, {
+  "buildOrder" : 67,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/67/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 1385
+  }
+}, {
+  "buildOrder" : 64,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/64/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 733
+  }
+}, {
+  "buildOrder" : 63,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/63/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 710
+  }
+}, {
+  "buildOrder" : 62,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/62/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 666
+  }
+}, {
+  "buildOrder" : 61,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/61/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 935
+  }
+}, {
+  "buildOrder" : 60,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/60/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 655
+  }
+}, {
+  "buildOrder" : 59,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/59/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 625
+  }
+}, {
+  "buildOrder" : 58,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/58/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 625
+  }
+}, {
+  "buildOrder" : 57,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/57/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 625
+  }
+}, {
+  "buildOrder" : 56,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/56/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 625
+  }
+}, {
+  "buildOrder" : 53,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/53/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 625
+  }
+}, {
+  "buildOrder" : 52,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/52/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 625
+  }
+}, {
+  "buildOrder" : 50,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/50/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "Product defects" : 1348
+  }
+} ]

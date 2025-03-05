@@ -1,0 +1,36 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1586761926350" stop="1586761936445">
+  <name>4正在下载</name>
+  <title>4正在下载</title>
+  <labels/>
+  <test-cases>
+    <test-case severity="normal" start="1586761936424" status="failed" stop="1586761936430">
+      <description>测试</description>
+      <name>测试</name>
+      <failure>
+        <message>Test execution stopped due to a fatal error.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="issue" value="robot:exit"/>
+        <label name="thread" value="2437248"/>
+      </labels>
+      <steps>
+        <step start="1586761936433" status="passed" stop="1586761936442">
+          <name>BuiltIn.Run Keyword And Ignore Error</name>
+          <title>BuiltIn.Run Keyword And Ignore Error</title>
+          <attachments/>
+          <steps>
+            <step start="1586761936435" status="passed" stop="1586761936442">
+              <name>AppiumLibrary.Close All Applications</name>
+              <title>AppiumLibrary.Close All Applications</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

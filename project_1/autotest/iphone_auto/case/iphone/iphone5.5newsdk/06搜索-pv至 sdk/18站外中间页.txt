@@ -1,0 +1,91 @@
+*** Settings ***
+Documentation     站外中间页
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+站外中间页pvs-条数
+    [Setup]
+    sleep    5
+    首页-搜索
+    公共-删除数据
+    搜索首页－输入搜索词    奔跑吧
+    搜索-点击搜索
+    公共-删除数据
+    搜索-点击播放
+    ${result}    公共-获取结果    ${pvs}    zhanwai_zhongjian    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+站外中间页pvs-字段
+    公共-字段    ${result}
+
+站外中间页pvs-字段值
+    公共-字段值    ${result}
+
+跳站外大图action-条数
+    公共-删除数据
+    comment    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[2]
+    公共－点击页面文本    follow_play_button
+    公共－点击页面文本    网页播放
+    sleep    2
+    ${result}    公共-获取结果    ${action}    zhanwai_datu    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳站外大图action-字段
+    公共-字段    ${result}
+
+跳站外大图action-字段值
+    公共-字段值    ${result}
+
+跳站外大图pvs-条数
+    ${result}    公共-获取结果    ${pvs}    zhanwai_datu    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳站外大图pvs-字段
+    公共-字段    ${result}
+
+跳站外大图pvs-字段值
+    公共-字段值    ${result}
+
+相关视频action-条数
+    公共－点击页面文本    back icon
+    公共-删除数据
+    公共－点击页面文本    奔跑吧，追光少年！
+    ${result}    公共-获取结果    ${action}    zhanwai_xiangguan    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相关视频action-字段
+    公共-字段    ${result}
+
+相关视频action-字段值
+    公共-字段值    ${result}
+
+看了还会看action-条数
+    点播播放页-返回
+    公共-删除数据
+    公共-滑动页面    相关视频    看了还会看
+    公共－点击页面文本    快乐大本营 2018
+    sleep    2
+    ${result}    公共-获取结果    ${action}    zhanwai_kanle    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看了还会看action-字段
+    公共-字段    ${result}
+
+看了还会看action-字段值
+    公共-字段值    ${result}

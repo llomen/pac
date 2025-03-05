@@ -1,0 +1,10 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***

@@ -1,0 +1,140 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${recommended}    {'act':'recommended'}
+${relatepv}       {'act':'relatepv'}
+${hotpv}          {'act':'hotpv'}
+${interestpv}     {'act':'interestpv'}
+${recommend_hot}    {'act':'recommend_hot'}
+${recommended_user}    {'act':'recommend_user'}
+${more}           {'act':'more'}
+${change}         {'act':'change'}
+${pvs}            {'act':'pvs'}
+${aplay}          {'act':'aplay'}
+
+*** Test Cases ***
+电视剧排行榜hotpv-条数
+    公共-删除数据
+    sleep    3
+    频道页-切换tab    电视剧
+    sleep    2
+    上滑
+    ${result}    公共-获取结果    ${hotpv}    iphone_jingxuan_001    mpp_recommendpv_hotpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧排行榜hotpv-字段
+    公共-字段    ${result}
+
+电视剧排行榜hotpv-字段值
+    公共-字段值    ${result}
+
+排行榜更多more-条数
+    公共-删除数据
+    tap    最热电视剧TOP榜    10    10
+    sleep    2
+    ${result}    公共-获取结果    ${more}    iphone_jingxuan_001    mpp_recommendpv_more    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+排行榜更多more-字段
+    公共-字段    ${result}
+
+排行榜更多more-字段值
+    公共-字段值    ${result}
+
+排行榜更多hotpv-条数
+    ${result}    公共-获取结果    ${hotpv}    iphone_jingxuan_gengduo    mpp_recommendpv_hotpv    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+排行榜更多hotpv-字段
+    公共-字段    ${result}
+
+排行榜更多hotpv-字段值
+    公共-字段值    ${result}
+
+排行榜切换tab的pvs-条数
+    ${result}    公共-获取结果    ${pvs}    paihangbang_tab    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+排行榜切换tab的pvs-字段
+    公共-字段    ${result}
+
+排行榜切换tab的pvs-字段值
+    公共-字段值    ${result}
+
+排行榜切换tab的pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    paihangbang_tab    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+排行榜切换tab的pvs1-字段
+    公共-字段    ${result}
+
+排行榜切换tab的pvs1-字段值
+    公共-字段值    ${result}
+
+排行榜页recommend_hot-条数
+    公共－点击页面文本    综艺
+    公共-删除数据
+    公共－点击页面文本    快乐大本营 2017
+    ${result}    公共-获取结果    ${recommend_hot}    iphone_jingxuan_gengduo    mpp_recommend_hot    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+排行榜页recommend_hot-字段
+    公共-字段    ${result}
+
+排行榜页recommend_hot-字段值
+    公共-字段值    ${result}
+
+电视剧排行榜点击recommend_hot-条数
+    点播播放页-返回
+    Comment    click element    //UIAApplication[1]/UIAWindow[1]/UIAButton[12]
+    Comment    公共－点击页面文本    backbg icon
+    comment    榜单页-返回
+    公共-删除数据
+    公共－点击页面文本    电视剧
+    公共－xpath    (//XCUIElementTypeStaticText[@name="楚乔传"])[1]
+    sleep    18
+    ${result}    公共-获取结果    ${recommend_hot}    iphone_jingxuan_bangdan    mpp_recommend_hot    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧排行榜点击recommend_hot-字段
+    公共-字段    ${result}
+
+电视剧排行榜点击recommend_hot-字段值
+    公共-字段值    ${result}
+
+电视剧排行榜点击aplay-条数
+    ${result}    公共-获取结果    ${aplay}    dianbopaihangbang_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧排行榜点击aplay-字段
+    公共-字段    ${result}
+
+电视剧排行榜点击aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_008    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+上滑
+    swipe    128    640    128    240

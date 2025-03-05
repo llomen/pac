@@ -1,0 +1,48 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+
+*** Test Cases ***
+未登录播放记录同步
+    首页-我
+    进入退出登录
+    滚动到退出登录
+    Element Value Should Be    //XCUIElementTypeSwitch[@name="同步芒果TV客户端播放记录"]    0
+    公共－xpath    //XCUIElementTypeSwitch[@name="同步芒果TV客户端播放记录"]
+    公共－xpath    //XCUIElementTypeButton[@name="登录"]
+    run keyword and ignore error    公共－点击页面文本    登录
+    sleep    3
+    Element Value Should Be    //XCUIElementTypeSwitch[@name="同步芒果TV客户端播放记录"]    1
+
+播放记录下一集pvs-条数
+    click element    back icon
+    click element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeStatusBar/XCUIElementTypeOther[1]
+    公共－点击页面文本    播放记录
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="下一集"])[1]
+    sleep    20
+    ${result}    公共-获取结果    ${pvs}    bofangjilu_next    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录下一集pvs-字段
+    公共-字段    ${result}
+
+播放记录下一集pvs-字段值
+    公共-字段值    ${result}
+
+播放记录下一集aplay-条数
+    ${result}    公共-获取结果    ${aplay}    bofangjilu_next    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放记录下一集aplay-字段
+    公共-字段    ${result}
+
+播放记录下一集aplay-字段值
+    公共-字段值    ${result}

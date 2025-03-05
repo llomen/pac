@@ -1,0 +1,268 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${comment}        {'act':'comment'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_pvs_dianbo}    mpp_pv_5_5_iphone_sdk_dianbo
+${table_cjplayshow}    mpp_ip_chzlshow
+${table_cjlayclick}    mpp_ip_chzlclick_2
+${cjplayshow}     {'act':'cjplayshow'}
+${cjplayclick}    {'act':'cjplayclick'}
+${table_click}    mpp_jiaohu_iphone
+${table_sp}       mpp_sp_iphone
+${share}          {'act':'share'}
+${cp10}           {'act':'cp1'}
+${cdn1}           {'s':'1','type':'0'}
+${cdn3}           {'s':'3','type':'2'}
+${cdn2}           {'s':'2','type':'1'}
+${r3}             {'r':'3'}
+${r1}             {'r’:'1'}
+${hb3}            {'ht':'0','act':'hb'}
+${hb5}            {'ht':'1','act':'hb'}
+${hb_end}         {'ht':'2','act':'hb'}
+${hb3_cj}         {'ht':'0','act':'hb'}
+${hb5_cj}         {'ht':'1','act':'hb'}
+${hb_end_cj}      {'ht':'2','act':'hb'}
+
+*** Test Cases ***
+进入点播页
+    首页-搜索
+    搜索首页－输入搜索词    快乐大本营
+    搜索-点击搜索
+    公共－xpath    (//XCUIElementTypeButton[@name="2"])[1]
+    sleep    3
+    公共-删除数据
+    ${result}    公共-获取结果    ${pfc}    pfc_pinglun_old    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放feed流
+    新版点播-滑动到feed流
+    新版点播-feed流点播放
+
+feed流show-条数
+    下滑
+    ${result}    公共-获取结果    ${show}    show_pinglun    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流show-字段
+    公共-字段    ${result}
+
+feed流show-字段值
+    公共-字段值    ${result}
+
+feed流playfeedshow-条数
+    ${result}    公共-获取结果    ${show}    show_pinglun    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流playfeedshow-字段
+    公共-字段    ${result}
+
+feed流playfeedshow-字段值
+    公共-字段值    ${result}
+
+自动播放playfeedclick-条数
+    ${result}    公共-获取结果    ${show}    show_pinglun    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+自动播放playfeedclick-字段
+    公共-字段    ${result}
+
+自动播放playfeedclick-字段值
+    公共-字段值    ${result}
+
+播放不上报pvs-条数
+    ${result}    公共-获取结果    ${pvs}    pinglun_006    ${table_pvs}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放不上报pvs-字段
+    comment    公共-字段    ${result}
+
+播放不上报pvs-字段值
+    comment    公共-字段值    ${result}
+
+feed流可播比cp1-条数
+    ${result}    公共-获取结果    {cp1}    ke2_01    mpp_cp    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流可播比cp1-字段
+    公共-字段    ${result}
+
+feed流可播比cp1-字段值
+    公共-字段值    ${result}
+
+feed流连播sp-条数
+    ${result}    公共-获取结果    ${sp}    chenjin_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流连播sp-条数-字段
+    公共-字段    ${result}
+
+feed流连播sp-条数-字段值
+    公共-字段值    ${result}
+
+feed流cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    ke2_07    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流cdn1-字段
+    公共-字段    ${result}
+
+feed流cdn1-字段值
+    公共-字段值    ${result}
+
+feed流cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    ke2_08    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流cdn2-字段
+    公共-字段    ${result}
+
+feed流cdn2-字段值
+    公共-字段值    ${result}
+
+feed流cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    ke2_09    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流cdn3-字段
+    公共-字段    ${result}
+
+feed流cdn3-字段值
+    公共-字段值    ${result}
+
+feed流播放定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流播放定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+feed流播放定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+feed流buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianboxiayige_001    mpp_buffer_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流buffer-字段
+    公共-字段    ${result}
+
+feed流buffer-字段值
+    公共-字段值    ${result}
+
+feed流视频播放aplay-条数
+    ${result}    公共-获取结果    ${aplay}    dianboxiayige_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流视频播放aplay-字段
+    公共-字段    ${result}
+
+feed流视频播放aplay-字段值
+    公共-字段值    ${result}
+
+feed流大数据心跳hb3-条数
+    ${result}    公共-获取结果    ${hb3}    dianboxiayige_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流大数据心跳hb3-字段
+    公共-字段    ${result}
+
+feed流大数据心跳hb3-字段值
+    公共-字段值    ${result}
+
+feed流大数据心跳hb5-条数
+    ${result}    公共-获取结果    ${hb5}    dianboxiayige_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流大数据心跳hb5-字段
+    公共-字段    ${result}
+
+feed流大数据心跳hb5-字段值
+    公共-字段值    ${result}
+
+点举报playfeedclick-条数
+    ${result}    公共-获取结果    ${show}    show_pinglun    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点举报playfeedclick-字段
+    公共-字段    ${result}
+
+点举报playfeedclick-字段值
+    公共-字段值    ${result}
+
+点看正片playfeedclick-条数
+    ${result}    公共-获取结果    ${playfeedclick}    playfeedclick    ${table_playfeedclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点看正片playfeedclick-字段
+    公共-字段    ${result}
+
+点看正片playfeedclick-字段值
+    公共-字段值    ${result}
+
+跳转点播页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    cjs_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转点播页pvs-字段
+    公共-字段    ${result}
+
+跳转点播页pvs-字段值
+    公共-字段值    ${result}
+
+feed流大数据心跳停止hb-条数
+    ${result}    公共-获取结果    ${hb_end}    dianboxiayige_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流大数据心跳停止hb-字段
+    公共-字段    ${result}
+
+feed流大数据心跳停止hb-字段值
+    公共-字段值    ${result}
+
+feed流播放定时上报cdn-r3-条数
+    ${result}    公共-获取结果    ${r3}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+feed流播放定时上报cdn-r3-字段
+    公共-字段    ${result}
+
+feed流播放定时上报cdn-r3-字段值
+    公共-字段值    ${result}
+
+点播页sp-条数
+    ${result}    公共-获取结果    ${sp}    chenjin_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页sp-条数-字段
+    公共-字段    ${result}
+
+点播页sp-条数-字段值
+    公共-字段值    ${result}

@@ -1,0 +1,415 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table}          mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${table_click}    mpp_jiaohu_iphone
+${search_mingxing}    赵丽颖
+${search_jiemu}    快乐大本营
+
+*** Test Cases ***
+点击搜索fantuan-条数
+    首页-饭团
+    公共-删除数据
+    饭团-搜索
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击搜索fantuan-字段
+    公共-字段    ${result}
+
+点击搜索fantuan-字段名
+    公共-字段值    ${result}
+
+推荐页-搜索页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_021    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐页-搜索页pvs-字段
+    公共-字段    ${result}
+
+推荐页-搜索页pvs-字段名
+    公共-字段值    ${result}
+
+推荐页-搜索页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_021    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐页-搜索页pvs1-字段
+    公共-字段    ${result}
+
+推荐页-搜索页pvs1-字段名
+    公共-字段值    ${result}
+
+搜索页-搜索结果页pvs-条数
+    run keyword and ignore error    公共－点击页面文本    清空历史
+    公共-删除数据
+    饭团-搜索-输入    ${search_mingxing}
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_022    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页-搜索结果页pvs-字段
+    公共-字段    ${result}
+
+搜索页-搜索结果页pvs-字段名
+    公共-字段值    ${result}
+
+搜索页-搜索结果页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_022    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页-搜索结果页pvs1-字段
+    公共-字段    ${result}
+
+搜索页-搜索结果页pvs1-字段名
+    公共-字段值    ${result}
+
+搜索fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索fantuan-字段
+    公共-字段    ${result}
+
+搜索fantuan-字段名
+    公共-字段值    ${result}
+
+搜索页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_07    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页stay-字段
+    公共-字段    ${result}
+
+搜索页stay-字段名
+    公共-字段值    ${result}
+
+取消搜索fantuan-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消搜索fantuan-字段
+    公共-字段    ${result}
+
+取消搜索fantuan-字段名
+    公共-字段值    ${result}
+
+搜索结果页-推荐页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_024    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索结果页-推荐页pvs-字段
+    公共-字段    ${result}
+
+搜索结果页-推荐页pvs-字段名
+    公共-字段值    ${result}
+
+搜索结果页-推荐页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_024    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索结果页-推荐页pvs1-字段
+    公共-字段    ${result}
+
+搜索结果页-推荐页pvs1-字段名
+    公共-字段值    ${result}
+
+搜索结果页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_08    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索结果页stay-字段
+    公共-字段    ${result}
+
+搜索结果页stay-字段名
+    公共-字段值    ${result}
+
+搜索推荐fantuan-条数
+    饭团-搜索
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="1"]/following-sibling::XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索推荐fantuan-字段
+    公共-字段    ${result}
+
+搜索推荐fantuan-字段名
+    公共-字段值    ${result}
+
+搜索历史fantuan-条数
+    公共－点击页面文本    取消
+    饭团-搜索
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeButton[@name="fantuan search delete"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索历史fantuan-字段
+    公共-字段    ${result}
+
+搜索历史fantuan-字段名
+    公共-字段值    ${result}
+
+结果页点饭团头像fantuan-条数
+    公共-删除数据
+    饭团-结果页-饭团主页
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页点饭团头像fantuan-字段
+    公共-字段    ${result}
+
+结果页点饭团头像fantuan-字段名
+    公共-字段值    ${result}
+
+结果页-明星饭团主页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_025    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-明星饭团主页pvs-字段
+    公共-字段    ${result}
+
+结果页-明星饭团主页pvs-字段名
+    公共-字段值    ${result}
+
+结果页-明星饭团主页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_025    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-明星饭团主页pvs1-字段
+    公共-字段    ${result}
+
+结果页-明星饭团主页pvs1-字段名
+    公共-字段值    ${result}
+
+饭团主页-结果页pvs-条数
+    饭团-明星-退出饭团
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_026    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团主页-结果页pvs-字段
+    公共-字段    ${result}
+
+饭团主页-结果页pvs-字段名
+    公共-字段值    ${result}
+
+饭团主页-结果页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_026    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团主页-结果页pvs1-字段
+    公共-字段    ${result}
+
+饭团主页-结果页pvs1-字段名
+    公共-字段值    ${result}
+
+结果页点加入fantuan-条数
+    公共-删除数据
+    公共－点击页面文本    + 加入
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页点加入fantuan-字段
+    公共-字段    ${result}
+
+结果页点加入fantuan-字段名
+    公共-字段值    ${result}
+
+结果页跳登录pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_sousuo_01    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页跳登录pvs-字段
+    公共-字段    ${result}
+
+结果页跳登录pvs-字段名
+    公共-字段值    ${result}
+
+结果页跳登录pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_sousuo_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页跳登录pvs1-字段
+    公共-字段    ${result}
+
+结果页跳登录pvs1-字段名
+    公共-字段值    ${result}
+
+登录返回结果页pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_sousuo_02    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录返回结果页pvs-字段
+    公共-字段    ${result}
+
+登录返回结果页pvs-字段名
+    公共-字段值    ${result}
+
+登录返回结果页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_sousuo_02    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录返回结果页pvs1-字段
+    公共-字段    ${result}
+
+登录返回结果页pvs1-字段名
+    公共-字段值    ${result}
+
+结果页-节目饭团主页pvs-条数
+    Clear Text    name=search_textField
+    饭团-搜索-输入    ${search_jiemu}
+    公共-删除数据
+    点击不可见文本    xpath=(//XCUIElementTypeStaticText[@name="${search_jiemu}"])[1]
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_027    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-节目饭团主页pvs-字段
+    公共-字段    ${result}
+
+结果页-节目饭团主页pvs-字段名
+    公共-字段值    ${result}
+
+结果页-节目饭团主页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_027    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-节目饭团主页pvs1-字段
+    公共-字段    ${result}
+
+结果页-节目饭团主页pvs1-字段名
+    公共-字段值    ${result}
+
+节目饭团主页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_028    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目饭团主页返回pvs-字段
+    公共-字段    ${result}
+
+节目饭团主页返回pvs-字段名
+    公共-字段值    ${result}
+
+节目饭团主页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_tuijian_028    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目饭团主页返回pvs1-字段
+    公共-字段    ${result}
+
+节目饭团主页返回pvs1-字段名
+    公共-字段值    ${result}
+
+节目主页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_12    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目主页stay-字段
+    公共-字段    ${result}
+
+节目主页stay-字段名
+    公共-字段值    ${result}
+
+点第一条动态头像fantuan-条数
+    公共-删除数据
+    饭团-结果页-第一个发布者
+    ${result}    公共-获取结果    ${fantuan}    fantuan_sousuo_07    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点第一条动态头像fantuan-字段
+    公共-字段    ${result}
+
+点第一条动态头像fantuan-字段名
+    公共-字段值    ${result}
+
+结果页-个人主页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_sousuo_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-个人主页pvs-字段
+    公共-字段    ${result}
+
+结果页-个人主页pvs-字段名
+    公共-字段值    ${result}
+
+结果页-个人主页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_sousuo_03    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+结果页-个人主页pvs1-字段
+    公共-字段    ${result}
+
+结果页-个人主页pvs1-字段名
+    公共-字段值    ${result}
+
+个人主页-结果页pvs-条数
+    公共-删除数据
+    饭团-个人主页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_sousuo_04    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人主页-结果页pvs-字段
+    公共-字段    ${result}
+
+个人主页-结果页pvs-字段名
+    公共-字段值    ${result}
+
+个人主页-结果页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_sousuo_04    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+个人主页-结果页pvs1-字段
+    公共-字段    ${result}
+
+个人主页-结果页pvs1-字段名
+    公共-字段值    ${result}

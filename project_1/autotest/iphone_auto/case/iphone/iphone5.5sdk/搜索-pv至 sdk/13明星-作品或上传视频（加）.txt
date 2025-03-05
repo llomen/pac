@@ -1,0 +1,138 @@
+*** Settings ***
+Documentation     明星搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+明星且艺人搜索pvs-条数
+    [Setup]
+    首页－搜索
+    搜索首页－输入搜索词    杨幂
+    公共-删除数据
+    搜索-点击搜索
+    sleep    5
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    mpp_pv_5_5_iphone_sdk_search    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星且艺人搜索pvs-字段
+    公共-字段    ${result}
+
+明星且艺人搜索pvs-字段值
+    公共-字段值    ${result}
+
+明星且艺人搜索search-条数
+    ${result}    公共-获取结果    ${search}    mingyi_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星且艺人搜索search-字段
+    公共-字段    ${result}
+
+明星且艺人搜索search-字段值
+    公共-字段值    ${result}
+
+明星且艺人搜索view-条数
+    ${result}    公共-获取结果    ${view}    mingxing_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+明星且艺人搜索view-字段
+    公共-字段    ${result}
+
+明星且艺人搜索view-字段值
+    公共-字段值    ${result}
+
+更多作品click-条数
+    公共-删除数据
+    搜索-点击更多作品
+    sleep    4
+    ${result}    公共-获取结果    ${click}    mingyi_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+更多作品click-字段
+    公共-字段    ${result}
+
+更多作品click-字段值
+    公共-字段值    ${result}
+
+更多作品action-条数
+    ${result}    公共-获取结果    ${action}    mingyi_gengduo    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+更多作品action-字段
+    公共-字段    ${result}
+
+更多作品action-字段值
+    公共-字段值    ${result}
+
+中间页-明星作品点击action-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeButton[1]
+    sleep    3
+    ${result}    公共-获取结果    ${action}    zhongjianye_dianji    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+中间页-明星作品点击action-字段
+    公共-字段    ${result}
+
+中间页-明星作品点击action-字段值
+    公共-字段值    ${result}
+
+热门作品click-条数
+    公共-删除数据
+    点播播放页－返回
+    公共－点击页面文本    back icon
+    公共-删除数据
+    搜索－取消
+    sleep    5
+    首页－搜索
+    搜索首页－输入搜索词    王凯
+    公共-删除数据
+    搜索-点击搜索
+    Comment    公共-屏幕上滑
+    搜索-点击热门作品
+    sleep    4
+    ${result}    公共-获取结果    ${click}    mingyi_002    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门作品click-字段
+    公共-字段    ${result}
+
+热门作品click-字段值
+    公共-字段值    ${result}
+
+热门作品action-条数
+    ${result}    公共-获取结果    ${action}    mingxing_zuopin    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门作品action-字段
+    公共-字段    ${result}
+
+热门作品action-字段值
+    公共-字段值    ${result}
+
+热门作品pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_dongtai2    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门作品pvs-字段
+    公共-字段    ${result}
+
+热门作品pvs-字段值
+    公共-字段值    ${result}

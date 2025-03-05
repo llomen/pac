@@ -1,0 +1,152 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${account}        siqian50@qq.com
+${password}       111111
+${pvs}            {'act':'pvs'}
+${xc}             {'act':'xc'}
+${nd}             {'act':'nd'}
+${appsetpush}     appsetpush
+
+*** Test Cases ***
+获取图片验证码click-条数
+    首页-我
+    我－未登录
+    公共－点击页面文本    使用其它账号登录
+    公共-删除数据
+    公共－点击页面文本    注册
+    ${result}    公共-获取结果    ${VerifyImgGet}    bu2_010    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+获取图片验证码click-字段
+    公共-字段    ${result}
+
+获取图片验证码click-字段值
+    公共-字段值    ${result}
+
+忘记密码-邮箱登录pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    bu2_011    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+忘记密码-邮箱登录pvs-字段
+    公共-字段    ${result}
+
+忘记密码-邮箱登录pvs-字段值
+    公共-字段值    ${result}
+
+芒果账户登录-历史账户登录pvs-条数
+    非播放页-返回
+    公共-滑动页面    消息中心    设置
+    公共－点击页面文本    设置
+    公共-滑动页面    账号与安全    退出登录
+    公共－点击页面文本    退出登录
+    公共－点击页面文本    退出
+    公共-删除数据
+    click element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeStatusBar/XCUIElementTypeOther[1]
+    我－未登录
+    ${result}    公共-获取结果    ${pvs}    bu2_014    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+芒果账户登录-历史账户登录pvs-字段
+    公共-字段    ${result}
+
+芒果账户登录-历史账户登录pvs-字段值
+    公共-字段值    ${result}
+
+历史账户登录-我pvs-条数
+    公共-删除数据
+    公共－点击页面文本    登录
+    ${result}    公共-获取结果    ${pvs}    bu2_015    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+历史账户登录-我pvs-字段
+    公共-字段    ${result}
+
+历史账户登录-我pvs-字段值
+    公共-字段值    ${result}
+
+切换暗夜nd-条数
+    公共-删除数据
+    scroll    消息中心    设置
+    Page Should Contain Text    芒果橙
+    公共－点击页面文本    皮肤
+    公共－点击页面文本    暗夜
+    Page Should Contain Text    暗夜
+    ${result}    公共-获取结果    {'act':'nd'}    shift_nd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换暗夜nd-字段
+    公共-字段    ${result}
+
+切换暗夜nd-字段值
+    公共-字段值    ${result}
+
+切换芒果橙nd-条数
+    公共-删除数据
+    公共－点击页面文本    皮肤
+    公共－点击页面文本    芒果橙
+    Page Should Contain Text    芒果橙
+    ${result}    公共-获取结果    {'act':'nd'}    shift_mgnd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换芒果橙nd-字段
+    公共-字段    ${result}
+
+切换芒果橙nd-字段值
+    公共-字段值    ${result}
+
+小窗播开关开xc-条数
+    首页-我
+    scroll    消息中心    设置
+    公共－点击页面文本    设置
+    ${aa}    Get Element Attribute    xpath=//XCUIElementTypeSwitch[@name="小窗播放功能"]    value
+    run keyword if    ${aa} ==1    公共－xpath    //XCUIElementTypeSwitch[@name="小窗播放功能"]
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeSwitch[@name="小窗播放功能"]
+    ${result}    公共-获取结果    {'act':'xc'}    shift_mgnd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+小窗播开关开xc-字段
+    公共-字段    ${result}
+
+小窗播开关开xc-字段值
+    公共-字段值    ${result}
+
+小窗播开关关xc-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeSwitch[@name="小窗播放功能"]
+    ${result}    公共-获取结果    {'act':'xc'}    shift_mgnd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+小窗播开关关xc-字段
+    公共-字段    ${result}
+
+小窗播开关开xc-字段值
+    公共-字段值    ${result}
+
+热门推送appsetpush-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeSwitch[@name="热门内容推送"]
+    ${result}    公共-获取结果    ${appsetpush}    shift_mgnd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门推送appsetpush-字段
+    公共-字段    ${result}
+
+热门推送appsetpush-字段值
+    公共-字段值    ${result}

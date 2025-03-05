@@ -1,0 +1,233 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay1}         {"act":"aplay","bid":"2.1.1.1.1"}
+${aplay2}         {"act":"aplay","bid":"2.1.1"}
+${buffer1}        {"act":"buffer","bdsv":"iphone_v2.0.0.20180212"}
+${buffer2}        {"act":"buffer","imei":""}
+${hb3}            {'act':'hb','ht':'0'}
+${hb5}            {'act':'hb','ht':'1'}
+${hb15}           {'act':'hb','ht':'3'}
+${cdn2}           {'s':'2'}
+${cdn3}           {'s':'3'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${refresh}        {'action':'refresh'}
+${view1}          {'action':'view','cpn':'1'}
+${view2}          {'action':'view','cpn':'2'}
+${view5}          {'action':'view','cpn':'5'}
+${play}           {'action':'play'}
+${click}          {'action':'click'}
+${back}           {'action':'back'}
+
+*** Test Cases ***
+进入关注列表pvs-条数
+    [Tags]    sdk
+    公共－点击页面文本    有料
+    公共-删除数据
+    短视频-切换关注
+    ${result}    公共-获取结果    {"act":"pvs"}    duanshipin_tuijian_1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入关注列表pvs-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+进入关注列表pvs-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}
+
+初次进入推荐列表refresh-条数
+    ${result}    公共-获取结果    ${refresh}    redian_refresh    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次进入推荐列表refresh-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+初次进入推荐列表refresh-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}
+
+进入播放页click-条数
+    公共-删除数据
+    短视频-推荐播放第一个
+    sleep    3
+    ${result}    公共-获取结果    ${click}    redian_click    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入播放页click-字段
+    公共-字段    ${result}
+
+进入播放页click-字段值
+    公共-字段值    ${result}
+
+进入播放页view1-条数
+    ${result}    公共-获取结果    ${view5}    redian_view    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入播放页view1-字段
+    公共-字段    ${result}
+
+进入播放页view1-字段值
+    公共-字段值    ${result}
+
+进入播放页play-条数
+    ${result}    公共-获取结果    ${play}    redian_play    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入播放页play-字段
+    公共-字段    ${result}
+
+进入播放页play-字段值
+    公共-字段值    ${result}
+
+进入播放页view2-条数
+    ${result}    公共-获取结果    ${view2}    redian_view    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入播放页view2-字段
+    公共-字段    ${result}
+
+进入播放页view2-字段值
+    公共-字段值    ${result}
+
+进入播放页pvs-条数
+    [Tags]    sdk
+    ${result}    公共-获取结果    {"act":"pvs"}    duanshipin_tuijian_1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入播放页pvs-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+进入播放页pvs-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}
+
+点击播放aplay-条数
+    ${result}    公共-获取结果    ${aplay2}    tuijian_duanshipin_001    mpp_vv_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放aplay-字段
+    公共-字段    ${result}
+
+点击播放aplay-字段值
+    公共-字段值    ${result}
+
+点击播放cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    tuijian_duanshipin_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放cdn2-字段
+    公共-字段    ${result}
+
+点击播放cdn2-字段值
+    公共-字段值    ${result}
+
+点击播放cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    tuijian_duanshipin_002    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放cdn3-字段
+    公共-字段    ${result}
+
+点击播放cdn3-字段值
+    公共-字段值    ${result}
+
+短视频定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    tuijian_duanshipin_001    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+短视频定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+短视频定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+点击播放buffer-条数
+    ${result}    公共-获取结果    ${buffer2}    tuijian_duanshipin_001    mpp_buffer_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放buffer-字段
+    公共-字段    ${result}
+
+点击播放buffer-字段值
+    公共-字段值    ${result}
+
+点击播放hb3-条数
+    ${result}    公共-获取结果    ${hb3}    tuijian_duanshipin_001    mpp_hb_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放hb3-字段
+    公共-字段    ${result}
+
+点击播放hb3-字段值
+    公共-字段值    ${result}
+
+点击播放hb5-条数
+    ${result}    公共-获取结果    ${hb5}    tuijian_duanshipin_001    mpp_hb_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放hb5-字段
+    公共-字段    ${result}
+
+点击播放hb5-字段值
+    公共-字段值    ${result}
+
+点击播放hb15-条数
+    sleep    10
+    ${result}    公共-获取结果    ${hb15}    tuijian_duanshipin_001    mpp_hb_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击播放hb15-字段
+    公共-字段    ${result}
+
+点击播放hb15-字段值
+    公共-字段值    ${result}
+
+退出短视频播放pvs-条数
+    短视频-返回
+    ${result}    公共-获取结果    {"act":"pvs"}    duanshipin_tuijian_1    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出短视频播放pvs-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+退出短视频播放pvs-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}
+
+退出短视频播放back-条数
+    ${result}    公共-获取结果    ${back}    redian_refresh    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出短视频播放back-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+退出短视频播放back-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}

@@ -1,0 +1,209 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_click}    mpp_jiaohu_iphone
+${btclick}        {'act':'btclick'}
+${my}             {'act':'my'}
+${aplay}          {'act':'aplay'}
+${table_aplay}    mpp_vv_5_5_iphone_sdk
+
+*** Test Cases ***
+我的看单页面删除所有视频
+    首页-我
+    我的-看单
+    公共－点击页面文本    节目
+    看单-删除
+    公共－点击页面文本    视频
+    看单-删除
+    非播放页-返回
+    首页-精选
+    comment    启动应用
+    sleep    5
+
+看单为空show-条数
+    公共-删除数据
+    sleep    2
+    首页-我
+    ${result}    公共-获取结果    ${show}    show_kandan    ${table_show}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看单为空show-字段
+    comment    公共-字段    ${result}
+
+看单为空show-字段值
+    comment    公共-字段值    ${result}
+
+点播页-合集加入看单btclick-条数
+    首页-精选
+    首页-搜索
+    搜索首页－输入搜索词    楚乔传
+    搜索-点击搜索
+    公共－点击页面文本    播放
+    公共-删除数据
+    新版点播-加入看单
+    ${result}    公共-获取结果    ${btclick}    btclick_001    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页-合集加入看单btclick-字段
+    公共-字段    ${result}
+
+点播页-合集加入看单btclick-字段值
+    公共-字段值    ${result}
+
+点播页-加入看单pfc-条数
+    ${result}    公共-获取结果    ${pfc}    pfc-collect    ${table_click}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页-加入看单pfc-字段
+    comment    公共-字段    ${result}
+
+点播页-加入看单pfc-字段值
+    comment    公共-字段值    ${result}
+
+点播页-取消加入看单btclick-条数
+    公共-删除数据
+    新版点播-加入看单
+    ${result}    公共-获取结果    ${btclick}    btclick_002    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页-取消加入看单btclick-字段
+    公共-字段    ${result}
+
+点播页-取消加入看单btclick-字段值
+    公共-字段值    ${result}
+
+点播页-取消加入看单pfc-条数
+    ${result}    公共-获取结果    ${pfc}    pfc-collect    ${table_click}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页-取消加入看单pfc-字段
+    comment    公共-字段    ${result}
+
+点播页-取消加入看单pfc-字段值
+    comment    公共-字段值    ${result}
+
+点播页-取消后再加入看单btclick-条数
+    公共-删除数据
+    新版点播-加入看单
+    ${result}    公共-获取结果    ${btclick}    btclick_001    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页-取消后再加入看单btclick-字段
+    公共-字段    ${result}
+
+点播页-取消后再加入看单btclick-字段值
+    公共-字段值    ${result}
+
+点播页-返回
+    点播播放页-返回
+
+点播页-单视频加入看单btclick-条数
+    公共－点击页面文本    电影
+    公共－点击页面文本    微电影《茉莉之恋》发布会：杨洋赵丽颖大谈《楚乔传》和《三生》趣事
+    公共-删除数据
+    新版点播-加入看单
+    ${result}    公共-获取结果    ${btclick}    btclick_003    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页-单视频加入看单btclick-字段
+    公共-字段    ${result}
+
+点播页-单视频加入看单btclick-字段值
+    公共-字段值    ${result}
+
+返回首页
+    点播播放页-返回
+    搜索－取消
+
+我的看单show-条数
+    公共-删除数据
+    sleep    2
+    首页-我
+    ${result}    公共-获取结果    ${show}    show_kandan    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的看单show-字段
+    公共-字段    ${result}
+
+我的看单show-字段值
+    公共-字段值    ${result}
+
+点我的看单视频my-条数
+    公共-删除数据
+    看单-点单视频
+    sleep    3
+    ${result}    公共-获取结果    ${my}    my_bofang_play_list    ${table_click}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点我的看单视频my-字段
+    comment    公共-字段    ${result}
+
+点我的看单视频my-字段值
+    comment    公共-字段值    ${result}
+
+跳转点播页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    kandan_001    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转点播页pvs-字段
+    公共-字段    ${result}
+
+跳转点播页pvs-字段值
+    公共-字段值    ${result}
+
+看单视频点播页vv-条数
+    sleep    15
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    ${table_aplay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+看单视频点播页vv-字段
+    公共-字段    ${result}
+
+看单视频点播页vv-字段值
+    公共-字段值    ${result}
+
+返回我的pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    kandan_back_001    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回我的pvs-字段
+    公共-字段    ${result}
+
+返回我的pvs-字段值
+    公共-字段值    ${result}
+
+点播页-移出看单
+
+点播页-未登录用户点看单
+
+点播页-点击即将播放下一集“加入看单”按钮
+
+频道-长按视频加看单
+
+频道节目页-点加看单
+
+频道节目页-移出看单
+
+搜索结果页-点加看单
+
+频道节目页-移出看单

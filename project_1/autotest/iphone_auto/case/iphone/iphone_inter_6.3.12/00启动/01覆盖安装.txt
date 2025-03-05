@@ -1,0 +1,67 @@
+*** Settings ***
+Suite Setup
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+test
+    select-xpath    test1    test2
+
+无授权界面
+    公共-删除数据
+    启动应用
+    sleep    5
+    公共-页面不包含元素    同意并继续
+    公共-页面不包含元素    不同意
+
+无权限提示
+    公共-页面不包含元素    允许
+    公共-页面不包含元素    不允许
+
+初次启动st
+    sleep    3
+    ${result}    公共-获取结果    ${st}    iphone_qidong2    mpp_st_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动st1
+    ${result}    公共-获取结果    ${st1}    iphone_qidong2    mpp_st_iphone_v2    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动tf
+    ${result}    公共-获取结果    ${tf}    iphone_tf    mpp_st_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动tf1
+    ${result}    公共-获取结果    ${tf1}    iphone_tf    mpp_st_iphone_v2    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动pvs
+    ${result}    公共-获取结果    ${pvs}    setup_pvs    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动pvs1
+    ${result}    公共-获取结果    ${pvs1}    setup_pvs    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页pd
+    ${result}    公共-获取结果    ${pd}    pd_1    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+初次启动上报曝光show
+    ${result}    公共-获取结果    {'logtype':'show'}    show_dianbo_1    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点我的跳个人中心
+    #页面无引导遮挡浮层
+    首页-我
+    sleep    2
+    公共-页面包含元素    播放记录

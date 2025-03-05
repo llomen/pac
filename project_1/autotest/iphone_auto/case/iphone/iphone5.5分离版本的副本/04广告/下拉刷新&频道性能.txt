@@ -1,0 +1,215 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+精选页pmm-条数
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_jingxuan    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+精选页pmm-字段
+    公共-字段    ${result}
+
+精选页pmm-字段值
+    公共-字段值    ${result}
+
+综艺页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    综艺
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_zongyi    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+综艺页pmm-字段
+    公共-字段    ${result}
+
+综艺页pmm-字段值
+    公共-字段值    ${result}
+
+电视剧页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    电视剧
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_dianshiju    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+电视剧页pmm-字段
+    公共-字段    ${result}
+
+电视剧页pmm-字段值
+    公共-字段值    ${result}
+
+电影页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    电影
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_dianying    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+电影页pmm-字段
+    公共-字段    ${result}
+
+电影页pmm-字段值
+    公共-字段值    ${result}
+
+少儿页pmm-条数
+    公共－点击页面文本    直播
+    公共-删除数据
+    公共－点击页面文本    少儿
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_shaoer    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+少儿页pmm-字段
+    公共-字段    ${result}
+
+少儿页pmm-字段值
+    公共-字段值    ${result}
+
+动漫页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    动漫
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_dongman    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+动漫页pmm-字段
+    公共-字段    ${result}
+
+动漫页pmm-字段值
+    公共-字段值    ${result}
+
+新闻页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    新闻
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_xinwen    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+新闻页pmm-字段
+    公共-字段    ${result}
+
+新闻页pmm-字段值
+    公共-字段值    ${result}
+
+纪录片页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    纪录片
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_jilupian    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+纪录片页pmm-字段
+    公共-字段    ${result}
+
+纪录片页pmm-字段值
+    公共-字段值    ${result}
+
+游戏页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    原创
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_yuanchuang    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+游戏页pmm-字段
+    公共-字段    ${result}
+
+游戏页pmm-字段值
+    公共-字段值    ${result}
+
+原创页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    原创
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_yuanchuang    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+原创页pmm-字段
+    公共-字段    ${result}
+
+原创页pmm-字段值
+    公共-字段值    ${result}
+
+爱豆页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    爱豆
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_aidou    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+爱豆页pmm-字段
+    公共-字段    ${result}
+
+爱豆页pmm-字段值
+    公共-字段值    ${result}
+
+乐活页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    乐活
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_lehuo    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+乐活页pmm-字段
+    公共-字段    ${result}
+
+乐活页pmm-字段值
+    公共-字段值    ${result}
+
+教育页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    教育
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_jiaoyu    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+教育页pmm-字段
+    公共-字段    ${result}
+
+教育页pmm-字段值
+    公共-字段值    ${result}
+
+音乐页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    音乐
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_yinyue    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+音乐页pmm-字段
+    公共-字段    ${result}
+
+音乐页pmm-字段值
+    公共-字段值    ${result}
+
+体育页pmm-条数
+    公共-删除数据
+    公共－点击页面文本    体育
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_tiyu    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+体育页pmm-字段
+    公共-字段    ${result}
+
+体育页pmm-字段值
+    公共-字段值    ${result}

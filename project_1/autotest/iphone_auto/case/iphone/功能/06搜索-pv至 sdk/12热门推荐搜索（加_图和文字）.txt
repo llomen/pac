@@ -1,0 +1,135 @@
+*** Settings ***
+Documentation     综艺推荐和搜索按钮搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+热门推荐切换tab action-条数
+    首页-搜索
+    公共-删除数据
+    下滑
+    sleep    3
+    上滑
+    搜索-入口页切换tab    动漫
+    sleep    3
+    ${result}    公共-获取结果    ${action}    top_001    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门推荐切换tab action-字段
+    公共-字段    ${result}
+
+热门推荐切换tab action-字段值
+    公共-字段值    ${result}
+
+热门推荐（图）搜索search-条数
+    公共-删除数据
+    comment    公共－点击页面文本    小猪佩奇全集
+    公共－点击页面文本    变形记
+    sleep    3
+    ${result}    公共-获取结果    ${search}    top_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+热门推荐（图）搜索search-字段
+    公共-字段    ${result}
+
+热门推荐（图）搜索search-字段值
+    公共-字段值    ${result}
+
+热门推荐（图）click-条数
+    ${result}    公共-获取结果    ${click}    top_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门推荐（图）click-字段
+    公共-字段    ${result}
+
+热门推荐（图）click-字段值
+    公共-字段值    ${result}
+
+热门推荐（图）action-条数
+    ${result}    公共-获取结果    ${action}    top_002    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门推荐（图）action-字段
+    公共-字段    ${result}
+
+热门推荐（图）action-字段值
+    公共-字段值    ${result}
+
+播放返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sou_bo01    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放返回pvs-字段
+    公共-字段    ${result}
+
+播放返回pvs-字段值
+    公共-字段值    ${result}
+
+播放返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sou_bo01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放返回pvs1-字段
+    公共-字段    ${result}
+
+播放返回pvs1-字段值
+    公共-字段值    ${result}
+
+热门推荐（文字）搜索search-条数
+    comment    搜索-入口页切换tab    电影
+    sleep    3
+    公共-删除数据
+    上滑
+    comment    公共－点击页面文本    傲慢与偏见
+    公共－点击页面文本    我的恶魔少爷
+    ${result}    公共-获取结果    ${search}    top_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    5
+
+热门推荐（文字）搜索search-字段
+    公共-字段    ${result}
+
+热门推荐（文字）搜索search-字段值
+    公共-字段值    ${result}
+
+热门推荐（文字）click-条数
+    ${result}    公共-获取结果    ${click}    top_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门推荐（文字）click-字段
+    公共-字段    ${result}
+
+热门推荐（文字）click-字段值
+    公共-字段值    ${result}
+
+热门推荐（文字）action-条数
+    ${result}    公共-获取结果    ${action}    top_003    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门推荐（文字）action-字段
+    公共-字段    ${result}
+
+热门推荐（文字）action-字段值
+    公共-字段值    ${result}

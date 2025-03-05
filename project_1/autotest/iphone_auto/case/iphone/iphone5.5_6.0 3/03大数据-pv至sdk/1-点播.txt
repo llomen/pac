@@ -1,0 +1,610 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${buffer}         {'act':'buffer'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${pvs}            {'act':'pvs'}
+${cdn2}           {'s':'2'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${st}             {'act':'st'}
+${as}             {'act':'as'}
+${ae}             {'act':'ae'}
+${pv}             {'act':'pv'}
+${vv}             {'act':'vv'}
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***
+打开应用st-条数
+    公共-删除数据
+    启动应用
+    ${result}    公共-获取结果    ${st}    iphone_qidong    mpp_st_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+打开应用st-字段
+    公共-字段    ${result}
+
+打开应用st-字段值
+    公共-字段值    ${result}
+
+开机广告cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    kaiji_001    mpp_adcdn_iphone    4
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开机广告cdn1-字段
+    公共-字段    ${result}
+
+开机广告cdn1-字段值
+    公共-字段值    ${result}
+
+开机广告cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    kaiji_003    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开机广告cdn3-字段
+    公共-字段    ${result}
+
+开机广告cdn3-字段值
+    公共-字段值    ${result}
+
+空白缓存页pvs-条数
+    公共－点击页面文本    我
+    公共-删除数据
+    comment    公共－点击页面文本    离线缓存
+    我的-缓存
+    ${result}    公共-获取结果    ${pvs}    huancun_010    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存页pvs-字段
+    公共-字段    ${result}
+
+空白缓存页pvs-字段值
+    公共-字段值    ${result}
+
+空白缓存页提示
+    Page Should Contain Text    暂无缓存视频
+
+空白缓存页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    huancun_011    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+空白缓存页返回pvs-字段
+    公共-字段    ${result}
+
+空白缓存页返回pvs-字段值
+    公共-字段值    ${result}
+
+点播页pvs-条数
+    公共－点击页面文本    精选
+    公共-删除数据
+    comment    点击频道首页大图第一个图，跳转到视频《青云志》
+    首页-青云志
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    big_dianbo    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页pvs-字段
+    公共-字段    ${result}
+
+点播页pvs-字段值
+    公共-字段值    ${result}
+
+可播比cp1-条数
+    ${result}    公共-获取结果    {'act':'cp1'}    iphone_001    mpp_cp    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+可播比cp1-字段
+    公共-字段    ${result}
+
+可播比cp1-字段值
+    公共-字段值    ${result}
+
+点播前贴广告开始as-条数
+    ${result}    公共-获取结果    ${as}    dianbo_001    mpp_kpi_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播前贴广告开始as-字段
+    公共-字段    ${result}
+
+点播前贴广告开始as-字段值
+    公共-字段值    ${result}
+
+aplay-条数
+    sleep    18
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+aplay-字段
+    公共-字段    ${result}
+
+aplay-字段值
+    公共-字段值    ${result}
+
+点播前贴广告结束ae-条数
+    ${result}    公共-获取结果    ${ae}    dianbo_002    mpp_kpi_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播前贴广告开始ae-字段
+    公共-字段    ${result}
+
+点播前贴广告开始ae-字段值
+    公共-字段值    ${result}
+
+广告播放中上报type0-条数
+    ${result}    公共-获取结果    {'type':'0'}    bofangzhong_type0    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告播放中上报type0-字段
+    公共-字段    ${result}
+
+广告播放中上报type0-字段值
+    公共-字段值    ${result}
+
+广告播放中上报type1-条数
+    ${result}    公共-获取结果    {'type':'1'}    bofangzhong_type1    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告播放中上报type1-字段
+    公共-字段    ${result}
+
+广告播放中上报type1-字段值
+    公共-字段值    ${result}
+
+广告播放中上报type3-条数
+    ${result}    公共-获取结果    {'type':'3'}    bofangzhong_type3    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告播放中上报type3-字段
+    公共-字段    ${result}
+
+广告播放中上报type3-字段值
+    公共-字段值    ${result}
+
+广告播放中上报type4-条数
+    ${result}    公共-获取结果    {'type':'4'}    bofangzhong_type4    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告播放中上报type4-字段
+    公共-字段    ${result}
+
+广告播放中上报type4-字段值
+    公共-字段值    ${result}
+
+广告播放中上报type6-条数
+    ${result}    公共-获取结果    {'type':'6'}    bofangzhong_type6    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告播放中上报type6-字段
+    公共-字段    ${result}
+
+广告播放中上报type6-字段值
+    公共-字段值    ${result}
+
+点播开始事件pv-条数
+    ${result}    公共-获取结果    ${pv}    dianbo_003    mpp_kpi_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播开始事件pv-字段
+    公共-字段    ${result}
+
+点播开始事件pv-字段值
+    公共-字段值    ${result}
+
+点播vv-条数
+    ${result}    公共-获取结果    ${vv}    dianbo_004    mpp_kpi_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播vv-字段
+    公共-字段    ${result}
+
+点播vv-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_001    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+buffer-条数
+    ${result}    公共-获取结果    ${buffer}    iphone_001    mpp_buffer_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+buffer-字段
+    公共-字段    ${result}
+
+buffer-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    aphone_dianbo_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    aphone_dianbo_002    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn2-字段
+    公共-字段    ${result}
+
+cdn2-字段值
+    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    aphone_dianbo_003    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    公共-字段    ${result}
+
+cdn3-字段值
+    公共-字段值    ${result}
+
+点播播放定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    aphone_dianbo_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播播放定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+点播播放定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+正片加载事件vl-条数
+    公共-上滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeTable/XCUIElementTypeCell[9]
+    公共-下滑页面    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeTable/XCUIElementTypeCell[1]
+    ${result}    公共-获取结果    {'act':'vl','pos':'1'}    vl_zhengpian    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片加载事件vl-字段
+    公共-字段    ${result}
+
+正片加载事件vl-字段值
+    公共-字段值    ${result}
+
+花絮加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'2'}    vl_huaxu    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+花絮加载事件vl-字段
+    公共-字段    ${result}
+
+花絮加载事件vl-字段值
+    公共-字段值    ${result}
+
+节目账号加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'4'}    vl_zhanghao    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目账号加载事件vl-字段
+    公共-字段    ${result}
+
+节目账号加载事件vl-字段值
+    公共-字段值    ${result}
+
+猜你喜欢加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'8'}    vl_xihuan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+猜你喜欢加载事件vl-字段
+    公共-字段    ${result}
+
+猜你喜欢加载事件vl-字段值
+    公共-字段值    ${result}
+
+相关明星加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'5'}    vl_xiangguan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    公共-条数    ${result}
+
+相关明星加载事件vl-字段
+    公共-字段    ${result}
+
+相关明星加载事件vl-字段值
+    公共-字段值    ${result}
+
+点击下载按钮pfc-条数
+    公共-删除数据
+    点播播放页-下载
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-download    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击下载按钮pfc-字段
+    公共-字段    ${result}
+
+点击下载按钮pfc-字段值
+    公共-字段值    ${result}
+
+下载cdn1-条数
+    点播播放页-下载集数    (//XCUIElementTypeStaticText[@name="1"])[1]
+    sleep    5
+    ${result}    公共-获取结果    ${cdn1}    aphone_xiazai_001    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn1-字段
+    公共-字段    ${result}
+
+下载cdn1-字段值
+    公共-字段值    ${result}
+
+下载pvs-条数
+    ${result}    公共-获取结果    ${pvs}    xiazai_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载pvs-字段
+    公共-字段    ${result}
+
+下载pvs-字段值
+    公共-字段值    ${result}
+
+下载开始事件ds-条数
+    ${result}    公共-获取结果    {'act':'ds'}    ds_001    mpp_kpi_ds_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载开始事件ds-字段
+    公共-字段    ${result}
+
+下载开始事件ds-字段值
+    公共-字段值    ${result}
+
+下载cdn2-条数
+    sleep    2
+    ${result}    公共-获取结果    ${cdn2}    aphone_xiazai_002    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn2-字段
+    公共-字段    ${result}
+
+下载cdn2-字段值
+    公共-字段值    ${result}
+
+下载cdn3-条数
+    sleep    3
+    ${result}    公共-获取结果    ${cdn3}    aphone_xiazai_003    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn3-字段
+    公共-字段    ${result}
+
+下载cdn3-字段值
+    公共-字段值    ${result}
+
+退出下载pvs-条数
+    公共-删除数据
+    公共－点击页面文本    close icon
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    xiazai_002    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出下载pvs-字段
+    公共-字段    ${result}
+
+退出下载pvs-字段值
+    公共-字段值    ${result}
+
+点击赞pfc-条数
+    公共-删除数据
+    sleep    2
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/preceding-sibling::XCUIElementTypeButton[2]
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-zan    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击赞pfc-字段
+    公共-字段    ${result}
+
+点击赞pfc-字段值
+    公共-字段值    ${result}
+
+点击收藏pfc-条数
+    公共-删除数据
+    comment    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/following-sibling::XCUIElementTypeButton[1]
+    点播播放页-收藏
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-collect    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击收藏pfc-字段
+    公共-字段    ${result}
+
+点击收藏pfc-字段值
+    公共-字段值    ${result}
+
+点击节目简介pfc-条数
+    公共-删除数据
+    点播播放页-节目详情
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-brief    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击节目简介pfc-字段
+    公共-字段    ${result}
+
+点击节目简介pfc-字段值
+    公共-字段值    ${result}
+
+退出播放pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    dianbo_002    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出播放pvs-字段
+    公共-字段    ${result}
+
+退出播放pvs-字段值
+    公共-字段值    ${result}
+
+退出卡顿-条数
+    sleep    2
+    ${result}    公共-获取结果    ${r3}    aphone_dianbo_3    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出卡顿-字段
+    公共-字段    ${result}
+
+退出卡顿-字段值
+    公共-字段值    ${result}
+
+点播页再次进入pvs-条数
+    公共-删除数据
+    comment    点击频道首页大图第一个图，跳转到视频《青云志》
+    首页-青云志
+    sleep    18
+    ${result}    公共-获取结果    ${pvs}    big_dianbo    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页再次进入pvs-字段
+    公共-字段    ${result}
+
+点播页再次进入pvs-字段值
+    公共-字段值    ${result}
+
+点击踩pfc-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/preceding-sibling::XCUIElementTypeButton[1]
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-cai    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击踩pfc-字段
+    公共-字段    ${result}
+
+点击踩pfc-字段值
+    公共-字段值    ${result}
+
+点击评论pvs-条数
+    公共-删除数据
+    点播播放页-评论
+    comment    公共－点击页面文本    评论
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    pinglun_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击评论pvs-字段
+    公共-字段    ${result}
+
+点击评论pvs-字段值
+    公共-字段值    ${result}
+
+点击评论pfc-条数
+    sleep    2
+    ${result}    公共-获取结果    ${pfc}    pfc-cai    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击评论pfc-字段
+    公共-字段    ${result}
+
+点击评论pfc-字段值
+    公共-字段值    ${result}
+
+点击评论详情页pvs-条数
+    公共-删除数据
+    comment    公共－点击页面文本    LAYSGIRLx
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/..
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    pinglun_002    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击评论详情页pvs-字段
+    公共-字段    ${result}
+
+点击评论详情页pvs-字段值
+    公共-字段值    ${result}
+
+评论详情页返回pvs-条数
+    公共-删除数据
+    comment    公共－点击页面文本    Comment window Small
+    点播播放页-评论详情返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    pinglun_003    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论详情页返回pvs-字段
+    公共-字段    ${result}
+
+评论详情页返回pvs-字段值
+    公共-字段值    ${result}
+
+评论页返回pvs-条数
+    公共-删除数据
+    comment    公共－点击页面文本    close icon
+    点播播放页-评论详情返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    pinglun_004    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+评论页返回pvs-字段
+    公共-字段    ${result}
+
+评论页返回pvs-字段值
+    公共-字段值    ${result}

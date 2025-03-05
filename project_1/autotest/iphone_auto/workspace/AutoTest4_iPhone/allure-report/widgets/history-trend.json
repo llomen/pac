@@ -1,0 +1,241 @@
+[ {
+  "buildOrder" : 77,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/77/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1622,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 466,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 76,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/76/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1696,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 392,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 75,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/75/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 2078,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 10,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 74,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/74/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1049,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1039,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 73,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/73/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 729,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1359,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 72,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/72/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1201,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 887,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 70,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/70/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 789,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1299,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 67,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/67/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1385,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 703,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 64,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/64/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 733,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1355,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 63,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/63/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 710,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1378,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 62,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/62/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 666,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1422,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 61,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/61/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 935,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1153,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 60,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/60/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 655,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1433,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 59,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/59/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 625,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1463,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 58,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/58/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 625,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1463,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 57,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/57/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 625,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1463,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 56,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/56/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 625,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1463,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 53,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/53/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 625,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1463,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 52,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/52/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 625,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 1463,
+    "unknown" : 0,
+    "total" : 2088
+  }
+}, {
+  "buildOrder" : 50,
+  "reportUrl" : "http://10.1.172.175:8080/job/AutoTest4_iPhone/50/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1348,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 740,
+    "unknown" : 0,
+    "total" : 2088
+  }
+} ]

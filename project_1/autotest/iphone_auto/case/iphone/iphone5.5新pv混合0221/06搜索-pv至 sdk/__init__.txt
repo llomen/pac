@@ -1,0 +1,3 @@
+*** Settings ***
+Force Tags        1
+Library           AppiumLibrary

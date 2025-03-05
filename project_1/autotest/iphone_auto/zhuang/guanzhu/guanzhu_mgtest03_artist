@@ -1,0 +1,34 @@
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "artists": [
+		        	{
+			            "uid": "d0cbc6ad8c45a1ec829d8140b09a6e85",
+			            "accountType": "4",
+			            "isDyUpdate": "0",
+			            "lastDynamicId": "",
+			            "nickName": "",
+			            "fans": 1, 
+			            "isLiving": "1", 
+			            "onLineCount": 0,
+			            "photo": ""
+		       		 }
+		       		 ,
+		        	{
+			            "uid": "f446d598626c4cfab9d977eb40d50498",
+			            "accountType": "3",
+			            "isDyUpdate": "0",
+			            "lastDynamicId": "710893b9c4e04f708acfd28aba458c7d",
+			            "nickName": "芒果TV会员",
+			            "fans": 121, 
+			            "isLiving": "1", 
+			            "onLineCount": 0,
+			            "photo": "http://userpic.cdn.max.mgtv.com/person58ae86a281a26.jpg@1wh_1e_1c_0o_0l_130h_130w_90q_1pr"
+		       		 }
+		       		 
+        ],
+        "getShortcutCollectArtist->count": 2, 
+        "count": 0
+    }
+}

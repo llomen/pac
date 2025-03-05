@@ -1,0 +1,794 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Force Tags        g1
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${comment}        {'act':'comment'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_sp}       mpp_sp_iphone
+${share}          {'act':'share'}
+${cp10}           {'act':'cp1'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${cdn2}           {'s':'2'}
+${hb3}            {'ht':'0','act':'hb'}
+${hb5}            {'ht':'1','act':'hb'}
+${hb_end}         {'ht':'2','act':'hb'}
+${hb3_cj}         {'ht':'0','act':'hb'}
+${hb5_cj}         {'ht':'1','act':'hb'}
+${hb_end_cj}      {'ht':'2','act':'hb'}
+${oc_start}       {'act':'oc','pos':'5'}
+${oc_end}         {'act':'oc','pos':'6'}
+${pfc22}          {'act':'pfc','pos':'22'}
+${pfc23}          {'act':'pfc','pos':'23'}
+
+*** Test Cases ***
+进入竖屏pvs-条数
+    首页-搜索
+    搜索首页－输入搜索词    小吃播
+    搜索－点击搜索
+    公共-删除数据
+    公共－点击页面文本    2019-09-05 小朋友吃荷包蛋看起来特别香
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    shuping_01    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入竖屏pvs-字段
+    公共-字段    ${result}
+
+进入竖屏pvs-字段值
+    公共-字段值    ${result}
+
+进入竖屏pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shuping_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入竖屏pvs1-字段
+    公共-字段    ${result}
+
+进入竖屏pvs1-字段值
+    公共-字段值    ${result}
+
+进入竖屏cp1-条数
+    ${result}    公共-获取结果    ${cp1}    ke2_01    ${table_cp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入竖屏cp1-字段
+    公共-字段    ${result}
+
+进入竖屏cp1-字段值
+    公共-字段值    ${result}
+
+连播sp-条数
+    ${result}    公共-获取结果    ${sp}    feed_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+连播sp-条数-字段
+    公共-字段    ${result}
+
+连播sp-条数-字段值
+    公共-字段值    ${result}
+
+定时上报cdn-r1-条数
+    ${result}    公共-获取结果    ${r1}    aphone_changjing_1    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+定时上报cdn-r1-字段
+    公共-字段    ${result}
+
+定时上报cdn-r1-字段值
+    公共-字段值    ${result}
+
+buffer-条数
+    ${result}    公共-获取结果    ${buffer}    feed_001    ${table_buffer}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+buffer-字段
+    公共-字段    ${result}
+
+buffer-字段值
+    公共-字段值    ${result}
+
+cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    ke2_07    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn1-字段
+    公共-字段    ${result}
+
+cdn1-字段值
+    公共-字段值    ${result}
+
+cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    ke2_08    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn2-字段
+    公共-字段    ${result}
+
+cdn2-字段值
+    公共-字段值    ${result}
+
+cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    ke2_09    mpp_cdn_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+cdn3-字段
+    公共-字段    ${result}
+
+cdn3-字段值
+    公共-字段值    ${result}
+
+aplay-条数
+    ${result}    公共-获取结果    ${aplay}    feed_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+aplay-字段
+    公共-字段    ${result}
+
+aplay-字段值
+    公共-字段值    ${result}
+
+正片加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'1'}    vl_zhengpian    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片加载事件vl-字段
+    公共-字段    ${result}
+
+正片加载事件vl-字段值
+    公共-字段值    ${result}
+
+节目账号加载事件vl-条数
+    ${result}    公共-获取结果    {'act':'vl','pos':'4'}    vl_zhanghao    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目账号加载事件vl-字段
+    公共-字段    ${result}
+
+节目账号加载事件vl-字段值
+    公共-字段值    ${result}
+
+正片模块曝光show-条数
+    ${result}    公共-获取结果    {'logtype':'show','lob':'smod=1'}    show_dianbo_1    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+正片模块曝光show-字段
+    公共-字段    ${result}
+
+正片模块曝光show-字段值
+    公共-字段值    ${result}
+
+节目账号曝光show-条数
+    ${result}    公共-获取结果    {'logtype':'show','lob':'smod=4'}    show_dianbo_1    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+节目账号曝光show-字段
+    公共-字段    ${result}
+
+节目账号曝光show-字段值
+    公共-字段值    ${result}
+
+心跳hb3-条数
+    sleep    5
+    ${result}    公共-获取结果    ${hb3}    feed_03    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳hb3-字段
+    公共-字段    ${result}
+
+心跳hb3-字段值
+    公共-字段值    ${result}
+
+心跳hb5-条数
+    ${result}    公共-获取结果    ${hb5}    feed_05    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳hb5-字段
+    公共-字段    ${result}
+
+心跳hb5-字段值
+    公共-字段值    ${result}
+
+全屏播放pfc-条数
+    点播播放页-暂停
+    公共-删除数据
+    sleep    5
+    点播播放页-点屏幕
+    公共－点击页面文本    full ToY icon
+    ${result}    公共-获取结果    ${pfc}    pfc_sp_qp    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全屏播放pfc-字段
+    公共-字段    ${result}
+
+全屏播放pfc-字段值
+    公共-字段值    ${result}
+
+点设置pfc-条数
+    公共-删除数据
+    点屏幕
+    公共－点击页面文本    play Full screen setting
+    ${result}    公共-获取结果    ${pfc}    pfc_sp_set    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点设置pfc-字段
+    公共-字段    ${result}
+
+点设置pfc-字段值
+    公共-字段值    ${result}
+
+设置浮层pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shuping_02    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置浮层pvs-字段
+    公共-字段    ${result}
+
+设置浮层pvs-字段值
+    公共-字段值    ${result}
+
+设置浮层pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_002    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置浮层pvs1-字段
+    comment    公共-字段    ${result}
+
+设置浮层pvs1-字段值
+    comment    公共-字段值    ${result}
+
+设置浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_13    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+设置浮层曝光cv-字段
+    公共-字段    ${result}
+
+设置浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+点离线缓存pfc-条数
+    公共-删除数据
+    公共－点击页面文本    离线缓存
+    ${result}    公共-获取结果    ${pfc}    pfc_sp_lxhc    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点离线缓存pfc-字段
+    公共-字段    ${result}
+
+点离线缓存pfc-字段值
+    公共-字段值    ${result}
+
+离线缓存浮层pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shuping_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存浮层pvs-字段
+    公共-字段    ${result}
+
+离线缓存浮层pvs-字段值
+    公共-字段值    ${result}
+
+离线缓存浮层pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_002    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存浮层pvs1-字段
+    comment    公共-字段    ${result}
+
+离线缓存浮层pvs1-字段值
+    comment    公共-字段值    ${result}
+
+离线缓存浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_11    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+离线缓存浮层曝光cv-字段
+    公共-字段    ${result}
+
+离线缓存浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+开始下载oc-条数
+    公共-删除数据
+    点击不可见文本    xpath=(//XCUIElementTypeImage[@name="choice-iconD1"])[1]
+    ${result}    公共-获取结果    ${oc_start}    oc_start    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开始下载oc-字段
+    公共-字段    ${result}
+
+开始下载oc-字段值
+    公共-字段值    ${result}
+
+下载cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    aphone_xiazai_001    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn1-字段
+    公共-字段    ${result}
+
+下载cdn1-字段值
+    公共-字段值    ${result}
+
+下载开始事件ds-条数
+    ${result}    公共-获取结果    {'act':'ds'}    ds_001    mpp_kpi_ds_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载开始事件ds-字段
+    公共-字段    ${result}
+
+下载开始事件ds-字段值
+    公共-字段值    ${result}
+
+下载cdn2-条数
+    ${result}    公共-获取结果    ${cdn2}    aphone_xiazai_002    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn2-字段
+    公共-字段    ${result}
+
+下载cdn2-字段值
+    公共-字段值    ${result}
+
+下载cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    aphone_xiazai_003    mpp_cdn_5_iphone_download    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+下载cdn3-字段
+    公共-字段    ${result}
+
+下载cdn3-字段值
+    公共-字段值    ${result}
+
+查看缓存pfc-条数
+    公共-删除数据
+    公共－点击页面文本    查看缓存
+    ${result}    公共-获取结果    ${pfc}    pfc_sp_ckhc    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pfc-字段
+    公共-字段    ${result}
+
+查看缓存pfc-字段值
+    公共-字段值    ${result}
+
+查看缓存pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shuping_04    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pvs-字段
+    公共-字段    ${result}
+
+查看缓存pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shuping_04    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存pvs1-字段
+    公共-字段    ${result}
+
+查看缓存pvs1-字段值
+    公共-字段值    ${result}
+
+查看缓存返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    shuping_05    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存返回pvs-字段
+    公共-字段    ${result}
+
+查看缓存返回pvs-字段值
+    公共-字段值    ${result}
+
+查看缓存返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shuping_05    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+查看缓存返回pvs1-字段
+    公共-字段    ${result}
+
+查看缓存返回pvs1-字段值
+    公共-字段值    ${result}
+
+点击全部缓存pfc-条数
+    公共－点击页面文本    全部缓存
+    ${result}    公共-获取结果    ${pfc22}    pfc-huancun-click2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击全部缓存pfc-字段
+    公共-字段    ${result}
+
+点击全部缓存pfc-字段值
+    公共-字段值    ${result}
+
+全部缓存展示pfc-条数
+    ${result}    公共-获取结果    ${pfc23}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部缓存展示pfc-字段
+    公共-字段    ${result}
+
+全部缓存展示pfc-字段值
+    公共-字段值    ${result}
+
+全部缓存取消pfc-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pfc}    pfc-alldownload_cancle2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+全部缓存取消pfc-字段
+    公共-字段    ${result}
+
+全部缓存取消pfc-字段值
+    公共-字段值    ${result}
+
+退出下载页pvs-条数
+    公共-删除数据
+    点屏幕
+    ${result}    公共-获取结果    ${pvs}    shuping_06    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出下载页pvs-字段
+    公共-字段    ${result}
+
+退出下载页pvs-字段值
+    公共-字段值    ${result}
+
+退出下载页pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shuping_05    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出下载页pvs1-字段
+    comment    公共-字段    ${result}
+
+退出下载页pvs1-字段值
+    comment    公共-字段值    ${result}
+
+竖屏全屏分享pfc-条数
+    公共-删除数据
+    点屏幕
+    竖屏分享
+    ${result}    公共-获取结果    ${pfc}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+竖屏全屏分享pfc-字段
+    公共-字段    ${result}
+
+竖屏全屏分享pfc-字段值
+    公共-字段值    ${result}
+
+竖屏全屏分享点击share-条数
+    ${result}    公共-获取结果    {'act':'share','pos':'9'}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+竖屏全屏分享点击share-字段
+    公共-字段    ${result}
+
+竖屏全屏分享点击share-字段值
+    公共-字段值    ${result}
+
+竖屏全屏分享弹出share-条数
+    ${result}    公共-获取结果    {'act':'share','pos':'16'}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+竖屏全屏分享弹出share-字段
+    公共-字段    ${result}
+
+竖屏全屏分享弹出share-字段值
+    公共-字段值    ${result}
+
+分享到微信share-条数
+    公共-删除数据
+    公共－点击页面文本    微信
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    {'act':'share'}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到微信share-字段
+    公共-字段    ${result}
+
+分享到微信share-字段值
+    公共-字段值    ${result}
+
+点清晰度pfc-条数
+    公共-删除数据
+    sleep    5
+    点屏幕
+    公共－点击页面文本    标清
+    ${result}    公共-获取结果    ${pfc}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点清晰度pfc-字段
+    公共-字段    ${result}
+
+点清晰度pfc-字段值
+    公共-字段值    ${result}
+
+清晰度浮层pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shuping_07    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+清晰度浮层pvs-字段
+    公共-字段    ${result}
+
+清晰度浮层pvs-字段值
+    公共-字段值    ${result}
+
+清晰度浮层pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_002    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+清晰度浮层pvs1-字段
+    comment    公共-字段    ${result}
+
+清晰度浮层pvs1-字段值
+    comment    公共-字段值    ${result}
+
+清晰度浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_12    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+清晰度浮层曝光cv-字段
+    公共-字段    ${result}
+
+清晰度浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+关闭清晰度
+    点屏幕
+
+点选集pfc-条数
+    公共-删除数据
+    点屏幕
+    公共－点击页面文本    选集
+    ${result}    公共-获取结果    ${pfc}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点选集pfc-字段
+    公共-字段    ${result}
+
+点选集pfc-字段值
+    公共-字段值    ${result}
+
+选集浮层pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shuping_08    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集浮层pvs-字段
+    公共-字段    ${result}
+
+选集浮层pvs-字段值
+    公共-字段值    ${result}
+
+选集浮层pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    pinglun_002    ${table_pvs1}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集浮层pvs1-字段
+    comment    公共-字段    ${result}
+
+选集浮层pvs1-字段值
+    comment    公共-字段值    ${result}
+
+选集浮层曝光cv-条数
+    ${result}    公共-获取结果    ${cv}    play_13    ${table_cv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集浮层曝光cv-字段
+    公共-字段    ${result}
+
+选集浮层曝光cv-字段值
+    公共-字段值    ${result}
+
+选集关闭pvs-条数
+    公共-删除数据
+    公共－xpath    (//XCUIElementTypeStaticText[@name="她吃东西的样子真可爱"])[1]
+    sleep    5
+    ${result}    公共-获取结果    {'act':'pvs','fpn':'96'}    shuping_09    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集关闭pvs-字段
+    公共-字段    ${result}
+
+选集关闭pvs-字段值
+    公共-字段值    ${result}
+
+播放选集视频pvs-条数
+    ${result}    公共-获取结果    {'act':'pvs','fpn':'40'}    shuping_10    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放选集视频pvs-字段
+    公共-字段    ${result}
+
+播放选集视频pvs-字段值
+    公共-字段值    ${result}
+
+播放选集视频pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shuping_10    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放选集视频pvs1-字段
+    公共-字段    ${result}
+
+播放选集视频pvs1-字段值
+    公共-字段值    ${result}
+
+心跳停止hb-条数
+    sleep    2
+    ${result}    公共-获取结果    ${hb_end}    feed_03    ${table_hb_sdk}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+心跳停止hb-字段
+    公共-字段    ${result}
+
+心跳停止hb-字段值
+    公共-字段值    ${result}
+
+退出卡顿-条数
+    ${result}    公共-获取结果    ${r3}    aphone_dianbo_3    mpp_cdnq_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出卡顿-字段
+    公共-字段    ${result}
+
+退出卡顿-字段值
+    公共-字段值    ${result}
+
+选集播放连播sp-条数
+    ${result}    公共-获取结果    ${sp}    feed_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集播放连播sp-条数-字段
+    公共-字段    ${result}
+
+选集播放连播sp-条数-字段值
+    公共-字段值    ${result}
+
+选集播放aplay-条数
+    ${result}    公共-获取结果    ${aplay}    feed_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+选集播放aplay-字段
+    公共-字段    ${result}
+
+选集播放aplay-字段值
+    公共-字段值    ${result}
+
+播放下一个pfc-条数
+    公共-删除数据
+    点屏幕
+    播放下一个
+    ${result}    公共-获取结果    ${pfc}    pfc-huancun-show2    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放下一个pfc-字段
+    公共-字段    ${result}
+
+播放下一个pfc-字段值
+    公共-字段值    ${result}
+
+播放下一个视频pvs-条数
+    sleep    4
+    ${result}    公共-获取结果    ${pvs}    shuping_10    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放下一个视频pvs-字段
+    公共-字段    ${result}
+
+播放下一个视频pvs-字段值
+    公共-字段值    ${result}
+
+播放下一个视频pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    shuping_10    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放下一个视频pvs1-字段
+    公共-字段    ${result}
+
+播放下一个视频pvs1-字段值
+    公共-字段值    ${result}
+
+播放下一个连播sp-条数
+    ${result}    公共-获取结果    ${sp}    feed_001    ${table_sp}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放下一个连播sp-条数-字段
+    公共-字段    ${result}
+
+播放下一个连播sp-条数-字段值
+    公共-字段值    ${result}
+
+播放下一个aplay-条数
+    ${result}    公共-获取结果    ${aplay}    feed_001    ${table_vv}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放下一个aplay-字段
+    公共-字段    ${result}
+
+播放下一个aplay-字段值
+    公共-字段值    ${result}
+
+*** Keywords ***
+点屏幕
+    click a point    100    100
+
+播放下一个
+    公共－点击页面文本    next icon
+
+竖屏分享
+    公共－点击页面文本    share fullscreen icon

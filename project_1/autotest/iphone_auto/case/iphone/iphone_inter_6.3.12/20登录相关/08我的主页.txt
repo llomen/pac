@@ -1,0 +1,340 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Force Tags        smoke
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'logtype':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+
+*** Test Cases ***
+我的主页-粉丝fantuan-条数
+    首页-我
+    我-点名字
+    公共-删除数据
+    饭团-个人主页-粉丝
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-粉丝fantuan-字段
+    公共-字段    ${result}
+
+我的主页-粉丝fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-粉丝pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_01    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-粉丝pvs-字段
+    公共-字段    ${result}
+
+我的主页-粉丝pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-粉丝pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-粉丝pvs1-字段
+    公共-字段    ${result}
+
+我的主页-粉丝pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-关注fantuan-条数
+    comment    公共－点击页面文本    CutScreen Close button
+    非播放页-返回
+    公共-删除数据
+    饭团-个人主页-关注
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-关注fantuan-字段
+    公共-字段    ${result}
+
+我的主页-关注fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-关注pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_02    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-关注pvs-字段
+    公共-字段    ${result}
+
+我的主页-关注pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-关注pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_02    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-关注pvs1-字段
+    公共-字段    ${result}
+
+我的主页-关注pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-饭团fantuan-条数
+    非播放页-返回
+    公共-删除数据
+    饭团-个人主页-饭团
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-饭团fantuan-字段
+    公共-字段    ${result}
+
+我的主页-饭团fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-饭团pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_03    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-饭团pvs-字段
+    公共-字段    ${result}
+
+我的主页-饭团pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-饭团pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_03    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-饭团pvs1-字段
+    公共-字段    ${result}
+
+我的主页-饭团pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-饭团-关注pvs-条数
+    公共-删除数据
+    公共－点击页面文本    TA的关注
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_04    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-饭团-关注pvs-字段
+    公共-字段    ${result}
+
+我的主页-饭团-关注pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-饭团-关注pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_04    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-饭团-关注pvs1-字段
+    公共-字段    ${result}
+
+我的主页-饭团-关注pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-关注返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_05    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-关注返回pvs-字段
+    公共-字段    ${result}
+
+我的主页-关注返回pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-关注返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_05    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-关注返回pvs1-字段
+    公共-字段    ${result}
+
+我的主页-关注返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-编辑fantuan-条数
+    公共-删除数据
+    公共－点击页面文本    编辑
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-编辑fantuan-字段
+    公共-字段    ${result}
+
+我的主页-编辑fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-我的信息pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_06    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-我的信息pvs-字段
+    公共-字段    ${result}
+
+我的主页-我的信息pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-我的信息pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_06    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-我的信息pvs1-字段
+    公共-字段    ${result}
+
+我的主页-我的信息pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_11    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页stay-字段
+    公共-字段    ${result}
+
+我的主页stay-字段名
+    公共-字段值    ${result}
+
+我的主页-点所在地fantuan-条数
+    公共-删除数据
+    点击不可见文本    所在地
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-点所在地fantuan-字段
+    公共-字段    ${result}
+
+我的主页-点所在地fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-设置所在地fantuan-条数
+    公共-删除数据
+    公共－点击页面文本    确定
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-设置所在地fantuan-字段
+    公共-字段    ${result}
+
+我的主页-设置所在地fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-点个性签名fantuan-条数
+    公共-删除数据
+    点击不可见文本    个性签名
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_07    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-点个性签名fantuan-字段
+    公共-字段    ${result}
+
+我的主页-点个性签名fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-跳转签名页面pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_07    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-跳转签名页面pvs-字段
+    公共-字段    ${result}
+
+我的主页-跳转签名页面pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-跳转签名页面pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_07    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-跳转签名页面pvs1-字段
+    公共-字段    ${result}
+
+我的主页-跳转签名页面pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-保存个性签名fantuan-条数
+    公共-删除数据
+    公共－点击页面文本    保存
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodezhuye_08    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-保存个性签名fantuan-字段
+    公共-字段    ${result}
+
+我的主页-保存个性签名fantuan-字段名
+    公共-字段值    ${result}
+
+我的主页-签名页面返回pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_08    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-签名页面返回pvs-字段
+    公共-字段    ${result}
+
+我的主页-签名页面返回pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-签名页面返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_08    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-签名页面返回pvs1-字段
+    公共-字段    ${result}
+
+我的主页-签名页面返回pvs1-字段名
+    公共-字段值    ${result}
+
+我的主页-我的信息返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_wodezhuye_09    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-我的信息返回pvs-字段
+    公共-字段    ${result}
+
+我的主页-我的信息返回pvs-字段名
+    公共-字段值    ${result}
+
+我的主页-我的信息返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    ft_wodezhuye_09    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的主页-我的信息返回pvs1-字段
+    公共-字段    ${result}
+
+我的主页-我的信息返回pvs1-字段名
+    公共-字段值    ${result}

@@ -1,0 +1,282 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${table_pvs}      mpp_pv_5_5_iphone_sdk_qita
+${table_pvs_dianbo}    mpp_pv_5_5_iphone_sdk_dianbo
+${table_chzlshow}    mpp_ip_chzlshow
+${table_chzlclick}    mpp_ip_chzlclick
+${chzlshow}       {'act':'chzlshow'}
+${chzlclick}      {'act':'chzlclick'}
+${columnist}      {'act':'columnist'}
+${table_click}    mpp_jiaohu_iphone
+${share}          {'act':'share'}
+${stay}           {'act':'stay'}
+${table_stay}     mpp_stay_iphone
+
+*** Test Cases ***
+专栏show-条数
+    首页-频道管理
+    公共－点击页面文本    动漫
+    公共-删除数据
+    comment    scroll    name=偶像大师灰姑娘女孩    name=马栏山饲养员
+    ${result}    公共-获取结果    {'logtype':'show'}    index_shantu    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏show-字段
+    公共-字段    ${result}
+
+专栏show-字段值
+    公共-字段值    ${result}
+
+movietv专栏chzlshow-条数
+    ${result}    公共-获取结果    ${chzlshow}    chzlshow_002    ${table_chzlshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+movietv专栏chzlshow-字段
+    公共-字段    ${result}
+
+movietv专栏chzlshow-字段值
+    公共-字段值    ${result}
+
+tw专栏chzlshow-条数
+    公共-删除数据
+    频道专栏-滑动到图文
+    ${result}    公共-获取结果    ${chzlshow}    chzlshow_004    ${table_chzlshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+tw专栏chzlshow-字段
+    公共-字段    ${result}
+
+tw专栏chzlshow-字段值
+    公共-字段值    ${result}
+
+columht专栏chzlshow-条数
+    公共-删除数据
+    频道专栏-滑动到横图
+    ${result}    公共-获取结果    ${chzlshow}    chzlshow_001    ${table_chzlshow}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+columht专栏chzlshow-字段
+    公共-字段    ${result}
+
+columht专栏chzlshow-字段值
+    公共-字段值    ${result}
+
+专栏未登录点赞chzlclick-条数
+    公共-删除数据
+    频道专栏-点赞
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_001    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏未登录点赞chzlclick-字段
+    公共-字段    ${result}
+
+专栏未登录点赞chzlclick-字段值
+    公共-字段值    ${result}
+
+专栏未登录点赞columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏未登录点赞columnist-字段
+    公共-字段    ${result}
+
+专栏未登录点赞columnist-字段值
+    公共-字段值    ${result}
+
+专栏未登录点赞pvs-条数
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_005    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+专栏未登录点赞pvs-字段
+    公共-字段    ${result}
+
+专栏未登录点赞pvs-字段值
+    公共-字段值    ${result}
+
+登录页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    zhuanlan_006    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回pvs-字段
+    公共-字段    ${result}
+
+登录页返回pvs-字段值
+    公共-字段值    ${result}
+
+未登录关注chzlclick-条数
+    公共-删除数据
+    频道专栏-关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_002    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未登录关注chzlclick-字段
+    公共-字段    ${result}
+
+未登录关注chzlclick-字段值
+    公共-字段值    ${result}
+
+未登录关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未登录关注columnist-字段
+    公共-字段    ${result}
+
+未登录关注columnist-字段值
+    公共-字段值    ${result}
+
+登录后跳转回专栏频道
+    公共－点击页面文本    登录
+
+登录后点赞chzlclick-条数
+    公共-删除数据
+    频道专栏-点赞
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_001    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后点赞chzlclick-字段
+    公共-字段    ${result}
+
+登录后点赞chzlclick-字段值
+    公共-字段值    ${result}
+
+登录后点赞columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_05    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后点赞columnist-字段
+    公共-字段    ${result}
+
+登录后点赞columnist-字段值
+    公共-字段值    ${result}
+
+取消点赞chzlclick-条数
+    公共-删除数据
+    频道专栏-取消点赞
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_007    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消点赞chzlclick-字段
+    公共-字段    ${result}
+
+取消点赞chzlclick-字段值
+    公共-字段值    ${result}
+
+取消点赞columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_06    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消点赞columnist-字段
+    公共-字段    ${result}
+
+取消点赞columnist-字段值
+    公共-字段值    ${result}
+
+登录后关注chzlclick-条数
+    公共-删除数据
+    频道专栏-关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_002    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后关注chzlclick-字段
+    公共-字段    ${result}
+
+登录后关注chzlclick-字段值
+    公共-字段值    ${result}
+
+登录后关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录后关注columnist-字段
+    公共-字段    ${result}
+
+登录后关注columnist-字段值
+    公共-字段值    ${result}
+
+取消关注chzlclick-条数
+    公共-删除数据
+    频道专栏-取消关注
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_006    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消关注chzlclick-字段
+    公共-字段    ${result}
+
+取消关注chzlclick-字段值
+    公共-字段值    ${result}
+
+取消关注columnist-条数
+    ${result}    公共-获取结果    ${columnist}    columnist_04    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消关注columnist-字段
+    公共-字段    ${result}
+
+取消关注columnist-字段值
+    公共-字段值    ${result}
+
+点分享chzlclick-条数
+    公共-删除数据
+    频道专栏-分享
+    ${result}    公共-获取结果    ${chzlclick}    chzlclick_008    ${table_chzlclick}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点分享chzlclick-字段
+    公共-字段    ${result}
+
+点分享chzlclick-字段值
+    公共-字段值    ${result}
+
+分享框弹出share-条数
+    ${result}    公共-获取结果    ${share}    columnist_share_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享框弹出share-字段
+    公共-字段    ${result}
+
+分享框弹出share-字段值
+    公共-字段值    ${result}
+
+分享到微信share-条数
+    公共-删除数据
+    公共－点击页面文本    微信
+    公共－点击页面文本    确认
+    ${result}    公共-获取结果    ${share}    columnist_share_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享到微信share-字段
+    公共-字段    ${result}
+
+分享到微信share-字段值
+    公共-字段值    ${result}

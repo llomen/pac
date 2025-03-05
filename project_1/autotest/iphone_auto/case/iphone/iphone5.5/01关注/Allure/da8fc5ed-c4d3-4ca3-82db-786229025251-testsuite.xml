@@ -1,0 +1,56 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1522635060729" stop="1522635088030">
+  <name>2视频播放页点击关注</name>
+  <title>2视频播放页点击关注</title>
+  <labels/>
+  <test-cases>
+    <test-case severity="normal" start="1522635086512" status="failed" stop="1522635086514">
+      <description>视频播放页点击关注fol-条数</description>
+      <name>视频播放页点击关注fol-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="thread" value="-1447845440"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1522635086515" status="failed" stop="1522635086517">
+      <description>视频播放页点击关注fol-字段</description>
+      <name>视频播放页点击关注fol-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="thread" value="-1447845440"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1522635086521" status="failed" stop="1522635086523">
+      <description>视频播放页点击关注fol-字段名</description>
+      <name>视频播放页点击关注fol-字段名</name>
+      <failure>
+        <message>Parent suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="thread" value="-1447845440"/>
+      </labels>
+      <steps>
+        <step start="1522635086525" status="passed" stop="1522635088029">
+          <name>AppiumLibrary.Close All Applications</name>
+          <title>AppiumLibrary.Close All Applications</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

@@ -1,0 +1,160 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${show}           {'logtype':'show'}
+${table_show}     mpp_show_5_iphone_sdk
+${btclick}        {'act':'btclick'}
+${my}             {'act':'my'}
+${aplay}          {'act':'aplay'}
+${table_aplay}    mpp_vv_5_5_iphone_sdk
+
+*** Test Cases ***
+点我的看单click-条数
+    首页-我
+    公共-删除数据
+    我的-看单
+    sleep    3
+    ${result}    公共-获取结果    ${my}    my_bofang_enter    ${table_click}    0
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点我的看单click-字段
+    comment    公共-字段    ${result}
+
+点我的看单click-字段值
+    comment    公共-字段值    ${result}
+
+进入我的看单pvs-条数
+    ${result}    公共-获取结果    ${pvs}    kandan_010    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入我的看单pvs-字段
+    公共-字段    ${result}
+
+进入我的看单pvs-字段值
+    公共-字段值    ${result}
+
+切换到tab视频pvs-条数
+    公共-删除数据
+    看单-视频
+    ${result}    公共-获取结果    ${pvs}    kandan_011    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+切换到tab视频pvs-字段
+    公共-字段    ${result}
+
+切换到tab视频pvs-字段值
+    公共-字段值    ${result}
+
+再次切换到节目pvs-条数
+    公共-删除数据
+    看单-节目
+    ${result}    公共-获取结果    ${pvs}    kandan_012    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+再次切换到节目pvs-字段
+    公共-字段    ${result}
+
+再次切换到节目pvs-字段值
+    公共-字段值    ${result}
+
+删除节目tab中视频
+    看单-删除
+
+跳转登录页pvs-条数
+    公共-删除数据
+    公共－点击页面文本    立刻登录
+    ${result}    公共-获取结果    ${pvs}    kandan_013    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转登录页pvs-字段
+    公共-字段    ${result}
+
+跳转登录页pvs-字段值
+    公共-字段值    ${result}
+
+登录页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    kandan_014    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+登录页返回pvs-字段
+    公共-字段    ${result}
+
+登录页返回pvs-字段值
+    公共-字段值    ${result}
+
+进入看单视频pvs-条数
+    看单-视频
+    公共-删除数据
+    看单-点单视频
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    kandan_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入看单视频pvs-字段
+    公共-字段    ${result}
+
+进入看单视频pvs-字段值
+    公共-字段值    ${result}
+
+进入看单视频vv-条数
+    ${result}    公共-获取结果    ${aplay}    big_dianbo    ${table_aplay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入看单视频vv-字段
+    公共-字段    ${result}
+
+进入看单视频vv-字段值
+    公共-字段值    ${result}
+
+点播页返回我的看单pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs}    kandan_015    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播页返回我的看单pvs-字段
+    公共-字段    ${result}
+
+点播页返回我的看单pvs-字段值
+    公共-字段值    ${result}
+
+返回我的pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    kandan_016    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回我的pvs-字段
+    公共-字段    ${result}
+
+返回我的pvs-字段值
+    公共-字段值    ${result}
+
+点我的看单跳视频tab页-条数
+    公共-删除数据
+    我的-看单
+    ${result}    公共-获取结果    ${pvs}    kandan_017    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点我的看单跳视频tab页-字段
+    公共-字段    ${result}
+
+点我的看单跳视频tab页-字段值
+    公共-字段值    ${result}

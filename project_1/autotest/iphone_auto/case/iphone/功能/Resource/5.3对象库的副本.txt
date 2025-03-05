@@ -1,0 +1,1234 @@
+*** Settings ***
+Library           AppiumLibrary
+Library           AllureReportLibrary    Allure
+
+*** Keywords ***
+公共－删除cdn配置
+    delete cdn
+    sleep    2
+    钢铁侠
+
+公共－cdn配置
+    [Arguments]    ${text}
+    sleep    2
+    Insert Cdn Config    ${text}
+    sleep    2
+
+公共－滑动到某一控件
+    [Arguments]    ${text}
+    sleep    1
+    scroll to    ${text}
+    sleep    1
+
+公共－xpath
+    [Arguments]    ${xpath}
+    sleep    2
+    Comment    Wait Until Page Contains Element    xpath=${xpath}    timeout=5
+    Click Element    xpath=${xpath}
+    sleep    2
+
+公共－选中键盘第一个
+    sleep    2
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[4]/UIAKeyboard[1]/UIAElement[1]
+    sleep    3
+    111111
+
+启动应用
+    Open Application    http://127.0.0.1:4723/wd/hub    platformName=IOS    deviceName=iPhone 5S    platformVersion=10.3.2    newCommandTimeout=600    autoAcceptAlerts=true
+    ...    bundleId=com.hunantv.imgotv    udid=${udid}    AutomationName=XCUITest    noReset=true
+    获取屏幕大小
+    Comment    run keyword and ignore error    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeButton
+
+公共－启动应用
+    Comment    公共-删除数据
+    Comment    公共－点击页面文本    再想想
+    Comment    公共－xpath    //*[@label='跳过']
+    Comment    公共－点击坐标点    162    50
+    comment    公共－点击页面文本    稍后
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAImage[2]
+    Comment    sleep    2
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAButton[2]
+    Comment    sleep    2
+    启动应用
+    公共-启动应用前退出登录
+
+公共－关闭应用
+    Run Keyword And Ignore Error    Close All Applications
+
+公共－点击页面文本
+    [Arguments]    ${text}
+    sleep    2
+    Comment    Wait Until Page Contains Element    name=${text}    timeout=5
+    Click Element    name=${text}
+    sleep    2
+
+公共－点击页面文本－忽略错误
+    [Arguments]    ${text}
+    sleep    2
+    Run Keyword And Ignore Error    click element    ${text}
+    sleep    2
+
+公共－点击坐标点
+    [Arguments]    ${x}    ${y}
+    tap    ${x}    ${y}
+
+公共－上划屏幕
+    sleep    1
+    swipe    170    560    170    300
+
+公共－左滑屏幕
+    sleep    1
+    swipe    330    300    30    300
+    sleep    1
+
+公共－快进
+    sleep    1
+    swipe    50    120    300    120
+    sleep    1
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    swipe    50    120    300    120
+    sleep    30
+
+公共－home
+    Background App
+    sleep    3
+
+公共－切入应用
+    公共－左滑屏幕
+    tap    300    50
+    sleep    3
+
+公共－用户登录
+    [Arguments]    ${account}    ${password}
+    首页-我
+    comment    公共-滑动页面    设置    我的收藏
+    comment    公共-滑动页面    我的收藏    开通会员
+    comment    下滑
+    comment    click element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[3]/XCUIElementTypeStatusBar/XCUIElementTypeOther[1]
+    我－未登录
+    用户登录    ${account}    ${password}
+    放弃记录合并
+
+用户登录
+    [Arguments]    ${account}    ${password}
+    登录-是否有历史页面
+    公共－点击页面文本    邮箱
+    芒果登录－输入账号    ${account}
+    click a point    160    280
+    芒果登录－输入密码    ${password}
+
+公共－手机登录
+    [Arguments]    ${account}    ${password}
+    首页-我
+    我－未登录
+    公共－点击页面文本    使用其它账号登录
+    芒果登录－输入账号    ${account}
+    芒果登录－输入密码    ${password}
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIAButton[6]
+    comment    非播放页-返回
+    放弃记录合并
+    sleep    2
+
+我的-登录
+    [Arguments]    ${account}    ${password}
+    我的-点击登录
+    登录-是否有历史页面
+    公共－点击页面文本    邮箱
+    芒果登录－输入账号    ${account}
+    click a point    160    280
+    芒果登录－输入密码    ${password}
+    放弃记录合并
+
+我的-点击登录
+    ${aa}    run keyword and return status    element should be visible    name=点击登录
+    run keyword if    ${aa}==False    公共-滑动页面    设置    点击登录
+    公共－点击页面文本    点击登录
+
+放弃记录合并
+    ${aa}    if page contain text    放弃
+    run keyword if    ${aa}==1    公共-登录-放弃
+
+公共－退出登录
+    comment    公共－上划屏幕
+    公共-滑动页面    VIP会员    设置
+    公共－点击页面文本    设置
+    comment    公共－上划屏幕
+    公共-滑动页面    账号与安全    退出登录
+    公共－点击页面文本    退出登录
+    公共－点击页面文本    退出
+
+公共-条数
+    [Arguments]    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+公共-字段
+    [Arguments]    ${result}
+    should be true    ${result['field'][0]}==1    ${result['field'][1]}
+
+公共-字段值
+    [Arguments]    ${result}
+    should be true    ${result['errdata'][0]}==1    ${result['errdata'][1]}
+
+公共-获取结果
+    [Arguments]    ${field}    ${test_point}    ${field_table}    ${act_count}
+    ${result}    Check Result    ${field}    MGTV-iPhone-appstore5s_6    ${test_point}    ${field_table}    ${act_count}
+    [Return]    ${result}
+
+公共-删除数据
+    delete data    MGTV-iPhone-appstore5s_6
+    sleep    1
+
+首页-精选
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[1]
+
+首页-直播
+    Click Element    name=直播
+    sleep    2
+
+首页-vip
+    Comment    Click Element    name=会员
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[3]
+    sleep    8
+
+首页-关注
+    公共－点击页面文本    关注
+    Comment    ${aa}    Run Keyword And Return Status    Wait Until Page Contains Element    name=followed_fans
+    Comment    run keyword if    ${aa}    关注-关闭浮层
+
+首页-我
+    comment    公共－点击页面文本    我
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[5]
+
+首页-饭团
+    comment    公共－点击页面文本    饭团
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[4]
+
+首页-缓存
+    公共－点击页面文本    Channel Download iCON
+
+首页-搜索
+    公共－点击页面文本    search_textField
+
+首页-播放记录
+    公共－点击页面文本    Channel History iCON
+
+首页-消息中心
+    公共－点击页面文本    Channel Notice iCON
+
+首页-频道管理
+    comment    公共－点击页面文本    NavigantionBar channel All
+    公共－xpath    //XCUIElementTypeImage[@name="Home_Channel_Fonts_Shadow"]/following-sibling::XCUIElementTypeButton[1]
+
+首页-青云志
+    公共－xpath    (//XCUIElementTypeStaticText[@name="【青云志】田不易逼李易峰杀赵丽颖以证清白"])[1]
+
+频道页-全部
+    公共－点击页面文本    全部
+
+频道页-个人空间
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIACollectionView[2]/UIACollectionCell[1]/UIATableView[1]/UIATableCell[16]/UIAButton[3]
+    sleep    3
+
+点播播放页-返回
+    公共－点击页面文本    player back Shadow
+
+点播播放页-暂停
+    wq_double_tap    xpath=//XCUIElementTypeButton[@name="player back Shadow"]/..
+
+点播播放页-反映厅
+    公共－点击页面文本    VideoHall EnteriCON
+
+点播播放页-投屏
+    公共－点击页面文本    play dlnaicon nor
+
+点播播放页-赞
+    Click Element    xpath＝//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[2]
+
+点播播放页-踩
+    Click Element    xpath＝//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[3]
+
+点播播放页-下载
+    公共－点击页面文本    down icon nor
+    Comment    公共－点击页面文本    Player Floor DownLoad
+
+点播播放页-退出下载
+    公共－点击页面文本    close icon
+
+点播播放页-下载集数
+    [Arguments]    ${xpath}
+    公共－xpath    ${xpath}
+    ${aa}    if page contain text    取消缓存
+    run keyword if    ${aa}==1    点播播放页-删除并下载    ${xpath}    取消缓存
+    ${bb}    if page contain text    删除
+    run keyword if    ${bb}==1    点播播放页-删除并下载    ${xpath}    删除
+
+点播播放页-删除并下载
+    [Arguments]    ${xpath}    ${name}
+    公共－点击页面文本    ${name}
+    公共－xpath    ${xpath}
+
+点播播放页-收藏
+    comment    公共－点击页面文本    Player Floor Collect Normal
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/following-sibling::XCUIElementTypeButton[1]
+
+点播播放页-分享
+    comment    公共－点击页面文本    Player Floor Share
+    公共－点击页面文本    share icon nor
+
+点播播放页-分享到
+    [Arguments]    ${end_locator}
+    公共-分享到    share icon nor    ${end_locator}
+
+点播播放页-节目详情
+    公共－xpath    //XCUIElementTypeButton[@name="down icon nor"]/preceding-sibling::XCUIElementTypeButton[3]
+    comment    公共－xpath    (//XCUIElementTypeStaticText[@name="青云志"])[1]
+
+点播播放页-评论
+    comment    公共－xpath    //XCUIElementTypeButton[@name="Player Floor DownLoad"]/preceding-sibling::XCUIElementTypeButton[1]
+    公共－点击页面文本    评论
+
+点播播放页-评论详情
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/..
+
+点播播放页-评论返回
+    公共－xpath    //XCUIElementTypeStaticText[@name="评论"]/following-sibling::XCUIElementTypeButton[1]
+
+点播播放页-评论详情返回
+    公共－xpath    //XCUIElementTypeStaticText[@name="评论详情"]/following-sibling::XCUIElementTypeButton[1]
+
+点播播放页-全屏
+    Comment    公共－点击坐标点    180    100
+    click element    name=big nor nor new
+    Comment    sleep    1
+    comment    xpath: //UIAApplication[1]/UIAWindow[1]/UIAButton[18]/UIAImage[1]    350    180
+    comment    xpath: //UIAApplication[1]/UIAWindow[1]/UIAButton[12]
+    Comment    公共－点击坐标点    180    100
+    Comment    公共－点击坐标点    180    100
+
+点播播放页-开通会员
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[4]
+    sleep    1
+
+点播播放页-节目空间
+    公共－xpath    (//XCUIElementTypeStaticText[@name="青云志"])[2]
+
+点播播放页-正片列表
+    公共－xpath    //XCUIElementTypeStaticText[@name="1"]/../preceding-sibling::XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeButton
+
+点播播放页-正片列表关闭
+    公共－xpath    (//XCUIElementTypeStaticText[@name="青云志 DVD版"])[3]/following-sibling::XCUIElementTypeButton[1]
+    comment    公共－点击页面文本    close icon
+
+点播播放页-花絮列表关闭
+    公共－xpath    //XCUIElementTypeStaticText[@name="花絮片段"]/following-sibling::XCUIElementTypeButton[1]
+
+点播播放页-花絮
+    comment    上滑
+    ${aa}    Run Keyword And Return Status    Element Should Be Visible    xpath=//XCUIElementTypeStaticText[@name="1"]/../following-sibling::XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton
+    run keyword if    ${aa}== False    上滑
+    公共－xpath    //XCUIElementTypeStaticText[@name="1"]/../following-sibling::XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton
+
+点播播放页-明星空间
+    公共-滑动页面    青云志 DVD版    赵丽颖
+    公共－点击页面文本    赵丽颖
+
+全屏播放-返回
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[5]
+    sleep    1
+
+点播播放页-超清
+    Comment    公共－点击坐标点    300    150
+    Comment    sleep    10
+    tap    300    150
+    click element    name=标清
+    click element    name=蓝光
+    sleep    1
+    comment    location: {333.5, 287.5}
+    comment    size: {120, 70.000007629394531}
+    comment    xpath: //UIAApplication[1]/UIAWindow[1]/UIAButton[8]
+
+点播播放页-播放正片
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[2]/UIACollectionView[1]/UIACollectionCell[4]
+    sleep    1
+
+点播播放页-会员看全集
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[1]
+
+点播播放页-确定开通vip
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[4]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]/UIAButton[1]
+
+点播播放页-拖动进度条
+    [Arguments]    ${text}
+    公共－点击坐标点    100    100
+    input value    xpath=//UIAApplication[1]/UIAWindow[1]/UIASlider[1]    ${text}
+
+非播放页-返回
+    公共－点击页面文本    back icon
+
+直播－搜索
+    Click Element    name=navigantionbar search
+    sleep    3
+
+vip-搜索
+    公共－点击页面文本    Vip navigantionbar search
+    sleep    3
+
+开通会员－返回
+    ${bb}    if page contain text    忍痛拒绝
+    Run keyword if    ${bb} == 1    公共－点击页面文本    忍痛拒绝
+    公共－点击页面文本    close icon
+    sleep    3
+
+广告播放－返回
+    Click Element    xpath =//UIAApplication[1]/UIAWindow[1]/UIAButton[13]
+    sleep    3
+
+我－未登录
+    公共－点击页面文本    点击登录
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIAImage[1]
+
+芒果登录－关闭
+    公共－点击页面文本    back icon
+
+登录－芒果登录
+    sleep    1
+    Click Element    name=mango login icon
+    sleep    3
+
+芒果登录－输入账号
+    [Arguments]    ${accout}
+    sleep    1
+    Comment    input text    xpath=//UIAApplication[1]/UIAWindow[1]/UIATextField[1]    ${accout}
+    input text    xpath=//XCUIElementTypeTextField[@value='请输入邮箱账号']    ${accout}
+    sleep    3
+
+芒果登录－输入密码
+    [Arguments]    ${password}
+    sleep    3
+    Comment    input text    xpath=//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]    ${password}
+    Comment    input text    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeSecureTextField/XCUIElementTypeSecureTextField    ${password}
+    Comment    input text    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeSecureTextField/XCUIElementTypeSecureTextField    ${password}
+    Comment    input text    xpath=/XCUIElementTypeSecureTextField/XCUIElementTypeSecureTextField    ${password}
+    comment    click a point    143    170
+    comment    click element    name=1
+    input text    xpath=//XCUIElementTypeSecureTextField[@value='请输入密码']    ${password}
+    click element    name=return
+    sleep    10
+
+芒果登录－登录
+    sleep    1
+    Click Element    name=登录
+    sleep    3
+
+手机密码登录－输入手机号
+    [Arguments]    ${accout}
+    sleep    1
+    comment    input text    xpath=//XCUIElementTypeTextField[@value='请输入手机号']    ${accout}
+    input text    xpath=//XCUIElementTypeStaticText[@name="中国 +86"]/preceding-sibling::XCUIElementTypeTextField[1]    ${accout}
+    sleep    1
+
+手机密码登录－输入密码
+    [Arguments]    ${pwd}
+    sleep    1
+    comment    input text    xpath=//XCUIElementTypeSecureTextField[@value='请输入密码']    ${pwd}
+    input text    xpath=//XCUIElementTypeButton[@name="mine textbox eye off"]/preceding-sibling::XCUIElementTypeSecureTextField[1]    ${pwd}
+    click element    name=return
+    sleep    10
+    page should contain text    我的消息
+
+会员中心－视频播放
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[6]/UIAButton[1]
+    sleep    3
+
+搜索－点击搜索
+    sleep    1
+    Click Element    name=Search
+    sleep    1
+
+搜索－点击结果第一个
+    sleep    1
+    Click Element    xpath=(//XCUIElementTypeStaticText[@name="播放"])[1]
+    sleep    5
+
+搜索首页－输入搜索词
+    [Arguments]    ${text}
+    sleep    1
+    input text    xpath=//XCUIElementTypeTextField[@name="search_textField"]    ${text}
+    sleep    2
+    Comment    公共－点击页面文本    确认
+    Comment    公共－点击页面文本    搜索
+
+搜索－仍然搜索
+    sleep    1
+    Click Element    xpath=//XCUIElementTypeButton[@name="kuaile"]
+    sleep    1
+
+搜索－x
+    Comment    公共－点击页面文本    清除文本
+    Clear Text    name=search_textField
+    下滑
+    sleep    2
+
+搜索－取消
+    公共－点击页面文本    取消
+
+搜索结果－滚动到首页最后一个
+    sleep    1
+    scroll down    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[21]
+    sleep    1
+
+搜索－点击电视剧第一集
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[2]
+    sleep    2
+
+搜索－热门搜索第一个
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIACollectionView[5]/UIACollectionCell[2]
+    sleep    1
+
+搜索－历史搜索第一个
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIACollectionView[5]/UIACollectionCell[1]/UIAStaticText[1]
+    sleep    1
+
+搜索－筛选展开
+    sleep    1
+    Click Element    name=search screen n
+    sleep    1
+
+弹框－我要开通
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[4]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]/UIAButton[1]
+    sleep    2
+
+开通会员－关闭
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[1]/UIAButton[1]
+    sleep    1
+
+我－会员中心
+    公共－点击页面文本    VIP会员
+    sleep    2
+
+我-滑动到设置
+    公共-滑动页面    VIP会员    设置
+
+会员视频－播放第一个
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[5]/UIAButton[1]
+    sleep    1
+
+试看结束－立即开通
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[7]
+    sleep    1
+
+关注－＋
+    公共－点击页面文本    添加关注
+
+个人空间－关闭
+    Comment    公共－点击坐标点    100    100
+    公共－点击页面文本    back icon
+
+直播－电视台
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[1]
+    sleep    1
+
+直播－直播大事件
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]/UIAButton[2]
+    sleep    1
+
+直播－电视台第一个
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[1]
+    sleep    2
+
+电视播放－返回
+    [Arguments]    ${name}
+    Comment    公共－点击坐标点    300    300
+    Comment    sleep    1
+    Comment    Click Element    name=backbg icon
+    Comment    sleep    1
+    Comment    comment    xpath: //UIAApplication[1]/UIAWindow[1]/UIAButton[1]    xpath: //UIAApplication[1]/UIAWindow[1]/UIAButton[1]
+    ${var}    Set Variable    ${name}
+    Run keyword if    "${var}"=="${name}"    公共－点击页面文本    ${name}
+
+开通会员－点击开通
+    ${bb}    if page contain text    确认支付
+    Run keyword if    ${bb} == 1    开通会员-确认支付
+    ...    ELSE    开通会员-1个月VIP
+    sleep    5
+
+开通会员－取消支付
+    sleep    1
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[7]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[3]/UIAButton[1]
+    sleep    3
+
+关注-关闭浮层
+    sleep    1
+    Click Element    name=followed_fans
+    sleep    3
+
+搜索-点击搜索
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[4]/UIAKeyboard[1]/UIAButton[4]
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[5]/UIAKeyboard[1]/UIAButton[4]
+    公共－点击页面文本    确认
+    公共－点击页面文本    搜索
+    sleep    10
+
+动态详情页-返回
+    公共－点击页面文本    back
+
+搜索-点击上传视频
+    sleep    5
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[5]/UIAStaticText[1]
+    sleep    2
+
+搜索-点击热门作品
+    公共－点击页面文本    欢乐颂2
+
+搜索-点击进入空间
+    公共－点击页面文本    进入空间
+
+空间-返回
+    公共－点击页面文本    backbg icon
+
+搜索-点击综艺结果全部
+    sleep    2
+    Click Element    xpath=(//XCUIElementTypeStaticText[@name="全部"])[1]
+    sleep    2
+
+搜索-点击相同系列
+    sleep    3
+    Click Element    xpath=//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[8]/UIAButton[2]
+    sleep    2
+
+搜索-点击剧集的...
+    公共－点击页面文本    ...
+
+搜索-点击剧集的集数
+    Comment    sleep    3
+    公共－xpath    (//XCUIElementTypeButton[@name="1"])[1]
+    Comment    sleep    2
+
+搜索-点击纠错前合集
+    sleep    1
+    Click Element    xpath=(//XCUIElementTypeStaticText[@name="播放"])[1]
+    sleep    1
+
+搜索-历史搜索
+    sleep    1
+    Click Element    xpath=//XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther/XCUIElementTypeStaticText
+    sleep    1
+
+搜索-中间页点击集数
+    公共－点击页面文本    1
+
+搜索-入口页切换tab
+    [Arguments]    ${tab}
+    公共－点击页面文本    ${tab}
+
+搜索-点击更多作品
+    上滑
+    Comment    公共-滑动页面    查看更多    更多杨幂的作品
+    公共－点击页面文本    更多杨幂的作品
+
+搜索-点击播放
+    sleep    2
+    Click Element    xpath=(//XCUIElementTypeStaticText[@name="播放"])[1]
+    sleep    2
+
+点播播放页-无广告时返回
+    公共－点击坐标点    180    110
+    Comment    公共－点击坐标点    180    110
+    Comment    click element    xpath=//*[@label='pause butt']
+    Comment    公共－点击页面文本    pause butt
+    click element    xpath=//UIAApplication[1]/UIAWindow[1]/UIAButton[5]
+    Comment    点播播放页-返回
+
+榜单页-返回
+    公共－点击页面文本    back icon
+    sleep    2
+
+公共-上滑页面
+    [Arguments]    ${xpath}
+    scroll down    xpath=${xpath}
+    sleep    1
+
+公共-下滑页面
+    [Arguments]    ${xpath}
+    scroll up    xpath=${xpath}
+    sleep    4
+
+个人直播-关闭
+    Comment    公共－点击坐标点    100    100
+    Click Element    name=close player
+    sleep    2
+
+开通会员-确认支付
+    sleep    1
+    Click text    name=确认支付
+    sleep    2
+
+开通会员-1个月VIP
+    sleep    1
+    Click Element    name=1个月VIP
+    sleep    2
+
+公共-验证页面元素value
+    [Arguments]    ${xpath}    ${text}
+    ${path}    set variable    ${xpath}
+    ${value}    get element attribute    ${path}    value
+    should be equal as integers    ${value}    ${text}
+
+开通会员-购买
+    sleep    1
+    Click Element    name=购买
+    sleep    2
+
+开通会员－单片购买
+    Comment    ${aa}    if page contain text    连续包月VIP
+    ${bb}    if page contain text    确认支付
+    Run keyword if    ${bb} == 1    开通会员-确认支付
+    ...    ELSE    开通会员-购买
+    sleep    5
+
+公共-验证页面元素name
+    [Arguments]    ${xpath}    ${text}
+    ${path}    set variable    ${xpath}
+    ${value}    get element attribute    ${path}    name
+    should be equal    ${value}    ${text}
+
+公共-页面存在元素值
+    [Arguments]    ${text}
+    page should contain text    ${text}
+
+公共-页面不存在元素值
+    [Arguments]    ${text}
+    page should not contain text    ${text}
+
+开通会员-点击开通-会员中心
+    Comment    sleep    2
+    Comment    公共－点击坐标点    350    240
+    Comment    sleep    10
+    ${aa}    if page contain text    连续包月VIP
+    ${bb}    if page contain text    确认支付
+    Run keyword if    ${bb} == 1    开通会员-确认支付-会员中心
+    ...    ELSE    开通会员-1个月VIP
+    sleep    5
+
+开通会员-确认支付-会员中心
+    Comment    Click Element    name=年
+    sleep    1
+    Click text    name=确认支付
+    sleep    2
+
+视频播放-关注
+    ${bb}    if page contain text    已关注
+    Run keyword if    ${bb} == 1    视频播放-已关注
+    ...    ELSE    视频播放-未关注
+
+视频播放-已关注
+    sleep    1
+    click element    name=已关注
+    sleep    2
+    公共-删除数据
+    click element    name=关注
+    sleep    2
+
+视频播放-未关注
+    sleep    2
+    click element    name=关注
+    sleep    2
+
+获取屏幕大小
+    &{dict}=    get element size    class=Window
+    set global variable    ${屏幕宽度}    ${dict.width}
+    set global variable    ${屏幕高度}    ${dict.height}
+    [Return]    ${dict.width}    ${dict.height}
+
+左滑
+    获取屏幕大小
+    ${x1} =    evaluate    ${屏幕宽度}*0.8
+    ${y1} =    evaluate    ${屏幕高度}*0.5
+    ${x2} =    evaluate    -${屏幕宽度}*0.6
+    ${y2} =    evaluate    0
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+    capture page screenshot
+
+右滑
+    获取屏幕大小
+    ${x1} =    evaluate    ${屏幕宽度}*0.2
+    ${y1} =    evaluate    ${屏幕高度}*0.5
+    ${x2} =    evaluate    ${屏幕宽度}*0.6
+    ${y2} =    evaluate    0
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+    capture page screenshot
+
+上滑
+    ${x1} =    evaluate    ${屏幕宽度}*0.5
+    ${y1} =    evaluate    ${屏幕高度}*0.7
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    -${屏幕高度}*0.6
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+
+下滑
+    ${x1} =    evaluate    ${屏幕宽度}*0.2
+    ${y1} =    evaluate    ${屏幕高度}*0.2
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    ${屏幕高度}*0.5
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+
+按元素左滑
+    [Arguments]    ${locator}
+    获取屏幕大小
+    &{location} =    get element location    ${locator}
+    ${x1} =    evaluate    ${location.x}*1.0
+    ${y1} =    evaluate    ${location.y}*1.0
+    ${x2} =    evaluate    ${屏幕宽度}*0.9
+    ${y2} =    evaluate    0
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+
+按元素右滑
+    [Arguments]    ${locator}
+    获取屏幕大小
+    &{location} =    get element location    ${locator}
+    ${x1} =    evaluate    ${location.x}*1.0
+    ${y1} =    evaluate    ${location.y}*1.0
+    ${x2} =    evaluate    ${屏幕宽度}*-0.9
+    ${y2} =    evaluate    0
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+
+发帖上滑
+    获取屏幕大小
+    ${x1} =    evaluate    ${屏幕宽度}*0.5
+    ${y1} =    evaluate    ${屏幕高度}*0.5
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    -${屏幕高度}*0.3
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+
+点击
+    [Arguments]    &{a}
+    [Documentation]    点击相对坐标
+    Run Keyword And Ignore Error    获取屏幕大小
+    ${x} =    evaluate    ${屏幕宽度}*&{a}[x]
+    ${y} =    evaluate    ${屏幕高度}*&{a}[y]
+    click a point    ${x}    ${y}
+
+点击元素
+    [Arguments]    ${a}    ${i}
+    [Documentation]    元素转换成相对坐标来点击 ${a}是元素定位, ${i}是数组下标,从0开始,0代表第一个元素
+    @{b} =    get webelements    ${a}
+    &{size} =    get element size    @{b}[${i}]
+    &{location} =    get element location    @{b}[${i}]
+    ${x} =    evaluate    ${location.x}+${size.width}/2
+    ${y} =    evaluate    ${location.y}+${size.height}/2
+    click a point    ${x}    ${y}
+
+点击第N个元素
+    [Arguments]    ${a}    ${i}
+    [Documentation]    ${a}是元素定位, ${i}是数组下标,从0开始,0代表第一个元素
+    @{b} =    get webelements    ${a}
+    click element    @{b}[${i}]
+
+首页头部左滑
+    获取屏幕大小
+    ${x1} =    evaluate    ${屏幕宽度}*0.8
+    ${y1} =    evaluate    ${屏幕高度}*0.46
+    ${x2} =    evaluate    -${屏幕宽度}*0.6
+    ${y2} =    evaluate    0
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+    capture page screenshot
+
+首页头部右滑
+    获取屏幕大小
+    ${x1} =    evaluate    ${屏幕宽度}*0.2
+    ${y1} =    evaluate    ${屏幕高度}*0.46
+    ${x2} =    evaluate    ${屏幕宽度}*0.6
+    ${y2} =    evaluate    0
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+    capture page screenshot
+
+上滑到首页顶部banner运营位
+    获取屏幕大小
+    ${x1} =    evaluate    ${屏幕宽度}*0.5
+    ${y1} =    evaluate    ${屏幕高度}*0.6
+    ${x2} =    evaluate    0
+    ${y2} =    evaluate    -${屏幕高度}*0.2
+    log    ${x1},${y1},${x2},${y2}
+    swipe    ${x1}    ${y1}    ${x2}    ${y2}
+    capture page screenshot
+
+公共-启动应用前退出登录
+    短视频-进入有料
+    首页-我
+    sleep    2
+    放弃记录合并
+    ${aa}    if page contain text    点击登录
+    Run keyword if    ${aa} == 1    公共-未登录-回到主页
+    ...    ELSE    公共-已登录-退出登录
+    sleep    5
+
+公共-未登录-回到主页
+    Comment    公共-删除数据
+    首页-精选
+
+公共-已登录-退出登录
+    ${aa}    run keyword and return status    element should be visible    name=设置
+    run keyword if    ${aa}==False    滚动到设置
+    click element    name=设置
+    scroll    name=账号与安全    name=退出登录
+    Comment    sleep    3
+    click element    name=退出登录
+    click element    name=退出
+    sleep    5
+    公共-滑动页面    设置    点击登录
+    log    2222
+    首页-精选
+
+我的-元素
+    [Arguments]    ${locator}
+    ${aa}    run keyword and return status    element should be visible    name=${locator}
+    run keyword if    ${aa}==False    滚动到设置
+    公共－点击页面文本    ${locator}
+
+我的-缓存
+    ${aa}    if page contain text    离线缓存
+    run keyword if    ${aa}==1    公共－点击页面文本    离线缓存
+    ...    ELSE    公共－点击页面文本    离线下载
+
+滚动到设置
+    scroll    name=播放记录    name=设置
+
+公共-滑动页面
+    [Arguments]    ${start_locator}    ${end_locator}
+    sleep    3
+    scroll    name=${start_locator}    name=${end_locator}
+    sleep    1
+
+公共-登录-放弃
+    run keyword and ignore error    公共－点击页面文本    放弃
+
+点播-关闭右滑按钮
+    Comment    ${bb}    if page contain text    Gesture_ClosePlayer_Background
+    Comment    Run keyword if    ${bb} == 1    点播-关闭右滑
+    sleep    1
+
+点播-关闭右滑
+    公共－点击页面文本    Gesture_ClosePlayer_Background
+
+登录-是否有历史页面
+    ${bb}    if page contain text    使用其它账号登录
+    Run keyword if    ${bb} == 1    登录-使用其它账号登录
+
+登录-使用其它账号登录
+    公共－点击页面文本    使用其它账号登录
+
+点击确认按钮
+    Run Keyword And Ignore Error    click element    name=确认
+
+公共-分享到
+    [Arguments]    ${share_locator}    ${end_locator}
+    Comment    ${bb}    run keyword and return status    Element Should Be Visible    ${share_locator}
+    Comment    Run keyword if    ${bb}==False    scroll up    ${share_locator}
+    ${aa}    if page contain text    ${end_locator}
+    Run keyword if    ${aa}==0    公共－点击页面文本    ${share_locator}
+    公共-删除数据
+    公共－点击页面文本    ${end_locator}
+
+公共-向上滑动
+    [Arguments]    ${start_locator}    ${end_locator}
+    &{start}    Get Element Location    ${start_locator}
+    &{end}    Get Element Location    ${end_locator}
+    ${y}    evaluate    ${end.y}-${start.y}
+    swipe    ${end.x}    ${end.y}    0    -${y}
+
+短视频暂停
+    [Arguments]    ${a}
+    &{size} =    get element size    ${a}
+    &{location} =    get element location    ${a}
+    ${x} =    evaluate    ${location.x}+${size.width}/2
+    ${y} =    evaluate    ${location.y}+${size.height}/2
+    click a point    ${x}    ${y}    10
+    click a point    ${x}    ${y}    10
+
+短视频-进入有料
+    comment    click text    有料
+    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[2]
+
+短视频-推荐播放第一个
+    公共－xpath    (//XCUIElementTypeImage[@name="shortHomeLike"])[1]
+
+短视频-关注播放第一个
+    公共－xpath    (//XCUIElementTypeImage[@name="shortHomeLike"])[1]
+
+短视频-切换关注
+    公共－点击页面文本    关注
+
+短视频-点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="shortEntranceUnLike"])[1]
+
+短视频-取消点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="shortEntranceLiked"])[1]
+
+短视频-点击评论
+    公共－xpath    (//XCUIElementTypeButton[@name="shortEntranceComment"])[1]
+
+短视频-评论返回
+    公共－点击页面文本    shortVideoCommentClose
+
+短视频-评论点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="shortVideoCommentUnlike"])[1]
+
+短视频-评论详情
+    公共－点击页面文本    关注
+
+短视频-评论详情点赞
+    公共－点击页面文本    关注
+
+短视频-评论详情返回
+    公共－点击页面文本    关注
+
+短视频-加关注
+    公共－xpath    (//XCUIElementTypeButton[@name="shortEntranceUnFollow"])[1]
+
+短视频-跳转upgc主页
+    公共－xpath    (//XCUIElementTypeButton[@name="shortEntranceUnLike"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+
+短视频-upgc主页-取消关注
+    公共－点击页面文本    已关注
+
+短视频-点击分享
+    公共－xpath    (//XCUIElementTypeButton[@name="shortEntranceShare"])[1]
+
+短视频-返回
+    公共－点击页面文本    player back Shadow
+
+短视频-分享到
+    [Arguments]    ${name}
+    ${aa}    if page contain text    ${name}
+    run keyword if    ${aa}==0    短视频-点击分享
+    公共－点击页面文本    ${name}
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+
+饭团-推荐
+    公共－点击页面文本    推荐
+
+饭团-我的饭团
+    公共－点击页面文本    我的饭团
+
+饭团-电视台
+    公共－点击页面文本    Live Navigantion Bar Live TV
+
+饭团-我的头像
+    comment    公共－点击页面文本    headshot personal
+    公共－xpath    //XCUIElementTypeButton[@name="Live Navigantion Bar Live TV"]/following-sibling::XCUIElementTypeButton[1]
+
+饭团-我的头像-返回
+    comment    公共－点击页面文本    backbg icon
+    非播放页-返回
+
+饭团-消息
+    comment    公共－点击页面文本    Channel Notice iCON
+    公共－xpath    //XCUIElementTypeTextField[@name="search_textField"]/../following-sibling::XCUIElementTypeButton[1]
+
+饭团-搜索
+    公共－点击页面文本    search_textField
+
+饭团-搜索-输入
+    [Arguments]    ${text}
+    input text    xpath=//XCUIElementTypeTextField[@name="search_textField"]    ${text}
+    公共－点击页面文本    确认
+    公共－点击页面文本    搜索
+    sleep    10
+
+饭团-发布
+    公共－点击页面文本    fantuan Homepage release
+
+饭团-发布-取消
+    公共－点击页面文本    取消
+
+饭团-发布-提交
+    公共－点击页面文本    Comment input Send
+
+饭团-发布-选择饭团
+    公共－点击页面文本    请选择
+
+饭团-发布-输入标题
+    [Arguments]    ${text}
+    input text    xpath=//XCUIElementTypeStaticText[@name="标题:"]/following-sibling::XCUIElementTypeTextField[1]    ${text}
+
+饭团-发布-输入内容
+    [Arguments]    ${text}
+    input text    xpath=//XCUIElementTypeStaticText[@name="我来说两句..."]/..    ${text}
+
+饭团-发布-选择图片
+    公共－点击页面文本    Addition Pictures Normal
+    ${aa}    if page contain text    不允许
+    run keyword if    ${aa}==1    公共－点击页面文本    不允许
+
+饭团-发布-选择视频
+    公共－点击页面文本    Addition Video Normal
+    ${aa}    if page contain text    不允许
+    run keyword if    ${aa}==1    公共－点击页面文本    不允许
+
+饭团-动态-分享
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]
+
+饭团-分享到
+    [Arguments]    ${name}
+    ${aa}    if page contain text    ${name}
+    run keyword if    ${aa}==0    拉起饭团分享
+    公共－点击页面文本    ${name}
+    Run Keyword And Ignore Error    公共－点击页面文本    确认
+
+拉起饭团分享
+    饭团-动态-分享
+    公共-删除数据
+
+饭团-动态-来自饭团
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss Share iCON"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+
+饭团-动态-评论
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeButton[2]
+    饭团-动态-关闭评论框
+
+饭团-动态-关闭评论框
+    ${aa}    if page contain text    稍后再验证
+    run keyword if    ${aa}==1    公共－点击页面文本    稍后再验证
+    ${bb}    Run Keyword And Return Status    Page Should Contain Element    xpath=//XCUIElementTypeButton[@name="Comment Iput Emoj"]/preceding-sibling::XCUIElementTypeButton[1]
+    run keyword if    ${bb}==True    公共－xpath    //XCUIElementTypeButton[@name="Comment Iput Emoj"]/preceding-sibling::XCUIElementTypeButton[1]
+
+饭团-动态-点赞
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeButton[1]
+
+饭团-动态-更多
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]
+
+饭团-动态-发布者
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeStaticText[last()]
+
+饭团-动态-内容
+    公共－xpath    (//XCUIElementTypeButton[@name="Discuss More Gray"])[1]/preceding-sibling::XCUIElementTypeStaticText[last()-1]
+
+饭团-详情-饭团首页
+    公共－点击页面文本    fantuan_livesub_background
+
+饭团-详情-个人头像
+    公共－点击页面文本    headshot none
+
+饭团-明星-更多
+    公共－点击页面文本    web more
+
+饭团-明星-加入饭团
+    公共－点击页面文本    + 加入
+
+饭团-明星-作品
+    公共－点击页面文本    作品
+
+饭团-明星-全部动态
+    公共－点击页面文本    全部动态
+
+饭团-明星-退出饭团
+    ${aa}    if page contain text    已加入
+    run keyword if    ${aa}==1    退出饭团
+
+退出饭团
+    饭团-明星-更多
+    公共－点击页面文本    退出饭团
+
+饭团-我的饭团-饭团列表
+    公共－点击页面文本    arrow right
+
+饭团-我的饭团-更多饭团
+    公共－点击页面文本    更多饭团
+
+饭团-我的饭团-进入第一个饭团
+    公共－xpath    //XCUIElementTypeButton[@name="进饭团"][1]
+
+饭团-个人主页-粉丝
+    公共－点击页面文本    粉丝
+
+饭团-个人主页-关注
+    公共－xpath    //XCUIElementTypeButton[@name="关注"]
+
+饭团-个人主页-饭团
+    公共－xpath    //XCUIElementTypeButton[@name="饭团"]
+
+饭团-个人主页-加入的饭团
+    公共－点击页面文本    加入的饭团
+
+饭团-个人主页-返回
+    comment    公共－点击页面文本    backbg icon
+    非播放页-返回
+
+饭团-个人主页-更多
+    公共－点击页面文本    Combined Shape
+
+饭团-ta的饭团-加入第一个
+    ${aa}    Get Element Attribute    xpath=//XCUIElementTypeButton[@name="+ 加入"][1]/preceding-sibling::XCUIElementTypeStaticText[1]    name
+    公共－xpath    //XCUIElementTypeButton[@name="+ 加入"][1]
+    公共－点击页面文本    ${aa}
+
+饭团-结果页-饭团主页
+    ${aa}    if page contain text    + 加入
+    run keyword if    ${aa}==1    搜索结果页-点击饭团头像
+    ...    ELSE    公共－点击页面文本    进入
+
+默认登录用户
+    [Arguments]    ${account}    ${pwd}    ${name}
+    首页-我
+    ${aa}    if page contain text    ${name}
+    run keyword if    ${aa}==0    重新登录    ${account}    ${pwd}
+
+重新登录
+    [Arguments]    ${account}    ${pwd}
+    ${bb}    if page contain text    点击登录
+    run keyword if    ${bb}==1    我的-登录    ${account}    ${pwd}
+    ...    ELSE    退出登录后登录    ${account}    ${pwd}
+
+退出登录后登录
+    [Arguments]    ${account}    ${pwd}
+    公共－退出登录
+    下滑
+    我的-登录    ${account}    ${pwd}
+
+搜索结果页-点击饭团头像
+    公共－xpath    //XCUIElementTypeButton[@name="+ 加入"]/preceding-sibling::XCUIElementTypeStaticText[2]
+
+我的服务-全部添加
+    @{list}    get webelements    name = My service_set_join
+    ${length}    get length    ${list}
+    log    ${length}
+    : FOR    ${a}    IN RANGE    ${length}
+    \    click element    @{list}[0]
+
+我的服务-添加
+    [Arguments]    ${name}
+    ${aa}    Get Element Attribute    //XCUIElementTypeStaticText[@name="${name}"]/preceding-sibling::XCUIElementTypeImage[1]    name
+    ${bb}    Run Keyword And Return Status    Should Be Equal As Strings    ${aa}    My service_set_join
+    run keyword if    ${bb}==True    公共－点击页面文本    ${name}

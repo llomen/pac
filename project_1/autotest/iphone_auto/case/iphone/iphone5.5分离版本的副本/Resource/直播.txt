@@ -1,0 +1,22 @@
+*** Settings ***
+Library           AppiumLibrary
+
+*** Keywords ***
+场景直播-关闭
+    click a point    200    200
+    sleep    1
+    click element    name=player close
+    sleep    1
+
+场景直播-切换机位
+    click element    name=live camera
+    sleep    1
+
+场景直播-切换码率
+    click element    name=高清
+    sleep    1
+
+动态详情－关闭
+    Comment    Click Element    name=back
+    tap    back    2    0
+    sleep    1

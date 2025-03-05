@@ -1,0 +1,2101 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1548036832898" stop="1548036914520">
+  <name>1-点播</name>
+  <title>1-点播</title>
+  <labels/>
+  <test-cases>
+    <test-case severity="normal" start="1548036912765" status="failed" stop="1548036912769">
+      <description>打开应用st-条数</description>
+      <name>打开应用st-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912772" status="failed" stop="1548036912776">
+      <description>打开应用st-字段</description>
+      <name>打开应用st-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912778" status="failed" stop="1548036912782">
+      <description>打开应用st-字段值</description>
+      <name>打开应用st-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912785" status="failed" stop="1548036912793">
+      <description>开机广告cdn1-条数</description>
+      <name>开机广告cdn1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912794" status="failed" stop="1548036912799">
+      <description>开机广告cdn1-字段</description>
+      <name>开机广告cdn1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912804" status="failed" stop="1548036912809">
+      <description>开机广告cdn1-字段值</description>
+      <name>开机广告cdn1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912814" status="failed" stop="1548036912818">
+      <description>开机广告cdn3-条数</description>
+      <name>开机广告cdn3-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912819" status="failed" stop="1548036912823">
+      <description>开机广告cdn3-字段</description>
+      <name>开机广告cdn3-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912824" status="failed" stop="1548036912830">
+      <description>开机广告cdn3-字段值</description>
+      <name>开机广告cdn3-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912832" status="failed" stop="1548036912836">
+      <description>空白缓存页pvs1-条数</description>
+      <name>空白缓存页pvs1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912842" status="failed" stop="1548036912849">
+      <description>空白缓存页pvs1-字段</description>
+      <name>空白缓存页pvs1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912854" status="failed" stop="1548036912860">
+      <description>空白缓存页pvs1-字段值</description>
+      <name>空白缓存页pvs1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912863" status="failed" stop="1548036912867">
+      <description>空白缓存页提示</description>
+      <name>空白缓存页提示</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912871" status="failed" stop="1548036912875">
+      <description>空白缓存页返回pvs1-条数</description>
+      <name>空白缓存页返回pvs1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912878" status="failed" stop="1548036912883">
+      <description>空白缓存页返回pvs1-字段</description>
+      <name>空白缓存页返回pvs1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912886" status="failed" stop="1548036912890">
+      <description>空白缓存页返回pvs1-字段值</description>
+      <name>空白缓存页返回pvs1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912899" status="failed" stop="1548036912904">
+      <description>点播页pvs1-条数</description>
+      <name>点播页pvs1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912907" status="failed" stop="1548036912912">
+      <description>点播页pvs1-字段</description>
+      <name>点播页pvs1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912914" status="failed" stop="1548036912918">
+      <description>点播页pvs1-字段值</description>
+      <name>点播页pvs1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912921" status="failed" stop="1548036912925">
+      <description>可播比cp1-条数</description>
+      <name>可播比cp1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912927" status="failed" stop="1548036912931">
+      <description>可播比cp1-字段</description>
+      <name>可播比cp1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912933" status="failed" stop="1548036912938">
+      <description>可播比cp1-字段值</description>
+      <name>可播比cp1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912941" status="failed" stop="1548036912946">
+      <description>点播前贴广告开始as-条数</description>
+      <name>点播前贴广告开始as-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912953" status="failed" stop="1548036912959">
+      <description>点播前贴广告开始as-字段</description>
+      <name>点播前贴广告开始as-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912962" status="failed" stop="1548036912966">
+      <description>点播前贴广告开始as-字段值</description>
+      <name>点播前贴广告开始as-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912968" status="failed" stop="1548036912973">
+      <description>aplay-条数</description>
+      <name>aplay-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912974" status="failed" stop="1548036912977">
+      <description>aplay-字段</description>
+      <name>aplay-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912981" status="failed" stop="1548036912987">
+      <description>aplay-字段值</description>
+      <name>aplay-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036912989" status="failed" stop="1548036913012">
+      <description>点播前贴广告结束ae-条数</description>
+      <name>点播前贴广告结束ae-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913035" status="failed" stop="1548036913060">
+      <description>点播前贴广告开始ae-字段</description>
+      <name>点播前贴广告开始ae-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913068" status="failed" stop="1548036913078">
+      <description>点播前贴广告开始ae-字段值</description>
+      <name>点播前贴广告开始ae-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913082" status="failed" stop="1548036913092">
+      <description>广告播放中上报type0-条数</description>
+      <name>广告播放中上报type0-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913096" status="failed" stop="1548036913111">
+      <description>广告播放中上报type0-字段</description>
+      <name>广告播放中上报type0-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913116" status="failed" stop="1548036913127">
+      <description>广告播放中上报type0-字段值</description>
+      <name>广告播放中上报type0-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913132" status="failed" stop="1548036913139">
+      <description>广告播放中上报type1-条数</description>
+      <name>广告播放中上报type1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913144" status="failed" stop="1548036913150">
+      <description>广告播放中上报type1-字段</description>
+      <name>广告播放中上报type1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913161" status="failed" stop="1548036913175">
+      <description>广告播放中上报type1-字段值</description>
+      <name>广告播放中上报type1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913180" status="failed" stop="1548036913190">
+      <description>广告播放中上报type3-条数</description>
+      <name>广告播放中上报type3-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913193" status="failed" stop="1548036913208">
+      <description>广告播放中上报type3-字段</description>
+      <name>广告播放中上报type3-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913214" status="failed" stop="1548036913226">
+      <description>广告播放中上报type3-字段值</description>
+      <name>广告播放中上报type3-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913230" status="failed" stop="1548036913238">
+      <description>广告播放中上报type4-条数</description>
+      <name>广告播放中上报type4-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913243" status="failed" stop="1548036913248">
+      <description>广告播放中上报type4-字段</description>
+      <name>广告播放中上报type4-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913254" status="failed" stop="1548036913265">
+      <description>广告播放中上报type4-字段值</description>
+      <name>广告播放中上报type4-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913274" status="failed" stop="1548036913281">
+      <description>广告播放中上报type6-条数</description>
+      <name>广告播放中上报type6-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913285" status="failed" stop="1548036913288">
+      <description>广告播放中上报type6-字段</description>
+      <name>广告播放中上报type6-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913291" status="failed" stop="1548036913294">
+      <description>广告播放中上报type6-字段值</description>
+      <name>广告播放中上报type6-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913296" status="failed" stop="1548036913299">
+      <description>点播开始事件pv-条数</description>
+      <name>点播开始事件pv-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913301" status="failed" stop="1548036913305">
+      <description>点播开始事件pv-字段</description>
+      <name>点播开始事件pv-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913307" status="failed" stop="1548036913313">
+      <description>点播开始事件pv-字段值</description>
+      <name>点播开始事件pv-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913314" status="failed" stop="1548036913317">
+      <description>点播vv-条数</description>
+      <name>点播vv-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913322" status="failed" stop="1548036913327">
+      <description>点播vv-字段</description>
+      <name>点播vv-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913329" status="failed" stop="1548036913333">
+      <description>点播vv-字段值</description>
+      <name>点播vv-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913334" status="failed" stop="1548036913338">
+      <description>sdkload-条数</description>
+      <name>sdkload-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913339" status="failed" stop="1548036913343">
+      <description>sdkload-字段</description>
+      <name>sdkload-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913344" status="failed" stop="1548036913347">
+      <description>sdkload-字段值</description>
+      <name>sdkload-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913349" status="failed" stop="1548036913352">
+      <description>buffer-条数</description>
+      <name>buffer-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913353" status="failed" stop="1548036913357">
+      <description>buffer-字段</description>
+      <name>buffer-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913359" status="failed" stop="1548036913362">
+      <description>buffer-字段值</description>
+      <name>buffer-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913367" status="failed" stop="1548036913373">
+      <description>cdn1-条数</description>
+      <name>cdn1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913375" status="failed" stop="1548036913379">
+      <description>cdn1-字段</description>
+      <name>cdn1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913380" status="failed" stop="1548036913383">
+      <description>cdn1-字段值</description>
+      <name>cdn1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913385" status="failed" stop="1548036913389">
+      <description>cdn2-条数</description>
+      <name>cdn2-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913390" status="failed" stop="1548036913393">
+      <description>cdn2-字段</description>
+      <name>cdn2-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913395" status="failed" stop="1548036913398">
+      <description>cdn2-字段值</description>
+      <name>cdn2-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913399" status="failed" stop="1548036913403">
+      <description>cdn3-条数</description>
+      <name>cdn3-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913404" status="failed" stop="1548036913408">
+      <description>cdn3-字段</description>
+      <name>cdn3-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913409" status="failed" stop="1548036913413">
+      <description>cdn3-字段值</description>
+      <name>cdn3-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913420" status="failed" stop="1548036913425">
+      <description>点播播放定时上报cdn-r1-条数</description>
+      <name>点播播放定时上报cdn-r1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913427" status="failed" stop="1548036913430">
+      <description>点播播放定时上报cdn-r1-字段</description>
+      <name>点播播放定时上报cdn-r1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913433" status="failed" stop="1548036913436">
+      <description>点播播放定时上报cdn-r1-字段值</description>
+      <name>点播播放定时上报cdn-r1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913438" status="failed" stop="1548036913441">
+      <description>正片加载事件vl-条数</description>
+      <name>正片加载事件vl-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913443" status="failed" stop="1548036913446">
+      <description>正片加载事件vl-字段</description>
+      <name>正片加载事件vl-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913449" status="failed" stop="1548036913452">
+      <description>正片加载事件vl-字段值</description>
+      <name>正片加载事件vl-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913454" status="failed" stop="1548036913457">
+      <description>花絮加载事件vl-条数</description>
+      <name>花絮加载事件vl-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913459" status="failed" stop="1548036913462">
+      <description>花絮加载事件vl-字段</description>
+      <name>花絮加载事件vl-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913464" status="failed" stop="1548036913467">
+      <description>花絮加载事件vl-字段值</description>
+      <name>花絮加载事件vl-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913472" status="failed" stop="1548036913475">
+      <description>节目账号加载事件vl-条数</description>
+      <name>节目账号加载事件vl-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913481" status="failed" stop="1548036913485">
+      <description>节目账号加载事件vl-字段</description>
+      <name>节目账号加载事件vl-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913490" status="failed" stop="1548036913494">
+      <description>节目账号加载事件vl-字段值</description>
+      <name>节目账号加载事件vl-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913496" status="failed" stop="1548036913499">
+      <description>猜你喜欢加载事件vl-条数</description>
+      <name>猜你喜欢加载事件vl-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913501" status="failed" stop="1548036913504">
+      <description>猜你喜欢加载事件vl-字段</description>
+      <name>猜你喜欢加载事件vl-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913507" status="failed" stop="1548036913509">
+      <description>猜你喜欢加载事件vl-字段值</description>
+      <name>猜你喜欢加载事件vl-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913511" status="failed" stop="1548036913514">
+      <description>相关明星加载事件vl-条数</description>
+      <name>相关明星加载事件vl-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913517" status="failed" stop="1548036913523">
+      <description>相关明星加载事件vl-字段</description>
+      <name>相关明星加载事件vl-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913526" status="failed" stop="1548036913530">
+      <description>相关明星加载事件vl-字段值</description>
+      <name>相关明星加载事件vl-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913532" status="failed" stop="1548036913537">
+      <description>点击下载按钮pfc-条数</description>
+      <name>点击下载按钮pfc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913539" status="failed" stop="1548036913544">
+      <description>点击下载按钮pfc-字段</description>
+      <name>点击下载按钮pfc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913546" status="failed" stop="1548036913549">
+      <description>点击下载按钮pfc-字段值</description>
+      <name>点击下载按钮pfc-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913551" status="failed" stop="1548036913555">
+      <description>下载pvs1-条数0</description>
+      <name>下载pvs1-条数0</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913557" status="failed" stop="1548036913560">
+      <description>下载cdn1-条数</description>
+      <name>下载cdn1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913562" status="failed" stop="1548036913566">
+      <description>下载cdn1-字段</description>
+      <name>下载cdn1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913567" status="failed" stop="1548036913571">
+      <description>下载cdn1-字段值</description>
+      <name>下载cdn1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913576" status="failed" stop="1548036913579">
+      <description>下载开始事件ds-条数</description>
+      <name>下载开始事件ds-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913581" status="failed" stop="1548036913584">
+      <description>下载开始事件ds-字段</description>
+      <name>下载开始事件ds-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913587" status="failed" stop="1548036913591">
+      <description>下载开始事件ds-字段值</description>
+      <name>下载开始事件ds-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913593" status="failed" stop="1548036913599">
+      <description>下载cdn2-条数</description>
+      <name>下载cdn2-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913602" status="failed" stop="1548036913605">
+      <description>下载cdn2-字段</description>
+      <name>下载cdn2-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913609" status="failed" stop="1548036913615">
+      <description>下载cdn2-字段值</description>
+      <name>下载cdn2-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913617" status="failed" stop="1548036913619">
+      <description>下载cdn3-条数</description>
+      <name>下载cdn3-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913626" status="failed" stop="1548036913632">
+      <description>下载cdn3-字段</description>
+      <name>下载cdn3-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913634" status="failed" stop="1548036913644">
+      <description>下载cdn3-字段值</description>
+      <name>下载cdn3-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913646" status="failed" stop="1548036913649">
+      <description>退出下载pvs1-条数</description>
+      <name>退出下载pvs1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913651" status="failed" stop="1548036913655">
+      <description>点击赞pfc-条数</description>
+      <name>点击赞pfc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913658" status="failed" stop="1548036913663">
+      <description>点击赞pfc-字段</description>
+      <name>点击赞pfc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913669" status="failed" stop="1548036913679">
+      <description>点击赞pfc-字段值</description>
+      <name>点击赞pfc-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913684" status="failed" stop="1548036913694">
+      <description>点击收藏pfc-条数</description>
+      <name>点击收藏pfc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913696" status="failed" stop="1548036913700">
+      <description>点击收藏pfc-字段</description>
+      <name>点击收藏pfc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913702" status="failed" stop="1548036913708">
+      <description>点击收藏pfc-字段值</description>
+      <name>点击收藏pfc-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913712" status="failed" stop="1548036913716">
+      <description>点击节目简介pfc-条数</description>
+      <name>点击节目简介pfc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913719" status="failed" stop="1548036913728">
+      <description>点击节目简介pfc-字段</description>
+      <name>点击节目简介pfc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913731" status="failed" stop="1548036913737">
+      <description>点击节目简介pfc-字段值</description>
+      <name>点击节目简介pfc-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913741" status="failed" stop="1548036913747">
+      <description>退出播放pvs1-条数</description>
+      <name>退出播放pvs1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913751" status="failed" stop="1548036913756">
+      <description>退出播放pvs1-字段</description>
+      <name>退出播放pvs1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913759" status="failed" stop="1548036913763">
+      <description>退出播放pvs1-字段值</description>
+      <name>退出播放pvs1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913767" status="failed" stop="1548036913773">
+      <description>退出卡顿-条数</description>
+      <name>退出卡顿-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913776" status="failed" stop="1548036913794">
+      <description>退出卡顿-字段</description>
+      <name>退出卡顿-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913798" status="failed" stop="1548036913805">
+      <description>退出卡顿-字段值</description>
+      <name>退出卡顿-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913808" status="failed" stop="1548036913812">
+      <description>点播页再次进入pvs1-条数</description>
+      <name>点播页再次进入pvs1-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913815" status="failed" stop="1548036913822">
+      <description>点播页再次进入pvs1-字段</description>
+      <name>点播页再次进入pvs1-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913826" status="failed" stop="1548036913839">
+      <description>点播页再次进入pvs1-字段值</description>
+      <name>点播页再次进入pvs1-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913842" status="failed" stop="1548036913845">
+      <description>点击踩pfc-条数</description>
+      <name>点击踩pfc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913848" status="failed" stop="1548036913853">
+      <description>点击踩pfc-字段</description>
+      <name>点击踩pfc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913856" status="failed" stop="1548036913858">
+      <description>点击踩pfc-字段值</description>
+      <name>点击踩pfc-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913860" status="failed" stop="1548036913865">
+      <description>点击评论pvs1-条数0</description>
+      <name>点击评论pvs1-条数0</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913867" status="failed" stop="1548036913873">
+      <description>点击评论pfc-条数</description>
+      <name>点击评论pfc-条数</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913876" status="failed" stop="1548036913881">
+      <description>点击评论pfc-字段</description>
+      <name>点击评论pfc-字段</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913889" status="failed" stop="1548036913894">
+      <description>点击评论pfc-字段值</description>
+      <name>点击评论pfc-字段值</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913898" status="failed" stop="1548036913908">
+      <description>点击评论详情页pvs1-条数0</description>
+      <name>点击评论详情页pvs1-条数0</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913912" status="failed" stop="1548036913917">
+      <description>评论详情页返回pvs1-条数0</description>
+      <name>评论详情页返回pvs1-条数0</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case severity="normal" start="1548036913924" status="failed" stop="1548036913930">
+      <description>评论页返回pvs1-条数0</description>
+      <name>评论页返回pvs1-条数0</name>
+      <failure>
+        <message>Parent suite setup failed:
+Element 'name=有料' did not appear in 5 seconds</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="issue" value="1"/>
+        <label name="issue" value="5.7.0.04第五轮"/>
+        <label name="thread" value="-1451228736"/>
+      </labels>
+      <steps>
+        <step start="1548036913940" status="passed" stop="1548036914485">
+          <name>BuiltIn.Run Keyword And Ignore Error</name>
+          <title>BuiltIn.Run Keyword And Ignore Error</title>
+          <attachments/>
+          <steps>
+            <step start="1548036913941" status="passed" stop="1548036914484">
+              <name>AppiumLibrary.Close All Applications</name>
+              <title>AppiumLibrary.Close All Applications</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

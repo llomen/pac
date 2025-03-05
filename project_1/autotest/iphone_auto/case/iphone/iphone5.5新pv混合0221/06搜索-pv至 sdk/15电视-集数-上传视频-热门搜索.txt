@@ -1,0 +1,228 @@
+*** Settings ***
+Documentation     电视剧搜索
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+动漫pvs-条数
+    [Setup]
+    首页-搜索
+    搜索首页－输入搜索词    宝宝巴士儿歌
+    公共-删除数据
+    搜索-点击搜索
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫pvs-字段
+    公共-字段    ${result}
+
+动漫pvs-字段值
+    公共-字段值    ${result}
+
+动漫search-条数
+    ${result}    公共-获取结果    ${search}    dianshi_002    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫search-字段
+    公共-字段    ${result}
+
+动漫search-字段值
+    公共-字段值    ${result}
+
+动漫view-条数
+    ${result}    公共-获取结果    ${view}    dianshi_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫view-字段
+    公共-字段    ${result}
+
+动漫view-字段值
+    公共-字段值    ${result}
+
+动漫click-条数
+    公共-删除数据
+    搜索-点击剧集的集数
+    sleep    3
+    ${result}    公共-获取结果    ${click}    dianshi_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫click-字段
+    公共-字段    ${result}
+
+动漫click-字段值
+    公共-字段值    ${result}
+
+动漫播放pvs-条数
+    ${result}    公共-获取结果    ${pvs}    soudianshi_002    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫播放pvs-字段
+    公共-字段    ${result}
+
+动漫播放pvs-字段值
+    公共-字段值    ${result}
+
+动漫播放返回pvs-条数
+    公共-删除数据
+    点播播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    soudianshiju_002    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+动漫播放返回pvs-字段
+    公共-字段    ${result}
+
+动漫播放返回pvs-字段值
+    公共-字段值    ${result}
+
+搜素结果返回搜素首页pvs-条数
+    公共-删除数据
+    搜索－x
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sousuo_003    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜素结果返回搜素首页pvs-字段
+    公共-字段    ${result}
+
+搜素结果返回搜素首页pvs-字段值
+    公共-字段值    ${result}
+
+热门搜索search-条数
+    Comment    下滑
+    Comment    sleep    2
+    公共-删除数据
+    公共－点击页面文本    1
+    sleep    2
+    ${result}    公共-获取结果    ${search}    remen_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门搜索search-字段
+    公共-字段    ${result}
+
+热门搜索search-字段值
+    公共-字段值    ${result}
+
+热门搜索view-条数
+    ${result}    公共-获取结果    ${view}    remen_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门搜索view-字段
+    公共-字段    ${result}
+
+热门搜索view-字段值
+    公共-字段值    ${result}
+
+热门搜素结果返回搜素首页pvs-条数
+    公共-删除数据
+    搜索－x
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sousuo_003    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+热门搜索结果返回搜素首页pvs-字段
+    公共-字段    ${result}
+
+热门搜素结果返回搜素首页pvs-字段值
+    公共-字段值    ${result}
+
+返回首页pvs-条数
+    公共-删除数据
+    搜索－取消
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sousuo_007    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+返回首页pvs-字段
+    公共-字段    ${result}
+
+返回首页pvs-字段值
+    公共-字段值    ${result}
+
+电视剧pvs-条数
+    [Setup]
+    首页-搜索
+    搜索首页－输入搜索词    楚乔传
+    公共-删除数据
+    搜索-点击搜索
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧pvs-字段
+    公共-字段    ${result}
+
+电视剧pvs-字段值
+    公共-字段值    ${result}
+
+电视剧search-条数
+    ${result}    公共-获取结果    ${search}    dianshi_003    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧search-字段
+    公共-字段    ${result}
+
+电视剧search-字段值
+    公共-字段值    ${result}
+
+电视剧view-条数
+    ${result}    公共-获取结果    ${view}    dianshi_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧view-字段
+    公共-字段    ${result}
+
+电视剧view-字段值
+    公共-字段值    ${result}
+
+电视剧上传视频click-条数
+    公共-删除数据
+    公共－点击页面文本    电影
+    公共－点击页面文本    微电影《茉莉之恋》发布会：杨洋赵丽颖大谈《楚乔传》和《三生》趣事
+    sleep    3
+    ${result}    公共-获取结果    ${click}    dianshi_shangchuan    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧上传视频click-字段
+    公共-字段    ${result}
+
+电视剧上传视频click-字段值
+    公共-字段值    ${result}
+
+电视剧上传视频action-条数
+    sleep    3
+    ${result}    公共-获取结果    ${action}    dianshi_shangchuan    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧上传视频action-字段
+    公共-字段    ${result}
+
+电视剧上传视频action-字段值
+    公共-字段值    ${result}

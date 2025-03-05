@@ -1,0 +1,370 @@
+*** Settings ***
+Documentation     点播cdn异常
+Suite Setup       公共－初始化环境
+Suite Teardown    公共－关闭环境
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    allure
+
+*** Variables ***
+${cdn1-error}     {'s':'1','f':'-1'}
+${cdn2-error}     {'s':'2','f':'-1'}
+${cdn1-error1}    {'s':'1','f':'0'}
+${cdn3-error}     {'s':'3','f':'-1'}
+
+*** Test Cases ***
+点播-cdn1-404－条数
+    首页－搜索视频
+    搜索－点击搜索框
+    搜索－输入搜索词    活色生香
+    Comment    搜索－输入搜索词    小伶玩具
+    公共－清除数据
+    搜索－键盘搜索
+    公共－清除数据
+    公共－删除cdn配置
+    公共－cdn配置    404
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    15
+    ${result}    公共－校验结果    ${cdn1-error}    ipad_dianbo_004    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-404－字段
+    公共－字段    ${result}
+
+点播-cdn1-404－字段值
+    公共－字段值    ${result}
+
+点播-cdn1-500－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    500
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    15
+    ${result}    公共－校验结果    ${cdn1-error}    ipad_dianbo_005    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-500－字段
+    公共－字段    ${result}
+
+点播-cdn1-500－字段值
+    公共－字段值    ${result}
+
+点播-cdn1-解析错误－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    parse_error
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    2
+    ${result}    公共－校验结果    ${cdn1-error}    ipad_dianbo_006    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-解析错误－字段
+    公共－字段    ${result}
+
+点播-cdn1-解析错误－字段值
+    公共－字段值    ${result}
+
+点播-cdn1-空－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    nul
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    2
+    ${result}    公共－校验结果    ${cdn1-error}    ipad_dianbo_007    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-空－字段
+    公共－字段    ${result}
+
+点播-cdn1-空－字段值
+    公共－字段值    ${result}
+
+点播-cdn1-超时－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    timeout
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    40
+    ${result}    公共－校验结果    ${cdn1-error}    ipad_dianbo_008    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-超时－字段
+    公共－字段    ${result}
+
+点播-cdn1-超时－字段值
+    公共－字段值    ${result}
+
+点播-cdn1-无版权－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    no_copyright
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    3
+    ${result}    公共－校验结果    ${cdn1-error1}    ipad_dianbo_009    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-无版权－字段
+    公共－字段    ${result}
+
+点播-cdn1-无版权－字段值
+    公共－字段值    ${result}
+
+点播-cdn1-视频已下线－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    off_line
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    3
+    ${result}    公共－校验结果    ${cdn1-error1}    ipad_dianbo_010    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn1-视频已下线－字段
+    公共－字段    ${result}
+
+点播-cdn1-视频已下线－字段值
+    公共－字段值    ${result}
+
+点播-cdn2-404－条数
+    点播播放页－异常返回
+    公共－清除数据
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_404
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    5
+    ${result}    公共－校验结果    ${cdn2-error}    ipad_dianbo_011    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn2-404－字段
+    公共－字段    ${result}
+
+点播-cdn2-404－字段值
+    公共－字段值    ${result}
+
+点播-cdn2-500－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_500
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    10
+    ${result}    公共－校验结果    ${cdn2-error}    ipad_dianbo_012    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn2-500－字段
+    公共－字段    ${result}
+
+点播-cdn2-500－字段值
+    公共－字段值    ${result}
+
+点播-cdn2-解析错误－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_parse_error
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    10
+    ${result}    公共－校验结果    ${cdn2-error}    ipad_dianbo_013    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn2-解析错误－字段
+    公共－字段    ${result}
+
+点播-cdn2-解析错误－字段值
+    公共－字段值    ${result}
+
+点播-cdn2-空－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_nul
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    15
+    ${result}    公共－校验结果    ${cdn2-error}    ipad_dianbo_014    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn2-空－字段
+    公共－字段    ${result}
+
+点播-cdn2-空－字段值
+    公共－字段值    ${result}
+
+点播-cdn2-超时－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    cdn2_timeout
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    40
+    ${result}    公共－校验结果    ${cdn2-error}    ipad_dianbo_015    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn2-超时－字段
+    公共－字段    ${result}
+
+点播-cdn2-超时－字段值
+    公共－字段值    ${result}
+
+点播-cdn2-status!=ok－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－cdn配置    status_not_ok
+    公共－清除数据
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    10
+    ${result}    公共－校验结果    ${cdn2-error}    ipad_dianbo_016    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn2-status!=ok－字段
+    公共－字段    ${result}
+
+点播-cdn2-status!=ok－字段值
+    公共－字段值    ${result}
+
+点播-cdn3-404－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_404
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    15
+    ${result}    公共－校验结果    ${cdn3-error}    ipad_dianbo_017    mpp_cdn_5_ipad    4
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn3-404－字段
+    公共－字段    ${result}
+
+点播-cdn3-404－字段值
+    公共－字段值    ${result}
+
+播放器perr0-条数
+    ${result}    公共－校验结果    {'act':'perr','retry':'0'}    mobile_01    mobile_perr_ipad    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+播放器perr0-字段
+    公共－字段    ${result}
+
+播放器perr0-字段值
+    公共－字段值    ${result}
+
+播放器perr1-条数
+    ${result}    公共－校验结果    {'act':'perr','retry':'1'}    mobile_02    mobile_perr_ipad    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+播放器perr1-字段
+    公共－字段    ${result}
+
+播放器perr1-字段值
+    公共－字段值    ${result}
+
+播放器perr2-条数
+    ${result}    公共－校验结果    {'act':'perr','retry':'2'}    mobile_03    mobile_perr_ipad    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+播放器perr2-字段
+    公共－字段    ${result}
+
+播放器perr2-字段值
+    公共－字段值    ${result}
+
+播放器perr3-条数
+    ${result}    公共－校验结果    {'act':'perr','retry':'3'}    mobile_04    mobile_perr_ipad    1
+    Set Global Variable    ${result}
+    公共－条数    ${result}
+
+播放器perr3-字段
+    公共－字段    ${result}
+
+播放器perr3-字段值
+    公共－字段值    ${result}
+
+点播-cdn3-500－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_500
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    10
+    ${result}    公共－校验结果    ${cdn3-error}    ipad_dianbo_018    mpp_cdn_5_ipad    4
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn3-500－字段
+    公共－字段    ${result}
+
+点播-cdn3-500－字段值
+    公共－字段值    ${result}
+
+点播-cdn3-timeout－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_timeout
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    60
+    ${result}    公共－校验结果    ${cdn3-error}    ipad_dianbo_020    mpp_cdn_5_ipad    1
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn3-timeout－字段
+    公共－字段    ${result}
+
+点播-cdn3-timeout－字段值
+    公共－字段值    ${result}
+
+点播-cdn3-空－条数
+    点播播放页－异常返回
+    公共－删除cdn配置
+    公共－清除数据
+    公共－cdn配置    cdn3_nul
+    tap    综合    422    316
+    Comment    Click Element    name=4
+    sleep    10
+    ${result}    公共－校验结果    ${cdn3-error}    ipad_dianbo_019    mpp_cdn_5_ipad    4
+    Set Global Variable    ${result}
+    should be true    ${result['count'][0]}==1    ${result['count'][1]}
+
+点播-cdn3-空－字段
+    公共－字段    ${result}
+
+点播-cdn3-空－字段值
+    公共－删除cdn配置
+    公共－字段值    ${result}

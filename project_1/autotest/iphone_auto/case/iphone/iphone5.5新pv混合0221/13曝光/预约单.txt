@@ -1,0 +1,127 @@
+*** Test Cases ***
+未登录点单条预约click
+
+跳转登录页pvs
+
+登录后点单条预约click
+
+单条取消预约click
+
+点单条跳转pvs
+
+单条预约返回pvs
+
+频道页预约即将上线视频click
+
+频道点即将上线的视频pvs
+
+频道进点播页vv
+
+返回频道pvs
+
+进入我的预约页面pvs
+
+我的预约点视频进点播页pvs
+
+进点播页pvs
+
+我的预约进点播页vv
+
+点播页返回我的预约pvs
+
+切换tab待上线pvs
+
+切换tab已上线pvs
+
+点击编辑
+
+返回频道pvs
+
+取消预约click
+
+频道加入看单click
+
+首页点图标进每日放送pvs1-条数
+    公共-删除数据
+    首页-每日放送
+    sleep    2
+    ${result}    公共-获取结果    ${pvs1}    show_zl_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页点图标进每日放送pvs1-字段
+    公共-字段    ${result}
+
+首页点图标进每日放送pvs1-字段值
+    公共-字段值    ${result}
+
+加入看单click-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="粉彩回忆"]/following-sibling::XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${pvs1}    show_zl_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+加入看单click-字段
+    公共-字段    ${result}
+
+加入看单click-字段值
+    公共-字段值    ${result}
+
+取消加入看单click-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeStaticText[@name="粉彩回忆"]/following-sibling::XCUIElementTypeButton[1]
+    ${result}    公共-获取结果    ${pvs1}    show_zl_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消加入看单click-字段
+    公共-字段    ${result}
+
+取消加入看单click-字段值
+    公共-字段值    ${result}
+
+点每日放送视频pvs1-条数
+    公共－点击页面文本    粉彩回忆
+    ${result}    公共-获取结果    ${pvs1}    show_zl_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点每日放送视频pvs1-字段
+    公共-字段    ${result}
+
+点每日放送视频pvs1-字段值
+    公共-字段值    ${result}
+
+每日放送视频vv-条数
+    sleep    15
+    ${result}    公共-获取结果    ${aplay}    show_zl_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+每日放送视频vv-字段
+    公共-字段    ${result}
+
+每日放送视频vv-字段值
+    公共-字段值    ${result}
+
+每日放送视频返回pvs1-条数
+    公共-删除数据
+    点播播放页-返回
+    ${result}    公共-获取结果    ${pvs1}    show_zl_01    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+每日放送视频返回pvs1-字段
+    公共-字段    ${result}
+
+每日放送视频返回pvs1-字段值
+    公共-字段值    ${result}
+
+点更多节目pvs
+
+每日放送页面加入看单click
+
+每日放送页面取消看单click
+
+频道页取消看单

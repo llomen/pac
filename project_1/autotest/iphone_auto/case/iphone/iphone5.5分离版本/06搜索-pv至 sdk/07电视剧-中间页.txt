@@ -1,0 +1,90 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+电视剧search-条数
+    sleep    5
+    首页-搜索
+    搜索首页－输入搜索词    青云志
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${search}    dianshi_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧search-字段
+    公共-字段    ${result}
+
+电视剧search-字段值
+    公共-字段值    ${result}
+
+电视剧view-条数
+    ${result}    公共-获取结果    ${view}    dianshi_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧view-字段
+    公共-字段    ${result}
+
+电视剧view-字段值
+    公共-字段值    ${result}
+
+电视剧click-条数
+    公共-删除数据
+    搜索-点击剧集的...
+    sleep    2
+    ${result}    公共-获取结果    ${click}    dianshi_shenglvehao    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视剧click-字段
+    公共-字段    ${result}
+
+电视剧click-字段值
+    公共-字段值    ${result}
+
+中间页pvs-条数
+    ${result}    公共-获取结果    ${pvs}    soudianshiju_zhongjianye    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+中间页pvs-字段
+    公共-字段    ${result}
+
+中间页pvs-字段值
+    公共-字段值    ${result}
+
+中间页点击pvs-条数
+    公共-删除数据
+    搜索-中间页点击集数
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    zhongjianye_xuanjidian    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+中间页点击pvs-字段
+    公共-字段    ${result}
+
+中间页点击pvs-字段值
+    公共-字段值    ${result}
+
+中间页点击click-条数
+    sleep    2
+    ${result}    公共-获取结果    ${click}    zhongjianye_jujidian    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+中间页点击click-字段
+    公共-字段    ${result}
+
+中间页点击click-字段值
+    公共-字段值    ${result}

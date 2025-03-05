@@ -1,0 +1,104 @@
+*** Settings ***
+Documentation     正片、花絮、相关饭团、看了还会看
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***
+进入互动剧pvs
+
+进入互动剧pvs1
+
+互动剧vv
+
+互动剧cdn1
+
+互动剧cdn3
+
+互动剧buffer
+
+互动剧ppv
+
+互动剧pvv
+
+互动剧r1
+
+互动剧sp
+
+互动剧hb3s
+
+互动剧hb5s
+
+互动剧退出全屏
+
+切换下一个互动剧
+
+互动剧pend
+
+互动剧r3
+
+上一个心跳停止hb
+
+切换下一个互动剧pvs
+
+切换下一个互动剧pvs1
+
+切换下一个互动剧vv
+
+切换下一个互动剧sp
+
+互动剧重新心跳3s
+
+互动剧重新心跳5s
+
+互动剧切换点播页花絮
+
+互动剧到点播页pvs
+
+互动剧到点播页pvs1
+
+点播vv
+
+点播sp
+
+点播buffer
+
+点播页hb3s
+
+点播页hb5s
+
+退出点播页pvs
+
+退出点播页pvs1
+
+点播页hb_end
+
+搜索进点播页
+
+点播页切互动剧pvs
+
+点播页切互动剧pvs1
+
+点播页切互动剧vv
+
+点播页切互动剧sp
+
+互动剧2buffer
+
+互动剧2hb3s
+
+互动剧2hb5s
+
+退出互动剧pvs
+
+退出点播页pvs1
+
+互动剧hbend
+
+互动剧pend
+
+互动剧r3

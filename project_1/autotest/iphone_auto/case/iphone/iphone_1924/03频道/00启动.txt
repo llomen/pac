@@ -1,0 +1,119 @@
+*** Settings ***
+Suite Setup       启动应用2
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${aplay}          {'act':'aplay'}
+${heartbeat}      {'act':'heartbeat'}
+${buffer}         {'act':'buffer'}
+${cdn1}           {'s':'1'}
+${cdn3}           {'s':'3'}
+${switch}         {'act':'switch'}
+${cdn2}           {'s':'2'}
+${r3}             {'r':'3'}
+${r1}             {'r':'1'}
+${st}             {'act':'st'}
+${as}             {'act':'as'}
+${ae}             {'act':'ae'}
+${pv}             {'act':'pv'}
+${vv}             {'act':'vv'}
+${pfc}            {'act':'pfc'}
+
+*** Test Cases ***
+新手引导
+    判断后点击    同意并继续
+    sleep    10
+    comment    判断后点击    允许
+    sleep    10
+    comment    判断后点击    允许
+    sleep    3
+
+打开应用st-条数
+    公共－关闭应用
+    公共-删除数据
+    sleep    5
+    启动应用2
+    sleep    5
+    ${result}    公共-获取结果    ${st}    iphone_qidong2    mpp_st_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+打开应用st-字段
+    公共-字段    ${result}
+
+打开应用st-字段值
+    公共-字段值    ${result}
+
+开机广告cdn1-条数
+    ${result}    公共-获取结果    ${cdn1}    kaiji_001    mpp_adcdn_iphone    4
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开机广告cdn1-字段
+    公共-字段    ${result}
+
+开机广告cdn1-字段值
+    公共-字段值    ${result}
+
+开机广告cdn3-条数
+    ${result}    公共-获取结果    ${cdn3}    kaiji_003    mpp_adcdn_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开机广告cdn3-字段
+    公共-字段    ${result}
+
+开机广告cdn3-字段值
+    公共-字段值    ${result}
+
+启动pvs-条数
+    sleep    5
+    ${result}    公共-获取结果    ${pvs}    setup_pvs    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+启动pvs-字段
+    公共-字段    ${result}
+
+启动pvs-字段名
+    公共-字段值    ${result}
+
+精选页pmm-条数
+    ${result}    公共-获取结果    {'act':'pmm'}    iphone_jingxuan    mpp_livepmm_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+精选页pmm-字段
+    公共-字段    ${result}
+
+精选页pmm-字段值
+    公共-字段值    ${result}
+
+首页闪图show-条数
+    ${result}    公共-获取结果    ${show}    index_shantu    ${table_show}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页闪图show-字段
+    公共-字段    ${result}
+
+首页闪图show-字段名
+    公共-字段值    ${result}
+
+首页pd-条数
+    ${result}    公共-获取结果    ${pd}    pd_1    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页pd-字段
+    公共-字段    ${result}
+
+首页pd-字段值
+    公共-字段值    ${result}
+
+清空缓存
+    首页-缓存
+    删除全部缓存
+    非播放页-返回

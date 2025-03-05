@@ -1,0 +1,91 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${table}          mpp_pv_5_5_iphone_sdk_qita
+
+*** Test Cases ***
+vippvs-条数
+    sleep    2
+    公共-删除数据
+    首页－vip
+    ${result}    公共-获取结果    ${pvs}    vip_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+vippvs-字段
+    公共-字段    ${result}
+
+vippvs-字段名
+    公共-字段值    ${result}
+
+搜索页pvs-条数
+    公共-删除数据
+    vip-搜索
+    ${result}    公共-获取结果    ${pvs}    vip_004    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页pvs-字段
+    公共-字段    ${result}
+
+搜索页pvs-字段名
+    公共-字段值    ${result}
+
+搜索页返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${pvs}    vip_005    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+搜索页返回pvs-字段
+    公共-字段    ${result}
+
+搜索页返回pvs-字段名
+    公共-字段值    ${result}
+
+开通会员pvs-条数
+    公共-删除数据
+    公共－点击页面文本    立即开通
+    ${result}    公共-获取结果    ${pvs}    vip_006    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员pvs-字段
+    公共-字段    ${result}
+
+开通会员pvs-字段名
+    公共-字段值    ${result}
+
+开通会员返回pvs-条数
+    公共-删除数据
+    开通会员－返回
+    ${result}    公共-获取结果    ${pvs}    vip_007    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+开通会员返回pvs-字段
+    公共-字段    ${result}
+
+开通会员返回pvs-字段名
+    公共-字段值    ${result}
+
+播放页pvs-条数
+    公共-删除数据
+    公共－xpath    //XCUIElementTypeTable/XCUIElementTypeCell[4]/XCUIElementTypeButton[1]
+    Comment    公共－点击坐标点    100    480
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    vip_008    mpp_pv_5_5_iphone_sdk_dianbo    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页pvs-字段
+    公共-字段    ${result}
+
+播放页pvs-字段名
+    公共-字段值    ${result}

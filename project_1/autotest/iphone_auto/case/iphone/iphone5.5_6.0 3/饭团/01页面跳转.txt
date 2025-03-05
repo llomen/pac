@@ -1,0 +1,250 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${fantuan}        {'act':'fantuan'}
+${stay}           {'act':'stay'}
+${msgc}           {'act':'msgc'}
+${my}             {'act':'my'}
+${table}          mpp_pv_5_5_iphone_sdk_qita
+${table_stay}     mpp_stay_iphone
+${table_click}    mpp_pv_5_5_iphone_sdk_qita
+
+*** Test Cases ***
+饭团pvs-条数
+    公共-删除数据
+    首页-饭团
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_001    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+饭团pvs-字段
+    公共-字段    ${result}
+
+饭团pvs-字段名
+    公共-字段值    ${result}
+
+电视台pvs-条数
+    公共-删除数据
+    饭团-电视台
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_004    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台pvs-字段
+    公共-字段    ${result}
+
+电视台pvs-字段名
+    公共-字段值    ${result}
+
+电视台fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台fantuan-字段
+    公共-字段    ${result}
+
+电视台fantuan-字段名
+    公共-字段值    ${result}
+
+推荐页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_01    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐页stay-字段
+    公共-字段    ${result}
+
+推荐页stay-字段名
+    公共-字段值    ${result}
+
+电视台返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_005    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+电视台返回pvs-字段
+    公共-字段    ${result}
+
+电视台返回pvs-字段名
+    公共-字段值    ${result}
+
+我的头像pvs-条数
+    公共-删除数据
+    饭团-我的头像
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_006    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的头像pvs-字段
+    公共-字段    ${result}
+
+我的头像pvs-字段名
+    公共-字段值    ${result}
+
+我的头像fantuan-条数
+    ${result}    公共-获取结果    ${fantuan}    fantuan_tuijian_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的头像fantuan-字段
+    公共-字段    ${result}
+
+我的头像fantuan-字段名
+    公共-字段值    ${result}
+
+我的头像返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_007    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的头像返回pvs-字段
+    公共-字段    ${result}
+
+我的头像返回pvs-字段名
+    公共-字段值    ${result}
+
+消息中心pvs-条数
+    公共-删除数据
+    饭团-消息
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_008    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心pvs-字段
+    公共-字段    ${result}
+
+消息中心pvs-字段名
+    公共-字段值    ${result}
+
+消息中心fantuan-条数
+    ${result}    公共-获取结果    ${pvs}    fantuan_tuijian_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心fantuan-字段
+    公共-字段    ${result}
+
+消息中心fantuan-字段名
+    公共-字段值    ${result}
+
+消息中心msgc-条数
+    ${result}    公共-获取结果    ${fantuan}    msgc_tuijian    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心msgc-字段
+    公共-字段    ${result}
+
+消息中心msgc-字段名
+    公共-字段值    ${result}
+
+消息中心返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_009    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+消息中心返回pvs-字段
+    公共-字段    ${result}
+
+消息中心返回pvs-字段名
+    公共-字段值    ${result}
+
+我的饭团pvs-条数
+    公共-删除数据
+    饭团-我的饭团
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_002    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团pvs-字段
+    公共-字段    ${result}
+
+我的饭团pvs-字段名
+    公共-字段值    ${result}
+
+我的饭团-电视台fantuan-条数
+    公共-删除数据
+    饭团-电视台
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodefantuan_01    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团-电视台fantuan-字段
+    公共-字段    ${result}
+
+我的饭团-电视台fantuan-字段名
+    公共-字段值    ${result}
+
+我的饭团页stay-条数
+    ${result}    公共-获取结果    ${stay}    stay_06    ${table_stay}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团页stay-字段
+    公共-字段    ${result}
+
+我的饭团页stay-字段名
+    公共-字段值    ${result}
+
+我的饭团-我的头像fantuan-条数
+    非播放页-返回
+    公共-删除数据
+    饭团-我的头像
+    ${result}    公共-获取结果    ${fantuan}    fantuan_wodefantuan_02    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团-我的头像fantuan-字段
+    公共-字段    ${result}
+
+我的饭团-我的头像fantuan-字段名
+    公共-字段值    ${result}
+
+我的饭团-消息中心fantuan-条数
+    饭团-消息
+    ${result}    公共-获取结果    ${pvs}    fantuan_tuijian_03    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团-消息中心fantuan-字段
+    公共-字段    ${result}
+
+我的饭团-消息中心fantuan-字段名
+    公共-字段值    ${result}
+
+我的饭团-消息中心msgc-条数
+    ${result}    公共-获取结果    ${fantuan}    msgc_tuijian    ${table_click}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团-消息中心msgc-字段
+    公共-字段    ${result}
+
+我的饭团-消息中心msgc-字段名
+    公共-字段值    ${result}
+
+我的饭团-推荐pvs-条数
+    非播放页-返回
+    公共-删除数据
+    饭团-推荐
+    ${result}    公共-获取结果    ${pvs}    ft_tuijian_003    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+我的饭团-推荐pvs-字段
+    公共-字段    ${result}
+
+我的饭团-推荐pvs-字段名
+    公共-字段值    ${result}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180402 10:10:54.625" generator="Robot 3.0.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/klyg/Desktop/autotest/iphone_auto/case/iphone/iphone5.5/01关注/2视频播放页点击关注.txt" id="s1" name="2视频播放页点击关注">
+<kw type="setup" name="公共－启动应用" library="5.3对象库">
+<kw name="公共-删除数据" library="5.3对象库">
+<kw name="Delete Data" library="auto">
+<arguments>
+<arg>MGTV-iPhone-appstore</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:00.764" starttime="20180402 10:11:00.730"></status>
+</kw>
+<status status="PASS" endtime="20180402 10:11:00.764" starttime="20180402 10:11:00.729"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>platformName=IOS</arg>
+<arg>deviceName=iPhone 5s</arg>
+<arg>platformVersion=10.3</arg>
+<arg>newCommandTimeout=600</arg>
+<arg>autoAcceptAlerts=true</arg>
+<arg>bundleId=com.hunantv.imgotv</arg>
+<arg>udid=9888af9a2f7225fa99ac7182c161faa8525abf94</arg>
+<arg>AutomationName=XCUITest</arg>
+<arg>noReset=true</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.093" starttime="20180402 10:11:00.765"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>公共－点击页面文本</arg>
+<arg>再想想</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.094" starttime="20180402 10:11:15.094"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>公共－xpath</arg>
+<arg>//*[@label='跳过']</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.094" starttime="20180402 10:11:15.094"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>公共－点击坐标点</arg>
+<arg>162</arg>
+<arg>50</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.095" starttime="20180402 10:11:15.095"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>公共－点击页面文本</arg>
+<arg>稍后</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.095" starttime="20180402 10:11:15.095"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>公共－xpath</arg>
+<arg>//UIAApplication[1]/UIAWindow[1]/UIAImage[2]</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.096" starttime="20180402 10:11:15.095"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>sleep</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.096" starttime="20180402 10:11:15.096"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>公共－xpath</arg>
+<arg>//UIAApplication[1]/UIAWindow[1]/UIAButton[2]</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.097" starttime="20180402 10:11:15.096"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>sleep</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.097" starttime="20180402 10:11:15.097"></status>
+</kw>
+<kw name="公共-启动应用前退出登录" library="5.3对象库">
+<kw name="公共－点击页面文本" library="5.3对象库">
+<arguments>
+<arg>我</arg>
+</arguments>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>sleep</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20180402 10:11:15.098" starttime="20180402 10:11:15.098"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180402 10:11:17.099" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180402 10:11:17.100" starttime="20180402 10:11:15.098"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=${text}</arg>
+</arguments>
+<msg timestamp="20180402 10:11:17.100" level="INFO">Clicking element 'name=我'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20180402 10:11:26.508" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180402 10:11:26.508" starttime="20180402 10:11:25.133"></status>
+</kw>
+<msg timestamp="20180402 10:11:26.509" level="FAIL">ValueError: Element locator 'name=我' did not match any elements.</msg>
+<status status="FAIL" endtime="20180402 10:11:26.509" starttime="20180402 10:11:17.100"></status>
+</kw>
+<status status="FAIL" endtime="20180402 10:11:26.509" starttime="20180402 10:11:15.098"></status>
+</kw>
+<status status="FAIL" endtime="20180402 10:11:26.510" starttime="20180402 10:11:15.097"></status>
+</kw>
+<status status="FAIL" endtime="20180402 10:11:26.510" starttime="20180402 10:11:00.729"></status>
+</kw>
+<test id="s1-t1" name="视频播放页点击关注fol-条数">
+<status status="FAIL" endtime="20180402 10:11:26.512" critical="yes" starttime="20180402 10:11:26.510">Parent suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</status>
+</test>
+<test id="s1-t2" name="视频播放页点击关注fol-字段">
+<status status="FAIL" endtime="20180402 10:11:26.515" critical="yes" starttime="20180402 10:11:26.514">Parent suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</status>
+</test>
+<test id="s1-t3" name="视频播放页点击关注fol-字段名">
+<status status="FAIL" endtime="20180402 10:11:26.521" critical="yes" starttime="20180402 10:11:26.518">Parent suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</status>
+</test>
+<kw type="teardown" name="公共－关闭应用" library="5.3对象库">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" endtime="20180402 10:11:28.028" starttime="20180402 10:11:26.524"></status>
+</kw>
+<status status="PASS" endtime="20180402 10:11:28.029" starttime="20180402 10:11:26.524"></status>
+</kw>
+<status status="FAIL" endtime="20180402 10:11:28.029" starttime="20180402 10:10:54.638">Suite setup failed:
+ValueError: Element locator 'name=我' did not match any elements.</status>
+</suite>
+<statistics>
+<total>
+<stat fail="3" pass="0">Critical Tests</stat>
+<stat fail="3" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="3" id="s1" name="2视频播放页点击关注" pass="0">2视频播放页点击关注</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

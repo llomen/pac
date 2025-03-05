@@ -1,0 +1,212 @@
+*** Settings ***
+Documentation     综艺推荐和搜索按钮搜索
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Test Setup
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+${action}         {'act':'action'}
+
+*** Test Cases ***
+推荐词搜索search-条数
+    首页-搜索
+    搜索首页－输入搜索词    快乐大本营
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${search}    suggest_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐词搜索search-字段
+    公共-字段    ${result}
+
+推荐词搜索search-字段值
+    公共-字段值    ${result}
+
+推荐词搜索view-条数
+    ${result}    公共-获取结果    ${view}    suggest_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+推荐词搜索view-字段
+    公共-字段    ${result}
+
+推荐词搜索view-字段值
+    公共-字段值    ${result}
+
+进入饭团click-条数
+    公共-删除数据
+    Comment    公共-屏幕上滑一小块
+    comment    搜索-点击进入空间
+    公共－点击页面文本    进入饭团
+    sleep    3
+    ${result}    公共-获取结果    ${click}    zongyi_003    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团click-字段
+    公共-字段    ${result}
+
+进入饭团click-字段值
+    公共-字段值    ${result}
+
+进入饭团action-条数
+    ${result}    公共-获取结果    ${action}    zongyi_kongjian    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团action-字段
+    公共-字段    ${result}
+
+进入饭团action-字段值
+    公共-字段值    ${result}
+
+进入饭团pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_kongjian3    ${table_pvs}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团pvs-字段
+    公共-字段    ${result}
+
+进入饭团pvs-字段值
+    公共-字段值    ${result}
+
+进入饭团pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_kongjian3    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团pvs1-字段
+    公共-字段    ${result}
+
+进入饭团pvs1-字段值
+    公共-字段值    ${result}
+
+进入饭团返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    ${result}    公共-获取结果    ${pvs}    sousuo_dongtai1    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团返回pvs-字段
+    公共-字段    ${result}
+
+进入饭团返回pvs-字段值
+    公共-字段值    ${result}
+
+进入饭团返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_dongtai1    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+进入饭团返回pvs1-字段
+    公共-字段    ${result}
+
+进入饭团返回pvs1-字段值
+    公共-字段值    ${result}
+
+点全部播放click-条数
+    公共-删除数据
+    搜索-点击综艺结果全部
+    sleep    2
+    ${result}    公共-获取结果    ${click}    zongyi_002    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点全部播放click-字段
+    公共-字段    ${result}
+
+点全部播放click-字段值
+    公共-字段值    ${result}
+
+点全部播放action-条数
+    ${result}    公共-获取结果    ${action}    zongyi_quanbu    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点全部播放action-字段
+    公共-字段    ${result}
+
+点全部播放action-字段值
+    公共-字段值    ${result}
+
+点全部播放pvs-条数
+    ${result}    公共-获取结果    ${pvs}    sousuo_quanbu2    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点全部播放pvs-字段
+    公共-字段    ${result}
+
+点全部播放pvs-字段值
+    公共-字段值    ${result}
+
+点全部播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_quanbu2    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点全部播放pvs1-字段
+    公共-字段    ${result}
+
+点全部播放pvs1-字段值
+    公共-字段值    ${result}
+
+综艺中间页返回pvs-条数
+    公共-删除数据
+    非播放页-返回
+    sleep    3
+    ${result}    公共-获取结果    ${pvs}    sousuo_quanbu1    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺中间页返回pvs-字段
+    公共-字段    ${result}
+
+综艺中间页返回pvs-字段值
+    公共-字段值    ${result}
+
+综艺中间页返回pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_quanbu1    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+综艺中间页返回pvs1-字段
+    公共-字段    ${result}
+
+综艺中间页返回pvs1-字段值
+    公共-字段值    ${result}
+
+相同系列点击click-条数
+    Comment    搜索-点击相同系列
+    公共-滑动页面    进入饭团    相同系列
+    点击不可见文本    快乐大本营2015
+    sleep    2
+    ${result}    公共-获取结果    ${click}    xilie_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相同系列点击click-字段
+    公共-字段    ${result}
+
+相同系列点击click-字段值
+    公共-字段值    ${result}
+
+相同系列点击action-条数
+    ${result}    公共-获取结果    ${action}    zongyi_xilie    mpp_action_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+相同系列点击action-字段
+    公共-字段    ${result}
+
+相同系列点击action-字段值
+    公共-字段值    ${result}

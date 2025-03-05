@@ -1,0 +1,77 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${table}          mpp_show_5_iphone_sdk
+
+*** Test Cases ***
+启动pvs1-字段
+    ${result}    公共-获取结果    {'act':'pvs1'}    setup_pvs1    mpp_pv1_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-字段    ${result}
+
+启动pvs1-字段名
+    公共-字段值    ${result}
+
+首页闪图show-条数
+    公共-删除数据
+    启动应用
+    sleep    8
+    ${result}    公共-获取结果    {'act':'show','flag':'655'}    index_shantu    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页闪图show-字段
+    公共-字段    ${result}
+
+首页闪图show-字段名
+    公共-字段值    ${result}
+
+首页头条要闻show-条数
+    ${result}    公共-获取结果    {'act':'show','flag':'929'}    index_toutiao    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页头条要闻show-字段
+    公共-字段    ${result}
+
+首页头条要闻show-字段名
+    公共-字段值    ${result}
+
+小窗播放xc-条数
+    ${result}    公共-获取结果    {'act':'xc'}    setup_xc    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+小窗播放xc-字段
+    公共-字段    ${result}
+
+小窗播放xc-字段名
+    公共-字段值    ${result}
+
+皮肤nd-条数
+    ${result}    公共-获取结果    {'act':'nd'}    setup_nd    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+皮肤nd-字段
+    公共-字段    ${result}
+
+皮肤nd-字段名
+    公共-字段值    ${result}
+
+首页今日热门show-条数
+    公共-删除数据
+    scroll    name=头条要闻    name=今日热门
+    ${result}    公共-获取结果    {'act':'show','flag':'656'}    index_remen    ${table}    2
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+首页今日热门show-字段
+    公共-字段    ${result}
+
+首页今日热门show-字段名
+    公共-字段值    ${result}

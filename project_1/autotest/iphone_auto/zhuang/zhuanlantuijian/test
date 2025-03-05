@@ -1,0 +1,59 @@
+{
+	"code": 10008,
+	"data": {},
+	"msg": "视频信息获取失败"
+}
+
+,{
+		"adId": 0,
+		"dataMode": 0,
+		"dataModuleId": 8218,
+		"interfaceUrl": "http://rc-channel.bz.mgtv.com/user_rec",
+		"isExchange": "0",
+		"moduleId": 8218,
+		"moduleName": "guessvideo",
+		"moduleTitle": "猜你喜歡我試試換名字",
+		"moduleType": "guessvideo"
+	}
+
+
+
+{
+		"zlparam": "test1=test2&test3=test4",
+		"moduleType": "columtw",
+		"dataModuleId": "8213",
+		"moduleName": "看这帮直男明星谈恋爱，能把人急死",
+		"moduleId": "8213",
+		"zlData": [{
+			"bgColor": "",
+			"imgHUrl": "https://ugc.hitv.com/3/181031105834726312600.jpeg",
+			"imgHVUrl": "https://ugc.hitv.com/3/181031105834726312600.jpeg",
+			"isFollow": 0,
+			"jumpId": "36",
+			"jumpKind": 20001,
+			"leftBottom": "",
+			"name": "",
+			"praiseNum": "",
+			"score": "",
+			"shareInfo": {
+				"img": "https://ugc.hitv.com/3/181031105641726365760.png",
+				"title": "看这帮直男明星谈恋爱，能把人急",
+				"url": "https://m.mgtv.com/zhuanlan/7bebf7fd70710f735e52de921ea37263/36.html",
+				"desc": "看这帮直男明星谈恋爱，能把人急死"
+			},
+			"showType": 6,
+			"subName": "",
+			"updateInfo": "",
+			"user": {
+				"level": 0,
+				"nickName": "啊哈啊哈啊哈啊哈哈",
+				"accountType": 6,
+				"sign": "想要非常认真严肃的承诺地老天荒",
+				"photo": "http://avatar.hitv.com/iT4FqEJ4sIVv9cm6yLI8fogRE1CIqU.jpg?x-oss-process=style/large",
+				"bgImg": "https://ugc.hitv.com/3/181022094151726363900.jpeg",
+				"uuid": "7bebf7fd70710f735e52de921ea37263"
+			},
+			"uuid": "7bebf7fd70710f735e52de921ea37263",
+			"videoId": ""
+		}]
+	},

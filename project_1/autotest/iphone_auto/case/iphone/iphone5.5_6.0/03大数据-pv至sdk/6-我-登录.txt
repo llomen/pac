@@ -1,0 +1,146 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${table}          mpp_pv_5_5_iphone_sdk_qita
+${phone_account}    18501760103
+${phone_pwd}      3324156
+${mail_account}    siqian50@qq.com
+${mail_pwd}       111111
+${mail_account_vip}    siqian50@qq.com
+${mail_pwd_vip}    111111
+${click}          {'act':'click'}
+${verifyimgget}    {'act':'VerifyImgGet'}
+${dologin}        {'act':'DoLogin'}
+${logout}         {'act':'Logout'}
+
+*** Test Cases ***
+注册pvs-条数
+    公共－点击页面文本    精选
+    首页-我
+    公共－点击页面文本    点击登录
+    Run Keyword And Ignore Error    公共－点击页面文本    使用其它账号登录
+    公共-删除数据
+    公共－点击页面文本    注册
+    ${result}    公共-获取结果    ${pvs}    42_login01    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+注册pvs-字段
+    公共-字段    ${result}
+
+注册pvs-字段名
+    公共-字段值    ${result}
+
+图片验证码VerifyImgGet-条数
+    ${result}    公共-获取结果    ${verifyimgget}    login_img    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+图片验证码VerifyImgGet-字段
+    公共-字段    ${result}
+
+图片验证码VerifyImgGet-字段名
+    公共-字段值    ${result}
+
+注册返回pvs-条数
+    公共-删除数据
+    公共－点击页面文本    back icon
+    ${result}    公共-获取结果    ${pvs}    42_login02    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+注册返回pvs-字段
+    公共-字段    ${result}
+
+注册返回pvs-字段名
+    公共-字段值    ${result}
+
+账号密码登录pvs-条数
+    公共-删除数据
+    sleep    2
+    公共－点击页面文本    帐号密码登录
+    ${result}    公共-获取结果    ${pvs}    42_login03    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+账号密码登录pvs-字段
+    公共-字段    ${result}
+
+账号密码登录pvs-字段名
+    公共-字段值    ${result}
+
+手机号登录成功pvs-条数
+    公共-删除数据
+    手机密码登录－输入手机号    ${phone_account}
+    手机密码登录－输入密码    ${phone_pwd}
+    ${result}    公共-获取结果    ${pvs}    42_login04    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+手机号登录成功pvs-字段
+    公共-字段    ${result}
+
+手机号登录成功pvs-字段名
+    公共-字段值    ${result}
+
+手机号登录click-条数
+    ${result}    公共-获取结果    ${dologin}    login_001    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+手机号登录click-字段
+    公共-字段    ${result}
+
+手机号登录click-字段名
+    公共-字段值    ${result}
+
+退出登录pvs-条数
+    scroll    name=我的消息    name=设置
+    click element    name=设置
+    scroll    name=账号与安全    name=退出登录
+    公共-删除数据
+    click element    name=退出登录
+    click element    name=退出
+    ${result}    公共-获取结果    ${pvs}    42_login05    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出登录pvs-字段
+    公共-字段    ${result}
+
+退出登录pvs-字段名
+    公共-字段值    ${result}
+
+退出登录click-条数
+    ${result}    公共-获取结果    ${logout}    logout_001    mpp_jiaohu_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+退出登录click-字段
+    公共-字段    ${result}
+
+退出登录click-字段名
+    公共-字段值    ${result}
+
+邮箱登录pvs-条数
+    scroll    name=设置    name=我的消息
+    公共－点击页面文本    点击登录
+    ${aa}    if page contain text    点击登录
+    run keyword if    公共－点击页面文本－忽略错误    点击登录
+    公共－点击页面文本－忽略错误    使用其它账号登录
+    公共－点击页面文本    邮箱
+    公共-删除数据
+    ${result}    公共-获取结果    ${click}    42_login06    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+邮箱登录pvs-字段
+    公共-字段    ${result}
+
+邮箱登录pvs-字段名
+    公共-字段值    ${result}

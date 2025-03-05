@@ -1,0 +1,269 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${buy}            {'act':'buy'}
+${order}          {'act':'order'}
+${result1}        {'act':'result'}
+${vip}            {'act':'vip'}
+${pvs}            {'act':'pvs'}
+${aplay}          {'act':'aplay'}
+${buffer}         {'act':'buffer'}
+${hb}             {'act':'hb'}
+${hb3}            {'act':'hb','ht':'0'}
+${hb5}            {'act':'hb','ht':'1'}
+${hb15}           {'act':'hb','ht':'3'}
+${cancel}         {'act':'cancel'}
+
+*** Test Cases ***
+A库视频aplay-条数
+    默认登录用户    ${mail_account}    ${mail_pwd}    ${mail_name}
+    首页-精选
+    首页-搜索
+    搜索首页－输入搜索词    ${firm_vip_free}
+    搜索-点击搜索
+    sleep    5
+    公共-删除数据
+    搜索－点击结果第一个
+    sleep    17
+    ${result}    公共-获取结果    ${aplay}    dianbovip_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+A库视频aplay-字段
+    公共-字段    ${result}
+
+A库视频aplay-字段名
+    公共-字段值    ${result}
+
+reachpv-条数
+    ${result}    公共-获取结果    {'act':'reachpv'}    vip_001    mpp_audit_reachpv_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+reachpv-字段
+    公共-字段    ${result}
+
+reachpv-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_002    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+A库视频buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianbovip_001    mpp_buffer_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+A库视频buffer-字段
+    公共-字段    ${result}
+
+A库视频buffer-字段名
+    公共-字段值    ${result}
+
+A库视频hb3-条数
+    sleep    15
+    ${result}    公共-获取结果    ${hb3}    dianbovip_001_3    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+A库视频hb3-字段
+    公共-字段    ${result}
+
+A库视频hb3-字段名
+    公共-字段值    ${result}
+
+A库视频hb5-条数
+    ${result}    公共-获取结果    ${hb5}    dianbovip_001_5    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+A库视频hb5-字段
+    公共-字段    ${result}
+
+A库视频hb5-字段名
+    公共-字段值    ${result}
+
+A库视频hb15-条数
+    ${result}    公共-获取结果    ${hb15}    dianbovip_001_15    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+A库视频hb15-字段
+    公共-字段    ${result}
+
+A库视频hb15-字段名
+    公共-字段值    ${result}
+
+试看入口vip-条数
+    公共-删除数据
+    Comment    公共－点击坐标点    160    100
+    Comment    公共－点击坐标点    160    100
+    公共－点击页面文本    立即开通
+    sleep    3
+    ${result}    公共-获取结果    ${vip}    aphone_shikan_001    mpp_buy_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+试看入口vip-字段
+    公共-字段    ${result}
+
+试看入口vip-字段名
+    公共-字段值    ${result}
+
+收银台展示show_store-条数
+    sleep    3
+    ${result}    公共-获取结果    {'act':'show_store'}    show_02    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+收银台展示show_store-字段
+    公共-字段    ${result}
+
+收银台展示show_store-字段名
+    公共-字段值    ${result}
+
+试看入口pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shikan_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+试看入口pvs-字段
+    公共-字段    ${result}
+
+试看入口pvs-字段名
+    公共-字段值    ${result}
+
+order-条数
+    开通会员－点击开通
+    sleep    5
+    ${result}    公共-获取结果    ${order}    aphone_shikan_weixin    mpp_order_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+order-字段
+    公共-字段    ${result}
+
+order-字段名
+    公共-字段值    ${result}
+
+点击购买按钮click_pay_button-条数
+    ${result}    公共-获取结果    {'act':'click_pay_button'}    click_02    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击购买按钮click_pay_button-字段
+    公共-字段    ${result}
+
+点击购买按钮click_pay_button-字段名
+    公共-字段值    ${result}
+
+result-条数
+    Comment    公共－xpath    //UIAApplication[1]/UIAWindow[7]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[3]/UIAButton[1]
+    Comment    公共－xpath    //XCUIElementTypeApplication[@name=" "]/XCUIElementTypeWindow[7]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeKeyboard/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[@name="Return"]
+    Comment    公共－点击页面文本    Return
+    sleep    10
+    Run Keyword And Ignore Error    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${result1}    aphone_shikan_weixin    mpp_result_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+result-字段
+    公共-字段    ${result}
+
+result-字段名
+    公共-字段值    ${result}
+
+取消支付cance-条数
+    ${result}    公共-获取结果    ${cancel}    cancel_02    mpp_audit_xiadan_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消支付cance-字段
+    公共-字段    ${result}
+
+取消支付cance-字段名
+    公共-字段值    ${result}
+
+支付返回pvs-条数
+    公共-删除数据
+    开通会员－返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    shikan_002    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+支付返回pvs-字段
+    公共-字段    ${result}
+
+支付返回pvs-字段名
+    公共-字段值    ${result}
+
+播放入口buy-条数
+    Comment    公共－快进
+    sleep    150
+    公共－点击坐标点    150    80
+    sleep    160
+    公共-删除数据
+    Comment    公共－xpath    //XCUIElementTypeButton[@name="立即开通"]
+    公共－点击页面文本    立即开通
+    Comment    公共－xpath    //XCUIElementTypeApplication[@name="芒果TV"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeButton[1]
+    Comment    公共－点击页面文本    立即开通
+    comment    试看结束－立即开通
+    sleep    2
+    ${result}    公共-获取结果    ${vip}    aphone_bofang_001    mpp_buy_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放入口buy-字段
+    公共-字段    ${result}
+
+播放入口buy-字段名
+    公共-字段值    ${result}
+
+立即开通入口pvs-条数
+    ${result}    公共-获取结果    ${pvs}    shikan_001    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+立即开通入口pvs-字段
+    公共-字段    ${result}
+
+立即开通入口pvs-字段名
+    公共-字段值    ${result}
+
+试看结束order-条数
+    开通会员－点击开通
+    ${result}    公共-获取结果    ${order}    aphone_bofang_zhifubao1    mpp_order_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+试看结束order-字段
+    公共-字段    ${result}
+
+试看结束order-字段名
+    公共-字段值    ${result}
+
+试看结束result-条数
+    sleep    8
+    Run Keyword And Ignore Error    公共－点击页面文本    取消
+    ${result}    公共-获取结果    ${result1}    aphone_bofang_zhifubao1    mpp_result_data_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+试看结束result-字段
+    公共-字段    ${result}
+
+试看结束result-字段名
+    公共-字段值    ${result}

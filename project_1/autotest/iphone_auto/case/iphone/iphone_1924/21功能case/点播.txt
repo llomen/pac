@@ -1,0 +1,70 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+合集信息栏标题播放次数显示
+    首页-我
+    公共－xpath    //XCUIElementTypeStaticText[@name="偶像大师 灰姑娘的女孩 第2集 竟有如此美丽的城堡"]
+    公共-页面包含文本    偶像大师灰姑娘女孩
+    公共-页面包含文本    294.3万次播放
+
+合集基本信息展示
+    公共－点击页面文本    偶像大师灰姑娘女孩
+    公共-页面包含文本    类型：动漫
+    公共-页面包含文本    地区：日本
+    公共-页面包含文本    导演：高雄统子
+    公共-页面包含文本    演员：岛村卯月
+    点播播放页-返回
+
+播单信息栏标题播放次数显示
+    公共－xpath    //XCUIElementTypeStaticText[@name="《我的特工爷爷》MV—爷爷的情书"]
+    公共-页面包含文本    我的特工爷爷
+    公共-页面包含文本    7615次播放
+
+基本信息展开或收起
+    公共－xpath    //XCUIElementTypeStaticText[@name="我的特工爷爷"]
+    滚动到看了还会看
+    滚动到我的特工爷爷
+    公共－xpath    //XCUIElementTypeStaticText[@name="我的特工爷爷"]
+
+点播页-调起分享
+    公共－xpath    //XCUIElementTypeButton[@name="Player Floor Share"]
+
+竖屏分享展示
+    公共-页面包含元素    饭团
+    公共-页面包含元素    朋友圈
+    公共-页面包含元素    微信
+    公共-页面包含元素    微博
+    公共-页面包含元素    QQ
+
+竖屏饭团分享展示
+    公共－点击页面文本    饭团
+    公共－点击页面文本    取消
+
+竖屏朋友圈分享展示
+    公共－xpath    //XCUIElementTypeButton[@name="Player Floor Share"]
+    公共－点击页面文本    朋友圈
+    公共-页面包含文本    未安装微信客户端
+    公共－点击页面文本    确定
+
+竖屏微信分享展示
+    公共－xpath    //XCUIElementTypeButton[@name="Player Floor Share"]
+    公共－点击页面文本    微信
+    公共-页面包含文本    未安装微信客户端
+    公共－点击页面文本    确定
+
+竖屏微博分享展示
+    公共－xpath    //XCUIElementTypeButton[@name="Player Floor Share"]
+    公共－点击页面文本    微博
+    公共－点击页面文本    芒果TV
+
+竖屏QQ分享展示
+    公共－xpath    //XCUIElementTypeButton[@name="Player Floor Share"]
+    公共－点击页面文本    QQ
+    公共－点击页面文本    芒果TV
+
+退出点播页
+    点播播放页-返回

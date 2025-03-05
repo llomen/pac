@@ -1,0 +1,110 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Test Cases ***
+点击了解详情click-条数
+    click element    xpath=(//XCUIElementTypeStaticText[@name="【青云志】田不易逼李易峰杀赵丽颖以证清白"])[1]
+    sleep    1
+    公共-删除数据
+    click element    name=了解详情
+    sleep    3
+    ${result}    公共-获取结果    {'t':'1'}    qiantie_click    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击了解详情click-字段
+    公共-字段    ${result}
+
+点击了解详情click-字段值
+    公共-字段值    ${result}
+
+点击了解详情adlost-条数
+    ${result}    公共-获取结果    {'lostid':'5'}    adlost_02    mpp_ad_adlost_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点击了解详情adlost-字段
+    公共-字段    ${result}
+
+点击了解详情adlost-字段值
+    公共-字段值    ${result}
+
+跳转广告h5页面pvs-条数
+    ${result}    公共-获取结果    ${pvs}    ad_01    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转广告h5页面pvs-字段
+    公共-字段    ${result}
+
+跳转广告h5页面pvs-字段值
+    公共-字段值    ${result}
+
+跳转广告h5页面返回pvs-条数
+    公共-删除数据
+    click element    xpath=(//XCUIElementTypeButton[@name="player back Shadow"])[2]
+    comment    点播播放页-返回
+    sleep    2
+    ${result}    公共-获取结果    ${pvs}    ad_02    ${table_pvs_dianbo}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转广告h5页面返回pvs-字段
+    公共-字段    ${result}
+
+跳转广告h5页面返回pvs-字段值
+    公共-字段值    ${result}
+
+跳转广告h5页面返回landclose-条数
+    ${result}    公共-获取结果    {'t':'60000'}    landclose    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+跳转广告h5页面返回landclose-字段
+    公共-字段    ${result}
+
+跳转广告h5页面返回landclose-字段值
+    公共-字段值    ${result}
+
+广告静音mute-条数
+    click element    ImgotvInteractiveMediaAds.bundle/ad-voice-nor
+    click element    ImgotvInteractiveMediaAds.bundle/ad-voice-nor
+    sleep    5
+    ${result}    公共-获取结果    {'t':'20000'}    mute    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告静音mute-字段
+    公共-字段    ${result}
+
+广告静音mute-字段值
+    公共-字段值    ${result}
+
+广告取消静音unmute-条数
+    ${result}    公共-获取结果    {'t':'20001'}    unmute    mpp_ad_jiance_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+广告取消静音unmute-字段
+    公共-字段    ${result}
+
+广告取消静音unmute-字段值
+    公共-字段值    ${result}
+
+未添加离线退出adlost-条数
+    点播播放页-返回
+    公共-删除数据
+    首页-青云志
+    点播播放页-返回
+    ${result}    公共-获取结果    {'lostid':'1'}    adlost_01    mpp_ad_adlost_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+未添加离线退出adlost-字段
+    公共-字段    ${result}
+
+未添加离线退出adlost-字段值
+    公共-字段值    ${result}

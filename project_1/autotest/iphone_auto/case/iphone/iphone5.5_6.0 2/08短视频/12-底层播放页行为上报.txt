@@ -1,0 +1,109 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${playhistory}    {"act":"playHistory"}
+
+*** Test Cases ***
+关注用户followu-条数
+    公共－用户登录    ${mail_account}    ${mail_pwd}
+    短视频-进入有料
+    短视频-推荐播放第一个
+    公共-删除数据
+    短视频-加关注
+    sleep    3
+    ${result}    公共-获取结果    {"action":"followu"}    redian_followu    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+关注用户followu-字段
+    公共-字段    ${result}
+
+关注用户followu-字段值
+    公共-字段值    ${result}
+
+播放页点赞like-条数
+    短视频-点赞
+    ${result}    公共-获取结果    {"action":"like"}    redian_like    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+播放页点赞like-字段
+    公共-字段    ${result}
+
+播放页点赞like-字段值
+    公共-字段值    ${result}
+
+取消点赞cclike-条数
+    短视频-取消点赞
+    ${result}    公共-获取结果    {"action":"cclike"}    redian_cclike    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+取消点赞cclike-字段
+    公共-字段    ${result}
+
+取消点赞cclike-字段值
+    公共-字段值    ${result}
+
+分享share-条数
+    短视频-分享到    朋友圈
+    sleep    3
+    ${result}    公共-获取结果    {"action":"share"}    redian_share    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享share-字段
+    公共-字段    ${result}
+
+分享share-字段值
+    公共-字段值    ${result}
+
+分享share微信-条数
+    短视频-分享到    微信
+    ${result}    公共-获取结果    {"action":"share"}    redian_share    mpp_action_duanshipin    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+分享share微信-字段
+    公共-字段    ${result}
+
+分享share微信-字段值
+    公共-字段值    ${result}
+
+进入upgc主页pvs-条数
+    [Tags]    sdk
+    短视频-跳转upgc主页
+    ${result}    公共-获取结果    {"act":"pvs"}    redian_1    mpp_pv_5_5_iphone_sdk_pindao    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+进入upgc主页pvs-字段
+    [Tags]    sdk
+    公共-字段    ${result}
+
+进入upgc主页pvs-字段值
+    [Tags]    sdk
+    公共-字段值    ${result}
+
+upgc主页返回pvs
+    [Tags]    sdk
+    Run Keyword And Ignore Error    短视频-upgc主页-取消关注
+    非播放页－返回
+    ${result}    公共-获取结果    {"act":"pvs"}    redian_1    mpp_pv_5_5_iphone_sdk_pindao    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+    sleep    3
+
+upgc主页返回pvs
+    [Tags]    sdk
+    公共-字段    ${result}
+
+upgc主页返回pvs
+    [Tags]    sdk
+    公共-字段值    ${result}

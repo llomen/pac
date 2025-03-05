@@ -1,0 +1,124 @@
+*** Settings ***
+Suite Setup       启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+Library           AllureReportLibrary    Allure
+
+*** Variables ***
+${pvs}            {'act':'pvs'}
+${search}         {'act':'search'}
+${view}           {'act':'view'}
+${click}          {'act':'click'}
+
+*** Test Cases ***
+直播搜索pvs-条数
+    [Setup]
+    首页-搜索
+    搜索首页－输入搜索词    少年说
+    公共-删除数据
+    搜索-点击搜索
+    ${result}    公共-获取结果    ${pvs}    sousuo_002    ${table_pvs_search}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播搜索pvs-字段
+    公共-字段    ${result}
+
+直播搜索pvs-字段值
+    公共-字段值    ${result}
+
+直播搜索pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_002    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播搜索pvs1-字段
+    公共-字段    ${result}
+
+直播搜索pvs1-字段值
+    公共-字段值    ${result}
+
+直播搜索search-条数
+    ${result}    公共-获取结果    ${search}    zhibo_001    mpp_search_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播搜索search-字段
+    公共-字段    ${result}
+
+直播搜索search-字段值
+    公共-字段值    ${result}
+
+直播搜索view-条数
+    ${result}    公共-获取结果    ${view}    zhibo_001    mpp_view_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播搜索view-字段
+    公共-字段    ${result}
+
+直播搜索view-字段值
+    公共-字段值    ${result}
+
+直播搜索click-条数
+    公共-删除数据
+    公共－点击页面文本    少年说3
+    sleep    2
+    ${result}    公共-获取结果    ${click}    zhibo_001    mpp_click_5_5_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播搜索click-字段
+    公共-字段    ${result}
+
+直播搜索click-字段值
+    公共-字段值    ${result}
+
+直播播放pvs-条数
+    [Setup]
+    ${result}    公共-获取结果    ${pvs}    sousuo_zhibo    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播播放pvs-字段
+    公共-字段    ${result}
+
+直播播放pvs-字段值
+    公共-字段值    ${result}
+
+直播播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_zhibo    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播播放pvs1-字段
+    公共-字段    ${result}
+
+直播播放pvs1-字段值
+    公共-字段值    ${result}
+
+直播退出播放pvs-条数
+    [Setup]
+    公共-删除数据
+    sleep    2
+    直播-退出
+    ${result}    公共-获取结果    ${pvs}    sousuo_zhibotuichu    mpp_pv_5_5_iphone_sdk_qita    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播退出播放pvs-字段
+    公共-字段    ${result}
+
+直播退出播放pvs-字段值
+    公共-字段值    ${result}
+
+直播退出播放pvs1-条数
+    ${result}    公共-获取结果    ${pvs1}    sousuo_zhibotuichu    ${table_pvs1}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+直播退出播放pvs1-字段
+    公共-字段    ${result}
+
+直播退出播放pvs1-字段值
+    公共-字段值    ${result}

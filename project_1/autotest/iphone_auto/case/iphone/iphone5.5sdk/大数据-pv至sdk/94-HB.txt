@@ -1,0 +1,119 @@
+*** Settings ***
+Suite Setup       公共－启动应用
+Suite Teardown    公共－关闭应用
+Resource          ../5.3对象库.txt
+
+*** Variables ***
+${hb}             {'act':'hb','bdsv':'iphone_v3.0.0.1815'}
+${table}          mpp_hb_5_iphone_sdk
+${aplay}          {'act':'aplay','bdsv':'iphone_v3.0.0.1815'}
+${buffer}         {'act':'buffer','bdsv':'iphone_v3.0.0.1815'}
+
+*** Test Cases ***
+点播15hb-条数
+    首页－搜索
+    搜索首页－输入搜索词    钢铁侠3
+    公共－点击页面文本    确认
+    公共－点击页面文本    搜索
+    搜索－点击结果第一个
+    sleep    20
+    sleep    15
+    ${result}    公共-获取结果    ${hb}    shikan_15    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播15hb-字段
+    公共-字段    ${result}
+
+点播15hb-字段值
+    公共-删除数据
+    公共-字段值    ${result}
+
+点播45hb-条数
+    sleep    33
+    ${result}    公共-获取结果    ${hb}    shikan_45    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播45hb-字段
+    公共-字段    ${result}
+
+点播45hb-字段值
+    公共-删除数据
+    公共-字段值    ${result}
+
+点播60hb-条数
+    sleep    30
+    ${result}    公共-获取结果    ${hb}    shikan_60    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播60hb-字段
+    公共-字段    ${result}
+
+点播60hb-字段值
+    公共-删除数据
+    公共-字段值    ${result}
+
+点播180hb-条数
+    sleep    120
+    ${result}    公共-获取结果    ${hb}    shikan_120    ${table}    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+点播180hb-字段
+    公共-字段    ${result}
+
+点播180hb-字段值
+    公共-删除数据
+    公共-字段值    ${result}
+
+播放页列表跳转播放aplay-条数
+    点播-关闭右滑按钮
+    公共-删除数据
+    公共－点击页面文本    小辣椒暴力满级
+    sleep    20
+    ${result}    公共-获取结果    ${aplay}    dianboliebiao_001    mpp_vv_5_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页列表跳转播放aplay-字段
+    公共-字段    ${result}
+
+播放页列表跳转播放aplay-字段值
+    公共-字段值    ${result}
+
+sdkload-条数
+    ${result}    公共-获取结果    {'act':'sdkload'}    dianbo_005    mpp_sdkload_iphone    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+sdkload-字段
+    公共-字段    ${result}
+
+sdkload-字段值
+    公共-字段值    ${result}
+
+播放页列表跳转播放buffer-条数
+    ${result}    公共-获取结果    ${buffer}    dianboliebiao_001    mpp_buffer_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页列表跳转播放buffer-字段
+    公共-字段    ${result}
+
+播放页列表跳转播放buffer-字段值
+    公共-字段值    ${result}
+
+播放页列表跳转播放hb-条数
+    公共-删除数据
+    sleep    17
+    ${result}    公共-获取结果    ${hb}    dianboliebiao_001    mpp_hb_5_iphone_sdk    1
+    Set Global Variable    ${result}
+    公共-条数    ${result}
+
+播放页列表跳转播放hb-字段
+    公共-字段    ${result}
+
+播放页列表跳转播放hb-字段值
+    公共-字段值    ${result}
