@@ -1,5 +1,5 @@
 """
-自动化测试
+python+selenium爬取携程酒店数据
 xiaozixi
 日期：2025年03月09日
 """
@@ -14,11 +14,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
 # ========== 配置参数 ==========
-CITY_CODE = "2"  # 北京城市代码
+CITY_CODE = "32"  # 广州城市代码
 CHECK_IN = "2025-05-01"
 CHECK_OUT = "2025-05-02"
 MAX_PAGES = 3
-OUTPUT_FILE = 'ctrip_hotels.csv'
+OUTPUT_FILE = '广州酒店.csv'
 
 
 # ========== 浏览器设置 ==========
