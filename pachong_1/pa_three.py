@@ -2,6 +2,7 @@
 自动化测试
 xiaozixi
 日期：2025年03月15日
+非正式版
 """
 import requests
 import time

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可视化网页编辑器</title>
+    <!-- 依赖库 -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.2/dist/pickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr@1.8.2/dist/themes/classic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #2196F3;
+            --toolbar-bg: #2d2d2d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* 左侧组件面板 */
+        .component-panel {
+            width: 250px;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-right: 1px solid #ddd;
+        }
+
+        .component-item {
+            background: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            cursor: move;
+            border-radius: 6px;
+        }
+
+        /* 主编辑区域 */
+        .editor-area {
+            flex: 1;
+            padding: 2rem;
+            background: #f9f9f9;
+            position: relative;
+        }
+
+        .editable-element {
+            position: absolute;
+            border: 2px dashed transparent;
+            transition: all 0.3s;
+        }
+
+        .editable-element:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* 顶部工具栏 */
+        .toolbar {
+            position: fixed;
+            top: 0;
+            left: 250px;
+            right: 0;
+            background: var(--toolbar-bg);
+            padding: 0.5rem 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .toolbar button {
+            background: #444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* 属性面板 */
+        .property-panel {
+            width: 300px;
+            background: white;
+            border-left: 1px solid #ddd;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 左侧组件库 -->
+    <div class="component-panel">
+        <div class="component-item" data-type="text">文本组件</div>
+        <div class="component-item" data-type="image">图片组件</div>
+        <div class="component-item" data-type="button">按钮组件</div>
+    </div>
+
+    <!-- 主编辑区域 -->
+    <div class="editor-area" id="editorArea"></div>
+
+    <!-- 顶部工具栏 -->
+    <div class="toolbar">
+        <button onclick="saveDesign()">保存</button>
+        <button onclick="exportHTML()">导出HTML</button>
+        <button onclick="toggleGrid()">显示网格</button>
+        <input type="color" id="bgColor" onchange="updateBgColor(this.value)">
+    </div>
+
+    <!-- 右侧属性面板 -->
+    <div class="property-panel" id="propertyPanel">
+        <h3>元素属性</h3>
+        <div id="styleControls"></div>
+    </div>
+
+    <script>
+        // 初始化编辑器
+        let selectedElement = null;
+        const ELEMENT_TYPES = {
+            text: {
+                html: '<div class="editable-text" contenteditable="true">双击编辑文字</div>',
+                defaultStyles: {
+                    width: '200px',
+                    height: 'auto',
+                    fontSize: '16px',
+                    color: '#333'
+                }
+            },
+            image: {
+                html: '<img src="https://via.placeholder.com/200" class="editable-image">',
+                defaultStyles: {
+                    width: '200px',
+                    height: 'auto'
+                }
+            },
+            button: {
+                html: '<button class="editable-button">按钮</button>',
+                defaultStyles: {
+                    width: '120px',
+                    padding: '8px 16px',
+                    backgroundColor: '#2196F3',
+                    color: 'white'
+                }
+            }
+        };
+
+        // 初始化拖拽系统
+        new Sortable(document.querySelector('.component-panel'), {
+            group: {
+                name: 'components',
+                pull: 'clone',
+                put: false
+            },
+            sort: false,
+            draggable: '.component-item',
+            onEnd: (evt) => {
+                const type = evt.item.dataset.type;
+                createNewElement(type, { x: evt.originalEvent.clientX, y: evt.originalEvent.clientY });
+            }
+        });
+
+        // 创建新元素
+        function createNewElement(type, position) {
+            const elementData = ELEMENT_TYPES[type];
+            const element = document.createElement('div');
+            element.className = 'editable-element';
+            element.innerHTML = elementData.html;
+
+            Object.assign(element.style, elementData.defaultStyles, {
+                left: `${position.x - 250}px`,
+                top: `${position.y - 50}px`
+            });
+
+            // 添加交互功能
+            element.addEventListener('dblclick', () => showStyleEditor(element));
+            element.addEventListener('mousedown', () => selectElement(element));
+
+            document.getElementById('editorArea').appendChild(element);
+            makeDraggable(element);
+        }
+
+        // 使元素可拖拽
+        function makeDraggable(element) {
+            let isDragging = false;
+            let startX, startY, initialLeft, initialTop;
+
+            element.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                initialLeft = parseFloat(element.style.left) || 0;
+                initialTop = parseFloat(element.style.top) || 0;
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            });
+
+            function onMouseMove(e) {
+                if (!isDragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                element.style.left = `${initialLeft + dx}px`;
+                element.style.top = `${initialTop + dy}px`;
+            }
+
+            function onMouseUp() {
+                isDragging = false;
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+            }
+        }
+
+        // 显示样式编辑器
+        function showStyleEditor(element) {
+            selectedElement = element;
+            const controls = `
+                <div class="style-control">
+                    <label>宽度：</label>
+                    <input type="text" value="${element.style.width}"
+                           onchange="updateStyle('width', this.value)">
+                </div>
+                <div class="style-control">
+                    <label>字体大小：</label>
+                    <input type="range" min="12" max="48"
+                           value="${parseInt(element.style.fontSize) || 16}"
+                           oninput="updateStyle('fontSize', this.value + 'px')">
+                </div>
+                <div class="style-control">
+                    <label>文字颜色：</label>
+                    <input type="color"
+                           value="${element.style.color || '#333'}"
+                           onchange="updateStyle('color', this.value)">
+                </div>
+            `;
+            document.getElementById('styleControls').innerHTML = controls;
+        }
+
+        // 样式更新函数
+        window.updateStyle = function(prop, value) {
+            if (!selectedElement) return;
+            selectedElement.style[prop] = value;
+        }
+
+        // 保存设计
+        function saveDesign() {
+            const elements = Array.from(document.querySelectorAll('.editable-element')).map(el => ({
+                html: el.innerHTML,
+                styles: el.style.cssText,
+                position: {
+                    x: el.style.left,
+                    y: el.style.top
+                }
+            }));
+            localStorage.setItem('webDesign', JSON.stringify(elements));
+            alert('设计已保存！');
+        }
+
+        // 加载设计
+        function loadDesign() {
+            const saved = localStorage.getItem('webDesign');
+            if (saved) {
+                JSON.parse(saved).forEach(elementData => {
+                    const element = document.createElement('div');
+                    element.className = 'editable-element';
+                    element.innerHTML = elementData.html;
+                    element.style.cssText = elementData.styles;
+                    element.style.left = elementData.position.x;
+                    element.style.top = elementData.position.y;
+                    element.addEventListener('dblclick', () => showStyleEditor(element));
+                    element.addEventListener('mousedown', () => selectElement(element));
+                    makeDraggable(element);
+                    document.getElementById('editorArea').appendChild(element);
+                });
+            }
+        }
+
+        // 初始化加载
+        loadDesign();
+    </script>
+</body>
+</html>
